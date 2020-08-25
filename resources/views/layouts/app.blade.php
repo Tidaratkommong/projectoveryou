@@ -28,7 +28,7 @@
                 <a class="navbar-brand" style="font-size:32px;" href="{{ url('/') }}">
                     Overyou
                 </a>
-                <img src="LOGO.jpg" style="font-size:32px;" href="{{ url('/') }}" alt="...">
+              <!--  <img src="LOGO.png" style="width: 130px;height: 80px;" href="{{ url('/') }}" alt="...">-->
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
                 </button>
