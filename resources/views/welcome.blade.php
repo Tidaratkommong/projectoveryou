@@ -12,7 +12,7 @@
         <div class="carousel-item active">
             <img src="cat.jpg" width="200" height="350" class="d-block w-100" alt="...">
             <div class="carousel-caption d-none d-md-block">
-                <h5>โปรโมชั่น </h5>
+                <h5>โปรโมชั่น</h5>
                 <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
             </div>
         </div>
