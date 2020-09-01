@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/profile', 'HomeController@edit')->name('user.edit_profile');
+
 
 Route::get('/', function () {
     return view('welcome');
@@ -22,9 +22,18 @@ Route::get('/', function () {
 
 Auth::routes();
 
+Route::get('/profile', 'HomeController@edit')->name('user.edit_profile');
 Route::get('/home', 'HomeController@index')->name('home');
-Route::resource('Product', 'ProductsController');
-Route::post('/Product', 'ProductsController@Store');
+Route::get('product/index', 'ProductsController@index')->name('product/index');
+
+Route::resource('product', 'ProductsController');
+
+//Route::get('product', 'ProductsControlle@index');
+
+//Route::resource('product', 'ProductsController@index');
+
+//Route::resource('/Product', 'ProductsController@create');
+//Route::post('product', 'ProductsController@store');
 
 //Route::get('/product', 'ProductController@Index');
 

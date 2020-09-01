@@ -15,10 +15,11 @@ class ProductsController extends Controller
      */
     public function index()
     {
-        $data = Product::latest()->paginate(5);
-        return view('product', compact('data'))
-            ->with('i', (request()->input('page', 1) - 1) * 5);
-    }
+        $product = Product::all();
+        return view('product.index')->with('product',$product);
+            
+
+        }
 
     /**
      * Show the form for creating a new resource.
@@ -27,7 +28,7 @@ class ProductsController extends Controller
      */
     public function create()
     {
-        return view('create');
+       return view('product.create');
     }
 
     /**
@@ -38,32 +39,25 @@ class ProductsController extends Controller
      */
     public function store(Request $request)
     {
-       $request->validate([
-            'product_id' => 'required',
-            'product_name' => 'required',
-            'product_delail' => 'required',
-            'product_price' => 'required',
-            'protype_id' => 'required',
-            'product_img' => 'required|image|max:2084',
-            'product_num' => 'required'
-        ]);
+        
+        
+         $product =new Product;
+         $product->product_id = $request->product_id;
+         $product->product_name = $request->product_name;
+         $product->product_delail = $request->product_delail;
+         $product->product_price = $request->product_price;
+         $product->protype_id = $request->protype_id;
+         $product->product_num = $request->product_num;
+         $product->product_img = '';
+         
+         if($product->save()){
+             $request->session()->flash('success','เพิ่ม'. $product->product_name.'สำเร็จ');
+             return view('product.index');
+         }else{
+            $request->session()->flash('success','เพิ่ม'. $product->product_name.'ไม่สำเร็จ');
+            return view('product.create');
 
-        $image = $request->file('image');
-        $new_name = rand().'.'.$image->
-        getClientOriginalExtension();
-        $image->move(public_path('images'),$new_name);
-        $form_data=array(
-            'product_id' => $request->product_id,
-            'product_name' => $request->product_name,
-            'product_delail' =>$request->product_delail,
-            'product_price' => $request->product_price,
-            'protype_id' => $request->protype_id,
-            'product_img' => $new_name,
-            'product_num' => $request->product_num
-        );
-
-        Product::create($form_data);
-        return redirect('product')->whit('success','Data Added successfully'); 
+         }
     }
 
     /**
