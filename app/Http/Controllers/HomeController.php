@@ -23,6 +23,7 @@ class HomeController extends Controller
      */
     public function index()
     {
+      
         //auth()->user()->assignRole('admin'); //กำหนดเป็น admin
         //การตรวจเช็คบทบาท
         if(auth()->user()->hasRole('admin')){
@@ -33,4 +34,10 @@ class HomeController extends Controller
         }
         
     }
+    public function edit()
+    {
+        return view('edit_profile');
+    }
+    
+
 }
