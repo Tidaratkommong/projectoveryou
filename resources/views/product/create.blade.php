@@ -3,7 +3,7 @@
 @section('content')
 <br />
 <div class="container">
-<a type="submit" class="btn btn-danger" href="{{url('product/index')}}">ยกเลิก</a>
+    <a type="submit" class="btn btn-outline-secondary" href="{{url('product/index')}}">ย้อนกลับ</a>
     <div class="row justify-content-center">
         <div class="col-md-10">
             <div class="card ">
@@ -12,58 +12,64 @@
                     @csrf
 
                     @if(Session::get('success'))
-                    <div class="alert alert-success">
+                    <div class="alert alert-danger">
                         {{Session::get('success')}}
                     </div>
                     @endif
 
-                    <div class="form-row">
-                        <div class="form-group col-md-6">
-                            <label for="inputEmail4">รหัสสินค้า</label>
-                            <input type="text" name="product_id" class="form-control input-lg" placeholder="รหัสสินค้า" required />
+                    @if($errors->any())
+                    <div class="alert alert-danger">
+                        <ul>
+                            @foreach ($errors->all() as $error)
+                            <li>{{$error}}</li>
+                            @endforeach
+                        </ul>
                         </div>
+                    @endif
 
-                        <div class="form-group col-md-6">
-                            <label for="inputPassword4">ชื่อสินค้า</label>
-                            <input type="text" name="product_name" class="form-control input-lg" placeholder="ชื่อสินค้า" required />
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <label for="productname">ชื่อสินค้า</label>
+                                <input type="text" name="product_name" class="form-control input-lg" placeholder="ชื่อสินค้า" value="{{old('product_name')}}" />
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="productprice">ราคาสินค้า</label>
+                                <input type="number" name="product_price" class="form-control input-lg" placeholder="ราคาสินค้า" value="{{old('product_price')}}" />
+                            </div>
                         </div>
-                    </div>
-                    <div class="form-group">
-                        <label for="exampleFormControlTextarea1">รายละเอียดสินค้า</label>
-                        <textarea class="form-control" id="exampleFormControlTextarea1" type="text" name="product_delail" placeholder="รายละเอียดสินค้า" rows="4" required></textarea>
-                    </div>
-                    <div class="form-row">
-                        <div class="form-group col-md-6">
-                            <label for="inputCity">ราคาสินค้า</label>
-                            <input type="number" name="product_price" class="form-control input-lg" placeholder="ราคาสินค้า" required />
+                        <div class="form-group">
+                            <label for="productdetail">รายละเอียดสินค้า</label>
+                            <textarea class="form-control" type="text" name="product_detail" placeholder="รายละเอียดสินค้า" rows="4" value="{{old('product_detail')}}"></textarea>
                         </div>
-                        <div class="form-group col-md-4">
+                        <div class="form-row">
+
+                            <!--<div class="form-group col-md-4">
                             <label for="inputState">ประเภทสินค้า</label>
-                            <select type="text" name="protype_id" required class="form-control">
+                            <select type="text" name="protype_id"  class="form-control">
                                 <option selected>ประเภทสินค้า</option>
                                 <option>...</option>
                             </select>
 
-                        </div>
+                        </div> -->
 
-                        <div class="form-group col-md-2">
-                            <label for="inputZip">จำนวนสินค้า</label>
-                            <input type="number" name="product_num" class="form-control input-lg" placeholder="จำนวนสินค้า" required />
+                            <div class="form-group col-md-2">
+                                <label for="productnum">จำนวนสินค้า</label>
+                                <input type="number" name="product_num" class="form-control input-lg" placeholder="จำนวนสินค้า" value="{{old('product_num')}}" />
+                            </div>
                         </div>
+                        <br />
+                        <div class="form-group">
+                            <label for="exampleInputFile">Select Profile Image</label>
+                            <input type="file" name="product_img" value="{{old('product_img')}}"  />
+                        </div>
+                        <div class="checkbox">
+                            <label>
+                                <input type="checkbox"> Check me out
+                            </label>
+                        </div>
+                        <button type="submit" class="btn btn-success">บันทึก</button>
+
                     </div>
-                    <br />
-                    <div class="form-group">
-                        <label for="exampleInputFile">Select Profile Image</label>
-                        <input type="file" name="product_img" required />
-                    </div>
-                    <div class="checkbox">
-                        <label>
-                            <input type="checkbox"> Check me out
-                        </label>
-                    </div>
-                    <button type="submit" class="btn btn-success">บันทึก</button>
-                    
             </div>
         </div>
-    </div>
-    @endsection
+        @endsection

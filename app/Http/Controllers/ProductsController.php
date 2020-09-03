@@ -26,9 +26,10 @@ class ProductsController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Request $request)
     {
-       return view('product.create');
+       $request->session()->forget('success');
+      return view('product.create');
     }
 
     /**
@@ -39,14 +40,21 @@ class ProductsController extends Controller
      */
     public function store(Request $request)
     {
-        
-        
-         $product =new Product;
-         $product->product_id = $request->product_id;
+        //validate
+         $request->validate([
+            'product_name' =>  'required',
+            'product_price' =>  'required',
+            'product_detail' =>  'required',
+            'product_num' =>  'required',
+            'product_img'=>  'required'
+
+        ]);
+        //Add to DB
+
+        $product =new Product;
          $product->product_name = $request->product_name;
-         $product->product_delail = $request->product_delail;
+         $product->product_detail = $request->product_detail;
          $product->product_price = $request->product_price;
-         $product->protype_id = $request->protype_id;
          $product->product_num = $request->product_num;
          $product->product_img = '';
          
