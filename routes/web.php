@@ -27,7 +27,8 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('product/index', 'ProductsController@index')->name('product/index');
 
 Route::resource('product', 'ProductsController');
-
+//Route::get('/product/{id}', 'ProductController@show');
+//Route::put('/product/edit/{id}', 'ProductController@edit');
 //Route::get('product', 'ProductsControlle@index');
 
 //Route::resource('product', 'ProductsController@index');
@@ -41,4 +42,3 @@ Route::resource('product', 'ProductsController');
 
 //Route::delete('/product/{id}', 'ProductController@Destroy');
 
-//Route::put('/product/{id}', 'ProductController@Update');

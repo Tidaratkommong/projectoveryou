@@ -15,11 +15,12 @@ class ProductsController extends Controller
      */
     public function index()
     {
-        $product = Product::all();
-        return view('product.index')->with('product',$product);
-            
 
-        }
+
+        $product = Product::latest()->paginate(6);
+        return view('product.index', compact('product'))
+            ->with('i', (request()->input('page', 1) - 1) * 6);
+    }
 
     /**
      * Show the form for creating a new resource.
@@ -28,8 +29,8 @@ class ProductsController extends Controller
      */
     public function create(Request $request)
     {
-       $request->session()->forget('success');
-      return view('product.create');
+        $request->session()->forget('success');
+        return view('product.create');
     }
 
     /**
@@ -41,31 +42,39 @@ class ProductsController extends Controller
     public function store(Request $request)
     {
         //validate
-         $request->validate([
+        $request->validate([
             'product_name' =>  'required',
             'product_price' =>  'required',
             'product_detail' =>  'required',
             'product_num' =>  'required',
-            'product_img'=>  'required'
+            'product_img' =>  'required'
 
         ]);
+        // Move imge to folder
+        $path = $request->product_img->store('public/imaproduct');
+        //return public/imaproduct/filename
+
+        //chand path befor insert into DB
+        $replace_path = str_replace("public","storage",$path);
+
+
+
         //Add to DB
 
-        $product =new Product;
-         $product->product_name = $request->product_name;
-         $product->product_detail = $request->product_detail;
-         $product->product_price = $request->product_price;
-         $product->product_num = $request->product_num;
-         $product->product_img = '';
-         
-         if($product->save()){
-             $request->session()->flash('success','เพิ่ม'. $product->product_name.'สำเร็จ');
-             return view('product.index');
-         }else{
-            $request->session()->flash('success','เพิ่ม'. $product->product_name.'ไม่สำเร็จ');
-            return view('product.create');
+        $product = new Product;
+        $product->product_name = $request->product_name;
+        $product->product_detail = $request->product_detail;
+        $product->product_price = $request->product_price;
+        $product->product_num = $request->product_num;
+        $product->product_img = $replace_path;
 
-         }
+        if ($product->save()) {
+            $request->session()->flash('success', 'เพิ่ม' . $product->product_name . 'สำเร็จ');
+            return redirect('product');
+        } else {
+            $request->session()->flash('success', 'เพิ่ม' . $product->product_name . 'ไม่สำเร็จ');
+            return view('product.create');
+        }
     }
 
     /**
@@ -76,7 +85,8 @@ class ProductsController extends Controller
      */
     public function show($id)
     {
-        //
+        $product =Product::findOrFail($id);
+        return view('product.viewproduct', compact('product'));
     }
 
     /**
@@ -87,7 +97,7 @@ class ProductsController extends Controller
      */
     public function edit($id)
     {
-        //
+        
     }
 
     /**
