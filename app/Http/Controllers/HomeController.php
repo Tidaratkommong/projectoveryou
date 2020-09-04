@@ -34,10 +34,7 @@ class HomeController extends Controller
         }
         
     }
-    public function edit()
-    {
-        return view('edit_profile');
-    }
+    
     
 
 }
