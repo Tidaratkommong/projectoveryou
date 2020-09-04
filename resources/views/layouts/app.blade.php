@@ -73,6 +73,10 @@
                                 {{ __('Edit Profile') }}
                             </a>
 
+                            <a class="dropdown-item" href="{{ route('password.edit')}}">
+                                {{ __('Change Password') }}
+                            </a>
+
         
                             <!--จัดการข้อมูลส่วนตัว-->
                             <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();

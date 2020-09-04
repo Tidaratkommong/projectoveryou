@@ -13,6 +13,3 @@
 </div>
 @endsection
 
-<script style="text/javascript">
-    document.title = "{{ $user['username']}} profile";
-</script>

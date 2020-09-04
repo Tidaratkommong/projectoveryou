@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 
 class UserController extends Controller
 {
@@ -18,7 +19,7 @@ class UserController extends Controller
             } else {
                 return redirect()->back();
             }
-        }else{
+        } else {
             return redirect()->back();
         }
     }
@@ -26,44 +27,41 @@ class UserController extends Controller
 
     public function update(Request $request)
     {
-        $user =User::find(Auth::user()->id);
- 
-        if($user){
-            $validate = null;
-            if(Auth::user()->email == $request['email']){
-            $validate =$request->validate([
-               'username' => 'required',
-               'fname' => 'required',
-               'lname' => 'required',
-               'phone' => 'required',
-               'email' => 'required|email'
-            ]);
+        $user = User::find(Auth::user()->id);
 
-            }else{
-                $validate =$request->validate([
+        if ($user) {
+            $validate = null;
+            if (Auth::user()->email == $request['email']) {
+                $validate = $request->validate([
+                    'username' => 'required',
+                    'fname' => 'required',
+                    'lname' => 'required',
+                    'phone' => 'required',
+                    'email' => 'required|email'
+                ]);
+            } else {
+                $validate = $request->validate([
                     'username' => 'required',
                     'fname' => 'required',
                     'lname' => 'required',
                     'phone' => 'required',
                     'email' => 'required|email|unique:users'
-                 ]);
-
+                ]);
             }
-            if ($validate){
-            $user->username =$request['username'];
-            $user->fname =$request['fname'];
-            $user->lname =$request['lname'];
-            $user->phone =$request['phone'];
-            $user->email =$request['email'];
+            if ($validate) {
+                $user->username = $request['username'];
+                $user->fname = $request['fname'];
+                $user->lname = $request['lname'];
+                $user->phone = $request['phone'];
+                $user->email = $request['email'];
 
-            $user->save();
-            $request->session()->flash('success',' Your detals have now been updated !');
-            return redirect()->back();
-            }else{
+                $user->save();
+                $request->session()->flash('success', ' Your detals have now been updated !');
+                return redirect()->back();
+            } else {
                 return redirect()->back();
             }
-
-        }else{
+        } else {
             return redirect()->back();
         }
     }
@@ -71,11 +69,31 @@ class UserController extends Controller
 
     public function passwordEdit()
     {
-        //
+        if (Auth::user()) {      
+                return view('user.password');
+        } else {
+            return redirect()->back();
+        }
+
     }
-    public function passwordUpdate()
+
+
+    public function passwordUpdate(Request $request)
     {
-        //
+        $user = User::find(Auth::user()->id);
+
+        if ($user) {
+            if (Hash::check($request['oldPassword'], $user->password)) {
+                $user->password = $request['password'];
+                $user->save();
+
+                $request->session()->flash('success', ' Your password have been update!');
+                return redirect()->back();
+            } else {
+                $request->session()->flash('error', ' The entered does not match your current password!');
+                return redirect()->round('password.edit');
+            }
+        }
     }
 
     public function profile($id)
