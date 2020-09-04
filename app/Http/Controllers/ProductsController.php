@@ -17,9 +17,9 @@ class ProductsController extends Controller
     {
 
 
-        $product = Product::latest()->paginate(6);
-        return view('product.index', compact('product'))
-            ->with('i', (request()->input('page', 1) - 1) * 6);
+        $product = Product::latest()->paginate(5);
+        return view('product.index_product', compact('product'))
+            ->with('i', (request()->input('page', 1) - 1) * 5);
     }
 
     /**
@@ -30,7 +30,7 @@ class ProductsController extends Controller
     public function create(Request $request)
     {
         $request->session()->forget('success');
-        return view('product.create');
+        return view('product.create_product');
     }
 
     /**
@@ -43,25 +43,41 @@ class ProductsController extends Controller
     {
         //validate
         $request->validate([
+
+            'product_id' =>  'required',
             'product_name' =>  'required',
-            'product_price' =>  'required',
+            'product_price' =>  'required|numeric',
             'product_detail' =>  'required',
             'product_num' =>  'required',
-            'product_img' =>  'required'
+            'product_img' =>  'required|mimes:jpeg,jpg,png'
+
+        ], [
+
+            'product_id.required' => 'กรุณากรอกรหัสสินค้า',
+            'product_name.required' => 'กรุณากรอกชื่อสินค้า',
+            'product_detail.required' => 'กรุณากรอรายละเอียดสินค้า',
+            'product_price.required' => 'กรุณากรอกราคา',
+            'product_num.required' => 'กรุณากรอกจำนวนสินค้า',
+            'product_price.numeric' => 'กรุณากรอกราคาเป็นตัวเลขเท่านั้น',
+            'product_img.required' => 'กรุณากรอกรูปภาพ',
+            'product_img.mimes' => 'ไฟล์ที่เลือกต้องนามสกุล jpeg, jpg, png เท่านั้น'
 
         ]);
+
+
         // Move imge to folder
         $path = $request->product_img->store('public/imaproduct');
         //return public/imaproduct/filename
 
         //chand path befor insert into DB
-        $replace_path = str_replace("public","storage",$path);
+        $replace_path = str_replace("public", "storage", $path);
 
 
 
         //Add to DB
 
         $product = new Product;
+        $product->product_id = $request->product_id;
         $product->product_name = $request->product_name;
         $product->product_detail = $request->product_detail;
         $product->product_price = $request->product_price;
@@ -73,7 +89,7 @@ class ProductsController extends Controller
             return redirect('product');
         } else {
             $request->session()->flash('success', 'เพิ่ม' . $product->product_name . 'ไม่สำเร็จ');
-            return view('product.create');
+            return view('product.create_product');
         }
     }
 
@@ -85,8 +101,8 @@ class ProductsController extends Controller
      */
     public function show($id)
     {
-        $product =Product::findOrFail($id);
-        return view('product.viewproduct', compact('product'));
+        //$product = Product::findOrFail($id);
+       // return view('product.view_product', compact('product'));
     }
 
     /**
@@ -97,7 +113,7 @@ class ProductsController extends Controller
      */
     public function edit($id)
     {
-        
+       //return view('product.edit_product');
     }
 
     /**
