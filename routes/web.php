@@ -32,8 +32,9 @@ Route::post('/edit/user/', 'UserController@update')->name('user.update');
 Route::get('/edit/password/user/', 'UserController@passwordEdit')->name('password.edit');
 Route::post('/edit/password/user/', 'UserController@passwordUpdate')->name('password.update');
 
-Route::resource('product', 'ProductsController');
 Route::get('product/index_product', 'ProductsController@index')->name('product/index_product');
+Route::resource('product', 'ProductsController');
+
 
 //Route::put('/product/edit/{id}', 'ProductController@edit');
 //Route::get('product', 'ProductsControlle@index');
