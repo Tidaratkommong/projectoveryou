@@ -22,12 +22,17 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/profile', 'HomeController@edit')->name('user.edit_profile');
 Route::get('/home', 'HomeController@index')->name('home');
-Route::get('product/index', 'ProductsController@index')->name('product/index');
+
+Route::get('admin/index_user', 'DashboardController@registered')->name('admin/index_user');
+
+Route::get('/user/{id}','UserController@profile')->name('user.profile');
+Route::get('/edit/user/', 'UserController@edit')->name('user.edit');
+Route::post('/edit/user/', 'UserController@update')->name('user.update');
 
 Route::resource('product', 'ProductsController');
-//Route::get('/product/{id}', 'ProductController@show');
+Route::get('product/index_product', 'ProductsController@index')->name('product/index_product');
+
 //Route::put('/product/edit/{id}', 'ProductController@edit');
 //Route::get('product', 'ProductsControlle@index');
 
