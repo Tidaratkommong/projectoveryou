@@ -37,12 +37,17 @@
                     <td>
                    <!-- <a  class="btn btn-primary" 
                     href="#">แสดง</a>-->
+                   
+                    <a  class="btn btn-primary" 
+                    href="{{ route('product.show',$value->product_name )}}">แสดง</a>
 
                     <a  class="btn btn-warning" 
+                    href="/role-edit/{{$value->product_id}}">แก้ไข</a>
+
+                    <a  class="btn btn-danger" 
                     href="/role-edit/{{$value->product_id}}">ลบ</a>
     
-                    <!--<button  type="button"  class="btn btn-warning"  >แก้ไข</button>
-                    <button  type="button"  class="btn btn-danger" >ลบ</button>-->
+                    
                     
                     </td>
 

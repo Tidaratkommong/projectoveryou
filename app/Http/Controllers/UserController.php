@@ -80,11 +80,17 @@ class UserController extends Controller
 
     public function passwordUpdate(Request $request)
     {
+        $validate = $request->validate([
+            'oldPassword' => 'required|min:8',
+            'password' => 'required|min:8|required_with:password_confirmation'
+            
+        ]);
+
         $user = User::find(Auth::user()->id);
 
         if ($user) {
-            if (Hash::check($request['oldPassword'], $user->password)) {
-                $user->password = $request['password'];
+            if (Hash::check($request['oldPassword'], $user->password) && $validate) {
+                $user->password = Hash::make($request['password']);
                 $user->save();
 
                 $request->session()->flash('success', ' Your password have been update!');

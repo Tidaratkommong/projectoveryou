@@ -99,12 +99,20 @@ class ProductsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($product_id)
     {
-        //$product = Product::findOrFail($id);
-       // return view('product.view_product', compact('product'));
+      /*  $product = Product::find($product_id);
+        if ($product) {
+            return view('product.view_product')->withProduct($product);
+        } else {
+            return redirect()->back();
+        }
+    }*/
+         
+        $product = Product::findOrFail($product_id);
+        return view('product.view_product', compact('product'));
+    
     }
-
     /**
      * Show the form for editing the specified resource.
      *
