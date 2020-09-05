@@ -36,7 +36,7 @@ Route::get('/edit/password/user/', 'UserController@passwordEdit')->name('passwor
 Route::post('/edit/password/user/', 'UserController@passwordUpdate')->name('password.update');
 
 Route::get('product/index_product', 'ProductsController@index')->name('product/index_product');
-//Route::get('/product/{id}','ProductsController@show')->name('product/view_product');
+Route::get('/product/{product_id}','ProductsController@show')->name('product/view_product');
 Route::resource('product', 'ProductsController');
 
 

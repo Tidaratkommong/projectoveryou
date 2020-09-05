@@ -101,18 +101,18 @@ class ProductsController extends Controller
      */
     public function show($product_id)
     {
-      /*  $product = Product::find($product_id);
-        if ($product) {
-            return view('product.view_product')->withProduct($product);
+        $products = Product::find($product_id);
+        if ($products) {
+            return view('product.view_product')->withProduct($product_id);
         } else {
             return redirect()->back();
         }
-    }*/
-         
-        $product = Product::findOrFail($product_id);
-        return view('product.view_product', compact('product'));
-    
     }
+         
+       // $product = Product::findOrFail($product_id);
+       // return view('product.view_product', compact('product'));
+    
+    
     /**
      * Show the form for editing the specified resource.
      *

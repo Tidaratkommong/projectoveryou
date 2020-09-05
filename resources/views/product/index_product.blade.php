@@ -39,7 +39,7 @@
                     href="#">แสดง</a>-->
                    
                     <a  class="btn btn-primary" 
-                    href="{{ route('product.show',$value->product_name )}}">แสดง</a>
+                    href="{{ route('product.show',$value->product_id )}}">แสดง</a>
 
                     <a  class="btn btn-warning" 
                     href="/role-edit/{{$value->product_id}}">แก้ไข</a>

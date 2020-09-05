@@ -27,7 +27,7 @@ class HomeController extends Controller
         //auth()->user()->assignRole('admin'); //กำหนดเป็น admin
         //การตรวจเช็คบทบาท
         if(auth()->user()->hasRole('admin')){
-            $user=auth()->user();
+            $users=auth()->user();
             return view('adminhome');      
         }else{
             return view('welcome');

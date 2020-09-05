@@ -13,7 +13,7 @@
                 {{Session::get('success')}}
             </div>
             @endif
-            
+
             <div class="text-center">
                 <h5 class="card-header text-center">จัดการข้อมูลสมาชิก</h5>
                 <table class="table table-bordered">
@@ -37,12 +37,8 @@
                         <td>{{$row->email }}</td>
                         <td>
 
-                            <form action="/delete_user/{{$row->id}}" method="post">
-                                @csrf
+                            <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#edit">ลบสมาชิก</button>
 
-                                {{method_field('DELETE')}}
-                                <button type="submit" class="btn btn-danger">ลบ</button>
-                            </form>
                         </td>
 
                     </tr>
@@ -52,5 +48,31 @@
             </div>
         </div>
     </div>
+    
+    <!--  delete Modal -->
+    <div class="modal fade" id="edit"  aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">ลบสมาชิก</h5>
+                </div>
+                <form action="/delete_user/{{$row->id}}" method="post">
+                    @csrf
+                    {{method_field('DELETE')}}
+                    
+               
+                <div class="modal-body">
+                    ...................
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">ยกเลิก</button>
+                    <button type="submit" class="btn btn-danger">ยืนยันการลบ</button>
+                </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- end delete Modal -->
 </div>
 @endsection
