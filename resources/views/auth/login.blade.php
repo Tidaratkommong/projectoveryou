@@ -1,8 +1,6 @@
-@extends('layouts.app')
+@extends('layouts.test')
 
 @section('content')
-<br/>
-<br/>
 <br/>
 <br/>
 <div class="container">
@@ -61,11 +59,11 @@
                                     {{ __('Login') }}
                                 </button>
 
-                               <!-- @if (Route::has('password.request'))
+                                @if (Route::has('password.request'))
                                     <a class="btn btn-link" href="{{ route('password.request') }}">
                                         {{ __('Forgot Your Password?') }}
                                     </a>
-                                @endif-->
+                                @endif
                             </div>
                         </div>
                     </form>

@@ -50,7 +50,7 @@
         }
 
         .wrapper .sidebar h2 {
-            color: #000000;
+            color: #fff;
             text-transform: uppercase;
             text-align: center;
             margin-bottom: 40px;
@@ -64,8 +64,7 @@
         }
 
         .wrapper .sidebar ul li a {
-            color: #000000;
-            /* text */
+            color: #bdb8d7;
             display: block;
         }
 
@@ -74,12 +73,11 @@
         }
 
         .wrapper .sidebar ul li:hover {
-            background-color: #cccccc;
-            /* bg-text */
+            background-color: #594f8d;
         }
 
         .wrapper .sidebar ul li:hover a {
-            color: #000000;
+            color: #fff;
         }
 
         .wrapper .sidebar .social_media {
@@ -137,34 +135,26 @@
     <script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
 
     <div class="wrapper">
-        <div class="sidebar card bg-white">
-            <li>
-                <div class=" pt-0 text-center">
-                    <a href="https://www.img.in.th/image/hIPjeJ"> <img src="https://www.img.in.th/images/cd968666279db315f52e1f661af8238d.th.jpg" class="rounded-circle" style="width:75px;height:75px;"></a>
+        <div class="sidebar card ">
+            <h4 id="navbar" class="nav-link " href="#" role="button" aria-haspopup="true" aria-expanded="false" v-pre>
+                <!--Auth::user->name --> ชื่อ user
+            </h4>
 
-                    <h6 class="card-title">{{ Auth::user()->email }}</h6>
-                </div>
-            </li>
             <ul>
-
-                <li><a href="{{url('adminhome')}}"><i class="fas fa-home"></i>หน้าหลัก</a></li>
-                <li><a href="{{url('admin/index_user')}}"><i class="fas fa-address-card"></i>จักการผู้ใช้</a></li>
-                <li><a href="#"><i class="fas fa-order"></i>จัดการประเภทสินค้า</a></li>
-                <li><a href="{{url('product/index_product')}}"><i class="fas fa-list"></i>จัดการสินค้า</a></li>
-                <li><a href="#"><i class="fas fa-order"></i>จัดการโปรโมชั่น</a></li>
-                <li class="nav-item dropdown">
-                    <a href="#"><i class=" fas fa-list"></i> รายการยืนยัน</a>
-                    <a class="dropdown-item  " href="#">    :ยืนยันการสั่งซื้อ</a>
-                    <a class="dropdown-item " href="#">      :ยืนยันการคืนสินค้า</a>
-                </li>
-                <li><a href="#"><i class="fas fa-order"></i>สรุปยอดขาย</a></li>
+                <li><a href="#"><i class="fas fa-home"></i>หน้าหลัก</a></li>
+                <li><a href="#"><i class="fas fa-user"></i>Profile</a></li>
+                <li><a href="#"><i class="fas fa-address-card"></i>About</a></li>
+                <li><a href="#"><i class="fas fa-project-diagram"></i>portfolio</a></li>
+                <li><a href="#"><i class="fas fa-blog"></i>Blogs</a></li>
+                <li><a href="#"><i class="fas fa-address-book"></i>Contact</a></li>
+                <li><a href="#"><i class="fas fa-map-pin"></i>Map</a></li>
             </ul>
         </div>
         <div class="main_content">
             <div id="app">
-                <nav class="navbar navbar-expand-md navbar-light bg-warning shadow-sm">
+                <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
                     <div class="container">
-                        <a class="navbar-brand" href="{{ url('adminhome') }}"> Overyou
+                        <a class="navbar-brand" href="{{ url('/') }}"> Overyou
                         </a>
                         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                             <span class="navbar-toggler-icon"></span>
@@ -195,19 +185,6 @@
                                     </a>
 
                                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-
-                                        <a class="dropdown-item fas fa-user" href="{{ route('user.profile',Auth::user()->id )}}">
-                                            {{ __('View Profile') }}
-                                        </a>
-
-                                        <a class="dropdown-item fas fa-edit" href="{{ route('user.edit')}}">
-                                            {{ __('Edit Profile') }}
-                                        </a>
-
-                                        <a class="dropdown-item" href="{{ route('password.edit')}}">
-                                            {{ __('Change Password') }}
-                                        </a>
-
                                         <a class="dropdown-item fas fa-lock" href="{{ route('logout') }}" onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
                                             {{ __('Logout') }}

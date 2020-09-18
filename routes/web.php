@@ -20,9 +20,24 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('adminhome', function () {
+    return view('adminhome');
+});
+
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+//Route::get('/home', 'HomeController@index')->name('home');
+
+Route::group(['middleware' => ['auth']], function () {
+    Route::get('/home', 'HomeController@index');
+});
+//Route for admin
+Route::group(['prefix' => 'admin'], function(){
+    Route::group(['middleware' => ['admin']], function(){
+        Route::get('/adminhome', 'UserController@index');
+    });
+});
+
 
 Route::get('admin/index_user', 'DashboardController@registered')->name('admin/index_user');
 Route::delete('/delete_user/{id}', 'DashboardController@registeredDelete');
@@ -36,7 +51,7 @@ Route::get('/edit/password/user/', 'UserController@passwordEdit')->name('passwor
 Route::post('/edit/password/user/', 'UserController@passwordUpdate')->name('password.update');
 
 Route::get('product/index_product', 'ProductsController@index')->name('product/index_product');
-Route::get('/product/{product_id}','ProductsController@show')->name('product/view_product');
+//Route::get('/product/{id}','ProductsController@show')->name('product/view_product');
 Route::resource('product', 'ProductsController');
 
 

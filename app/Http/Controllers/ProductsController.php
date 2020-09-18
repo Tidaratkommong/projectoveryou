@@ -99,11 +99,11 @@ class ProductsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($product_id)
+    public function show($id)
     {
-        $products = Product::find($product_id);
+        $products = Product::find($id);
         if ($products) {
-            return view('product.view_product')->withProduct($product_id);
+            return view('product.view_product')->withProduct($id);
         } else {
             return redirect()->back();
         }
