@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.test')
 
 @section('content')
 <br/>
@@ -9,7 +9,7 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">{{ __('Change Password') }}</div>
+                <div class="card-header">{{ __('เปลียนรหัสผ่าน') }}</div>
 
                 <div class="card-body">
                     <form method="POST" action="{{ route('password.update') }}">

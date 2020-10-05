@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.test')
 
 @section('content')
 <div class="container">
@@ -14,7 +14,7 @@
 
             <div class="card">
 
-                <div class="card-header">{{ __('Update profile') }}</div>
+                <div class="card-header">{{ __('จัดการโปรไฟล์') }}</div>
                 <div class="card-body">
                     <form method="POST" action="{{ route('user.update') }}">
                         @csrf
@@ -28,7 +28,7 @@
                             <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Username') }}</label>
 
                             <div class="col-md-6">
-                                <input id="username" type="text" class="form-control @error('username') is-invalid @enderror" name="username" value="{{$user['username'] }}" autocomplete="username" autofocus>
+                                <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{$user['name'] }}" autocomplete="name" autofocus>
 
                                 @error('username')
                                 <span class="invalid-feedback" role="alert">

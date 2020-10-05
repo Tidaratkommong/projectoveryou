@@ -12,7 +12,9 @@
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
-
+    <script src="http://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
+    <script src="{{ asset('js/bonus.js') }}"></script>
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
@@ -140,24 +142,25 @@
         <div class="sidebar card bg-white">
             <li>
                 <div class=" pt-0 text-center">
-                    <a href="https://www.img.in.th/image/hIPjeJ"> <img src="https://www.img.in.th/images/cd968666279db315f52e1f661af8238d.th.jpg" class="rounded-circle" style="width:75px;height:75px;"></a>
+                
+                    <a href="https://www.picz.in.th/image/OEEnav"> <img src="https://sv1.picz.in.th/images/2020/09/20/OEEnav.jpg" class="rounded-circle" style="width:75px;height:75px;"></a>
 
-                    <h6 class="card-title">{{ Auth::user()->email }}</h6>
+                    <h6 class="card-title">{{ Auth::user()->name }}</h6>
                 </div>
             </li>
             <ul>
 
                 <li><a href="{{url('adminhome')}}"><i class="fas fa-home"></i>หน้าหลัก</a></li>
                 <li><a href="{{url('admin/index_user')}}"><i class="fas fa-address-card"></i>จักการผู้ใช้</a></li>
-                <li><a href="#"><i class="fas fa-order"></i>จัดการประเภทสินค้า</a></li>
-                <li><a href="{{url('product/index_product')}}"><i class="fas fa-list"></i>จัดการสินค้า</a></li>
-                <li><a href="#"><i class="fas fa-order"></i>จัดการโปรโมชั่น</a></li>
+                <li><a href="{{url('product/index_product')}}"><i class="fa fa-database"></i>  จัดการสินค้า</a></li>
+                <li><a href="#"><i class="fa fa-thumbs-up"></i>  จัดการโปรโมชั่น</a></li>
                 <li class="nav-item dropdown">
-                    <a href="#"><i class=" fas fa-list"></i> รายการยืนยัน</a>
-                    <a class="dropdown-item  " href="#">    :ยืนยันการสั่งซื้อ</a>
-                    <a class="dropdown-item " href="#">      :ยืนยันการคืนสินค้า</a>
+                    <a href="#"><i class="fa fa-tasks"></i> รายการยืนยัน</a>
+                    <a class="dropdown-item  " href="#"> :ยืนยันการสั่งซื้อ</a>
+                    <a class="dropdown-item " href="#"> :ยืนยันการคืนสินค้า</a>
+                    <a class="dropdown-item " href="#"> :ยืนยันการเปลียนแปลงสินค้า</a>
                 </li>
-                <li><a href="#"><i class="fas fa-order"></i>สรุปยอดขาย</a></li>
+                <li><a href="#"><i class="fa fa-sort"></i>สรุปยอดขาย</a></li>
             </ul>
         </div>
         <div class="main_content">
@@ -195,19 +198,6 @@
                                     </a>
 
                                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-
-                                        <a class="dropdown-item fas fa-user" href="{{ route('user.profile',Auth::user()->id )}}">
-                                            {{ __('View Profile') }}
-                                        </a>
-
-                                        <a class="dropdown-item fas fa-edit" href="{{ route('user.edit')}}">
-                                            {{ __('Edit Profile') }}
-                                        </a>
-
-                                        <a class="dropdown-item" href="{{ route('password.edit')}}">
-                                            {{ __('Change Password') }}
-                                        </a>
-
                                         <a class="dropdown-item fas fa-lock" href="{{ route('logout') }}" onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
                                             {{ __('Logout') }}

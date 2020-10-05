@@ -44,16 +44,16 @@ class ProductsController extends Controller
         //validate
         $request->validate([
 
-            'product_id' =>  'required',
+
             'product_name' =>  'required',
             'product_price' =>  'required|numeric',
             'product_detail' =>  'required',
+            'product_type' =>  'required',
             'product_num' =>  'required',
             'product_img' =>  'required|mimes:jpeg,jpg,png'
 
         ], [
 
-            'product_id.required' => 'กรุณากรอกรหัสสินค้า',
             'product_name.required' => 'กรุณากรอกชื่อสินค้า',
             'product_detail.required' => 'กรุณากรอรายละเอียดสินค้า',
             'product_price.required' => 'กรุณากรอกราคา',
@@ -77,9 +77,9 @@ class ProductsController extends Controller
         //Add to DB
 
         $product = new Product;
-        $product->product_id = $request->product_id;
         $product->product_name = $request->product_name;
         $product->product_detail = $request->product_detail;
+        $product->product_type = $request->product_type;
         $product->product_price = $request->product_price;
         $product->product_num = $request->product_num;
         $product->product_img = $replace_path;
@@ -100,16 +100,11 @@ class ProductsController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function show($id)
-    {
-        $products = Product::find($id);
-        if ($products) {
-            return view('product.view_product')->withProduct($id);
-        } else {
-            return redirect()->back();
-        }
-    }
-         
-       // $product = Product::findOrFail($product_id);
+    {   
+        $products = Product::findOrFail($id);
+        return view('product.view_product', compact('products'));
+    }   
+       // $product = Product::findOrFail($id);
        // return view('product.view_product', compact('product'));
     
     
@@ -121,7 +116,8 @@ class ProductsController extends Controller
      */
     public function edit($id)
     {
-       //return view('product.edit_product');
+      $products= Product::find($id);
+      return view('product.edit_product',compact(['products']));
     }
 
     /**
@@ -144,6 +140,7 @@ class ProductsController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Product::find($id)->delete();
+        return redirect('product');
     }
 }

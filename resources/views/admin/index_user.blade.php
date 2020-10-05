@@ -30,7 +30,7 @@
                     <tr>
                         @foreach($users as $row)
                     <tr>
-                        <td>{{ $row->username }}</td>
+                        <td>{{ $row->name }}</td>
                         <td>{{ $row->fname }}</td>
                         <td>{{ $row->lname }}</td>
                         <td>{{ $row->phone }}</td>

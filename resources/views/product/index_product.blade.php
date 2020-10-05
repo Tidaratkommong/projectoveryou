@@ -10,7 +10,7 @@
             {{Session::get('success')}}
         </div>
         @endif
-        <a href="{{route('product.create')}}" class="btn btn-success" role="button" aria-pressed="true">เพิ่มสินค้า</a>
+        <a href="{{route('product.create')}}" class="btn btn-success fa fa-plus" role="button" aria-pressed="true"> เพิ่มสินค้า</a>
         @csrf
         <hr>
         <div class="text-center">
@@ -19,36 +19,42 @@
                 <tr>
                     <th width="3%">รหัสสินค้า</th>
                     <th width="5%">รูปภาพ</th>
+                    <th width="5%">ประเภทสินค้า</th>
                     <th width="8%">ชื่อสินค้า</th>
                     <th width="5%">ราคาสินค้า</th>
                     <th width="12%">รายละเอียดสินค้า</th>
                     <th width="5%">จำนวนสินค้า</th>
-                    <th width="10%">Action</th>
+                    <th width="2%">แสดง</th>
+                    <th width="2%">แก้ไข</th>
+                    <th width="2%">ลบ</th>
                 </tr>
 
                 @foreach($product as $value)
                 <tr>
-                    <td>{{ $value->product_id }}</td>
-                    <td><img src="{{asset($value->product_img )}}" style="width: 80px;"/></td>
+                    <td>{{ $value->id}}</td>
+                    <td><img src="{{asset($value->product_img )}}" style="width: 30px;" /></td>
+                    <td>{{ $value->product_type }}</td>
                     <td>{{ $value->product_name }}</td>
-                    <td>{{ $value->product_price }}</td>
+                    <td>{{ $value->product_price }} ฿</td>
                     <td>{{ $value->product_detail }}</td>
-                    <td>{{$value->product_num }}</td>
+                    <td>{{$value->product_num }} ตัว </td>
+
                     <td>
-                   <!-- <a  class="btn btn-primary" 
-                    href="#">แสดง</a>-->
-                   
-                    <a  class="btn btn-primary" 
-                    href="{{ route('product.show',$value->product_id )}}">แสดง</a>
+                        <a class="btn btn-primary" href="{{ route('product.show',$value->id )}}"><i class="fa fa-eye" aria-hidden="true"></i></a>
+                    </td>
+                    <td>
+                        <a class="btn btn-warning" href="{{ route('product.edit',$value->id )}}"><i class="fa fa-wrench" aria-hidden="true"></i></a>
+                    </td>
+                    <td>
+                        <form action="{{route('product.destroy',$value->id)}}" method="post">
+                            @csrf @method('DELETE')
+                            <a class="btn btn-danger deleteForm"><i class="fa fa-trash" aria-hidden="true"></i></a>
+                            <!--<input type="submit" value="ลบ"  class="btn btn-danger deleteForm">-->
+                        </form>
+                    </td>
 
-                    <a  class="btn btn-warning" 
-                    href="/role-edit/{{$value->product_id}}">แก้ไข</a>
 
-                    <a  class="btn btn-danger" 
-                    href="/role-edit/{{$value->product_id}}">ลบ</a>
-    
-                    
-                    
+
                     </td>
 
                 </tr>

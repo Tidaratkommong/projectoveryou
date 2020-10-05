@@ -3,11 +3,11 @@
 @section('content')
 <br />
 <div class="container">
-    <a type="submit" class="btn btn-outline-secondary" href="{{url('product/index_product')}}">ย้อนกลับ</a>
+    <a type="submit" class="btn btn-outline-secondary fa fa-arrow-left" href="{{url('product/index_product')}}">ย้อนกลับ</a>
     <div class="row justify-content-center">
         <div class="col-md-10">
             <div class="card ">
-                <h5 class="card-header text-center">เพิ่มสินค้า</h5>
+                <h5 class="card-header text-center">เพิ่มสินค้า</i></h5>
                 <form style="margin: 20px;" method="POST" action="{{route('product.store')}}" enctype="multipart/form-data">
                     @csrf
 
@@ -29,13 +29,20 @@
 
                     <div class="form-row">
                         <div class="form-group col-md-6">
-                            <label for="productid">รหัสสินค้า</label>
-                            <input type="text" name="product_id" class="form-control input-lg" placeholder="รหัสสินค้า" value="{{old('product_id')}}" />
-                        </div>
-                        <div class="form-group col-md-6">
-                        <label for="productname">ชื่อสินค้า</label>
+                            <label for="productname">ชื่อสินค้า</label>
                             <input type="text" name="product_name" class="form-control input-lg" placeholder="ชื่อสินค้า" value="{{old('product_name')}}" />
                         </div>
+
+                        <div class="form-group col-md-6">
+                            <label for="producttype">ประเภทสินค้า</label>
+                            <select class="form-control input-lg" placeholder="ประเภทสินค้า" type="text" name="product_type" value="{{old('product_type')}}">
+                                <option>กางเกง</option>
+                                <option>เสื้อ</option>
+                                <option>รองเท้า</option>
+                                <option>นาฬิกา</option>
+                            </select>
+                        </div>
+
                     </div>
                     <div class="form-group">
                         <label for="productdetail">รายละเอียดสินค้า</label>
