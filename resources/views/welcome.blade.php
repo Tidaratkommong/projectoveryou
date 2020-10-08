@@ -1,8 +1,7 @@
 @extends('layouts.test')
 
 @section('content')
-<br />
-<button type="button" class="btn btn-primary active">Active Primary</button>
+
 <div class="container">
     <!-- promotion -->
     <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
@@ -38,6 +37,8 @@
             <span class="sr-only">Next</span>
         </a>
     </div>
+
+
     <br />
     <!--product -->
     <div class="breadcrumb">กางเกง
@@ -85,7 +86,7 @@
                                 <a href="javascript:void(0);">
                                     <div class="card mb-2 shadow-sm" style="width: 18rem; height:22rem;">
                                         <img src="p2.jpg" class="card-img-top" alt="...">
-                                        <div>หัวเรื่องรายการทดสอบ This is test title</div>
+                                        <div></div>
                                         <div class="price text-danger">฿1,500</div>
                                         <div class="discount_price text-danger">฿2,500 <span>-50%</span></div>
 
@@ -135,22 +136,12 @@
     </div>
 
 </div>
-<br />
-<ul class="nav justify-content-center bg-dark ">
 
-<br />
-<br />
+<ul class="nav justify-content-center bg-dark fixed-bottom ">
     <li class="nav-item">
-        <a class="btn btn-link" href="#">ติดตามเรา</a>
+        <a class="btn btn-link" href="#"></a>
     </li>
-    <li class="nav-item">
-        <a href="https://api.addthis.com/oexchange/0.8/forward/facebook/offer?url=http%3A%2F%2Fkoshk.dev&pubid=USERNAME&ct=1&title=AddThis%20-%20Get%20likes%2C%20get%20shares%2C%20get%20followers&pco=tbxnj-1.0" target="_blank"><img src="https://cache.addthiscdn.com/icons/v2/thumbs/32x32/facebook.png" border="0" alt="Facebook" /></a>
-        <a href="https://api.addthis.com/oexchange/0.8/forward/twitter/offer?url=http%3A%2F%2Fkoshk.dev&pubid=USERNAME&ct=1&title=AddThis%20-%20Get%20likes%2C%20get%20shares%2C%20get%20followers&pco=tbxnj-1.0" target="_blank"><img src="https://cache.addthiscdn.com/icons/v2/thumbs/32x32/twitter.png" border="0" alt="Twitter" /></a>
-        <a href="https://api.addthis.com/oexchange/0.8/forward/google_plusone_share/offer?url=http%3A%2F%2Fkoshk.dev&pubid=USERNAME&ct=1&title=AddThis%20-%20Get%20likes%2C%20get%20shares%2C%20get%20followers&pco=tbxnj-1.0" target="_blank"><img src="https://cache.addthiscdn.com/icons/v2/thumbs/32x32/google_plusone_share.png" border="0" alt="Google+" /></a>
-        <a href="https://www.addthis.com/bookmark.php?source=tbx32nj-1.0&v=300&url=http%3A%2F%2Fkoshk.dev&pubid=USERNAME&ct=1&title=AddThis%20-%20Get%20likes%2C%20get%20shares%2C%20get%20followers&pco=tbxnj-1.0" target="_blank"><img src="https://cache.addthiscdn.com/icons/v2/thumbs/32x32/addthis.png" border="0" alt="Addthis" /></a>
-    </li>
-    <br />
-    <br />
+    
 </ul>
 
 

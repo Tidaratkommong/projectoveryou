@@ -3,11 +3,13 @@
 @section('content')
 <br />
 <div class="container">
-    <a type="submit" class="btn btn-outline-secondary fa fa-arrow-left" href="{{url('product/index_product')}}">ย้อนกลับ</a>
+    <a type="submit" class="btn btn-outline-secondary fa fa-arrow-left" href="{{url('product/index_product')}}">      ย้อนกลับ</a>
+    <br/>
+    <br/>
     <div class="row justify-content-center">
         <div class="col-md-10">
             <div class="card ">
-                <h5 class="card-header text-center">เพิ่มสินค้า</i></h5>
+                <h5 class="card-header text-center bg-success">เพิ่มสินค้า</i></h5>
                 <form style="margin: 20px;" method="POST" action="{{route('product.store')}}" enctype="multipart/form-data">
                     @csrf
 

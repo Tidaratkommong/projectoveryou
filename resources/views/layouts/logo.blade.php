@@ -46,11 +46,11 @@
                             <!-- Authentication Links -->
                             @guest
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route('login') }}"> {{ __('เข้าสู่ระบบ') }}</a>
+                                <a class="nav-link text-light" href="{{ route('login') }}">{{ __('เข้าสู่ระบบ') }}</a>
                             </li>
                             @if (Route::has('register'))
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route('register') }}"> {{ __('ลงทะเบียน') }}</a>
+                                <a class="nav-link text-light" href="{{ route('register') }}">{{ __('ลงทะเบียน') }}</a>
                             </li>
                             @endif
                             @else
@@ -61,7 +61,7 @@
 
 
                             <li class="nav-item dropdown">
-                                <a id="navbarDropdown" class="nav-link dropdown-toggle fas fa-user" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                <a id="navbarDropdown" class="nav-link dropdown-toggle fas fa-user text-light" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     {{ Auth::user()->name }}
                                 </a>
 

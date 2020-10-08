@@ -46,29 +46,38 @@
                             <!-- Authentication Links -->
 
                             <li class="nav-item">
-
-                                <a class="btn btn-link" href="{{ url('help') }}">การช่วยเหลือ</a>
+                                <a class="btn btn-link text-light" href="{{ url('help') }}"><i class="fa fa-info-circle" aria-hidden="true"></i>  การช่วยเหลือ</a>
                             </li>
                             <li class="nav-item">
-                                <a class="btn btn-link" href="{{ url('about') }}">เกี่ยวกับเรา</a>
+                                <a class="btn btn-link text-light" href="{{ url('about') }}"><i class="fa fa-compress" aria-hidden="true"></i> เกี่ยวกับเรา</a>
                             </li>
                             <li class="nav-item">
-                                <a class="btn btn-link" href="#">ช่องทางการชำระเงิน</a>
+                                <a class="btn btn-link text-light" href="#"> โปรโมชั่น</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="btn btn-link text-light" href="#">ติดตามเรา</i></a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="btn btn-link text-light" href="#"><i class="fa fa-comments" aria-hidden="true"></i>  Chat กับเรา</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="btn btn-link text-light" href="#"> ออกแบบ.....</a>
                             </li>
 
                             <form class="form-inline my-2 my-lg-0">
-                                <input class="form-control mr-sm-2" type="search" placeholder="ค้นหาสินค้าที่คุณต้องการ" aria-label="Search" style="width: 16rem;">
+                                <input class="form-control mr-sm-2" type="search" placeholder="ค้นหาสินค้าที่คุณต้องการ" aria-label="Search" style="width: 22rem;">
                                 <button class="btn btn-outline-success my-2 my-sm-0" type="submit"> <i class="fas fa-search cus-icon py-1"></i></button>
+                                
                             </form>
 
 
                             @guest
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route('login') }}"> {{ __('เข้าสู่ระบบ') }}</a>
+                                <a class="nav-link text-light" href="{{ route('login') }}"> {{ __('เข้าสู่ระบบ') }}</a>
                             </li>
                             @if (Route::has('register'))
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route('register') }}"> {{ __('ลงทะเบียน') }}</a>
+                                <a class="nav-link text-light" href="{{ route('register') }}"> {{ __('ลงทะเบียน') }}</a>
                             </li>
                             @endif
                             @else
@@ -79,7 +88,7 @@
 
 
                             <li class="nav-item dropdown">
-                                <a id="navbarDropdown" class="nav-link dropdown-toggle fas fa-user" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                <a id="navbarDropdown" class="nav-link dropdown-toggle fas fa-user text-light" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     {{ Auth::user()->name }}
                                 </a>
 

@@ -39,6 +39,10 @@
                         <li class="nav-item active">
                             <h2 class="nav-link">|</h2>
                         </li>
+                        <li class="nav-item active">
+                            <a class="navbar-brand my-2" href="{{ url('/') }}"> หน้าหลัก </a>
+                        </li>
+
 
                     </ul>
 

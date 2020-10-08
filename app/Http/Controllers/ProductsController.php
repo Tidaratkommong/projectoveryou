@@ -17,9 +17,9 @@ class ProductsController extends Controller
     {
 
 
-        $product = Product::latest()->paginate(5);
+        $product = Product::latest()->paginate(7);
         return view('product.index_product', compact('product'))
-            ->with('i', (request()->input('page', 1) - 1) * 5);
+            ->with('i', (request()->input('page', 1) - 1) * 7);
     }
 
     /**
@@ -85,7 +85,7 @@ class ProductsController extends Controller
         $product->product_img = $replace_path;
 
         if ($product->save()) {
-            $request->session()->flash('success', 'เพิ่ม' . $product->product_name . 'สำเร็จ');
+            $request->session()->flash('success', 'เพิ่ม' . $product->product_name  . 'สำเร็จ จำนวน'  . $product->product_num .  'ตัว');
             return redirect('product');
         } else {
             $request->session()->flash('success', 'เพิ่ม' . $product->product_name . 'ไม่สำเร็จ');
@@ -100,14 +100,14 @@ class ProductsController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function show($id)
-    {   
+    {
         $products = Product::findOrFail($id);
         return view('product.view_product', compact('products'));
-    }   
-       // $product = Product::findOrFail($id);
-       // return view('product.view_product', compact('product'));
-    
-    
+    }
+    // $product = Product::findOrFail($id);
+    // return view('product.view_product', compact('product'));
+
+
     /**
      * Show the form for editing the specified resource.
      *
@@ -116,8 +116,8 @@ class ProductsController extends Controller
      */
     public function edit($id)
     {
-      $products= Product::find($id);
-      return view('product.edit_product',compact(['products']));
+        $products = Product::findOrFail($id);
+        return view('product.edit_product', compact('products'));
     }
 
     /**
@@ -129,7 +129,28 @@ class ProductsController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $request->validate([
+            'product_name' =>  'required',
+            'product_price' =>  'required|numeric',
+            'product_detail' =>  'required',
+            'product_type' =>  'required',
+            'product_num' =>  'required',
+            'product_img' =>  'product_img|max:2048'
+
+        ], [
+
+            'product_name.required' => 'กรุณากรอกชื่อสินค้า',
+            'product_detail.required' => 'กรุณากรอรายละเอียดสินค้า',
+            'product_price.required' => 'กรุณากรอกราคา',
+            'product_num.required' => 'กรุณากรอกจำนวนสินค้า',
+            'product_price.numeric' => 'กรุณากรอกราคาเป็นตัวเลขเท่านั้น',
+            'product_img.required' => 'กรุณากรอกรูปภาพ',
+            'product_img.mimes' => 'ไฟล์ที่เลือกต้องนามสกุล jpeg, jpg, png เท่านั้น'
+
+        ]);  
+        Product::find($id)->update($request->all());
+        return redirect('product')->with('success', ' แก้ไขข้อมูลสินค้าสำเร็จ' );
+       
     }
 
     /**

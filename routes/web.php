@@ -32,6 +32,11 @@ Route::get('about', function () {
     return view('about');
 });
 
+Route::get('event', function () {
+    return view('event');
+});
+
+
 Auth::routes();
 
 //Route::get('/home', 'HomeController@index')->name('home');
@@ -65,11 +70,19 @@ Route::post('/edit/password/user/', 'UserController@passwordUpdate')->name('pass
 Route::get('product/index_product', 'ProductsController@index')->name('product/index_product');
 Route::resource('product', 'ProductsController');
 Route::get('product/{id}','ProductsController@show')->name('product/view_product');
+
+
+//Route::post('/product','ProductController@update');
+//Route::get('/product/{id}/edit', 'ProductController@edit');
+
+//Route::get('product/edit/{id}', 'ProductController@edit')->name('product/edit_product');
+//Route::post('product/edit/{id}', 'ProductController@update');
+
 Route::delete('/product/{id}', 'ProductController@Destroy');
 //Route::get('adminhome', 'EventController@index');
 
 
-//Route::put('/product/edit/{id}', 'ProductController@edit');
+//Route::put('/product/edit/{id}', 'ProductController@update');
 //Route::get('product', 'ProductsControlle@index');
 
 //Route::resource('product', 'ProductsController@index');
@@ -81,5 +94,5 @@ Route::delete('/product/{id}', 'ProductController@Destroy');
 
 //Route::get('/product/{id}', 'ProductController@Show');
 
-Route::delete('/product/{id}', 'ProductController@Destroy');
+//Route::delete('/product/{id}', 'ProductController@Destroy');
 

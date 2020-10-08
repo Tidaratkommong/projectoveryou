@@ -95,9 +95,7 @@
                                 <button type="submit" class="btn btn-primary btn-sm">
                                     {{ __('Update') }}
                                 </button>
-                                <button type="submit" class="btn btn-secondary btn-sm">
-                                    {{ __('cancel') }}
-                                </button>
+                                
                             </div>
                         </div>
 

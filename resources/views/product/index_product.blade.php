@@ -14,10 +14,9 @@
         @csrf
         <hr>
         <div class="text-center">
-            <h5 class="card-header text-center">ข้อมูลสินค้า</h5>
-            <table class="table table-bordered">
+            <h5 class="card-header text-center bg-success">ข้อมูลสินค้า</h5>
+            <table class=" table table-bordered">
                 <tr>
-                    <th width="3%">รหัสสินค้า</th>
                     <th width="5%">รูปภาพ</th>
                     <th width="5%">ประเภทสินค้า</th>
                     <th width="8%">ชื่อสินค้า</th>
@@ -31,7 +30,7 @@
 
                 @foreach($product as $value)
                 <tr>
-                    <td>{{ $value->id}}</td>
+
                     <td><img src="{{asset($value->product_img )}}" style="width: 30px;" /></td>
                     <td>{{ $value->product_type }}</td>
                     <td>{{ $value->product_name }}</td>

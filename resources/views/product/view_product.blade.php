@@ -10,12 +10,15 @@
 
 
                 <h6 class="card-header text-center">ID สินค้าที่ {{ $products->id }}</h6>
-                <form style="margin: 20px;" enctype="multipart/form-data">
+                <form style=" margin: 10px;" enctype="multipart/form-data">
                     @csrf
                     <div class="form-row">
-                        <div align="center">
-                            <img src="{{asset($products->product_img )}}" style="width: 16rem; height:16rem;" class="img-thumbnail" />   
+                        <div class="ml-5 ">
+                            <img src="{{asset($products->product_img )}}" style="width: 16rem; height:16rem;" class="img-thumbnail" />
+                            <br />
+                            <br />
                         </div>
+
                         <div class="form-group col-md-6">
                             <label for="productname">ชื่อสินค้า : {{ $products->product_name }} </label>
                         </div>
