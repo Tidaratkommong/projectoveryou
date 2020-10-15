@@ -5,7 +5,7 @@
 <div class="container">
     <ul class="navbar-nav mr-auto">
         <li class="nav-item active">
-            <br/>
+            <br />
             <h3 class="nav-link">เกี่ยวกับเรา</h3>
         </li>
     </ul>
@@ -16,17 +16,30 @@
                 <ul class="navbar-nav mr-auto">
                     <br />
                     <li class="nav-item active">
-                        <h5 class="nav-link ml-2 text-black">  </h5>
+                        <h5 class="nav-link ml-2 text-black ml-3 "> เว็บไซต์ Overyou99 สร้างขึ้นเพื่อเพิ่มช่องทางการซื้อขายสินค้า
+                            จากร้านค้าชื่อ Overyou99​ ที่ขายสินค้าเกี่ยวกับเสื้อผ้า รองเท้า และของใช้สำหรับผู้ชายจากแบรนด์ดัง อาทิ Superstars Adidas Nike เป็นต้น</h5>
                     </li>
                     <li class="nav-item active">
-                        <h6 class="nav-link ml-3"> </h6>
+                        <h5 class="nav-link ml-3"> สามารถเยี่ยมชมร้านค้าผ่านทาง </h5>
+                        <h5 class="nav-link ml-3"> Facebook ได้ที่เพจ :<a href="https://www.facebook.com/overyou99">Over You99</a></h5>
+<div id="fb-root"></div>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/th_TH/sdk.js#xfbml=1&version=v8.0" nonce="TYzgmT9c"></script>
 
+<div class="fb-page" 
+data-href="https://www.facebook.com/overyou99"
+data-width="380" 
+data-hide-cover="false"
+data-show-facepile="false"></div>                     
+                        <h5 class="nav-link ml-3"> ติดต่อเรา : 0807429240</h5>
+                        <h5 class="nav-link ml-3"> Line ID : @Overyou </h5>
+                        <br />
+                        <br />
                     </li>
-                   
+
                 </ul>
             </div>
         </div>
     </div>
-    
+
 
     @endsection

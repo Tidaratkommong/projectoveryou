@@ -1,26 +1,21 @@
 <!doctype html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+  <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <title>Overyou 99</title>
-
-    <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}" defer></script>
-    <script src="http://code.jquery.com/jquery-3.5.1.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
-    <script src="{{ asset('js/bonus.js') }}"></script>
-
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
-
-
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.9.0/moment.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/fullcalendar/2.2.7/fullcalendar.min.js"></script>
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/fullcalendar/2.2.7/fullcalendar.min.css" />
 
 
     <!-- Styles -->
@@ -35,7 +30,7 @@
             box-sizing: border-box;
             list-style: none;
             text-decoration: none;
-            
+           
         }
 
         body {
@@ -186,55 +181,9 @@
                                         </ul>
 
                                         <!-- Right Side Of Navbar -->
-                                        <ul class="navbar-nav ml-auto">
-                                            <!-- Authentication Links -->
-                                            @guest
-                                            <li class="nav-item">
-                                                <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
-                                            </li>
-                                            @if (Route::has('register'))
-                                            <li class="nav-item">
-                                                <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
-                                            </li>
-                                            @endif
-                                            @else
-                                            <li class="nav-item dropdown">
-                                              <!-- time -->
-                                                <?php
-                                                $_month_name = array(
-                                                    "01" => "มกราคม",  "02" => "กุมภาพันธ์",  "03" => "มีนาคม",
-                                                    "04" => "เมษายน",  "05" => "พฤษภาคม",  "06" => "มิถุนายน",
-                                                    "07" => "กรกฎาคม",  "08" => "สิงหาคม",  "09" => "กันยายน",
-                                                    "10" => "ตุลาคม", "11" => "พฤศจิกายน",  "12" => "ธันวาคม"
-                                                );
 
-                                                $vardate = date('Y-m-d');
-                                                $yy = date('Y');
-                                                $mm = date('m');
-                                                $dd = date('d');
-                                                if ($dd < 10) {
-                                                    $dd = substr($dd, 1, 2);
-                                                }
-                                                $date = $dd . " " . $_month_name[$mm] . "  " . $yy += 543;
-                                                echo $date;
-                                                ?>
-                                       
-                                                <a id="navbarDropdown" class="nav-link dropdown-toggle fas fa-user text-dark"  role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                                    {{ Auth::user()->name }}
-                                                </a>
+                                        
 
-                                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                                    <a class="dropdown-item fas fa-lock" href="{{ route('logout') }}" onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                                                        {{ __('Logout') }}
-                                                    </a>
-                                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                                                        @csrf
-                                                    </form>
-                                                </div>
-                                            </li>
-                                            @endguest
-                                        </ul>
                                     </div>
                                 </div>
                             </nav>
@@ -242,6 +191,8 @@
                                 @yield('content')
                             </main>
                         </div>
+            
+                        
         </div>
     </div>
 
