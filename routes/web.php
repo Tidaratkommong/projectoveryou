@@ -32,6 +32,7 @@ Route::get('about', function () {
     return view('about');
 });
 
+  
 
 
 Auth::routes();
@@ -41,10 +42,11 @@ Auth::routes();
 Route::group(['middleware' => ['auth']], function () {
     Route::get('/home', 'HomeController@index');
 });
+
 //Route for admin
 Route::group(['prefix' => 'admin'], function(){
     Route::group(['middleware' => ['admin']], function(){
-        Route::get('adminhome', 'UserController@index');
+        Route::get('/adminhome', 'UserController@index');
     });
 });
 
@@ -94,5 +96,15 @@ Route::delete('/product/{id}', 'ProductController@Destroy');
 //Route::delete('/product/{id}', 'ProductController@Destroy');
 
 // event
-Route::resource('event', 'EventController');
+Route::resource('/event', 'EventController');
 Route::get('/addeventurl','EventController@display');
+Route::get('/displaydata','EventController@show');
+
+//Route::delete('/deleteevent', 'EventController@Destroy');
+
+
+Route::get('/', 'ListproductController@index');
+//Route::get('/home', 'ListproductController@index');
+
+//chatbot
+Route::match(['get', 'post'], '/botman', 'BotManController@handle');

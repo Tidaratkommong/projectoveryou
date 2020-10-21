@@ -2,10 +2,11 @@
 
 @section('content')
 <br />
+
 <div class="container">
+<a type="submit" name="submit" class="btn btn-danger " value="BACK" href="{{url('home')}}" />BACK</a>
     <div class="col-md-12">
         <div class="margin: 20px;">
-            <a type="submit" class="btn btn-outline-secondary" href="{{url('home')}}">ย้อนกลับ</a>
             @csrf
             <hr>
             @if(Session::get('success'))
@@ -42,7 +43,7 @@
             </div>
         </div>
     </div>
-    
+
     <!--  delete Modal -->
     <div class="modal fade" id="edit" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog">
@@ -50,18 +51,18 @@
                 <div class="modal-header">
                     <h5 class="modal-title" id="exampleModalLabel">ลบสมาชิก</h5>
                 </div>
-                <form  method="post">
+                <form method="post">
                     @csrf
                     {{method_field('DELETE')}}
-                    
-               
-                <div class="modal-body">
-                    ต้องการลบสมาชิก {{ $row->name }}
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">ยกเลิก</button>
-                    <button type="submit" class="btn btn-danger">ยืนยันการลบ</button>
-                </div>
+
+
+                    <div class="modal-body">
+                        ต้องการลบสมาชิก {{ $row->name }}
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">ยกเลิก</button>
+                        <button type="submit" class="btn btn-danger">ยืนยันการลบ</button>
+                    </div>
                 </form>
             </div>
         </div>

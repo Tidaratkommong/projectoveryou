@@ -3,7 +3,7 @@
 @section('content')
 <br />
 <div class="container">
-    <a type="submit" class="btn btn-outline-secondary fa fa-arrow-left" href="{{url('product/index_product')}}"> ย้อนกลับ</a>
+    <a type="submit" name="submit" class="btn btn-danger" value="BACK" href="{{url('product/index_product')}}" />BACK</a> 
     <div class="row justify-content-center">
         <div class="col-md-5">
             <div class="card ">

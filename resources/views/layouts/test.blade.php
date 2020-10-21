@@ -8,7 +8,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>Overyou 99</title>
+    <title>Over You 99</title>
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
@@ -30,9 +30,9 @@
             <nav class="navbar navbar-expand-md navbar-dark bg-dark sticky-top">
 
                 <div class="container-fluid my-4">
-                    <a href="{{ url('/') }}"> <img src="https://www.img.in.th/images/2ca66c73960a89eeaa7a3407cf46eb32.th.jpg" class="img-rounded" alt="Cinque Terre" style="width:100px;height:55px;"></a>
+                      <!--<a href="{{ url('/') }}"> <img src="https://www.img.in.th/images/2ca66c73960a89eeaa7a3407cf46eb32.th.jpg" class="img-rounded" alt="Cinque Terre" style="width:100px;height:55px;"></a>-->
                      
-                    <!--<a class="navbar-brand" href="{{ url('/') }}"> Overyou 99</a>-->
+                    <a class="navbar-brand" href="{{ url('/') }}"> Over You 99</a>
 
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                         <span class="navbar-toggler-icon"> </span>
@@ -43,7 +43,7 @@
                         <ul class="navbar-nav mr-auto">
 
                         </ul>
-
+                        
                         <!-- Right Side Of Navbar -->
                         <ul class="navbar-nav ml-auto">
                             <!-- Authentication Links -->
@@ -84,11 +84,15 @@
                             </li>
                             @endif
                             @else
-
-                            <form class="form-inline my-2 my-lg-0">
-                                <a class="btn btn-outline-warning my-2 my-sm-0" type="submit" href="#"> <i class="fa fa-shopping-cart cus-icon py-1"></i></a>
+                           
+                            <div class="card-body py-0">
+                            <form class="form-inline ">
+                                <a class="btn btn-outline-warning" type="submit" href="#">
+                                 <i class="fa fa-shopping-cart cus-icon py-1"> </i>
+                                </a>
+                               
                             </form>
-
+</div>
 
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle fas fa-user text-light" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
@@ -118,6 +122,7 @@
                             </li>
                             @endguest
                         </ul>
+
                         </ul>
                     </div>
                 </div>

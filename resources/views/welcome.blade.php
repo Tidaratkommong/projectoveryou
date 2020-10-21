@@ -41,28 +41,32 @@
 
     <br />
     <!--product -->
-    <div class="breadcrumb">กางเกง
+    <div class="breadcrumb">สินค้าทั้งหมด
         <main>
-            @yield('content')
+           
             <div class="page-overlay-bg">
                 <div class="container-fluid m-0 p-0">
                     <!--container-fluid-->
                     <div class="row no-gutters px-0">
                         <!--row-->
-                        <?php for ($i = 1; $i <= 4; $i++) { ?>
+                        @guest
+
+                        @foreach($product as $value)
+                       
                             <div class="col-6 col-sm-4 col-md-3 bg-light px-1">
-                                <a href="javascript:void(0);">
-                                    <div class="card mb-2 shadow-sm" style="width: 18rem; height:17rem;">
-                                        <img src="p1.jpg" class="card-img-top" alt="...">
-                                        <div>หัวเรื่องรายการทดสอบ This is test title</div>
-                                        <div class="price text-danger">฿1,500</div>
-                                        <div class="discount_price text-danger">฿2,500 <span>-50%</span></div>
-
+                                <div href="javascript:void(0);">
+                                    <div class="card mb-2 shadow-sm" style="width: 16rem; height:19rem;">
+                                    <img src="{{asset($value->product_img )}}" style="width: 180px; height:200px;" />
+                                        <div class=" text-dark">{{ $value->product_name }}</div>
+                                        <div class="discount_price text-dark"> จำนวนสินค้า {{$value->product_num }} <span>ตัว</span> </div>
+                                        <div class="price text-danger"> ราคา {{ $value->product_price }}<span> บาท </span></div>
+                                        <div><a  href="" />รายละเอียดเพิ่มเติม</a> </div>
                                     </div>
-
-                                </a>
                             </div>
-                        <?php } ?>
+                            </div>
+                       @endforeach
+                       
+                       @endguest
                     </div>
                     <!--row-->
                 </div>
@@ -71,72 +75,10 @@
             </div><!-- page-main-->
         </main>
     </div>
-    <!--product -->
-    <div class="breadcrumb">นาฬิกา
-        <main>
-            @yield('content')
-
-            <div class="page-overlay-bg">
-                <div class="container-fluid m-0 p-0">
-                    <!--container-fluid-->
-                    <div class="row no-gutters px-0">
-                        <!--row-->
-                        <?php for ($i = 1; $i <= 4; $i++) { ?>
-                            <div class="col-6 col-sm-4 col-md-3 bg-light px-1">
-                                <a href="javascript:void(0);">
-                                    <div class="card mb-2 shadow-sm" style="width: 18rem; height:22rem;">
-                                        <img src="p2.jpg" class="card-img-top" alt="...">
-                                        <div></div>
-                                        <div class="price text-danger">฿1,500</div>
-                                        <div class="discount_price text-danger">฿2,500 <span>-50%</span></div>
-
-                                    </div>
-
-                                </a>
-                            </div>
-                        <?php } ?>
-                    </div>
-                    <!--row-->
-                </div>
-                <!--container-fluid-->
-
-            </div><!-- page-main-->
-
-        </main>
-    </div>
-    <!--product -->
-    <div class="breadcrumb">เสื้อ
-        <main>
-            @yield('content')
-            <div class="page-overlay-bg">
-                <div class="container-fluid m-0 p-0">
-                    <!--container-fluid-->
-                    <div class="row no-gutters px-0">
-                        <!--row-->
-                        <?php for ($i = 1; $i <= 4; $i++) { ?>
-                            <div class="col-6 col-sm-4 col-md-3 bg-light px-1">
-                                <a href="javascript:void(0);">
-                                    <div class="card mb-2 shadow-sm" style="width: 18rem; height:17rem;">
-                                        <img src="p3.jpg" class="card-img-top" alt="...">
-                                        <div>หัวเรื่องรายการทดสอบ This is test title</div>
-                                        <div class="price text-danger">฿1,500</div>
-                                        <div class="discount_price text-danger">฿2,500 <span>-50%</span></div>
-
-                                    </div>
-
-                                </a>
-                            </div>
-                        <?php } ?>
-                    </div>
-                    <!--row-->
-                </div>
-                <!--container-fluid-->
-            </div><!-- page-main-->
-        </main>
-    </div>
-
+    
 </div>
-<!-- chatbot -->
+
+<!-- chatbot-->
 <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
         <style>
             html, body {
@@ -162,36 +104,9 @@
   
     <script src='https://cdn.jsdelivr.net/npm/botman-web-widget@0/build/js/widget.js'></script>
     
-  <!-- endchatbot -->  
-  
-<!-- chatbot 
-<link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
-        <style>
-            html, body {
-                background-color: #fff;
-                color: #636b6f;
-                font-family: sans-serif;
-                font-weight: 200;
-                height: 100vh;
-                margin: 0;
-            }
-        </style>
-    </head>
-    <body>
-    </body>
-  
-    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/botman-web-widget@0/build/assets/css/chat.min.css">
-    <script>
-	    var botmanWidget = {
-	        aboutText: 'ssdsd',
-	        introMessage: "✋ Hi! I'm form ItSolutionStuff.com"
-	    };
-    </script>
-  
-    <script src='https://cdn.jsdelivr.net/npm/botman-web-widget@0/build/js/widget.js'></script>
-    -->
-  <!-- endchatbot -->  
+  <!-- endchatbot --> 
 
+  
 <br/>
 <br/>
 <ul class="nav justify-content-center bg-dark fixed-bottom ">

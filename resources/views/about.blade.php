@@ -21,17 +21,23 @@
                     </li>
                     <li class="nav-item active">
                         <h5 class="nav-link ml-3"> สามารถเยี่ยมชมร้านค้าผ่านทาง </h5>
-                        <h5 class="nav-link ml-3"> Facebook ได้ที่เพจ :<a href="https://www.facebook.com/overyou99">Over You99</a></h5>
-<div id="fb-root"></div>
-<script async defer crossorigin="anonymous" src="https://connect.facebook.net/th_TH/sdk.js#xfbml=1&version=v8.0" nonce="TYzgmT9c"></script>
-
-<div class="fb-page" 
-data-href="https://www.facebook.com/overyou99"
-data-width="380" 
-data-hide-cover="false"
-data-show-facepile="false"></div>                     
                         <h5 class="nav-link ml-3"> ติดต่อเรา : 0807429240</h5>
                         <h5 class="nav-link ml-3"> Line ID : @Overyou </h5>
+                        <h5 class="nav-link ml-3"> Facebook ได้ที่เพจ :<a href="https://www.facebook.com/overyou99">Over You99</a></h5>
+<div id="fb-root "></div>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/th_TH/sdk.js#xfbml=1&version=v8.0" nonce="Svru9YoR"></script>
+<div class="fb-page" 
+data-href="https://www.facebook.com/overyou99" 
+data-tabs="timeline" 
+data-width="500" data-height="" 
+data-small-header="false" 
+data-adapt-container-width="true" 
+data-hide-cover="false" 
+data-show-facepile="true">
+<blockquote cite="https://www.facebook.com/overyou99" class="fb-xfbml-parse-ignore"></blockquote></div>
+
+                        <br />
+                        <br />
                         <br />
                         <br />
                     </li>

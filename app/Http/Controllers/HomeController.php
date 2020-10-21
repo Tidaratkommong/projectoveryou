@@ -29,12 +29,9 @@ class HomeController extends Controller
 
         if(auth()->user()->isAdmin()) {
             return view('adminhome');
+            
         } else {
             return view('welcome');
-        }
-        
+        }  
     }
-    
-    
-
 }

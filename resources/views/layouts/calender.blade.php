@@ -7,7 +7,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>Overyou 99</title>
+    <title>Over You 99</title>
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
@@ -181,7 +181,48 @@
                                         </ul>
 
                                         <!-- Right Side Of Navbar -->
+                                        <div class="card-body text-right ">
+                                            <!-- Authentication Links -->
+                                            @guest
+                                            
+                                            @else
+                                            <li class="nav-item dropdown ">
+                                              <!-- time -->
+                                                <?php
+                                                $_month_name = array(
+                                                    "01" => "มกราคม",  "02" => "กุมภาพันธ์",  "03" => "มีนาคม",
+                                                    "04" => "เมษายน",  "05" => "พฤษภาคม",  "06" => "มิถุนายน",
+                                                    "07" => "กรกฎาคม",  "08" => "สิงหาคม",  "09" => "กันยายน",
+                                                    "10" => "ตุลาคม", "11" => "พฤศจิกายน",  "12" => "ธันวาคม"
+                                                );
 
+                                                $vardate = date('Y-m-d');
+                                                $yy = date('Y');
+                                                $mm = date('m');
+                                                $dd = date('d');
+                                                if ($dd < 10) {
+                                                    $dd = substr($dd, 1, 2);
+                                                }
+                                                $date = $dd . " " . $_month_name[$mm] . "  " . $yy += 543;
+                                                echo $date;
+                                                ?>
+                                       
+                                                <a id="navbarDropdown" class="nav-link dropdown-toggle fas fa-user text-dark "  role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                                    {{ Auth::user()->name }}
+                                                </a>
+
+                                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                                    <a class="dropdown-item fas fa-lock" href="{{ route('logout') }}" onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                                        {{ __('Logout') }}
+                                                    </a>
+                                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                                        @csrf
+                                                    </form>
+                                                </div>
+                                            </li>
+                                            @endguest
+                                            </div>
                                         
 
                                     </div>

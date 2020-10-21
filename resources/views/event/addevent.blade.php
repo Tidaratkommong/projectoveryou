@@ -14,6 +14,7 @@
 <body>
     <!-- calender -->
     <div class="container">
+    <a type="submit" name="submit" class="btn btn-danger" value="BACK" href="{{url('event')}}" />BACK</a>
         <div class="row">
             <div class="col-md-8 col-md-offset-2">
                 <div class="panel panel-default">
@@ -37,7 +38,7 @@
                             <input type="datetime-local" class="form-control" name="end_date" class="date" placeholder="Enter The end date" required/><br /> <br />
 
                             <input type="submit" name="submit" class="btn btn-primary" value="add Event data" />
-
+                    
                         </form>
                     </div>
                 </div>

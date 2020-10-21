@@ -33,7 +33,7 @@ class EventController extends Controller
         }
 
         $calendar = \Calendar::addEvents($event);
-        return view('event', compact('event', 'calendar'));
+        return view('event/event', compact('event', 'calendar'));
     }
 
     /**
@@ -55,7 +55,7 @@ class EventController extends Controller
     public function display()
     {
 
-        return view('addevent');
+        return view('event/addevent');
     }
 
     public function store(Request $request)
@@ -85,9 +85,11 @@ class EventController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show()
     {
-        //
+        $events = Event::all();
+        return view('event/display', compact('events'));
+   
     }
 
     /**
@@ -121,6 +123,9 @@ class EventController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $event = Event::find($id);
+        $event->delete();
+
+        return redirect('event')->with('success','Event Delete');
     }
 }

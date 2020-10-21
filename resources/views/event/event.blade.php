@@ -16,12 +16,12 @@
     <div class="container">
 
         <div class="row">
-            <a href="/addeventurl" class="btn btn-success"> ADD Events</a>
-            <a href="/editeventurl" class="btn btn-primary"> Edit Events</a>
-            <a href="/deleteeventurl" class="btn btn-danger"> Delete Events</a>
+        <div class="card-body ">
+          <a  href="addeventurl" class="btn btn-success "> ADD Events</a>
+          <a  href="/displaydata" class="btn btn-primary "> Edit Events</a>
+           <!-- <a  href="/deleteeventurl" class="btn btn-danger"> Delete Events</a>-->
         </div>
-        <br/>
-        
+        </div>
         @if(Session::get('success'))
                     <div class="alert alert-success">
                         {{Session::get('success')}}
