@@ -1,5 +1,6 @@
 <?php
 
+use App\Repositories\TodoRepositoryInterface;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -108,3 +109,15 @@ Route::get('/', 'ListproductController@index');
 
 //chatbot
 Route::match(['get', 'post'], '/botman', 'BotManController@handle');
+//Route::get('/botman/tinker', 'BotManController@tinker');
+
+Route::get('test',function(TodoRepositoryInterface $repository){
+
+    $todo = [
+      'title' => 'Title 3',
+      'description' => 'dddd'
+    ];
+    $repository->store($todo);
+    
+    dd($repository->all());
+});

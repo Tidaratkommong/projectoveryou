@@ -79,7 +79,10 @@
 </div>
 
 <!-- chatbot-->
-<link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
+
+<!--<link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">-->
+
+<link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,700,800" rel="stylesheet">      
         <style>
             html, body {
                 background-color: #fff;
@@ -98,12 +101,16 @@
     <script>
 	    var botmanWidget = {
 	        aboutText: 'ssdsd',
-	        introMessage: "✋ Hi! I'm form ItSolutionStuff.com"
+            title: 'Over You 99',
+            introMessage: '✋ สวัสดีมีอะไรให้เราช่วยไหมคะ',
+            placeholderText: 'Ask Me Something',
+            aboutLink: 'mhdevelopment.gr'
+            
 	    };
-    </script>
-  
-    <script src='https://cdn.jsdelivr.net/npm/botman-web-widget@0/build/js/widget.js'></script>
-    
+    </script> 
+        <script src='https://cdn.jsdelivr.net/npm/botman-web-widget@0/build/js/widget.js'></script>
+
+
   <!-- endchatbot --> 
 
   
