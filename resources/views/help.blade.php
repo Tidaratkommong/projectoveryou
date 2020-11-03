@@ -3,9 +3,10 @@
 @section('content')
 
 <div class="container">
+    <br/>
     <ul class="navbar-nav mr-auto">
         <li class="nav-item active">
-            <h3 class="nav-link">การช่วยเหลือ</h3>
+            <h1 class="nav-link">การช่วยเหลือ</h1>
         </li>
     </ul>
 

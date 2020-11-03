@@ -46,10 +46,13 @@
                         </div>
 
                     </div>
+                    
                     <div class="form-group">
                         <label for="productdetail">รายละเอียดสินค้า</label>
                         <textarea class="form-control" name="product_detail" placeholder="รายละเอียดสินค้า" rows="4" />{{old('product_detail')}}</textarea>
                     </div>
+
+
                     <div class="form-row">
 
                         <!--<div class="form-group col-md-4">

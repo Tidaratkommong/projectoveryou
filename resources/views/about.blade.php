@@ -6,7 +6,7 @@
     <ul class="navbar-nav mr-auto">
         <li class="nav-item active">
             <br />
-            <h3 class="nav-link">เกี่ยวกับเรา</h3>
+            <h1 class="nav-link">เกี่ยวกับเรา</h1>
         </li>
     </ul>
 

@@ -1,11 +1,11 @@
-@extends('layouts.test')
+@extends('layouts.navbar')
 
 @section('content')
-<br/>
-<br/>
-<br/>
+
 <br/>
 <div class="container">
+<br/>
+<a type="submit" class="btn btn-danger" value="BACK" href="{{url('home')}}">BACK</a>
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">

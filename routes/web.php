@@ -33,8 +33,9 @@ Route::get('about', function () {
     return view('about');
 });
 
-  
-
+Route::get('shipments', function () {
+    return view('shipments');
+});
 
 Auth::routes();
 

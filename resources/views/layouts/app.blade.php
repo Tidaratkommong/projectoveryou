@@ -155,10 +155,10 @@
             </li>
             <ul>
 
-                <li><a href="{{url('adminhome')}}"><i class="fas fa-home"></i>หน้าหลัก</a></li>
-                <li><a href="{{url('admin/index_user')}}"><i class="fas fa-address-card"></i>จักการผู้ใช้</a></li>
-                <li><a href="{{url('product/index_product')}}"><i class="fa fa-database"></i> จัดการสินค้า</a></li>
-                <li><a href="#"><i class="fa fa-thumbs-up"></i> จัดการโปรโมชั่น</a></li>
+                <li><a href="{{url('adminhome')}}"><i class="fas fa-home"></i> หน้าหลัก</a></li>
+                <li><a href="{{url('admin/index_user')}}"><i class="fas fa-address-card"></i> จักการผู้ใช้</a></li>
+                <li><a href="{{url('product/index_product')}}"><i class="fa fa-database"></i>  จัดการสินค้า</a></li>
+                <!--<li><a href="#"><i class="fa fa-thumbs-up"></i> จัดการโปรโมชั่น</a></li>-->
                 <!--  <li class="nav-item dropdown">
                     <a href="#"><i class="fa fa-tasks"></i> รายการยืนยัน</a>
                     <a class="dropdown-item  " href="#"> :ยืนยันการสั่งซื้อ</a>

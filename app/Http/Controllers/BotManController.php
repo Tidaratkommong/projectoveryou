@@ -20,16 +20,16 @@ class BotManController extends Controller
         // user:hi
         //botman: hi user
         $botman->hears('สวัสดีครับ', function ($bot) {
-            $bot->reply('สวัสดีค่ะ ✋');
+          //  $bot->reply('มีอะไรให้เราช่วยไหมคะ ถ้าต้องการเริ่มต้นใหม่ พิมพ์คำว่า "เริ่มใหม่" ได้ตลอดเวลา');
             $this->startConversation($bot);
         });
 
         $botman->hears('สวัสดีค่ะ', function ($bot) {
-            $bot->reply('สวัสดีค่ะ ✋');
+           // $bot->reply('สวัสดีค่ะ ✋');
             $this->startConversation($bot);
         });
 
-        $botman->hears('เมนู', function ($bot) {
+        $botman->hears('เริ่มใหม่', function ($bot) {
             $this->startConversation($bot);
         });
         // 

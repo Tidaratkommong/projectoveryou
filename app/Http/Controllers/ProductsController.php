@@ -148,9 +148,10 @@ class ProductsController extends Controller
             'product_img.mimes' => 'ไฟล์ที่เลือกต้องนามสกุล jpeg, jpg, png เท่านั้น'
 
         ]);  
+   
         Product::find($id)->update($request->all());
         return redirect('product')->with('success', ' แก้ไขข้อมูลสินค้าสำเร็จ' );
-       
+        
     }
 
     /**

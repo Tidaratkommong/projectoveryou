@@ -64,6 +64,9 @@
                             <!--<li class="nav-item">
                                 <a class="btn btn-link text-light" href="#"><i class="fa fa-comments" aria-hidden="true"></i>  Chat กับเรา</a>
                             </li>-->
+                            <li class="nav-item">
+                                <a class="btn btn-link text-light" href="{{ url('shipments') }} " > ตรวจสอบการจัดส่ง</a>
+                            </li>
 
                             <li class="nav-item">
                                 <a class="btn btn-link text-light" href="#"> ออกแบบ.....</a>

@@ -39,6 +39,7 @@
                             <input type="text" name="product_name" class="form-control input-lg text-dark" value="{{$products['product_name'] }}" />
                         </div>
 
+                         <!--producttype -->
                         <div class="form-group col-md-6">
                             <label for="producttype">ประเภทสินค้า</label>
                             <select class="form-control input-lg text-dark" type="text" name="product_type" value="{{$products['product_type'] }}">
@@ -51,11 +52,20 @@
                         </div>
 
                     </div>
+
+                     <!--productdetail -->
                     <div class="form-group">
                         <label for="productdetail">รายละเอียดสินค้า</label>
-                        <input type="text" name="product_detail" class="form-control input-lg text-dark" value="{{$products['product_detail'] }}" />
-
+                        <textarea class="form-control" name="product_detail" placeholder="รายละเอียดสินค้า" rows="4" />{{$products['product_detail']}}</textarea>
                     </div>
+
+                    <!--<div class="form-group">
+                        <label for="productdetail">รายละเอียดสินค้า</label>
+                        <input type="text" name="product_detail" class="form-control input-lg text-dark" value="{{$products['product_detail']}}" />
+                    </div>-->
+                    
+
+                   <!--productprice -->
                     <div class="form-row">
                         <div class="form-group col-md-6">
                             <label for="productprice">ราคาสินค้า</label>
@@ -68,15 +78,16 @@
                         </div>
                     </div>
                     <br />
+
                     <div class="form-group">
                         <label for="exampleInputFile">Select Profile Image</label>
-
                             <input type="file" name="product_img" />
-                                   <img src="{{asset ($products->product_img) }}" class="img-thumbnail" width="50" />
-                                        <input type="hidden" name="hidden_image" value="{{ $products->product_img }}" />
+                            <img src="{{asset ($products->product_img) }}" class="img-thumbnail" width="50" />
+                            <input type="hidden" name="hidden_image" value="{{ $products->product_img }}" />
                     </div>
 
-                    <button type="submit" class="btn btn-success text-dark">อัพเดทสินค้า</button>
+
+                    <button type="submit" class="btn btn-success text-dark"> อัพเดทสินค้า</button>
 
             </div>
         </div>

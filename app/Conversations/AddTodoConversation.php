@@ -20,7 +20,10 @@ class AddTodoConversation extends Conversation
     public function run()
     {
        
-      $this->bot->reply('แสดงรูป');
+      $this->bot->reply('ขั้นตอนการคืนสินค้า <br> ....................................');
+
+      //$image = Image::url('foo')->title('title');
+      //$message = OutgoingMessage::create()->withAttachment($image);
      // $this->bot->reply('');// The original payload
     }
     
