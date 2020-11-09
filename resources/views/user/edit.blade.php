@@ -44,7 +44,7 @@
                             <label for="address" class="col-md-4 col-form-label text-md-right">{{ __('ที่อยู่ :') }}</label>
 
                             <div class="col-md-6">
-                                <textarea id="address" type="text" class="form-control  @error('address') is-invalid @enderror" name="address"  rows="4" autocomplete="address" autofocus/>{{$user['address'] }}</textarea>
+                                <textarea id="address" type="text" class="form-control  @error('address') is-invalid @enderror" name="address"  rows="3" autocomplete="address" autofocus/>{{$user['address'] }}</textarea>
                                
                                 @error('address')
                                 <span class="invalid-feedback" role="alert">
@@ -95,4 +95,15 @@
         </div>
     </div>
 </div>
+
+
+
+<ul class="nav justify-content-center bg-dark fixed-bottom ">
+    <li class="nav-item">
+        <a class="btn btn-link" href="#"></a>
+    </li>
+    <br/>
+    
+</ul>
+
 @endsection

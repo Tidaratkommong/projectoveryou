@@ -2,6 +2,7 @@
 
 @section('content')
 
+<!-- Login access-->
 <div class="container">
     <!-- promotion -->
     <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
@@ -41,16 +42,13 @@
 
     <br />
     <!--product -->
-    <div class="breadcrumb"><h5><a href="{{url('/homeproduct')}}">สินค้าทั้งหมด</a></h5>
+    <div class="breadcrumb"><h5>สินค้าทั้งหมด</h5>
         <main>
-           
             <div class="page-overlay-bg">
                 <div class="container-fluid m-0 p-0">
                     <!--container-fluid-->
                     <div class="row no-gutters px-0">
                         <!--row-->
-                        @guest
-
                         @foreach($product as $value)
                             <div class="col-6 col-sm-4 col-md-3 bg-light px-1">
                                 <div href="javascript:void(0);">
@@ -62,14 +60,14 @@
                                         <div class="discount_price text-dark text-center"> จำนวนสินค้า : {{$value->product_num }} <span>ตัว</span> </div>
                                         <div class="price text-dark text-center"> ราคา : {{ $value->product_price }}<span> บาท </span></div>
                                         <div class="price text-dark text-center"> รายละเอียด : {{ $value->product_detail }}</div> <br/>
-                                        <div class="text-center"><button class="btn btn-outline my-1 my-sm-0" type="submit" ><a  href="{{ route('login') }}" />เพิ่มไปยังรถเข็น<i class="fa fa-shopping-cart cus-icon py-1"> </i></a></button></div>
+                                        <div class="text-center"><button class="btn btn-outline my-1 my-sm-0" type="submit" ><a  href="#" />เพิ่มไปยังรถเข็น<i class="fa fa-shopping-cart cus-icon py-1"> </i></a></button></div>
                                         <!--<div class="text-center"> <a class=" text-danger"  />เพิ่มไปยังรถเข็น</a></div>-->
                                     </div>
                             </div>
                             </div>
                        @endforeach
                        
-                       @endguest
+                   
                     </div>
                     <!--row-->
                 </div>
@@ -77,7 +75,8 @@
 
             </div><!-- page-main-->
         </main>
-    </div>    
+    </div>
+    
 </div>
 
 <!-- chatbot-->

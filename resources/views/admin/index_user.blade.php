@@ -19,9 +19,11 @@
                 <h5 class="card-header text-center">จัดการข้อมูลสมาชิก</h5>
                 <table class="table table-bordered">
                     <tr>
-                        <th width="10%">Username</th>
-                        <th width="10%">E-Mail Address</th>
-                        <th width="15%">Action</th>
+                        <th width="10%">ชื่อผู้ใช้งาน</th>
+                        <th width="20%">ที่อยู่</th>
+                        <th width="10%">เบอร์โทร</th>
+                        <th width="10%">E-Mail</th>
+                        <th width="5%">Action</th>
                     </tr>
 
 
@@ -29,6 +31,8 @@
                         @foreach($users as $row)
                     <tr>
                         <td>{{ $row->name }}</td>
+                        <td>{{ $row->address }}</td>
+                        <td>{{ $row->telephone }}</td>
                         <td>{{$row->email }}</td>
                         <td>
 
@@ -51,6 +55,7 @@
                 <div class="modal-header">
                     <h5 class="modal-title" id="exampleModalLabel">ลบสมาชิก</h5>
                 </div>
+
                 <form method="post">
                     @csrf
                     {{method_field('DELETE')}}

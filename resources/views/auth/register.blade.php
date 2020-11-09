@@ -32,7 +32,7 @@
                             <label for="address" class="col-md-4 col-form-label text-md-right">{{ __('ที่อยู่ :') }}</label>
 
                             <div class="col-md-6">
-                            <textarea id="address" type="text" class="form-control  @error('address') is-invalid @enderror" name="address"  rows="4" autocomplete="address" autofocus/>{{ old('address') }}</textarea>
+                            <textarea id="address" type="text" class="form-control  @error('address') is-invalid @enderror" name="address"  rows="3" autocomplete="address" autofocus/>{{ old('address') }}</textarea>
                                <!-- <input id="address" type="text" class="form-control @error('address') is-invalid @enderror" name="address" value="" required autocomplete="address" autofocus>-->
 
                                 @error('address')

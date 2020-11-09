@@ -1,8 +1,7 @@
 @extends('layouts.navbar')
 
 @section('content')
-
-<br />
+<br/>
 <div class="container">
     <a type="submit" class="btn btn-danger" value="BACK" href="{{url('home')}}">BACK</a>
 
@@ -23,6 +22,14 @@
     </div>
 </div>
 
+
+<ul class="nav justify-content-center bg-dark fixed-bottom ">
+    <li class="nav-item">
+        <a class="btn btn-link" href="#"></a>
+    </li>
+    <br/>
+    
+</ul>
 
 
 

@@ -104,9 +104,16 @@ Route::get('/displaydata','EventController@show');
 
 //Route::delete('/deleteevent', 'EventController@Destroy');
 
-
+// view welcome
 Route::get('/', 'ListproductController@index');
-//Route::get('/home', 'ListproductController@index');
+//Route::get('/{id}','ListproductController@show'); // detail product
+
+
+// view home
+Route::get('/homeproduct', 'ListproducthomeController@index');
+
+
+
 
 //chatbot
 Route::match(['get', 'post'], '/botman', 'BotManController@handle');

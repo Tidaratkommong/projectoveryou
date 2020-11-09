@@ -2,11 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\Product;
-use Illuminate\Support\Facades\Auth;
+use Illuminate\Http\Request;
 
-class ListproductController extends Controller
+class ListproducthomeController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,11 +14,8 @@ class ListproductController extends Controller
      */
     public function index()
     {
-        //$product =Product::find(Auth::all());
-        //return view('welcome', compact('product'));
         $product = Product::all();
-        return view('welcome', compact('product'));
-       // {{ Auth::user()->name }}
+        return view('/homeproduct', compact('product'));
     }
 
     /**
@@ -51,8 +47,7 @@ class ListproductController extends Controller
      */
     public function show($id)
     {
-        $products = Product::findOrFail($id);
-        return view('welcome', compact('products'));
+        //
     }
 
     /**

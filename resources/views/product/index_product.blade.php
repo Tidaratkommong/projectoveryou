@@ -39,7 +39,7 @@
                     <td>{{$value->product_num }} ตัว </td>
 
                     <td>
-                        <a class="btn btn-primary" href="{{ route('product.show',$value->id )}}"><i class="fa fa-eye" aria-hidden="true"></i></a>
+                        <a class="btn btn-primary" href="{{ route('product.show',$value->id )}}"> <i class="fa fa-eye" aria-hidden="true"></i></a>
                     </td>
                     <td>
                         <a class="btn btn-warning" href="{{ route('product.edit',$value->id )}}"><i class="fa fa-wrench" aria-hidden="true"></i></a>

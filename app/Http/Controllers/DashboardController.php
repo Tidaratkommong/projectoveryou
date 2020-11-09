@@ -20,11 +20,14 @@ class DashboardController extends Controller
             ->with('i', (request()->input('page', 1) - 1) * 10);
     }
 
-   // public function registeredDelete($id)
-   // {
-    //    $users = User::findOrFail($id);
-     //   $users ->delete();
-     //   return redirect('admin/index_user')->with('success','Your Data is Deleted');
-  //  }
 
+    /*public function registeredDelete($id)
+    {
+       $users = User::findOrFail($id);
+        $users ->delete();
+        return redirect('admin/index_user')->with('success','Your Data is Deleted');
+
+   }*/
+    
+  
 }

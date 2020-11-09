@@ -12,11 +12,13 @@
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
+    <script src="http://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
+    <script src="{{ asset('js/bonus.js') }}"></script>
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
-
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 
@@ -32,7 +34,7 @@
                 <div class="container-fluid my-4">
                       <!--<a href="{{ url('/') }}"> <img src="https://www.img.in.th/images/2ca66c73960a89eeaa7a3407cf46eb32.th.jpg" class="img-rounded" alt="Cinque Terre" style="width:100px;height:55px;"></a>-->
                      
-                    <a class="navbar-brand" href="{{ url('/') }}"> Over You 99</a>
+                    <a class="navbar-brand" href="{{url('/')}}"> Over You 99</a>
 
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                         <span class="navbar-toggler-icon"> </span>
@@ -95,8 +97,7 @@
                                 </a>
                                
                             </form>
-</div>
-
+                         </div>
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle fas fa-user text-light" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     {{ Auth::user()->name }}
@@ -114,6 +115,11 @@
                                     <a class="dropdown-item" href="{{ route('password.edit')}}">
                                         {{ __('เปลี่ยนรหัสผ่าน') }}
                                     </a>
+
+                                    <a class="dropdown-item" href="#">
+                                        {{ __('ประวัติการซื้อ') }}
+                                    </a>
+
                                     <a class="dropdown-item " href="{{ route('logout') }}" onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
                                         {{ __('ออกจากระบบ') }}
