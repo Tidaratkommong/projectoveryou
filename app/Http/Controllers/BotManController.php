@@ -29,6 +29,11 @@ class BotManController extends Controller
             $this->startConversation($bot);
         });
 
+        $botman->hears('สวัสดี', function ($bot) {
+            // $bot->reply('สวัสดีค่ะ ✋');
+             $this->startConversation($bot);
+         });
+
         $botman->hears('เริ่มใหม่', function ($bot) {
             $this->startConversation($bot);
         });
