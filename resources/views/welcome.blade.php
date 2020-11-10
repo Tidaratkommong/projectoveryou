@@ -12,17 +12,17 @@
         </ol>
         <div class="carousel-inner">
             <div class="carousel-item active">
-                <img src="promo2.jpg" width="270" height="280" class="d-block w-100" alt="...">
+                <img src="promo2.jpg" width="270" height="300" class="d-block w-100" alt="...">
                 <div class="carousel-caption d-none d-md-block">
                 </div>
             </div>
             <div class="carousel-item">
-                <img src="promo3.jpg" width="270" height="280" class="d-block w-100" alt="...">
+                <img src="promo3.jpg" width="270" height="300" class="d-block w-100" alt="...">
                 <div class="carousel-caption d-none d-md-block">
                 </div>
             </div>
             <div class="carousel-item">
-                <img src="promo1.jpg" width="270" height="280" class="d-block w-100" alt="...">
+                <img src="promo1.jpg" width="270" height="300" class="d-block w-100" alt="...">
                 <div class="carousel-caption d-none d-md-block">
                 </div>
             </div>
@@ -55,7 +55,7 @@
                             <div class="col-6 col-sm-4 col-md-3 bg-light px-1">
                                 <div href="javascript:void(0);">
                                     <div class="card  mb-2 shadow-sm" style="width: 16rem; height:26rem;">
-                                    <img class="text-center w-100" src="{{asset($value->product_img )}}" style="width: 180px; height:200px;" />{{ $value->product_img  }}
+                                    <img class="text-center w-100" src="{{asset(public/imaproduct.$value->product_img )}}" style="width: 180px; height:200px;" />
                                     <br/>
                                     
                                         <div class=" text-dark text-center">ชื่อสินค้า : {{ $value->product_name }}</div>
