@@ -20,7 +20,16 @@ class AddTodoConversation extends Conversation
     public function run()
     {
        
-      $this->bot->reply('ขั้นตอนการคืนสินค้า <br> ....................................');
+      $this->bot->reply('
+      
+      ข้อมูลการติดต่อทางร้าน 
+      <br> .................................... 
+      <br>ติดต่อเรา : 0807429240 
+      <br> Line ID : @Overyou
+       <br> Facebook ได้ที่เพจ :Over You99 
+       <br> ....................................
+       
+       ');
 
       //$image = Image::url('foo')->title('title');
       //$message = OutgoingMessage::create()->withAttachment($image);

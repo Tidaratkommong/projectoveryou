@@ -17,7 +17,7 @@
                     <br />
                     <li class="nav-item active">
                         <h5 class="nav-link ml-2 text-black ml-3 "> เว็บไซต์ Overyou99 สร้างขึ้นเพื่อเพิ่มช่องทางการซื้อขายสินค้า
-                            จากร้านค้าชื่อ Overyou99​ ที่ขายสินค้าเกี่ยวกับเสื้อผ้า รองเท้า และของใช้สำหรับผู้ชายจากแบรนด์ดัง อาทิ Superstars Adidas Nike เป็นต้น</h5>
+                            จากร้านค้าชื่อ Overyou99​ ที่ขายสินค้าเกี่ยวกับเสื้อผ้า รองเท้า <br/> และของใช้สำหรับผู้ชายจากแบรนด์ดัง อาทิ Superstars Adidas Nike เป็นต้น</h5>
                     </li>
                     <li class="nav-item active">
                         <h5 class="nav-link ml-3"> สามารถเยี่ยมชมร้านค้าผ่านทาง </h5>

@@ -20,9 +20,9 @@ class OptionsConversation extends Conversation
         ->fallback('Unable to choose option')
         ->callbackId('ask_about_option')
         ->addButtons([
-            Button::create('การคืนสินค้า')->value('add'),
+            Button::create('ข้อมูลการติดต่อทางร้าน')->value('add'),
             Button::create('การเลือกซื้อสินค้า')->value('all'),
-            Button::create('ข้อมูลการติดต่อทางร้าน')->value('completed'),
+            Button::create('การคืนสินค้า')->value('completed'),
             Button::create('.............')->value('not_completed'),
         ]);
 
