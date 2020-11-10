@@ -38,7 +38,7 @@ class OptionsConversation extends Conversation
                         $this->bot->startConversation(new AllTodoConversation);
                     break;
                     case 'completed':
-                        $this->bot->startConversation();
+                        $this->bot->startConversation(new CompletedTodoConversation);
                     break;
                     case 'not_completed':
                         $this->bot->startConversation();
