@@ -23,12 +23,22 @@ class DashboardController extends Controller
             ->with('i', (request()->input('page', 1) - 1) * 10);
     }
 
-    public function edit($id)
+
+    public function edit()
     {
-        $users = User::findOrFail($id);
-        return view('admin.edit_user', compact('users'));
+        if (Auth::user()) {
+            $user = User::find(Auth::user()->id);
+            if ($user) {
+                return view('admin.edit_user')->withUser($user);
+            } else {
+                return redirect()->back();
+            }
+        } else {
+            return redirect()->back();
+        }
     }
 
+    
     public function update(Request $request)
     {
         $user = User::find(Auth::user()->id);
