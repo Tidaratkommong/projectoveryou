@@ -8,7 +8,7 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card text-center ">
-                <div class="card-header bg-info">{{ __('ลงทะเบียน') }}</div>
+                <div class="card-header text-dark"><h4>{{ __('ลงทะเบียน') }}</h4></div>
 
                 <div class="card-body">
                     <form method="POST" action="{{ route('register') }}">
