@@ -104,6 +104,8 @@
 	    var botmanWidget = {
 	        aboutText: 'ssdsd',
             title: 'Over You 99',
+            mainColor: '#F28240',
+            bubbleBackground: '#F28240',
             introMessage: '✋สวัสดีค่ะ นี่เป็นข้อความอัตโนมัติ มีอะไรให้เราช่วยไหมคะ ถ้าต้องการเริ่มต้นใหม่ พิมพ์คำว่า "เริ่มใหม่" ได้ตลอดเวลา ',
             placeholderText: 'Ask Me Something',
             aboutLink: 'mhdevelopment.gr'
