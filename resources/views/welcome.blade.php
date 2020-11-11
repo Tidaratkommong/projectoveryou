@@ -12,17 +12,17 @@
         </ol>
         <div class="carousel-inner">
             <div class="carousel-item active">
-                <img src="promo2.jpg" width="270" height="300" class="d-block w-100" alt="...">
+                <img src="promo2.jpg" width="270" height="350" class="d-block w-100" alt="...">
                 <div class="carousel-caption d-none d-md-block">
                 </div>
             </div>
             <div class="carousel-item">
-                <img src="promo3.jpg" width="270" height="300" class="d-block w-100" alt="...">
+                <img src="promo3.jpg" width="270" height="350" class="d-block w-100" alt="...">
                 <div class="carousel-caption d-none d-md-block">
                 </div>
             </div>
             <div class="carousel-item">
-                <img src="promo1.jpg" width="270" height="300" class="d-block w-100" alt="...">
+                <img src="promo1.jpg" width="270" height="350" class="d-block w-100" alt="...">
                 <div class="carousel-caption d-none d-md-block">
                 </div>
             </div>
