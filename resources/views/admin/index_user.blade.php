@@ -36,7 +36,7 @@
                         <td>{{ $row->telephone }}</td>
                         <td>{{$row->email }}</td>
                         <td>
-                            <button type="button" class="btn btn-primary" href="{{ route('admin.edit,$row->id ')}}"> แก้ไขข้อมูล </button>
+                            <button type="button" class="btn btn-primary" href="#"> แก้ไขข้อมูล </button>
                         </td>
                         <td>
                             <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#edit">ลบสมาชิก</button>
