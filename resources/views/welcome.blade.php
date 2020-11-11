@@ -52,7 +52,7 @@
                         @guest
 
                         @foreach($product as $value)
-                            <div class="col-6 col-sm-5 col-md-3 bg-light px-1">
+                        <div class="col-6 col-sm-4 col-md-3 bg-light px-1">
                                 <div href="javascript:void(0);">
                                     <div class="card  mb-2 shadow-sm" style="width: 16rem; height:30rem;">
                                     <img class="text-center w-100" src="{{asset($value->product_img )}}" style="width: 180px; height:270px;" />
@@ -65,8 +65,8 @@
                                         <div class="text-center"><button class="btn btn-outline my-1 my-sm-0" type="submit" ><a  href="{{ route('login') }}" />เพิ่มไปยังรถเข็น<i class="fa fa-shopping-cart cus-icon py-1"> </i></a></button></div>
                                         <!--<div class="text-center"> <a class=" text-danger"  />เพิ่มไปยังรถเข็น</a></div>-->
                                     </div>
-                            </div>
-                            </div>
+                             </div>
+                        </div>
                        @endforeach
                        
                        @endguest
@@ -77,7 +77,10 @@
 
             </div><!-- page-main-->
         </main>
-    </div>    
+    </div> 
+    
+    
+    
 </div>
 
 <!-- chatbot-->
