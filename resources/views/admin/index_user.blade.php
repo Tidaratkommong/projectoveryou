@@ -4,7 +4,7 @@
 <br />
 
 <div class="container">
-<a type="submit" name="submit" class="btn btn-danger " value="BACK" href="{{url('home')}}" />BACK</a>
+<a type="submit" name="submit" class="btn btn-danger " value="BACK" href="{{url('adminhome')}}" />BACK</a>
     <div class="col-md-12">
         <div class="margin: 20px;">
             @csrf
@@ -23,7 +23,8 @@
                         <th width="20%">ที่อยู่</th>
                         <th width="10%">เบอร์โทร</th>
                         <th width="10%">E-Mail</th>
-                        <th width="5%">Action</th>
+                        <th width="5%">แก้ไขข้อมูล</th>
+                        <th width="5%">ลบข้อมูล</th>
                     </tr>
 
 

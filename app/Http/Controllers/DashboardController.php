@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use App\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
+
 
 class DashboardController extends Controller
 {
@@ -20,6 +23,44 @@ class DashboardController extends Controller
             ->with('i', (request()->input('page', 1) - 1) * 10);
     }
 
+    public function update(Request $request)
+    {
+        $user = User::find(Auth::user()->id);
+  
+        if ($user) {
+            $validate = null;
+            if (Auth::user()->email == $request['email']) {
+                $validate = $request->validate([
+                    'name' => 'required',
+                    'address' => 'required',
+                    'telephone' => 'required',
+                    'email' => 'required',
+                  
+                ]);
+            } else {
+                $validate = $request->validate([
+                    'name' => 'required',  
+                    'telephone' => 'required',
+                    'email' => 'required|email|unique:users',
+                    'address' => 'required',
+                ]);
+            }
+            if ($validate) {
+                $user->name = $request['name'];
+                $user->telephone = $request['telephone'];
+                $user->email = $request['email'];
+                $user->address = $request['address'];
+
+                $user->save();
+                $request->session()->flash('success', ' Your detals have now been updated !');
+                return redirect()->back();
+            } else {
+                return redirect()->back();
+            }
+        } else {
+            return redirect()->back();
+        }
+    }
 
     /*public function registeredDelete($id)
     {
