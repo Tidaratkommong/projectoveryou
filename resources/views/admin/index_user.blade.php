@@ -35,9 +35,10 @@
                         <td>{{ $row->telephone }}</td>
                         <td>{{$row->email }}</td>
                         <td>
-
+                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#edit"> แก้ไขข้อมูล </button>
+                        </td>
+                        <td>
                             <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#edit">ลบสมาชิก</button>
-
                         </td>
 
                     </tr>
