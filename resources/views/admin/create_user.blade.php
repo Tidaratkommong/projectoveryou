@@ -6,11 +6,11 @@
 <br />
 
 <div class="container">
-<a type="submit" name="submit" class="btn btn-danger " value="BACK" href="{{url('adminhome')}}" />BACK</a>
+<a type="submit" name="submit" class="btn btn-danger " value="BACK"  href="{{url('admin/index_user')}}" />BACK</a>
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card text-center ">
-                <div class="card-header text-dark"><h4>{{ __('เพิ่มสมาชิก') }}</h4></div>
+                <div class="card-header text-dark"><h4>{{ __(' เพิ่มสมาชิก ') }}</h4></div>
 
                 <div class="card-body">
                     <form method="POST" action="{{route('admin.store')}}">

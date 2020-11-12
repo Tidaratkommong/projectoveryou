@@ -38,14 +38,15 @@ class DashboardController extends Controller
         ]);
         User::create($request->all());
         return redirect()->route('admin.index_user')
-                        ->with('success', 'new biodata created successfully');
+                        ->with('success', ' new user created successfully');
     }
 
 
     public function edit()
     {
-        $users = User::find($id);
+        $users = User::findOrFail($id);
         return view('admin.edit_user', compact('users'));
+       
     }
 
     
