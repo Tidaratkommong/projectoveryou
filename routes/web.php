@@ -54,7 +54,7 @@ Route::group(['prefix' => 'admin'], function(){
 
 
 Route::get('admin/index_user', 'DashboardController@registered')->name('admin/index_user');
-Route::resource('admin/index_user', 'DashboardController');
+Route::resource('admins', 'DashboardController');
 //Route::get('admin/edit_user', 'DashboardController@edit')->name('admin/edit_user');
 //Route::delete('/delete_user/{id}', 'DashboardController@registeredDelete');
 

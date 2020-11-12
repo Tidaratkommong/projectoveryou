@@ -37,7 +37,7 @@ class DashboardController extends Controller
             'address' => 'required',
         ]);
         User::create($request->all());
-        return redirect()->route('admin.index_user')
+        return redirect()->route('admins')
                         ->with('success', ' new user created successfully');
     }
 
