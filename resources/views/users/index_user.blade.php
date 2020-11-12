@@ -4,10 +4,10 @@
 <br />
 
 <div class="container">
-<!--<a type="submit" name="submit" class="btn btn-danger " value="BACK" href="{{url('adminhome')}}" />BACK</a> -->
+<!--<a type="submit" name="submit" class="btn btn-danger " value="BACK" href="" />BACK</a> -->
 
 <div class="col-sm-2">
-        <a class="btn btn-sm btn-success" href="{{ route('admin.create_user') }}">Create New Biodata</a>
+        <a class="btn btn-sm btn-success" href="{{ route('users.create_user') }}">Create New Biodata</a>
       </div>
     <div class="col-md-12">
         <div class="margin: 20px;">
@@ -41,9 +41,9 @@
                         <td>{{ $row->telephone }}</td>
                         <td>{{$row->email }}</td>
 
-                        <form action="{{ route('admin.destroy', $row->id) }}" method="post">
+                        <form action="{{ route('users.destroy', $row->id) }}" method="post">
                         <td> 
-                            <button type="button" class="btn btn-primary" href="{{route('admin.edit_user',$row->id)}}"> แก้ไขข้อมูล </button>   
+                            <button type="button" class="btn btn-primary" href="{{route('users.edit_user',$row->id)}}"> แก้ไขข้อมูล </button>   
                         </td>
                         
                         <td>

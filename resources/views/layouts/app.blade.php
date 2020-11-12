@@ -156,7 +156,7 @@
             <ul>
 
                 <li><a href="{{url('adminhome')}}"><i class="fas fa-home"></i> หน้าหลัก</a></li>
-                <li><a href="{{url('admin/index_user')}}"><i class="fas fa-address-card"></i> จัดการผู้ใช้</a></li>
+                <li><a href="{{url('users/index_user')}}"><i class="fas fa-address-card"></i> จัดการผู้ใช้</a></li>
                 <li><a href="{{url('product/index_product')}}"><i class="fa fa-database"></i>  จัดการสินค้า</a></li>
                 <li><a href="#"><i class=""></i>ตรวจสอบการชำระเงิน</a></li>
                 <li><a href="#"><i class=""></i>ตรวจสอบคำสั่งซื้อ</a></li>
