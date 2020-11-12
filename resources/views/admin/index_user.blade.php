@@ -42,12 +42,12 @@
                         <td>{{ $value->email }}</td>
 
 
-                        <form action="{{ route('admin.destroy', $value->id) }}" method="post">
+                        
                         <td> 
-                            <a class="btn btn-warning" href="{{route('admin.edit',$value ->id)}} "> แก้ไขข้อมูล</a> 
+                            <a class="btn btn-warning" href="{{route('admin.edit',$value->id)}} "> แก้ไขข้อมูล</a> 
                         </td>
 
-                       
+                        <form action="{{ route('admin.destroy', $value->id) }}" method="post">
                         <td>
 
                        @csrf
