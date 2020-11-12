@@ -60,7 +60,7 @@
                                         <div class="discount_price text-dark text-center"> จำนวนสินค้า : {{$value->product_num }} <span>ตัว</span> </div>
                                         <div class="price text-dark text-center"> ราคา : {{ $value->product_price }}<span> บาท </span></div>
                                         <div class="price text-dark text-center"> รายละเอียด : {{ $value->product_detail }}</div> <br/>
-                                        <div class="text-center"><button class="btn btn-outline my-1 my-sm-0" type="submit" ><a  href="#" />เพิ่มไปยังรถเข็น<i class="fa fa-shopping-cart cus-icon py-1"> </i></a></button></div>
+                                        <div class="text-center"><button class="btn btn-outline my-1 my-sm-0" type="submit" ><a  href="#" />สั่งซื้อสินค้า </a></button></div>
                                         <!--<div class="text-center"> <a class=" text-danger"  />เพิ่มไปยังรถเข็น</a></div>-->
                                     </div>
                             </div>
