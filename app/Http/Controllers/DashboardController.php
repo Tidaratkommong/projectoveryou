@@ -16,7 +16,7 @@ class DashboardController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function registered()
+    public function index()
     { 
         $users = User::latest()->paginate(10);
         return view('admin.index_user', compact('users'))
