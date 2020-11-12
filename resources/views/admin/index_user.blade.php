@@ -7,7 +7,7 @@
 <a type="submit" name="submit" class="btn btn-danger " value="BACK" href="{{url('adminhome')}}" />BACK</a>
     <div class="col-md-12">
         <div class="margin: 20px;">
-           
+        <a type="submit" name="submit" class="btn btn-danger " value="BACK" href="{{url('admin/create_user')}}" />;;;;</a>
             @csrf
             <hr>
             @if(Session::get('success'))
