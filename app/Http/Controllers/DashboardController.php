@@ -37,12 +37,7 @@ class DashboardController extends Controller
             'address' => 'required',
         ]);
 
-        $users = new User;
-        $users->name = $request->name;
-        $users->telephone = $request->telephone;
-        $users->email = $request->email;
-        $users->address = $request->address;
-        if ($users->save()) {
+        if ($request->save()) {
             $request->session()->flash('success',  'new user created successfully');
             return redirect('admin');
         } else {
