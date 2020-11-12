@@ -42,8 +42,9 @@ class DashboardController extends Controller
     }
 
 
-    public function edit()
+    public function edit($id)
     {
+
         $users = User::findOrFail($id);
         return view('admin.edit_user', compact('users'));
        
