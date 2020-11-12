@@ -47,9 +47,10 @@
                     </td>
                     <td>
                         <form action="{{route('admin.destroy',$value->id)}}" method="post">
-                            @csrf @method('DELETE')
-                            <a class="btn btn-danger deleteForm"><i class="fa fa-trash" aria-hidden="true"></i></a>
-                            <!--<input type="submit" value="ลบ"  class="btn btn-danger deleteForm">-->
+                        @csrf
+                          @method('DELETE')
+                        <button type="submit" class="btn btn-sm btn-danger">Delete</button>
+                        
                         </form>
                     </td>
                        
