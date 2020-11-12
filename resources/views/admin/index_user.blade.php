@@ -7,7 +7,7 @@
 <!--<a type="submit" name="submit" class="btn btn-danger " value="BACK" href="" />BACK</a> -->
 
 <div class="col-sm-2">
-        <a class="btn btn-sm btn-success" href="#">Create New Biodata</a>
+        <a class="btn btn-sm btn-success"  href="{{route('admin.create')}}">Create New Biodata</a>
       </div>
     <div class="col-md-12">
         <div class="margin: 20px;">
@@ -43,12 +43,12 @@
 
                        
                         <td> 
-                            <button type="button" class="btn btn-primary" href=""> แก้ไขข้อมูล </button>   
+                            <button type="button" class="btn btn-primary" href="{{route('admin.edit',$row->id)}}"> แก้ไขข้อมูล </button>   
                         </td>
 
-                        
-                        <form action="{{ route('users.destroy', $row->id) }}" method="post">
+                        <form action="{{ route('admin.destroy', $row->id) }}" method="post">
                         <td>
+
                        @csrf
                        @method('DELETE')
                        <button type="submit" class="btn btn-sm btn-danger">ลบสมาชิก</button>
