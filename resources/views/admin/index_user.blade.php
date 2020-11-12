@@ -34,17 +34,17 @@
 
 
                     <tr>
-                        @foreach($users as $row)
+                        @foreach($users as $value)
                     <tr>
-                        <td>{{ $row->name }}</td>
-                        <td>{{ $row->address }}</td>
-                        <td>{{ $row->telephone }}</td>
-                        <td>{{ $row->email }}</td>
+                        <td>{{$value->name }}</td>
+                        <td>{{ $value->address }}</td>
+                        <td>{{ $value->telephone }}</td>
+                        <td>{{ $value->email }}</td>
 
 
-                        <form action="{{ route('admin.destroy', $row->id) }}" method="post">
+                        <form action="{{ route('admin.destroy', $value->id) }}" method="post">
                         <td> 
-                            <a class="btn btn-warning" href="{{route('admin.edit',$row->id)}} "> แก้ไขข้อมูล</a> 
+                            <a class="btn btn-warning" href="{{route('admin.edit',$value ->id)}} "> แก้ไขข้อมูล</a> 
                         </td>
 
                        
