@@ -46,9 +46,9 @@
                             <button type="button" class="btn btn-primary" href=""> แก้ไขข้อมูล </button>   
                         </td>
 
-                        <form action="{{ route('admin.destroy', $row->id) }}" method="post">
+                        
+                        <form action="{{ route('users.destroy', $row->id) }}" method="post">
                         <td>
-
                        @csrf
                        @method('DELETE')
                        <button type="submit" class="btn btn-sm btn-danger">ลบสมาชิก</button>
