@@ -37,10 +37,21 @@ class DashboardController extends Controller
             'address' => 'required',
         ]);
 
-
-        User::create($request->all());
-        return redirect()->route('admin.index_user')
-                        ->with('success', 'new biodata created successfully');
+        $users = new User;
+        $users->name = $request->name;
+        $users->telephone = $request->telephone;
+        $users->email = $request->email;
+        $users->address = $request->address;
+        if ($users->save()) {
+            $request->session()->flash('success',  'new user created successfully');
+            return redirect('admin');
+        } else {
+            $request->session()->flash('success', 'เพิ่ม User ไม่สำเร็จ');
+            return view('admin.create_user');
+        }
+       // User::create($request->all());
+       // return redirect()->route('admin.index_user')
+              //          ->with('success', 'new biodata created successfully');
 
 
 
