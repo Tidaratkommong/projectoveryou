@@ -39,12 +39,12 @@
                         <td>{{ $row->name }}</td>
                         <td>{{ $row->address }}</td>
                         <td>{{ $row->telephone }}</td>
-                        <td>{{$row->email }}</td>
+                        <td>{{ $row->email }}</td>
 
 
                         <form action="{{ route('admin.destroy', $row->id) }}" method="post">
                         <td> 
-                            <button type="button" class="btn btn-primary" href="{{route('admin.edit',$row->id)}}"> แก้ไขข้อมูล </button>   
+                            <a class="btn btn-warning" href="{{route('admin.edit',$row->id)}} "> แก้ไขข้อมูล</a> 
                         </td>
 
                        
