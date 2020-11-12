@@ -19,13 +19,13 @@ class DashboardController extends Controller
     public function registered()
     { 
         $users = User::latest()->paginate(10);
-        return view('admin.index_user', compact('users'))
+        return view('users.index_user', compact('users'))
             ->with('i', (request()->input('page', 1) - 1) * 10);
     }
 
     public function create()
     {
-        return view('admin.create_user');
+        return view('users.create_user');
     }
 
     public function store(Request $request)
@@ -37,7 +37,7 @@ class DashboardController extends Controller
             'address' => 'required',
         ]);
         User::create($request->all());
-        return redirect()->route('admin.index_user')
+        return redirect()->route('users.index_user')
                         ->with('success', 'new biodata created successfully');
     }
 
@@ -45,7 +45,7 @@ class DashboardController extends Controller
     public function edit()
     {
         $users = User::find($id);
-        return view('admin.edit_user', compact('users'));
+        return view('users.edit_user', compact('users'));
     }
 
     
@@ -63,7 +63,7 @@ class DashboardController extends Controller
           $users->email = $request->get('email');
           $users->address = $request->get('address');
           $users->save();
-          return redirect()->route('admin.index_user')
+          return redirect()->route('users.index_user')
                           ->with('success', 'Biodata siswa updated successfully');
        
     }
@@ -72,7 +72,7 @@ class DashboardController extends Controller
     {
         $users = User::find($id);
         $users->delete();
-        return redirect()->route('admin.index_user')
+        return redirect()->route('users.index_user')
                         ->with('success', 'Biodata siswa deleted successfully');
     }
 
