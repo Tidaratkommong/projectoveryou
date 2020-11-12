@@ -39,6 +39,7 @@ class DashboardController extends Controller
 
         
         User::create($request->all());
+        $request->session()->flash('success', 'new user created successfully');
         return redirect('admin');
                         
 
