@@ -39,8 +39,8 @@ class DashboardController extends Controller
 
         
         User::create($request->all());
-        return redirect()->route('admin')
-                        ->with('success', 'new biodata created successfully');
+        return redirect('admin');
+                        
 
 
 
