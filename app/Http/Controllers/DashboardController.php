@@ -44,7 +44,7 @@ class DashboardController extends Controller
 
     public function edit($id)
     {
-        
+
         $users = User::find($id);
         return view('admin.edit_user', compact('users'));
         
@@ -75,8 +75,8 @@ class DashboardController extends Controller
     {
         $users = User::find($id);
         $users->delete();
-        return redirect()->route('admin.index_user')
-                        ->with('success', 'Biodata siswa deleted successfully');
+        return redirect('admin')
+                        ->with('success', ' User deleted successfully');
     }
 
 

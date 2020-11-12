@@ -49,8 +49,9 @@
                         <form action="{{route('admin.destroy',$value->id)}}" method="post">
                         @csrf
                           @method('DELETE')
-                        <button type="submit" class="btn btn-sm btn-danger">Delete</button>
-                        
+
+                        <button type="submit" class="btn btn-sm btn-danger"> ลบข้อมูล </button>
+
                         </form>
                     </td>
                        
