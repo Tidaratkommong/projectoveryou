@@ -41,21 +41,17 @@
                         <td>{{ $value->telephone }}</td>
                         <td>{{ $value->email }}</td>
 
-
-                        
-                        <td> 
-                            <a class="btn btn-warning" href="{{route('admin.edit',$value->id)}} "> แก้ไขข้อมูล</a> 
-                        </td>
-
-                        <form action="{{ route('admin.destroy', $value->id) }}" method="post">
-                        <td>
-
-                       @csrf
-                       @method('DELETE')
-                       <button type="submit" class="btn btn-sm btn-danger">ลบสมาชิก</button>
-                           <!-- <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#edit">ลบสมาชิก</button>-->
-                        </td>
-                     </form>
+    
+                    <td>
+                        <a class="btn btn-warning" href="{{ route('admin.edit',$value->id )}}"> แก้ไข้อมูล </a>
+                    </td>
+                    <td>
+                        <form action="{{route('admin.destroy',$value->id)}}" method="post">
+                            @csrf @method('DELETE')
+                            <a class="btn btn-danger deleteForm"><i class="fa fa-trash" aria-hidden="true"></i></a>
+                            <!--<input type="submit" value="ลบ"  class="btn btn-danger deleteForm">-->
+                        </form>
+                    </td>
                        
 
 

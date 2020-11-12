@@ -44,7 +44,7 @@ class DashboardController extends Controller
 
     public function edit($id)
     {
-
+        
         $users = User::find($id);
         return view('admin.edit_user', compact('users'));
         
