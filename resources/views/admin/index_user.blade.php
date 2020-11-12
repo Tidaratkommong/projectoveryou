@@ -7,6 +7,7 @@
 <a type="submit" name="submit" class="btn btn-danger " value="BACK" href="{{url('adminhome')}}" />BACK</a>
     <div class="col-md-12">
         <div class="margin: 20px;">
+             <a href="{{route('user.create')}}" class="btn btn-success fa fa-plus" role="button" aria-pressed="true"> เพิ่มสมาชิก </a>
             @csrf
             <hr>
             @if(Session::get('success'))

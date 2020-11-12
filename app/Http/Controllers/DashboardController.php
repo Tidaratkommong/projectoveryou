@@ -16,14 +16,16 @@ class DashboardController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function registered()
-    {
-        
+    { 
         $users = User::latest()->paginate(10);
         return view('admin.index_user', compact('users'))
             ->with('i', (request()->input('page', 1) - 1) * 10);
     }
 
 
+    public function store(Request $request){
+        dd($request);
+    }
     public function edit()
     {
         if (Auth::user()) {
