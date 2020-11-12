@@ -37,19 +37,45 @@ class DashboardController extends Controller
             'address' => 'required',
         ]);
         User::create($request->all());
+        return redirect()->route('admin.index_user')
+                        ->with('success', 'new biodata created successfully');
     }
 
 
     public function edit()
     {
-        
+        $users = User::find($id);
+        return view('admin.edit_user', compact('users'));
     }
 
     
-    public function update(Request $request)
+    public function update(Request $request, $id)
     {
+        $request->validate([
+            'name' => 'required',  
+            'telephone' => 'required',
+            'email' => 'required|email|unique:users',
+            'address' => 'required',
+          ]);
+          $users = User::find($id);
+          $users->name = $request->get('name');
+          $users->telephone = $request->get('telephone');
+          $users->email = $request->get('email');
+          $users->address = $request->get('address');
+          $users->save();
+          return redirect()->route('admin.index_user')
+                          ->with('success', 'Biodata siswa updated successfully');
        
     }
+
+    public function destroy($id)
+    {
+        $users = User::find($id);
+        $users->delete();
+        return redirect()->route('admin.index_user')
+                        ->with('success', 'Biodata siswa deleted successfully');
+    }
+
 
     /*public function registeredDelete($id)
     {
