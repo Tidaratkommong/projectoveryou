@@ -36,12 +36,9 @@ class DashboardController extends Controller
             'email' => 'required|email|unique:users',
             'address' => 'required',
         ]);
-
-        
+       
         User::create($request->all());
-        $request->session()->flash('success', 'new user created successfully');
-        return redirect('admin');
-                        
+        return redirect('admin')->with('success', 'new biodata created successfully');
 
 
 
