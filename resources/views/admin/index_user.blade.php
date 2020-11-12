@@ -7,7 +7,7 @@
 <!--<a type="submit" name="submit" class="btn btn-danger " value="BACK" href="" />BACK</a> -->
 
 <div class="col-sm-2">
-        <a class="btn btn-sm btn-success" href="{{ route('users.create_user') }}">Create New Biodata</a>
+        <a class="btn btn-sm btn-success" href="{{ route('admin.create_user') }}">Create New Biodata</a>
       </div>
     <div class="col-md-12">
         <div class="margin: 20px;">
@@ -41,9 +41,9 @@
                         <td>{{ $row->telephone }}</td>
                         <td>{{$row->email }}</td>
 
-                        <form action="{{ route('users.destroy', $row->id) }}" method="post">
+                        <form action="{{ route('admin.destroy', $row->id) }}" method="post">
                         <td> 
-                            <button type="button" class="btn btn-primary" href="{{route('users.edit_user',$row->id)}}"> แก้ไขข้อมูล </button>   
+                            <button type="button" class="btn btn-primary" href="{{route('admin.edit_user',$row->id)}}"> แก้ไขข้อมูล </button>   
                         </td>
                         
                         <td>
@@ -65,29 +65,7 @@
     </div>
 
     <!--  delete Modal -->
-    <div class="modal fade" id="edit" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">ลบสมาชิก</h5>
-                </div>
-
-                <form method="post">
-                    @csrf
-                    {{method_field('DELETE')}}
-
-
-                    <div class="modal-body">
-                        ต้องการลบสมาชิก {{ $row->name }}
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">ยกเลิก</button>
-                        <button type="submit" class="btn btn-danger">ยืนยันการลบ</button>
-                    </div>
-                </form>
-            </div>
-        </div>
-    </div>
+    
 
     <!-- end delete Modal -->
 </div>
