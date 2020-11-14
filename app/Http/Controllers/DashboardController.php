@@ -54,9 +54,9 @@ class DashboardController extends Controller
     
     public function update(Request $request, $id)
     {
-        $user = User::find(Auth::user()->id);
+        $users = User::find(Auth::user()->id);
   
-        if ($user) {
+        if ($users) {
             $validate = null;
             if (Auth::user()->email == $request['email']) {
                 $validate = $request->validate([
@@ -75,12 +75,12 @@ class DashboardController extends Controller
                 ]);
             }
             if ($validate) {
-                $user->name = $request['name'];
-                $user->telephone = $request['telephone'];
-                $user->email = $request['email'];
-                $user->address = $request['address'];
+                $users->name = $request['name'];
+                $users->telephone = $request['telephone'];
+                $users->email = $request['email'];
+                $users->address = $request['address'];
 
-                $user->save();
+                $users->save();
                 $request->session()->flash('success', ' User updated successfully');
                 return redirect('admin');
             } else {
