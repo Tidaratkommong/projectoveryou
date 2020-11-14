@@ -54,11 +54,11 @@ class DashboardController extends Controller
     
     public function update(Request $request, $id)
     {
-        $users = User::find(Auth::users()->id);
+        $users = User::find(Auth::user()->id);
   
         if ($users) {
             $validate = null;
-            if (Auth::users()->email == $request['email']) {
+            if (Auth::user()->email == $request['email']) {
                 $validate = $request->validate([
                     'name' => 'required',
                     'address' => 'required',
