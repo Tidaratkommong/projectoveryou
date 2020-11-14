@@ -54,20 +54,45 @@ class DashboardController extends Controller
     
     public function update(Request $request, $id)
     {
-        $request->validate([
-            'name' => 'required',  
-            'telephone' => 'required',
-            'email' => 'required|email|unique:users',
-            'address' => 'required',
-          ]);
-          $users = User::find($id);
-          $users->name = $request->get('name');
-          $users->telephone = $request->get('telephone');
-          $users->email = $request->get('email');
-          $users->address = $request->get('address');
-          $users->save();
-          return redirect()->route('admin.index_user')
-                          ->with('success', ' User updated successfully');
+        $user = User::find(Auth::user()->id);
+  
+        if ($user) {
+            $validate = null;
+            if (Auth::user()->email == $request['email']) {
+                $validate = $request->validate([
+                    'name' => 'required',
+                    'address' => 'required',
+                    'telephone' => 'required',
+                    'email' => 'required',
+                  
+                ]);
+            } else {
+                $validate = $request->validate([
+                    'name' => 'required',  
+                    'telephone' => 'required',
+                    'email' => 'required|email|unique:users',
+                    'address' => 'required',
+                ]);
+            }
+            if ($validate) {
+                $user->name = $request['name'];
+                $user->telephone = $request['telephone'];
+                $user->email = $request['email'];
+                $user->address = $request['address'];
+
+                $user->save();
+                $request->session()->flash('success', ' User updated successfully');
+                return redirect('admin');
+            } else {
+                return redirect()->back();
+            }
+        } else {
+            return redirect()->back();
+        }
+
+
+          //return redirect()->route('admin.index_user')
+                          //->with('success', ' User updated successfully');
        
     }
 
