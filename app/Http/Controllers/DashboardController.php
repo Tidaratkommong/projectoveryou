@@ -58,7 +58,7 @@ class DashboardController extends Controller
   
         if ($users) {
             $validate = null;
-            if (Auth::user()->email == $request['email']) {
+            if (Auth::users()->email == $request['email']) {
                 $validate = $request->validate([
                     'name' => 'required',
                     'address' => 'required',
