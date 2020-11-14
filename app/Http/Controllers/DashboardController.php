@@ -46,55 +46,35 @@ class DashboardController extends Controller
     {
 
         $users = User::find($id);
-        return view('admin.edit_user', compact('users'));
-        
-       
+        return view('admin.edit_user', compact('users'));    
     }
 
-    
-    public function update(Request $request)
+
+    public function update(Request $request, $id)
     {
-        $users = User::find(Auth::user()->id);
-  
-        if ($users) {
-            $validate = null;
-            if (Auth::user()->email == $request['email']) {
-                $validate = $request->validate([
-                    'name' => 'required',
-                    'address' => 'required',
-                    'telephone' => 'required',
-                    'email' => 'required',
-                  
-                ]);
-            } else {
-                $validate = $request->validate([
-                    'name' => 'required',  
-                    'telephone' => 'required',
-                    'email' => 'required|email|unique:users',
-                    'address' => 'required',
-                ]);
-            }
-            if ($validate) {
-                $users->name = $request['name'];
-                $users->telephone = $request['telephone'];
-                $users->email = $request['email'];
-                $users->address = $request['address'];
+      $request->validate([
+        'name' => 'required',
+        'address' => 'required',
+        'telephone' => 'required',
+        'email' => 'required',
 
-                $users->save();
-                $request->session()->flash('success', ' User updated successfully');
-                return redirect()->back();
-            } else {
-                return redirect()->back();
-            }
-        } else {
-            return redirect()->back();
-        }
+      ]);
+      $users = User::find($id);
+      $users->name = $request->get('name');
+      $users->address = $request->get('address');
+      $users->telephone = $request->get('telephone');
+      $users->email = $request->get('email');
+      $users->save();
+      return redirect('admin.edit_user')->with('success', 'User updated successfully');  
 
-
+      //return redirect()->route('admin.edit_user')
+                      //->with('success', 'User updated successfully');
+    }
+    
           //return redirect()->route('admin.index_user')
                           //->with('success', ' User updated successfully');
        
-    }
+    
 
     public function destroy($id)
     {
