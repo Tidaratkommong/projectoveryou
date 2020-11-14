@@ -50,10 +50,10 @@
                     <div class="row no-gutters px-0">
                         <!--row-->
                         @foreach($product as $value)
-                            <div class="col-6 col-sm-6 col-md-3 bg-light px-1">
-                                <a href="javascript:void(0);">
+                            <div class="col-6 col-sm-4 col-md-3 bg-light px-1">
+                                <div href="javascript:void(0);">
                                      <div class="card  mb-2 shadow-sm" style="width: 16rem; height:30rem;">
-                                    <img class="text-center w-100" src="{{asset($value->product_img )}}"  />
+                                    <img class="text-center w-100" src="{{asset($value->product_img )}}" style="width: 180px; height:270px;" />
                                     <br/>
 
                                         <div class=" text-dark text-center">ชื่อสินค้า : {{ $value->product_name }}</div>
@@ -63,7 +63,7 @@
                                         <div class="text-center text-danger"><button class="btn btn-outline my-1 my-sm-0 text-danger" type="submit" ><a  class=" text-danger" href="#" /> สั่งซื้อสินค้า <i class="fa fa-shopping-cart" aria-hidden="true"></i></a></button></div>
                                         <!--<div class="text-center"> <a class=" text-danger"  />เพิ่มไปยังรถเข็น</a></div>-->
                                     </div>
-                             </a>
+                            </div>
                             </div>
                        @endforeach
                        
