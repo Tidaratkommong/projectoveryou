@@ -54,7 +54,7 @@ class DashboardController extends Controller
     
     public function update(Request $request, $id)
     {
-        $users = User::find(Auth::user()->id);
+        $users = User::find(Auth::users()->id);
   
         if ($users) {
             $validate = null;
