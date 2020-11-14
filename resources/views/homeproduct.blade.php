@@ -52,7 +52,7 @@
                         @foreach($product as $value)
                             <div class="col-6 col-sm-4 col-md-3 bg-light px-1">
                                 <div href="javascript:void(0);">
-                                     <div class="card  mb-2 shadow-sm" style="width: 16rem; height:26rem;">
+                                     <div class="card  mb-2 shadow-sm" style="width: 16rem; height:27rem;">
                                     <img class="text-center w-100" src="{{asset($value->product_img )}}" style="width: 180px; height:270px;" />
                                         <div class=" text-dark text-center">ชื่อสินค้า : {{ $value->product_name }}</div>
                                         <div class="discount_price text-dark text-center"> จำนวนสินค้า : {{$value->product_num }} <span>ตัว</span> </div>
