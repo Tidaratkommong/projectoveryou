@@ -82,7 +82,7 @@ class DashboardController extends Controller
 
                 $users->save();
                 $request->session()->flash('success', ' User updated successfully');
-                return redirect('admin');
+                return redirect()->back();
             } else {
                 return redirect()->back();
             }
