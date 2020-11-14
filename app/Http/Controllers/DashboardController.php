@@ -65,7 +65,7 @@ class DashboardController extends Controller
       $users->telephone = $request->get('telephone');
       $users->email = $request->get('email');
       $users->save();
-      return redirect('admin')->with('success', 'User updated successfully');  
+      return redirect('admin')->with('success', 'แก้ไขข้อมูลสมาชิกสำเร็จ');  
 
       //return redirect()->route('admin.edit_user')
                       //->with('success', 'User updated successfully');

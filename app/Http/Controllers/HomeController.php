@@ -31,8 +31,8 @@ class HomeController extends Controller
             return view('adminhome');
             
         } else {
-            return view('home');
-           // return view('welcome');
+           // return view('home');
+            return view('welcome');
         }  
     }
 }
