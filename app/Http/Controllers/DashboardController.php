@@ -67,7 +67,7 @@ class DashboardController extends Controller
           $users->address = $request->get('address');
           $users->save();
           return redirect()->route('admin.index_user')
-                          ->with('success', 'Biodata siswa updated successfully');
+                          ->with('success', ' User updated successfully');
        
     }
 
