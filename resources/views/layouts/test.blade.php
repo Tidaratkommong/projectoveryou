@@ -82,7 +82,7 @@
 
                             <!-- Search Widget -->
                             <div class="form-inline my-2 my-lg-0">
-                                <form class="card-body" action="/search" method="GET" role="search">
+                                <form class="card-body form-inline my-2 my-lg-0" action="/search" method="GET" role="search">
                                     {{ csrf_field() }}
                                     <div class="input-group">
                                         <input class="form-control mr-sm-2" type="text" class="form-control" placeholder="ค้นหาสินค้าที่คุณต้องการ" name="q"  style="width: 28rem;">
