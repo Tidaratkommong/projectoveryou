@@ -81,7 +81,7 @@
                             </form>-->
 
                             <!-- Search Widget -->
-                            <div class="form-inline my-2 my-lg-0">
+                           
                                 <form class="card-body form-inline my-2 my-lg-0" action="/search" method="GET" role="search">
                                     {{ csrf_field() }}
                                     <div class="input-group">
@@ -91,7 +91,7 @@
                                         </span>
                                     </div>
                                 </form>
-                            </div>
+                           
 
 
                             @guest
