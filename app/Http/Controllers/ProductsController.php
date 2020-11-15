@@ -42,7 +42,8 @@ class ProductsController extends Controller
     public function search(Request $request)
     {
         $search = $request->get('search');
-        $posts = DB::table('poducts')->
+        $product = DB::table('poducts')->where('product_name','like','%'.$search.'%')->paginate(5);
+        return view('welcome',['product' => $product]);
     }
 
 
