@@ -44,14 +44,15 @@
     <form class=" form-inline my-2 my-lg-0" action="/search" method="GET" role="search">
         {{ csrf_field() }}
         <div class="input-group">
-            <input class="form-control mr-sm-2" type="text" class="form-control" placeholder="ค้นหาสินค้าที่คุณต้องการ" name="q" style="width: 38rem;">
+            <input class="form-control mr-sm-2" type="text" class="form-control" placeholder="ค้นหาสินค้าที่คุณต้องการ" name="q" style="width: 48rem;">
             <span class="input-group-btn">
                 <button class="btn btn-outline-success my-2 my-sm-0" type="submit"><i class="fas fa-search cus-icon py-1"></i></button>
             </span>
         </div>
     </form>
+    <br />
+    <br />
 
-    
     <!--product -->
     <div class="breadcrumb">
         <h5><a href="{{url('/homeproduct')}}">สินค้าทั้งหมด</a></h5>
