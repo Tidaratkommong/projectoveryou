@@ -52,7 +52,7 @@ Route::group(['prefix' => 'admin'], function(){
     });
 });
 
-//Route::get('/search', [ProductController::class, 'search']);
+
 
 
 Route::get('admin/index_user', 'DashboardController@index')->name('admin/index_user');
@@ -78,7 +78,8 @@ Route::resource('product', 'ProductsController');
 Route::get('product/{id}','ProductsController@show')->name('product/view_product');
 Route::delete('/product/{id}', 'ProductController@Destroy');
 
-Route::get('/search', 'ProductController@search');
+Route::get('/search', [ProductController::class, 'search']);
+//Route::get('/search', 'ProductController@search');
 
 
 //Route::post('/product','ProductController@update');
