@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use App\Product;
 
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
 use Symfony\Component\VarDumper\Cloner\Data;
 
 class ProductsController extends Controller
@@ -42,7 +41,7 @@ class ProductsController extends Controller
     public function search(Request $request)
     {
         $search = $request->get('search');
-        $product = Product::where('product_name','like','%'.$search.'%')->pet();
+        $product = Product::where('product_name','LIKE','%'.$search.'%')->get();
         return view('welcome',compact('product'));
     }
 
