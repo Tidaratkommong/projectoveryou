@@ -81,8 +81,7 @@
                             </form>-->
 
                             <!-- Search Widget -->
-                            <div class="card my-4">
-                                <h5 class="card-header">Search</h5>
+                            <div class="form-inline my-2 my-lg-0">
                                 <form class="card-body" action="/search" method="GET" role="search">
                                     {{ csrf_field() }}
                                     <div class="input-group">
