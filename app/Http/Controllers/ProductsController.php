@@ -15,8 +15,6 @@ class ProductsController extends Controller
      */
     public function index()
     {
-
-
         $product = Product::latest()->paginate(7);
         return view('product.index_product', compact('product'))
             ->with('i', (request()->input('page', 1) - 1) * 7);
@@ -39,6 +37,9 @@ class ProductsController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
+
+
+     
     public function store(Request $request)
     {
         //validate
