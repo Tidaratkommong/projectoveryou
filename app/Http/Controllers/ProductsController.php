@@ -38,9 +38,9 @@ class ProductsController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function search(Request $request)
+    public function search()
     {
-        $search = $request->get('search');
+        $search = $_GET['search'];
         $product = Product::where('product_name','LIKE','%'.$search.'%')->get();
         return view('welcome',compact('product'));
     }
