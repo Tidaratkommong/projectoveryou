@@ -32,8 +32,8 @@
             <nav class="navbar navbar-expand-md navbar-dark bg-dark sticky-top">
 
                 <div class="container-fluid my-4">
-                      <!--<a href="{{ url('/') }}"> <img src="https://www.img.in.th/images/2ca66c73960a89eeaa7a3407cf46eb32.th.jpg" class="img-rounded" alt="Cinque Terre" style="width:100px;height:55px;"></a>-->
-                     
+                    <!--<a href="{{ url('/') }}"> <img src="https://www.img.in.th/images/2ca66c73960a89eeaa7a3407cf46eb32.th.jpg" class="img-rounded" alt="Cinque Terre" style="width:100px;height:55px;"></a>-->
+
                     <a class="navbar-brand" href="{{url('/')}}"> Over You 99</a>
 
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
@@ -45,40 +45,56 @@
                         <ul class="navbar-nav mr-auto">
 
                         </ul>
-                        
+
                         <!-- Right Side Of Navbar -->
                         <ul class="navbar-nav ml-auto">
                             <!-- Authentication Links -->
 
                             <li class="nav-item">
-                                <a class="btn btn-link text-light" href="{{ url('help') }}"><i class="fa fa-info-circle" aria-hidden="true"></i>  การช่วยเหลือ</a>
+                                <a class="btn btn-link text-light" href="{{ url('help') }}"><i class="fa fa-info-circle" aria-hidden="true"></i> การช่วยเหลือ</a>
                             </li>
                             <li class="nav-item">
                                 <a class="btn btn-link text-light" href="{{ url('about') }}"><i class="fa fa-compress" aria-hidden="true"></i> เกี่ยวกับเรา</a>
                             </li>
-                           <!-- <li class="nav-item">
+                            <!-- <li class="nav-item">
                                 <a class="btn btn-link text-light" href="#"> โปรโมชั่น</a>
                             </li>-->
                             <li class="nav-item">
                                 <a class="btn btn-link text-light" href="https://www.facebook.com/overyou99">ติดตามเรา</a></blockquote>
                             </li>
-                            
+
                             <!--<li class="nav-item">
                                 <a class="btn btn-link text-light" href="#"><i class="fa fa-comments" aria-hidden="true"></i>  Chat กับเรา</a>
                             </li>-->
                             <li class="nav-item">
-                                <a class="btn btn-link text-light" href="{{ url('shipments') }} " > ตรวจสอบการจัดส่ง</a>
+                                <a class="btn btn-link text-light" href="{{ url('shipments') }} "> ตรวจสอบการจัดส่ง</a>
                             </li>
 
                             <li class="nav-item">
                                 <a class="btn btn-link text-light" href="#"> ออกแบบ.....</a>
                             </li>
 
-                            <form class="form-inline my-2 my-lg-0">
+                            <!--<form class="form-inline my-2 my-lg-0">
                                 <input class="form-control mr-sm-2" type="search" placeholder="ค้นหาสินค้าที่คุณต้องการ" aria-label="Search" style="width: 28rem;">
                                 <button class="btn btn-outline-success my-2 my-sm-0" type="submit"> <i class="fas fa-search cus-icon py-1"></i></button>
                                 
-                            </form>
+                            </form>-->
+
+                            <!-- Search Widget -->
+                            <div class="card my-4">
+                                <h5 class="card-header">Search</h5>
+                                <form class="card-body" action="/search" method="GET" role="search">
+                                    {{ csrf_field() }}
+                                    <div class="input-group">
+                                        <input type="text" class="form-control" placeholder="Search for..." name="q">
+                                        <span class="input-group-btn">
+                                            <button class="btn btn-secondary" type="submit">Go!</button>
+                                        </span>
+                                    </div>
+                                </form>
+                            </div>
+
+
                             @guest
                             <li class="nav-item">
                                 <a class="nav-link text-light" href="{{ route('login') }}"> {{ __('เข้าสู่ระบบ') }}</a>
@@ -89,15 +105,15 @@
                             </li>
                             @endif
                             @else
-                           
+
                             <div class="card-body py-0">
-                            <form class="form-inline ">
-                                <a class="btn btn-outline-warning" type="submit" href="#">
-                                 <i class="fa fa-shopping-cart cus-icon py-1"> </i>
-                                </a>
-                               
-                            </form>
-                         </div>
+                                <form class="form-inline ">
+                                    <a class="btn btn-outline-warning" type="submit" href="#">
+                                        <i class="fa fa-shopping-cart cus-icon py-1"> </i>
+                                    </a>
+
+                                </form>
+                            </div>
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle fas fa-user text-light" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     {{ Auth::user()->name }}
