@@ -165,4 +165,12 @@ class ProductsController extends Controller
         Product::find($id)->delete();
         return redirect('product');
     }
+
+    
+    public function search()
+    {
+        $search = $_GET['search'];
+        $product = Product::where('product_name','LIKE','%'.$search.'%')->get();
+        return redirect('/',compact('product'));
+    }
 }

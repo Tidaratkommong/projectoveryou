@@ -8,12 +8,6 @@ use Illuminate\Http\Request;
 class PostController extends Controller
 {
 
-    public function search()
-    {
-        $search = $_GET['search'];
-        $product = Product::where('product_name','LIKE','%'.$search.'%')->with('product')->get();
-        return redirect('/',compact('product'));
-    }
     /**
      * Display a listing of the resource.
      *
