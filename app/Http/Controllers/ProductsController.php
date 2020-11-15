@@ -42,7 +42,7 @@ class ProductsController extends Controller
     public function search(Request $request)
     {
         $search = $request->get('search');
-        $product = DB::table('poducts')->where('product_name','like','%'.$search.'%')->paginate(5);
+        $product = DB::table('products')->where('product_name','like','%'.$search.'%')->paginate(5);
         return view('welcome',['product' => $product]);
     }
 
