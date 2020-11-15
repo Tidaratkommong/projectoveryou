@@ -2,6 +2,7 @@
 
 use App\Repositories\TodoRepositoryInterface;
 use Illuminate\Http\Request;
+use App\Http\Controllers\PostController;
 use Illuminate\Support\Facades\Route;
 
 /*
