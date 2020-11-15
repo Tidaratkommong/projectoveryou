@@ -54,7 +54,7 @@
                         <div class="col-6 col-sm-4 col-md-3 bg-light px-1">
                                 <div href="javascript:void(0);">
                                     <a href="{{ route('login') }}" class="card  mb-2 shadow-sm" style="width: 16rem; height:20rem;">
-                                    <img class="text-center w-100" src="{{asset($value->product_img )}}" style="width: 180px; height:270px;"  />
+                                    <img class="text-center w-100" src="{{asset($value->product_img )}}" style="width: 180px; height:250px;"  />
                                         <div class=" text-dark text-center">{{ $value->product_name }}</div>
                                         <div class="price text-dark text-center"> ราคา : {{ $value->product_price }}<span> บาท </span></div>  
                                     </a>
