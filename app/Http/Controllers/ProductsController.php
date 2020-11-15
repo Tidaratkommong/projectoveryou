@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Product;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+use Symfony\Component\VarDumper\Cloner\Data;
 
 class ProductsController extends Controller
 {
@@ -37,9 +39,13 @@ class ProductsController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
+    public function search(Request $request)
+    {
+        $search = $request->get('search');
+        $posts = DB::table('poducts')->
+    }
 
 
-     
     public function store(Request $request)
     {
         //validate

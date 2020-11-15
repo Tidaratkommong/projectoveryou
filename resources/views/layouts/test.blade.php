@@ -82,7 +82,7 @@
 
                             <!-- Search Widget -->
                            
-                                <form class=" form-inline my-2 my-lg-0" action="/search" method="GET" role="search">
+                               <!-- <form class=" form-inline my-2 my-lg-0" action="/search" method="GET" role="search">
                                     {{ csrf_field() }}
                                     <div class="input-group">
                                         <input class="form-control mr-sm-2" type="text" class="form-control" placeholder="ค้นหาสินค้าที่คุณต้องการ" name="q"  style="width: 28rem;">
@@ -90,7 +90,7 @@
                                             <button class="btn btn-outline-success my-2 my-sm-0" type="submit"><i class="fas fa-search cus-icon py-1"></i></button>
                                         </span>
                                     </div>
-                                </form>
+                                </form>-->
                            
 
 
