@@ -51,7 +51,7 @@
                         <!--row-->
                         @guest
 
-                        @foreach($product as $value)
+                     
                         
                         <div class="products text-center">
                         @foreach($product as $value)
