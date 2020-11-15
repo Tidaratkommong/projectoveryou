@@ -78,7 +78,7 @@ Route::resource('product', 'ProductsController');
 Route::get('product/{id}','ProductsController@show')->name('product/view_product');
 Route::delete('/product/{id}', 'ProductController@Destroy');
 
-Route::get('/search', [ProductController::class, 'search']);
+Route::get('/search', [PostController::class, 'search']);
 //Route::get('/search', 'ProductController@search');
 
 
