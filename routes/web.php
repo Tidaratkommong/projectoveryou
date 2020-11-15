@@ -52,6 +52,8 @@ Route::group(['prefix' => 'admin'], function(){
     });
 });
 
+Route::get('/search', [PostController::class, 'search']);
+
 
 Route::get('admin/index_user', 'DashboardController@index')->name('admin/index_user');
 Route::resource('admin', 'DashboardController');
@@ -132,3 +134,4 @@ Route::get('test',function(TodoRepositoryInterface $repository){
     
     dd($repository->all());
 });
+
