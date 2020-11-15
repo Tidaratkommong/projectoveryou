@@ -12,7 +12,7 @@ class PostController extends Controller
     {
         $search = $_GET['search'];
         $product = Product::where('product_name','LIKE','%'.$search.'%')->with('product')->get();
-        return view('welcome',compact('product'));
+        return redirect('/',compact('product'));
     }
     /**
      * Display a listing of the resource.
