@@ -12,17 +12,17 @@
         </ol>
         <div class="carousel-inner">
             <div class="carousel-item active">
-                <img src="promo2.jpg" width="270" height="300" class="d-block w-100" alt="...">
+                <img src="promo2.jpg" width="270" height="290" class="d-block w-100" alt="...">
                 <div class="carousel-caption d-none d-md-block">
                 </div>
             </div>
             <div class="carousel-item">
-                <img src="promo3.jpg" width="270" height="300" class="d-block w-100" alt="...">
+                <img src="promo3.jpg" width="270" height="290" class="d-block w-100" alt="...">
                 <div class="carousel-caption d-none d-md-block">
                 </div>
             </div>
             <div class="carousel-item">
-                <img src="promo1.jpg" width="270" height="300" class="d-block w-100" alt="...">
+                <img src="promo1.jpg" width="270" height="290" class="d-block w-100" alt="...">
                 <div class="carousel-caption d-none d-md-block">
                 </div>
             </div>
@@ -44,7 +44,7 @@
     <form class=" form-inline my-2 my-lg-0" action="/search" method="GET" role="search">
         {{ csrf_field() }}
         <div class="input-group">
-            <input class="form-control mr-sm-2" type="text" class="form-control" placeholder="ค้นหาสินค้าที่คุณต้องการ" name="q" style="width: 58rem;">
+            <input class="form-control mr-sm-4" type="text" class="form-control" placeholder="ค้นหาสินค้าที่คุณต้องการ" name="q" style="width: 68rem;">
             <span class="input-group-btn">
                 <button class="btn btn-outline-success my-2 my-sm-0" type="submit"><i class="fas fa-search cus-icon py-1"></i></button>
             </span>
