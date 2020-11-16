@@ -53,8 +53,8 @@
     </form>
     <br />
     <!--product -->
+    <h5>สินค้าทั้งหมด</h5>
     <div class="breadcrumb">
-        <h5>สินค้าทั้งหมด</h5>
         <main>
             <div class="page-overlay-bg">
                 <div class="container-fluid m-0 p-0">
@@ -66,8 +66,8 @@
                             <div href="javascript:void(0);">
                                 <a href="#" class="card  mb-2 shadow-sm" style="width: 16rem; height:18rem;">
                                     <img class="text-center w-100" src="{{asset($value->product_img )}}" style="width: 150px; height:230px;" />
-                                    <div class=" text-dark text-center">{{ $value->product_name }}</div>
-                                    <div class="price text-dark text-center"> ราคา : {{ $value->product_price }}<span> บาท </span></div>
+                                    <div class=" text-dark text-center"> <h5>{{ $value->product_name }} <h5></div>
+                                    <div class="price text-dark text-center"> <h5> ราคา : {{ $value->product_price }}<span> บาท  </h5></span></div>
                                 </a>
                             </div>
                         </div>

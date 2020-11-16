@@ -44,14 +44,14 @@
     <form class=" form-inline my-2 my-lg-0" action="/search" method="GET" role="search">
         {{ csrf_field() }}
         <div class="input-group">
-            <input class="form-control mr-sm-4" type="text" class="form-control" placeholder="ค้นหาสินค้าที่คุณต้องการ" name="search" style="width: 64rem;">
+            <input class="form-control mr-sm-4" type="text" class="form-control" placeholder="ค้นหาสินค้าที่คุณต้องการ" name="search" style="width: 64rem; height:2rem;">
             <span class="input-group-btn">
                 <button class="btn btn-outline-success my-2 my-sm-0" type="submit"><i class="fas fa-search cus-icon py-1"></i></button>
             </span>
         </div>
     </form>
     <br />
-    
+
     <!--product -->
     <h5><a href="{{url('/homeproduct')}}">สินค้าทั้งหมด</a></h5>
     <div class="breadcrumb">
@@ -68,8 +68,8 @@
                             <div href="javascript:void(0);">
                                 <a href="{{ route('login') }}" class="card  mb-2 shadow-sm" style="width: 16rem; height:18rem;">
                                     <img class="text-center w-100" src="{{asset($value->product_img )}}" style="width: 150px; height:230px;" />
-                                    <div class=" text-dark text-center">{{ $value->product_name }}</div>
-                                    <div class="price text-dark text-center"> ราคา : {{ $value->product_price }}<span> บาท </span></div>
+                                    <div class=" text-dark text-center"><h5>{{ $value->product_name }}</h5></div>
+                                    <div class="price text-dark text-center"><h5> ราคา : {{ $value->product_price }}<span> บาท  </h5> </span></div>
                                 </a>
                             </div>
                         </div>
