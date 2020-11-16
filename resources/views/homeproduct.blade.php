@@ -47,7 +47,7 @@
         <div class="input-group">
             <input class="form-control mr-sm-4" type="text" class="form-control" placeholder="ค้นหาสินค้าที่คุณต้องการ" name="search" style="width: 64rem; height:3rem;">
             <span class="input-group-btn">
-                <button class="btn btn-outline-success my-2 my-sm-0" type="submit" style="height:3rem;"><i class="fas fa-search cus-icon py-1"></i></button>
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit" style="width: 3rem; height:3rem;"><i class="fas fa-search cus-icon py-1"></i></button>
             </span>
         </div>
     </form>
