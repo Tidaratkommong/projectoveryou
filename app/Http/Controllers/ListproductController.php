@@ -88,4 +88,11 @@ class ListproductController extends Controller
     {
         //
     }
+
+    public function search()
+    {
+        $search = $_GET['search'];
+        $product = Product::where('product_name','LIKE','%'.$search.'%')->get();
+        return view('welcome', compact('products'));
+    }
 }

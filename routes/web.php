@@ -3,7 +3,7 @@
 use App\Repositories\TodoRepositoryInterface;
 use Illuminate\Http\Request;
 use App\Http\Controllers\ProductController;
-use App\Http\Controllers\PostController;
+use App\Http\Controllers\ListproductController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -80,10 +80,11 @@ Route::resource('product', 'ProductsController');
 Route::get('product/{id}','ProductsController@show')->name('product/view_product');
 Route::delete('/product/{id}', 'ProductController@Destroy');
 
-//Route::get('/search', [PostController::class, 'search']);
+Route::get('/search', [ListproductController::class, 'search']);
+
 //Route::get('/search', [ProductController::class, 'search']);
 
-Route::get('/search', 'ProductController@search');
+//Route::get('/search', 'ProductController@search');
 
 
 //Route::post('/product','ProductController@update');
