@@ -13,17 +13,17 @@
         </ol>
         <div class="carousel-inner">
             <div class="carousel-item active">
-                <img src="promo2.jpg" width="270" height="350" class="d-block w-100" alt="...">
+                <img src="promo2.jpg" width="270" height="290" class="d-block w-100" alt="...">
                 <div class="carousel-caption d-none d-md-block">
                 </div>
             </div>
             <div class="carousel-item">
-                <img src="promo3.jpg" width="270" height="350" class="d-block w-100" alt="...">
+                <img src="promo3.jpg" width="270" height="290" class="d-block w-100" alt="...">
                 <div class="carousel-caption d-none d-md-block">
                 </div>
             </div>
             <div class="carousel-item">
-                <img src="promo1.jpg" width="270" height="350" class="d-block w-100" alt="...">
+                <img src="promo1.jpg" width="270" height="290" class="d-block w-100" alt="...">
                 <div class="carousel-caption d-none d-md-block">
                 </div>
             </div>
@@ -39,10 +39,22 @@
         </a>
     </div>
 
+    <br />
+    <!-- Search Widget -->
 
+    <form class=" form-inline my-2 my-lg-0" action="/search" method="GET" role="search">
+        {{ csrf_field() }}
+        <div class="input-group">
+            <input class="form-control mr-sm-4" type="text" class="form-control" placeholder="ค้นหาสินค้าที่คุณต้องการ" name="search" style="width: 64rem;">
+            <span class="input-group-btn">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit"><i class="fas fa-search cus-icon py-1"></i></button>
+            </span>
+        </div>
+    </form>
     <br />
     <!--product -->
-    <div class="breadcrumb"><h5>สินค้าทั้งหมด</h5>
+    <div class="breadcrumb">
+        <h5>สินค้าทั้งหมด</h5>
         <main>
             <div class="page-overlay-bg">
                 <div class="container-fluid m-0 p-0">
@@ -51,19 +63,19 @@
                         <!--row-->
                         @foreach($product as $value)
                         <div class="col-6 col-sm-4 col-md-3 bg-light px-1">
-                                <div href="javascript:void(0);">
-                                    <a href="#" class="card  mb-2 shadow-sm" style="width: 16rem; height:18rem;">
-                                    <img class="text-center w-100" src="{{asset($value->product_img )}}" style="width: 150px; height:230px;"  />
-                                        <div class=" text-dark text-center">{{ $value->product_name }}</div>
-                                        <div class="price text-dark text-center"> ราคา : {{ $value->product_price }}<span> บาท </span></div>  
-                                    </a>
-                             </div>
+                            <div href="javascript:void(0);">
+                                <a href="#" class="card  mb-2 shadow-sm" style="width: 16rem; height:18rem;">
+                                    <img class="text-center w-100" src="{{asset($value->product_img )}}" style="width: 150px; height:230px;" />
+                                    <div class=" text-dark text-center">{{ $value->product_name }}</div>
+                                    <div class="price text-dark text-center"> ราคา : {{ $value->product_price }}<span> บาท </span></div>
+                                </a>
+                            </div>
                         </div>
-                       @endforeach
+                        @endforeach
 
 
-                       
-                   
+
+
                     </div>
                     <!--row-->
                 </div>
@@ -74,15 +86,16 @@
     </div>
 
     <div>
-  
 
-<!-- chatbot-->
 
-<!--<link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">-->
+        <!-- chatbot-->
 
-<link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,700,800" rel="stylesheet">      
+        <!--<link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">-->
+
+        <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,700,800" rel="stylesheet">
         <style>
-            html, body {
+            html,
+            body {
                 background-color: #fff;
                 color: #636b6f;
                 font-family: sans-serif;
@@ -91,43 +104,44 @@
                 margin: 0;
             }
         </style>
-    </head>
-    <body>
-    </body>
-  
-    <link rel="stylesheet" type="text/css" >
-    <script>
-	    var botmanWidget = {
-	        aboutText: 'ssdsd',
-            title: 'Over You 99',
-            mainColor: '#F28240',
-            bubbleBackground: '#F28240',
-            introMessage: '✋สวัสดีค่ะ นี่เป็นข้อความอัตโนมัติ มีอะไรให้เราช่วยไหมคะ ถ้าต้องการเริ่มต้นใหม่ พิมพ์คำว่า "เริ่มใหม่" ได้ตลอดเวลา ',
-            placeholderText: 'Ask Me Something',
-            aboutLink: 'mhdevelopment.gr'
-            
-	    };
-    </script> 
+        </head>
+
+        <body>
+        </body>
+
+        <link rel="stylesheet" type="text/css">
+        <script>
+            var botmanWidget = {
+                aboutText: 'ssdsd',
+                title: 'Over You 99',
+                mainColor: '#F28240',
+                bubbleBackground: '#F28240',
+                introMessage: '✋สวัสดีค่ะ นี่เป็นข้อความอัตโนมัติ มีอะไรให้เราช่วยไหมคะ ถ้าต้องการเริ่มต้นใหม่ พิมพ์คำว่า "เริ่มใหม่" ได้ตลอดเวลา ',
+                placeholderText: 'Ask Me Something',
+                aboutLink: 'mhdevelopment.gr'
+
+            };
+        </script>
         <script src='https://cdn.jsdelivr.net/npm/botman-web-widget@0/build/js/widget.js'></script>
 
 
-  <!-- endchatbot --> 
-
-  
-<br/>
-<br/>
-
-<ul class="nav justify-content-center bg-dark fixed-bottom ">
-    <li class="nav-item">
-        <a class="btn btn-link" href="#"></a>
-    </li>
-    <br/>
-    
-</ul>
+        <!-- endchatbot -->
 
 
+        <br />
+        <br />
+
+        <ul class="nav justify-content-center bg-dark fixed-bottom ">
+            <li class="nav-item">
+                <a class="btn btn-link" href="#"></a>
+            </li>
+            <br />
+
+        </ul>
 
 
 
 
-@endsection
+
+
+        @endsection
