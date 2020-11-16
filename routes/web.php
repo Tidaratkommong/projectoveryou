@@ -82,7 +82,7 @@ Route::delete('/product/{id}', 'ProductController@Destroy');
 
 Route::get('/search', [ListproductController::class, 'search']);
 
-Route::get('/search', [ListproducthomeController::class, 'search']);
+Route::get('/searchproduct', [ListproducthomeController::class, 'search']);
 
 //Route::get('/search', [ProductController::class, 'search']);
 

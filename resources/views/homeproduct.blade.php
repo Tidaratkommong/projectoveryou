@@ -42,7 +42,7 @@
     <br />
     <!-- Search Widget -->
 
-    <form class=" form-inline my-2 my-lg-0" action="/search" method="GET" role="search">
+    <form class=" form-inline my-2 my-lg-0" action="/searchproduct" method="GET" role="search">
         {{ csrf_field() }}
         <div class="input-group">
             <input class="form-control mr-sm-4" type="text" class="form-control" placeholder="ค้นหาสินค้าที่คุณต้องการ" name="search" style="width: 64rem;">
