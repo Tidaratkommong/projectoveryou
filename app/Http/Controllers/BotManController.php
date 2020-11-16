@@ -38,9 +38,7 @@ class BotManController extends Controller
             $this->startConversation($bot);
         });
 
-        $botman->hears(function ($bot) {
-              $this->startConversation($bot);
-        });
+       
 
         // 
         $botman->fallback(function($bot) {
