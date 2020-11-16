@@ -88,6 +88,6 @@ class ListproducthomeController extends Controller
     {
         $search = $_GET['search'];
         $product = Product::where('product_name','LIKE','%'.$search.'%')->get();
-        return redirect('/',compact('product'));
+        return view('/homeproduct', compact('product'));
     }
 }
