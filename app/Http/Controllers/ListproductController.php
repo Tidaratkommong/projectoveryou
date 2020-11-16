@@ -51,8 +51,8 @@ class ListproductController extends Controller
      */
     public function show($id)
     {
-        $products = Product::findOrFail($id);
-        return view('welcome', compact('products'));
+        $product = Product::findOrFail($id);
+        return view('welcome', compact('product'));
     }
 
     /**
@@ -92,7 +92,7 @@ class ListproductController extends Controller
     public function search()
     {
         $search = $_GET['search'];
-        $products = Product::where('product_name','LIKE','%'.$search.'%')->get();
-        return view('welcome', compact('products'));
+        $product = Product::where('product_name','LIKE','%'.$search.'%')->get();
+        return view('welcome', compact('product'));
     }
 }
