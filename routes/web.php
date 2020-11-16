@@ -17,8 +17,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-
-
 Route::get('/', function () {
     return view('welcome');
 });
@@ -55,16 +53,12 @@ Route::group(['prefix' => 'admin'], function(){
 });
 
 
-
-
 Route::get('admin/index_user', 'DashboardController@index')->name('admin/index_user');
 Route::resource('admin', 'DashboardController');
 
 //Route::get('admin/edit_user', 'DashboardController@edit')->name('admin/edit_user');
 //Route::delete('/delete_user/{id}', 'DashboardController@registeredDelete');
 
-//fullcalender
-//Route::resource('tasks', 'TasksController');
 
 
 //profile
@@ -80,8 +74,8 @@ Route::resource('product', 'ProductsController');
 Route::get('product/{id}','ProductsController@show')->name('product/view_product');
 Route::delete('/product/{id}', 'ProductController@Destroy');
 
+//search
 Route::get('/search', [ListproductController::class, 'search']);
-
 Route::get('/searchproduct', [ListproducthomeController::class, 'search']);
 
 //Route::get('/search', [ProductController::class, 'search']);
@@ -124,11 +118,8 @@ Route::get('/displaydata','EventController@show');
 Route::get('/', 'ListproductController@index');
 //Route::get('/{id}','ListproductController@show'); // detail product
 
-
 // view home
 Route::get('/homeproduct', 'ListproducthomeController@index');
-
-
 
 
 //chatbot

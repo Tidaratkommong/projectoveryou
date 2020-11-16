@@ -37,6 +37,11 @@ class BotManController extends Controller
         $botman->hears('เริ่มใหม่', function ($bot) {
             $this->startConversation($bot);
         });
+
+        $botman->hears(function ($bot) {
+              $this->startConversation($bot);
+        });
+
         // 
         $botman->fallback(function($bot) {
            $bot->reply('Sorry, I did not understand these commands. Here is a list of commands I understand: ...');
