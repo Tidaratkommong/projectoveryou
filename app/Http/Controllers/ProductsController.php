@@ -169,21 +169,9 @@ class ProductsController extends Controller
         $product->product_num = $request->product_num;
         $product->product_img = $replace_path;
 
-        if ($product->save()) {
-            $request->session()->flash('success', ' แก้ไขข้อมูลสินค้าสำเร็จ');
-            return redirect('product');
-        } else {
-            $request->session()->flash('success', 'แก้ไขข้อมูลสินค้าไม่สำเร็จ');
-            return view('product.create_product');
-        }
+        $product::find($id)->update($request->all());
+        return redirect('product')->with('success', ' แก้ไขข้อมูลสินค้าสำเร็จ' );
 
-
-
-
-
-      // Product::find($id)->update($request->all());
-      //  return redirect('product')->with('success', ' แก้ไขข้อมูลสินค้าสำเร็จ' );
-        
     }
 
     /**
