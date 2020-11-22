@@ -35,7 +35,7 @@
                             <input type="text" name="product_name" class="form-control input-lg" placeholder="ชื่อสินค้า" value="{{old('product_name')}}" />
                         </div>
 
-                        <div class="form-group col-md-6">
+                       <div class="form-group col-md-6">
                             <label for="producttype">ประเภทสินค้า</label>
                             <select class="form-control input-lg" placeholder="ประเภทสินค้า" type="text" name="product_type" value="{{old('product_type')}}">
                                 <option>กางเกง</option>
