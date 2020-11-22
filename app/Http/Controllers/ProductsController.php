@@ -135,7 +135,7 @@ class ProductsController extends Controller
             'product_detail' =>  'required',
             'product_type' =>  'required',
             'product_num' =>  'required',
-            'product_img' =>  'product_img|max:2048'
+            'product_img' =>  'product_img|required|numeric|max:10'
 
         ], [
 
@@ -148,7 +148,6 @@ class ProductsController extends Controller
             'product_img.mimes' => 'ไฟล์ที่เลือกต้องนามสกุล jpeg, jpg, png เท่านั้น'
 
         ]);  
-
 
         Product::find($id)->update($request->all());
         return redirect('product')->with('success', ' แก้ไขข้อมูลสินค้าสำเร็จ' );
