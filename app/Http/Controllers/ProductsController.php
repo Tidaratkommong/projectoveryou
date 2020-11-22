@@ -135,7 +135,7 @@ class ProductsController extends Controller
             'product_detail' =>  'required',
             'product_type' =>  'required',
             'product_num' =>  'required',
-            'product_img' =>  'required|mimes:jpeg,jpg,png'
+            'product_img' =>  'mimes:jpeg,jpg,png'
 
         ], [
 
