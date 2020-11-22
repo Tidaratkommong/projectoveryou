@@ -149,32 +149,8 @@ class ProductsController extends Controller
 
         ]);  
 
-
-        // Move imge to folder
-        $path = $request->product_img->update('public/imaproduct');
-        //return public/imaproduct/filename
-
-        //chand path befor insert into DB
-        $replace_path = str_replace("public", "storage", $path);
-
-
-
-        //Add to DB
-
-        $product = new Product;
-        $product->product_name = $request->product_name;
-        $product->product_detail = $request->product_detail;
-        $product->product_type = $request->product_type;
-        $product->product_price = $request->product_price;
-        $product->product_num = $request->product_num;
-        $product->product_img = $replace_path;
-
         Product::find($id)->update($request->all());
         return redirect('product')->with('success', ' แก้ไขข้อมูลสินค้าสำเร็จ' );
-
-
-
-
 
     }
 
