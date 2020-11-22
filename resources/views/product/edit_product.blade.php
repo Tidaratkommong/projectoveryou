@@ -43,7 +43,7 @@
                         <div class="form-group col-md-6">
                             <label for="producttype">ประเภทสินค้า</label>
                             <select class="form-control input-lg text-dark" type="text" name="product_type" value="{{$products['product_type'] }}">
-                                <option>{{$products['product_type']}}</option>
+                    
                                 <option>เสื้อ</option>
                                 <option>กางเกง</option>
                                 <option>รองเท้า</option>
