@@ -41,7 +41,6 @@
                                 <option>กางเกง</option>
                                 <option>เสื้อ</option>
                                 <option>รองเท้า</option>
-                                <option>นาฬิกา</option>
                             </select>
                         </div>
 
