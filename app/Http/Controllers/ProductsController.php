@@ -152,24 +152,8 @@ class ProductsController extends Controller
        
 
 
-        //Add to DB
-
-        $product = new Product;
-        $product->product_name = $request->product_name;
-        $product->product_detail = $request->product_detail;
-        $product->product_type = $request->product_type;
-        $product->product_price = $request->product_price;
-        $product->product_num = $request->product_num;
-       
-        if ($product->save()) {
-            $request->session()->flash('success', ' แก้ไขข้อมูลสินค้าสำเร็จ');
-            return redirect('product');
-        } else {
-            $request->session()->flash('success', 'แก้ไขข้อมูลสินค้าไม่สำเร็จ');
-            return view('product.create_product');
-        }
-        //Product::find($id)->update($request->all());
-        //return redirect('product')->with('success', ' แก้ไขข้อมูลสินค้าสำเร็จ' );
+        Product::find($id)->update($request->all());
+        return redirect('product')->with('success', ' แก้ไขข้อมูลสินค้าสำเร็จ' );
 
     }
 
