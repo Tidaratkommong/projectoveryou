@@ -169,8 +169,12 @@ class ProductsController extends Controller
         $product->product_num = $request->product_num;
         $product->product_img = $replace_path;
 
-        $product::find($id)->update($request->all());
+        Product::find($id)->update($request->all());
         return redirect('product')->with('success', ' แก้ไขข้อมูลสินค้าสำเร็จ' );
+
+
+
+
 
     }
 
