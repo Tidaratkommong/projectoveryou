@@ -181,7 +181,7 @@ class ProductsController extends Controller
             'product_detail' =>  'required',
             'product_type' =>  'required',
             'product_num' =>  'required',
-            'product_img' =>  'required|mimes:jpeg,jpg,png'
+            'product_img' =>  'mimes:jpeg,jpg,png'
 
         ], [
 
@@ -197,7 +197,7 @@ class ProductsController extends Controller
 
 
         // Move imge to folder
-        $path = $request->product_img->update('public/imaproduct');
+        $path = $request->product_img->store('public/imaproduct');
         //return public/imaproduct/filename
 
         //chand path befor insert into DB
