@@ -154,7 +154,6 @@ class ProductsController extends Controller
         Product::find($id)->update($request->all());
         return redirect('product')->with('success', ' แก้ไขข้อมูลสินค้าสำเร็จ' );
 */
-        $products =  Product::find($id);
         // Move imge to folder
         $path = $request->product_img->move('public/imaproduct');
         //return public/imaproduct/filename
@@ -162,6 +161,7 @@ class ProductsController extends Controller
         //chand path befor insert into DB
         $replace_path = str_replace("public", "storage", $path);
 
+        $products =  Product::find($id);
 
         $products->product_name = $request->product_name;
         $products->product_detail = $request->product_detail;
@@ -172,14 +172,14 @@ class ProductsController extends Controller
 
 
 
-       /* if ($request->hasFile('product_img')) {
+        /* if ($request->hasFile('product_img')) {
             $file = $request->file('product_img');
             $extension = $file->getClientOriginalExtension();
             $filename = time() . '.' . $extension;
             $file->move('public/imaproduct', $filename);
             $products->product_img = $filename;
         } */
-        
+
         $products->save();
         return redirect('product')->with('success', ' แก้ไขข้อมูลสินค้าสำเร็จ');
     }
