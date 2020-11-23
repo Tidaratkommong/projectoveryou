@@ -167,7 +167,7 @@ class ProductsController extends Controller
             $file = $request->file('product_img');
             $extension = $file->getClientOriginalExtension();
             $filename = time() . '.' . $extension;
-            $file->move('public/imaproduct', $filename);
+            $file->move('public/storage/imaproduct', $filename);
             $products->product_img = $filename;
         } 
 
