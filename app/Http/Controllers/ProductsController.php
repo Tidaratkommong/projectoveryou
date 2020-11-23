@@ -197,11 +197,7 @@ class ProductsController extends Controller
 
 
         // Move imge to folder
-        $path = $request->product_img->store('public/imaproduct');
-        //return public/imaproduct/filename
-
-        //chand path befor insert into DB
-        $replace_path = str_replace("public", "storage", $path);
+       
 
         //Add to DB
         $product = new Product;
@@ -210,7 +206,7 @@ class ProductsController extends Controller
         $product->product_type = $request->product_type;
         $product->product_price = $request->product_price;
         $product->product_num = $request->product_num;
-        $product->product_img = $replace_path;
+       
 
         $product->save();
         return redirect('product')->with('success', ' แก้ไขข้อมูลสินค้าสำเร็จ');
