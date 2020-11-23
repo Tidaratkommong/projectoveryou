@@ -38,7 +38,7 @@ class ProductsController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-   
+
     public function store(Request $request)
     {
         //validate
@@ -129,7 +129,7 @@ class ProductsController extends Controller
      */
     public function update(Request $request, $id)
     {
-       /* $request->validate([
+        /* $request->validate([
            
             'product_name' =>  'required',
             'product_price' =>  'required|numeric',
@@ -155,23 +155,33 @@ class ProductsController extends Controller
         return redirect('product')->with('success', ' แก้ไขข้อมูลสินค้าสำเร็จ' );
 */
         $products =  Product::find($id);
+        // Move imge to folder
+        $path = $request->product_img->move('public/imaproduct');
+        //return public/imaproduct/filename
+
+        //chand path befor insert into DB
+        $replace_path = str_replace("public", "storage", $path);
+
 
         $products->product_name = $request->product_name;
         $products->product_detail = $request->product_detail;
         $products->product_type = $request->product_type;
         $products->product_price = $request->product_price;
         $products->product_num = $request->product_num;
+        $products->product_img = $replace_path;
 
-        if ($request->hasFile('product_img')){
+
+
+       /* if ($request->hasFile('product_img')) {
             $file = $request->file('product_img');
             $extension = $file->getClientOriginalExtension();
-            $filename = time().'.'.$extension;
-            $file->move('public/imaproduct',$filename);
-            $products->product_img =$filename;
-        }
+            $filename = time() . '.' . $extension;
+            $file->move('public/imaproduct', $filename);
+            $products->product_img = $filename;
+        } */
+        
         $products->save();
-        return redirect('product')->with('success', ' แก้ไขข้อมูลสินค้าสำเร็จ' );
-
+        return redirect('product')->with('success', ' แก้ไขข้อมูลสินค้าสำเร็จ');
     }
 
     /**
@@ -185,7 +195,4 @@ class ProductsController extends Controller
         Product::find($id)->delete();
         return redirect('product');
     }
-
-    
-   
 }
