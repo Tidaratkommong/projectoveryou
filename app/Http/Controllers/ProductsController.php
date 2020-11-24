@@ -52,6 +52,8 @@ class ProductsController extends Controller
 
         $image = $request->file('public/imaproduct');
 
+        
+
         $new_name = rand() . '.' . $image->getClientOriginalExtension();
         $image->move(public_path('public/imaproduct'), $new_name);
         $form_data = array(
