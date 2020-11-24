@@ -31,7 +31,7 @@
                 @foreach($product as $value)
                 <tr>
 
-                    <td><img src="{{asset($value->product_img )}}" style="width: 40px; height:50px;" /></td>
+                    <td><img src="{{asset($value->product_img )}}" style="width: 60px; height:50px;" /></td>
                     <td>{{ $value->product_type }}</td>
                     <td>{{ $value->product_name }}</td>
                     <td>{{ $value->product_price }} ฿</td>
