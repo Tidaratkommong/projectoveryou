@@ -28,24 +28,24 @@
                     <th width="2%">ลบ</th>
                 </tr>
 
-                @foreach($product as $value)
+                @foreach($product as $products)
                 <tr>
 
-                    <td><img src="{{asset('public/storege/imaproduct'.$value->product_img )}}" style="width: 40px;" /></td>
-                    <td>{{ $value->product_type }}</td>
-                    <td>{{ $value->product_name }}</td>
-                    <td>{{ $value->product_price }} ฿</td>
-                    <td>{{ $value->product_detail }}</td>
-                    <td>{{$value->product_num }} ตัว </td>
+                    <td><img src="{{asset('public/imaproduct'.$products->product_img )}}" style="width: 40px;" /></td>
+                    <td>{{ $products->product_type }}</td>
+                    <td>{{ $products->product_name }}</td>
+                    <td>{{ $products->product_price }} ฿</td>
+                    <td>{{ $products->product_detail }}</td>
+                    <td>{{$products->product_num }} ตัว </td>
 
                     <td>
-                        <a class="btn btn-primary" href="{{ route('product.show',$value->id )}}"> <i class="fa fa-eye" aria-hidden="true"></i></a>
+                        <a class="btn btn-primary" href="{{ route('product.show',$products->id )}}"> <i class="fa fa-eye" aria-hidden="true"></i></a>
                     </td>
                     <td>
-                        <a class="btn btn-warning" href="{{ route('product.edit',$value->id )}}"><i class="fa fa-wrench" aria-hidden="true"></i></a>
+                        <a class="btn btn-warning" href="{{ route('product.edit',$products->id )}}"><i class="fa fa-wrench" aria-hidden="true"></i></a>
                     </td>
                     <td>
-                        <form action="{{route('product.destroy',$value->id)}}" method="post">
+                        <form action="{{route('product.destroy',$products->id)}}" method="post">
                             @csrf @method('DELETE')
                             <a class="btn btn-danger deleteForm"><i class="fa fa-trash" aria-hidden="true"></i></a>
                             <!--<input type="submit" value="ลบ"  class="btn btn-danger deleteForm">-->
