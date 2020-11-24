@@ -156,7 +156,7 @@ class ProductsController extends Controller
             ]);
         }
 
-        $request = array(
+        $form_data = array(
 
             'product_name' => $request->product_name,
             'product_detail' => $request->product_detail,
@@ -171,7 +171,7 @@ class ProductsController extends Controller
 
         //return redirect('crud')->with('success', 'Data is successfully updated');
 
-        Product::find($id)->update($request);
+        Product::find($id)->update($form_data);
         return redirect('product')->with('success', ' แก้ไขข้อมูลสินค้าสำเร็จ');
 
 
