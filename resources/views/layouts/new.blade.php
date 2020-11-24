@@ -148,17 +148,20 @@
             </li>
             <ul>
 
-                <li><a href="{{url('adminhome')}}"><i class="fas fa-home"></i>หน้าหลัก</a></li>
-                <li><a href="{{url('tasks')}}"><i class="fa fa-calendar"></i> จัดการตาราง</a></li>
-                <li><a href="{{url('admin/index_user')}}"><i class="fas fa-address-card"></i>จักการผู้ใช้</a></li>
-                <li><a href="{{url('product/index_product')}}"><i class="fas fa-list"></i>จัดการสินค้า</a></li>
-                <li><a href="#"><i class="fas fa-order"></i>จัดการโปรโมชั่น</a></li>
-                <li class="nav-item dropdown">
-                    <a href="#"><i class=" fas fa-list"></i> รายการยืนยัน</a>
+            <li><a href="{{url('adminhome')}}"><i class="fas fa-home"></i> หน้าหลัก</a></li>
+                <li><a href="{{url('admin/index_user')}}"><i class="fas fa-address-card"></i> จัดการผู้ใช้</a></li>
+                <li><a href="{{url('product/index_product')}}"><i class="fa fa-database"></i>  จัดการสินค้า</a></li>
+                <li><a href="#"><i class=""></i>ตรวจสอบการชำระเงิน</a></li>
+                <li><a href="#"><i class=""></i>ตรวจสอบคำสั่งซื้อ</a></li>
+                <!--<li><a href="#"><i class="fa fa-thumbs-up"></i> จัดการโปรโมชั่น</a></li>-->
+                <!--  <li class="nav-item dropdown">
+                    <a href="#"><i class="fa fa-tasks"></i> รายการยืนยัน</a>
                     <a class="dropdown-item  " href="#"> :ยืนยันการสั่งซื้อ</a>
                     <a class="dropdown-item " href="#"> :ยืนยันการคืนสินค้า</a>
-                </li>
-                <li><a href="#"><i class="fas fa-order"></i>สรุปยอดขาย</a></li>
+                </li>-->
+                <li><a href="#"><i class="fa fa-shopping-basket" aria-hidden="true"></i>  สรุปยอดขาย</a></li>
+                <li><a href="{{url('event')}}""><i class="fa fa-calendar" aria-hidden="true"></i>  Events</a></li>
+                
             </ul>
         </div>
         <div class="main_content">
