@@ -177,6 +177,16 @@ class ProductsController extends Controller
         ]);
 
 
+        
+
+        //Add to DB
+        $product = new Product;
+        $product->product_name = $request->product_name;
+        $product->product_detail = $request->product_detail;
+        $product->product_type = $request->product_type;
+        $product->product_price = $request->product_price;
+        $product->product_num = $request->product_num;
+
         if ($request->hasFile('public/imaproduct')) {
 
             $file = $request->file('public/imaproduct');
@@ -188,14 +198,6 @@ class ProductsController extends Controller
             // $file->move("public/imaproduct"('product_img'), $filename);
          
         }
-
-        //Add to DB
-        $product = new Product;
-        $product->product_name = $request->product_name;
-        $product->product_detail = $request->product_detail;
-        $product->product_type = $request->product_type;
-        $product->product_price = $request->product_price;
-        $product->product_num = $request->product_num;
        
         $product->save();
         return redirect('product')->with('success', ' แก้ไขข้อมูลสินค้าสำเร็จ');
