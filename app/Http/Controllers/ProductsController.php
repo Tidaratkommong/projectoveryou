@@ -129,6 +129,64 @@ class ProductsController extends Controller
      */
     public function update(Request $request, $id)
     {
+
+        $image_name = $request->hidden_image;
+        $image = $request->file('public/imaproduct');
+        if ($image != '') {
+            $request->validate([
+
+                'product_name' =>  'required',
+                'product_price' =>  'required|numeric',
+                'product_detail' =>  'required',
+                'product_type' =>  'required',
+                'product_num' =>  'required',
+                'product_img' =>  'image|max:2048'
+
+            ]);
+
+            $image_name = rand() . '.' . $image->getClientOriginalExtension();
+            $image->move(public_path('public/imaproduct'), $image_name);
+        } else {
+            $request->validate([
+                'product_name' =>  'required',
+                'product_price' =>  'required|numeric',
+                'product_detail' =>  'required',
+                'product_type' =>  'required',
+                'product_num' =>  'required',
+            ]);
+        }
+
+        $request = array(
+
+            'product_name' => $request->product_name,
+            'product_detail' => $request->product_detail,
+            'product_type' => $request->product_type,
+            'product_price' => $request->product_price,
+            'product_num' => $request->product_num,
+            'product_img' =>  $image_name
+
+        );
+
+        // Crud::whereId($id)->update($form_data);
+
+        //return redirect('crud')->with('success', 'Data is successfully updated');
+
+        Product::find($id)->update($request);
+        return redirect('product')->with('success', ' แก้ไขข้อมูลสินค้าสำเร็จ');
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         /* $request->validate([
            
             'product_name' =>  'required',
@@ -154,9 +212,9 @@ class ProductsController extends Controller
         Product::find($id)->update($request->all());
         return redirect('product')->with('success', ' แก้ไขข้อมูลสินค้าสำเร็จ' );
 */
-     
 
-       $products =  Product::find($id);
+
+        /* $products =  Product::find($id);
 
         $products->product_name = $request->product_name;
         $products->product_detail = $request->product_detail;
@@ -171,7 +229,7 @@ class ProductsController extends Controller
             $name = $timestamp. '-' .$file->getClientOriginalName();
             $products->product_img = $name;
             $file->move(public_path().'public/imaproduct', $name);                       
-        }*/
+        }
 
         if ($request->hasFile('public/imaproduct')) {
 
@@ -190,11 +248,10 @@ class ProductsController extends Controller
         } else {
             $request->session()->flash('success', 'แก้ไขข้อมูลสินค้kไม่สำเร็จ');
             return view('product.create_product');
-        }
+        }*/
 
-       /* $products->save();
+        /* $products->save();
         return redirect('product')->with('success', ' แก้ไขข้อมูลสินค้าสำเร็จ'); */
-
     }
 
     /**
