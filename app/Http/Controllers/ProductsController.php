@@ -154,66 +154,9 @@ class ProductsController extends Controller
         Product::find($id)->update($request->all());
         return redirect('product')->with('success', ' แก้ไขข้อมูลสินค้าสำเร็จ' );
 */
-        $request->validate([
+     
 
-
-            'product_name' =>  'required',
-            'product_price' =>  'required|numeric',
-            'product_detail' =>  'required',
-            'product_type' =>  'required',
-            'product_num' =>  'required',
-            'product_img' =>  'mimes:jpeg,jpg,png'
-
-        ], [
-
-            'product_name.required' => 'กรุณากรอกชื่อสินค้า',
-            'product_detail.required' => 'กรุณากรอรายละเอียดสินค้า',
-            'product_price.required' => 'กรุณากรอกราคา',
-            'product_num.required' => 'กรุณากรอกจำนวนสินค้า',
-            'product_price.numeric' => 'กรุณากรอกราคาเป็นตัวเลขเท่านั้น',
-            'product_img.required' => 'กรุณากรอกรูปภาพ',
-            'product_img.mimes' => 'ไฟล์ที่เลือกต้องนามสกุล jpeg, jpg, png เท่านั้น'
-
-        ]);
-
-
-        
-
-        //Add to DB
-        $product = new Product;
-        $product->product_name = $request->product_name;
-        $product->product_detail = $request->product_detail;
-        $product->product_type = $request->product_type;
-        $product->product_price = $request->product_price;
-        $product->product_num = $request->product_num;
-
-        if ($request->hasFile('public/imaproduct')) {
-
-            $file = $request->file('public/imaproduct');
-            $extension = $file->getClientOriginalExtension();
-            //$filename = str_replace([' ', ':'], '-', Carbon::now()->toDateTimeString()); 
-            $filename = time() . '.' . $extension;
-            $file->move(public_path() . 'public/imaproduct', $filename);
-            $product->product_img = $filename;
-            // $file->move("public/imaproduct"('product_img'), $filename);
-         
-        }
-        if ($product->save()) {
-            $request->session()->flash('success', ' แก้ไขข้อมูลสินค้าสำเร็จ');
-            return redirect('product');
-        } 
-
-        
-
-
-
-
-
-
-
-
-
-      /*  $products =  Product::find($id);
+       $products =  Product::find($id);
 
         $products->product_name = $request->product_name;
         $products->product_detail = $request->product_detail;
@@ -221,14 +164,14 @@ class ProductsController extends Controller
         $products->product_price = $request->product_price;
         $products->product_num = $request->product_num;
 
-        if ($request->hasFile('public/imaproduct'))
+        /*if ($request->hasFile('public/imaproduct'))
         {
             $file = $request->file('public/imaproduct');
             $timestamp = str_replace([' ', ':'], '-', Carbon::now()->toDateTimeString()); 
             $name = $timestamp. '-' .$file->getClientOriginalName();
             $products->product_img = $name;
             $file->move(public_path().'public/imaproduct', $name);                       
-        }
+        }*/
 
         if ($request->hasFile('public/imaproduct')) {
 
@@ -241,8 +184,14 @@ class ProductsController extends Controller
             $products->product_img = $filename;
         }
 
-        $products->save();
-        return redirect('product')->with('success', ' แก้ไขข้อมูลสินค้าสำเร็จ'); */
+        if ($products->save()) {
+            $request->session()->flash('success', ' แก้ไขข้อมูลสินค้าสำเร็จ');
+            return redirect('product');
+        } else {
+            $request->session()->flash('success', 'แก้ไขข้อมูลสินค้kไม่สำเร็จ');
+            return view('product.create_product');
+        }
+        
 
     }
 
