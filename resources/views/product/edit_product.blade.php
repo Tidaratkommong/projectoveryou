@@ -82,6 +82,7 @@
                         <label for="exampleInputFile">Select Profile Image</label>
                             <input type="file" name="product_img" />
                             <img src="{{asset ($products->product_img) }}" class="img-thumbnail" width="50" />
+                            <input type="file" name="product_img" value="{{$products['product_img']}}"/>
                     </div>
 
 
