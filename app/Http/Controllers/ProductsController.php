@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Product;
-
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Symfony\Component\VarDumper\Cloner\Data;
 
@@ -165,7 +165,7 @@ class ProductsController extends Controller
         if ($request->hasFile('product_img'))
         {
             $file = $request->file('product_img');
-            $timestamp = str_replace([' ', ':'], '-', Product::now()->toDateTimeString()); 
+            $timestamp = str_replace([' ', ':'], '-', Carbon::now()->toDateTimeString()); 
             $name = $timestamp. '-' .$file->getClientOriginalName();
             $products->product_img = $name;
             $file->move(public_path().'public/imaproduct', $name);                       
