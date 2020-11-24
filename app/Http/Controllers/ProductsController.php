@@ -184,6 +184,7 @@ class ProductsController extends Controller
             //$filename = str_replace([' ', ':'], '-', Carbon::now()->toDateTimeString()); 
             $filename = time() . '.' . $extension;
             $file->move(public_path() . 'public/imaproduct', $filename);
+            $product->product_img = $filename;
             // $file->move("public/imaproduct"('product_img'), $filename);
          
         }
@@ -195,8 +196,7 @@ class ProductsController extends Controller
         $product->product_type = $request->product_type;
         $product->product_price = $request->product_price;
         $product->product_num = $request->product_num;
-        $product->product_img = $filename;
-
+       
         $product->save();
         return redirect('product')->with('success', ' แก้ไขข้อมูลสินค้าสำเร็จ');
 
