@@ -41,45 +41,8 @@ class ProductsController extends Controller
 
     public function store(Request $request)
     {
-        $request->validate([
-            'product_name' =>  'required',
-            'product_price' =>  'required|numeric',
-            'product_detail' =>  'required',
-            'product_type' =>  'required',
-            'product_num' =>  'required',
-            'product_img' =>  'required|mimes:jpeg,jpg,png'
-        ]);
-
-        $image = $request->file('public/imaproduct');
-
-        $extension = $image ->getClientOriginalExtension();
-        //$filename = str_replace([' ', ':'], '-', Carbon::now()->toDateTimeString()); 
-        $new_name = time() . '.' . $extension;
-
-
-        //$new_name = rand() . '.' . $image->getClientOriginalExtension();
-        $image->move(public_path('public/imaproduct'), $new_name);
-        $form_data = array(
-            'product_name' => $request->product_name,
-            'product_detail' => $request->product_detail,
-            'product_type' => $request->product_type,
-            'product_price' => $request->product_price,
-            'product_num' => $request->product_num,
-            'product_img' =>  $new_name
-            
-        );
-
-        Product::create($form_data);
-        return redirect('product')->with('success', 'Data Added successfully' );
-
-      //return redirect('crud')->with('success', 'Data Added successfully.');
-
-
-
         //validate
-      /*  $request->validate([
-
-
+       $request->validate([
             'product_name' =>  'required',
             'product_price' =>  'required|numeric',
             'product_detail' =>  'required',
@@ -98,8 +61,6 @@ class ProductsController extends Controller
             'product_img.mimes' => 'ไฟล์ที่เลือกต้องนามสกุล jpeg, jpg, png เท่านั้น'
 
         ]);
-
-
         // Move imge to folder
         $path = $request->product_img->store('public/imaproduct');
         //return public/imaproduct/filename
@@ -107,10 +68,7 @@ class ProductsController extends Controller
         //chand path befor insert into DB
         $replace_path = str_replace("public", "storage", $path);
 
-
-
         //Add to DB
-
         $product = new Product;
         $product->product_name = $request->product_name;
         $product->product_detail = $request->product_detail;
@@ -125,7 +83,7 @@ class ProductsController extends Controller
         } else {
             $request->session()->flash('success', 'เพิ่ม' . $product->product_name . 'ไม่สำเร็จ');
             return view('product.create_product');
-        }*/
+        }
     }
 
     /**
@@ -164,64 +122,6 @@ class ProductsController extends Controller
      */
     public function update(Request $request, $id)
     {
-
-        $image_name = $request->hidden_image;
-        $image = $request->file('public/imaproduct');
-        if ($image != '') {
-            $request->validate([
-
-                'product_name' =>  'required',
-                'product_price' =>  'required|numeric',
-                'product_detail' =>  'required',
-                'product_type' =>  'required',
-                'product_num' =>  'required',
-                'product_img' =>  'image|max:2048'
-
-            ]);
-
-            $image_name = rand() . '.' . $image->getClientOriginalExtension();
-            $image->move(public_path('public/imaproduct'), $image_name);
-        } else {
-            $request->validate([
-                'product_name' =>  'required',
-                'product_price' =>  'required|numeric',
-                'product_detail' =>  'required',
-                'product_type' =>  'required',
-                'product_num' =>  'required',
-            ]);
-        }
-
-        $form_data = array(
-
-            'product_name' => $request->product_name,
-            'product_detail' => $request->product_detail,
-            'product_type' => $request->product_type,
-            'product_price' => $request->product_price,
-            'product_num' => $request->product_num,
-            'product_img' =>  $image_name
-
-        );
-
-        // Crud::whereId($id)->update($form_data);
-
-        //return redirect('crud')->with('success', 'Data is successfully updated');
-
-        Product::find($id)->update($form_data);
-        return redirect('product')->with('success', ' แก้ไขข้อมูลสินค้าสำเร็จ');
-
-
-
-
-
-
-
-
-
-
-
-
-
-
         /* $request->validate([
            
             'product_name' =>  'required',
@@ -249,7 +149,7 @@ class ProductsController extends Controller
 */
 
 
-        /* $products =  Product::find($id);
+         $products =  Product::find($id);
 
         $products->product_name = $request->product_name;
         $products->product_detail = $request->product_detail;
@@ -264,7 +164,11 @@ class ProductsController extends Controller
             $name = $timestamp. '-' .$file->getClientOriginalName();
             $products->product_img = $name;
             $file->move(public_path().'public/imaproduct', $name);                       
-        }
+        }*/
+
+
+       // $image_name = rand() . '.' . $image->getClientOriginalExtension();
+          //  $image->move(public_path('public/imaproduct'), $image_name);
 
         if ($request->hasFile('public/imaproduct')) {
 
@@ -281,9 +185,9 @@ class ProductsController extends Controller
             $request->session()->flash('success', ' แก้ไขข้อมูลสินค้าสำเร็จ');
             return redirect('product');
         } else {
-            $request->session()->flash('success', 'แก้ไขข้อมูลสินค้kไม่สำเร็จ');
+            $request->session()->flash('success', 'แก้ไขข้อมูลสินค้าไม่สำเร็จ');
             return view('product.create_product');
-        }*/
+        }
 
         /* $products->save();
         return redirect('product')->with('success', ' แก้ไขข้อมูลสินค้าสำเร็จ'); */
