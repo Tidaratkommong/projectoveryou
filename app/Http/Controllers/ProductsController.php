@@ -172,9 +172,11 @@ class ProductsController extends Controller
         }*/  
 
          if ($request->hasFile('public/imaproduct')) {
+
             $file = $request->file('public/imaproduct');
             $extension = $file->getClientOriginalExtension();
-            $filename = time() . '.' . $extension;
+            $filename = str_replace([' ', ':'], '-', Carbon::now()->toDateTimeString()); 
+           // $filename = time() . '.' . $extension;
              $file->move(public_path().'public/imaproduct', $filename); 
            // $file->move("public/imaproduct"('product_img'), $filename);
             $products->product_img = $filename;
