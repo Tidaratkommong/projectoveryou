@@ -173,7 +173,7 @@ class ProductsController extends Controller
             $file->move(public_path().'public/imaproduct', $name);                       
         }*/
 
-        if ($request->hasFile('public/imaproduct')) {
+        if ($products->hasFile('public/imaproduct')) {
 
             $file = $request->file('public/imaproduct');
             $extension = $file->getClientOriginalExtension();
@@ -184,14 +184,16 @@ class ProductsController extends Controller
             $products->product_img = $filename;
         }
 
-        if ($products->save()) {
+        /*if ($products->save()) {
             $request->session()->flash('success', ' แก้ไขข้อมูลสินค้าสำเร็จ');
             return redirect('product');
         } else {
             $request->session()->flash('success', 'แก้ไขข้อมูลสินค้kไม่สำเร็จ');
             return view('product.create_product');
-        }
-        
+        }*/
+
+        $products->save();
+        return redirect('product')->with('success', ' แก้ไขข้อมูลสินค้าสำเร็จ'); 
 
     }
 
