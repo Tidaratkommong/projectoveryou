@@ -162,14 +162,22 @@ class ProductsController extends Controller
         $products->product_price = $request->product_price;
         $products->product_num = $request->product_num;
       
-       
-         if ($request->hasFile('product_img')) {
+        if ($request->hasFile('product_img'))
+        {
+            $file = $request->file('product_img');
+            $timestamp = str_replace([' ', ':'], '-', Product::now()->toDateTimeString()); 
+            $name = $timestamp. '-' .$file->getClientOriginalName();
+            $products->image = $name;
+            $file->move(public_path().'public/imaproduct', $name);                       
+        }   
+
+        /* if ($request->hasFile('product_img')) {
             $file = $request->file('product_img');
             $extension = $file->getClientOriginalExtension();
             $filename = time() . '.' . $extension;
             $file->move("public/imaproduct"('product_img'), $filename);
             $products->product_img = $filename;
-        } 
+        } */
 
         $products->save();
         return redirect('product')->with('success', ' แก้ไขข้อมูลสินค้าสำเร็จ');
