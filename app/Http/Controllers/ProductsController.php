@@ -198,9 +198,12 @@ class ProductsController extends Controller
             // $file->move("public/imaproduct"('product_img'), $filename);
          
         }
-       
-        $product->save();
-        return redirect('product')->with('success', ' แก้ไขข้อมูลสินค้าสำเร็จ');
+        if ($product->save()) {
+            $request->session()->flash('success', ' แก้ไขข้อมูลสินค้าสำเร็จ');
+            return redirect('product');
+        } 
+
+        
 
 
 
