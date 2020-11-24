@@ -162,9 +162,9 @@ class ProductsController extends Controller
         $products->product_price = $request->product_price;
         $products->product_num = $request->product_num;
       
-        if ($request->hasFile('product_img'))
+        if ($request->hasFile('public/imaproduct'))
         {
-            $file = $request->file('product_img');
+            $file = $request->file('public/imaproduct');
             $timestamp = str_replace([' ', ':'], '-', Carbon::now()->toDateTimeString()); 
             $name = $timestamp. '-' .$file->getClientOriginalName();
             $products->product_img = $name;
