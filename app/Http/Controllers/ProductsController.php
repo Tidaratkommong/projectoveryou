@@ -41,8 +41,38 @@ class ProductsController extends Controller
 
     public function store(Request $request)
     {
-        //validate
         $request->validate([
+            'product_name' =>  'required',
+            'product_price' =>  'required|numeric',
+            'product_detail' =>  'required',
+            'product_type' =>  'required',
+            'product_num' =>  'required',
+            'product_img' =>  'required|mimes:jpeg,jpg,png'
+        ]);
+
+        $image = $request->file('public/imaproduct');
+
+        $new_name = rand() . '.' . $image->getClientOriginalExtension();
+        $image->move(public_path('public/imaproduct'), $new_name);
+        $form_data = array(
+            'product_name' => $request->product_name,
+            'product_detail' => $request->product_detail,
+            'product_type' => $request->product_type,
+            'product_price' => $request->product_price,
+            'product_num' => $request->product_num,
+            'product_img' =>  $new_name
+            
+        );
+
+        Product::create($form_data);
+        return redirect('product')->with('success', 'Data Added successfully' );
+
+      //return redirect('crud')->with('success', 'Data Added successfully.');
+
+
+
+        //validate
+      /*  $request->validate([
 
 
             'product_name' =>  'required',
@@ -90,7 +120,7 @@ class ProductsController extends Controller
         } else {
             $request->session()->flash('success', 'เพิ่ม' . $product->product_name . 'ไม่สำเร็จ');
             return view('product.create_product');
-        }
+        }*/
     }
 
     /**
