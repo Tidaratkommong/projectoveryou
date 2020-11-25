@@ -13,17 +13,17 @@
         </ol>
         <div class="carousel-inner">
             <div class="carousel-item active">
-                <img src="promo2.jpg" width="300" height="400" class="d-block w-100" alt="...">
+                <img src="promo2.jpg" width="250" height="400" class="d-block w-100" alt="...">
                 <div class="carousel-caption d-none d-md-block">
                 </div>
             </div>
             <div class="carousel-item">
-                <img src="promo3.jpg" width="300" height="400" class="d-block w-100" alt="...">
+                <img src="promo3.jpg" width="250" height="400" class="d-block w-100" alt="...">
                 <div class="carousel-caption d-none d-md-block">
                 </div>
             </div>
             <div class="carousel-item">
-                <img src="promo1.jpg" width="300" height="400" class="d-block w-100" alt="...">
+                <img src="promo1.jpg" width="250" height="400" class="d-block w-100" alt="...">
                 <div class="carousel-caption d-none d-md-block">
                 </div>
             </div>
@@ -47,16 +47,13 @@
         <main>
             <div class="page-overlay-bg">
                 <div class="container-fluid m-0 p-0">
-                    <!--container-fluid-->
+                   
 
-
-                    <!--container-fluid-->
-
-                </div><!-- page-main-->
+                </div>
         </main>
     </div>
 
-    ตกแต่งเพิ่มเติม
+    <br/>
 
     <div id="myCarousel" class="carousel slide" data-ride="carousel">
         <!-- Indicators -->
@@ -92,21 +89,7 @@
         </a>
     </div>
 
-    <div aria-live="polite" aria-atomic="true" style="position: relative; min-height: 200px;">
-  <div class="toast" style="position: absolute; top: 0; right: 0;">
-    <div class="toast-header">
-      <img src="..." class="rounded mr-2" alt="...">
-      <strong class="mr-auto">Bootstrap</strong>
-      <small>11 mins ago</small>
-      <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
-        <span aria-hidden="true">&times;</span>
-      </button>
-    </div>
-    <div class="toast-body">
-      Hello, world! This is a toast message.
-    </div>
-  </div>
-</div>
+    
 
 </div>
 
