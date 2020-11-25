@@ -47,49 +47,39 @@
         <main>
             <div class="page-overlay-bg">
                 <div class="container-fluid m-0 p-0">
-                   
+
 
                 </div>
         </main>
     </div>
 
-    <br/>
-
-    <div id="myCarousel" class="carousel slide" data-ride="carousel">
-        <!-- Indicators -->
-        <ol class="carousel-indicators">
-            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-            <li data-target="#myCarousel" data-slide-to="1"></li>
-            <li data-target="#myCarousel" data-slide-to="2"></li>
-        </ol>
-
-        <!-- Wrapper for slides -->
+    <br />
         <div class="carousel-inner">
-            <div class="item active">
-                <img ssrc="promo3.jpg" alt="Los Angeles">
+            <div class="carousel-item active">
+                <img src="promo2.jpg" width="200" height="250" class="d-block w-100" alt="...">
+                <div class="carousel-caption d-none d-md-block">
+                </div>
             </div>
+            <br />
 
-            <div class="item">
-                <img src="promo3.jpg" alt="Chicago">
+            <div class="carousel-item active">
+                <img src="promo2.jpg" width="200" height="250" class="d-block w-100" alt="...">
+                <div class="carousel-caption d-none d-md-block">
+                </div>
             </div>
+            <br />
 
-            <div class="item">
-                <img src="promo3.jpg" alt="New York">
+            <div class="carousel-item active">
+                <img src="promo2.jpg" width="200" height="250" class="d-block w-100" alt="...">
+                <div class="carousel-caption d-none d-md-block">
+                </div>
             </div>
+            <br/>
+            <br/>
         </div>
+   
 
-        <!-- Left and right controls -->
-        <a class="left carousel-control" href="#myCarousel" data-slide="prev">
-            <span class="glyphicon glyphicon-chevron-left"></span>
-            <span class="sr-only">Previous</span>
-        </a>
-        <a class="right carousel-control" href="#myCarousel" data-slide="next">
-            <span class="glyphicon glyphicon-chevron-right"></span>
-            <span class="sr-only">Next</span>
-        </a>
-    </div>
 
-    
 
 </div>
 
