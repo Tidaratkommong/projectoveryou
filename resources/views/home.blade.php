@@ -57,7 +57,7 @@
     </div>
 
     ตกแต่งเพิ่มเติม
-    </div>
+
     <div id="myCarousel" class="carousel slide" data-ride="carousel">
         <!-- Indicators -->
         <ol class="carousel-indicators">
@@ -69,15 +69,15 @@
         <!-- Wrapper for slides -->
         <div class="carousel-inner">
             <div class="item active">
-                <img src="la.jpg" alt="Los Angeles">
+                <img ssrc="promo3.jpg" alt="Los Angeles">
             </div>
 
             <div class="item">
-                <img src="chicago.jpg" alt="Chicago">
+                <img src="promo3.jpg"" alt="Chicago">
             </div>
 
             <div class="item">
-                <img src="ny.jpg" alt="New York">
+                <img src="promo3.jpg" alt="New York">
             </div>
         </div>
 
@@ -92,7 +92,7 @@
         </a>
     </div>
 
-
+</div>
 
 
 
