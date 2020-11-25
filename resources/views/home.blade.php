@@ -56,24 +56,18 @@
     <br />
         <div class="carousel-inner">
             <div class="carousel-item active">
-                <img src="promo2.jpg" width="200" height="180" class="d-block w-100" alt="...">
+                <img src="promo2.jpg" width="200" height="150" class="d-block w-100" alt="...">
                 <div class="carousel-caption d-none d-md-block">
                 </div>
             </div>
             <br />
 
             <div class="carousel-item active">
-                <img src="promo2.jpg" width="200" height="180" class="d-block w-100" alt="...">
+                <img src="promo2.jpg" width="200" height="150" class="d-block w-100" alt="...">
                 <div class="carousel-caption d-none d-md-block">
                 </div>
             </div>
             <br />
-
-            <div class="carousel-item active">
-                <img src="promo2.jpg" width="200" height="180" class="d-block w-100" alt="...">
-                <div class="carousel-caption d-none d-md-block">
-                </div>
-            </div>
             <br/>
             <br/>
         </div>
