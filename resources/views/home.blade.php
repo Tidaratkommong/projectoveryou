@@ -43,7 +43,7 @@
     <br />
     <!--product -->
     <div class="breadcrumb">
-        <h5><a href="{{url('/homeproduct')}}">ดูสินค้าทั้งหมดjjj</a></h5>
+        <h5><a href="{{url('/homeproduct')}}">ดูสินค้าทั้งหมด</a></h5>
         <main>
             <div class="page-overlay-bg">
                 <div class="container-fluid m-0 p-0">
@@ -56,14 +56,14 @@
     <br />
         <div class="carousel-inner">
             <div class="carousel-item active">
-                <img src="noimg.jpg" width="200" height="130" class="d-block w-100" alt="...">
+                <img src="noimg.jpg" width="200" height="110" class="d-block w-100" alt="...">
                 <div class="carousel-caption d-none d-md-block">
                 </div>
             </div>
             <br />
 
             <div class="carousel-item active">
-                <img src="noimg.jpg" width="200" height="130" class="d-block w-100" alt="...">
+                <img src="noimg.jpg" width="200" height="110" class="d-block w-100" alt="...">
                 <div class="carousel-caption d-none d-md-block">
                 </div>
             </div>
@@ -71,8 +71,6 @@
             <br/>
             <br/>
         </div>
-
-        hhhhhh
         <div class="product-description-review-area pb-90">
     <div class="container">
         <div class="product-description-review text-center">
