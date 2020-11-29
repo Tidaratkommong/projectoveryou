@@ -81,8 +81,8 @@
                             </form>-->
 
                             <!-- Search Widget -->
-                           
-                               <!-- <form class=" form-inline my-2 my-lg-0" action="/search" method="GET" role="search">
+
+                            <!-- <form class=" form-inline my-2 my-lg-0" action="/search" method="GET" role="search">
                                     {{ csrf_field() }}
                                     <div class="input-group">
                                         <input class="form-control mr-sm-2" type="text" class="form-control" placeholder="ค้นหาสินค้าที่คุณต้องการ" name="q"  style="width: 28rem;">
@@ -94,12 +94,13 @@
 
                             <div class="card-body py-0">
                                 <form class="form-inline ">
-                                    <a class="btn btn-outline-warning" type="submit" href="#">
-                                        <i class="fa fa-shopping-cart cus-icon py-1"> </i>
+                                    <a href="#pro-review" data-toggle="tab" role="tab" aria-selected="false">
+                                        <a class="btn btn-outline-warning" type="submit" href="#">
+                                            <i class="fa fa-shopping-cart cus-icon py-1"> </i>
+                                        </a> Reviews (0)
                                     </a>
-
                                 </form>
-                            </div> 
+                            </div>
 
 
                             @guest
