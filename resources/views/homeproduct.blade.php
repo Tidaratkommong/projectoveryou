@@ -41,7 +41,7 @@
 
     <br />
     <!-- Search Widget -->
-
+    <div class="carousel-inner">
     <form class=" form-inline my-2 my-lg-0" action="/searchproduct" method="GET" role="search">
         {{ csrf_field() }}
         <div class="input-group">
@@ -83,6 +83,7 @@
 
             </div><!-- page-main-->
         </main>
+    </div>
     </div>
 
     <div>
