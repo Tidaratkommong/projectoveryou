@@ -98,6 +98,7 @@
                                     <div class="badge badge-danger">
                                         @auth
                                       
+                                        
                                         0
                                         @endauth
                                     </div>
