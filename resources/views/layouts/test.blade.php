@@ -91,7 +91,15 @@
                                         </span>
                                     </div>
                                 </form>-->
-                           
+
+                            <div class="card-body py-0">
+                                <form class="form-inline ">
+                                    <a class="btn btn-outline-warning" type="submit" href="#">
+                                        <i class="fa fa-shopping-cart cus-icon py-1"> </i>
+                                    </a>
+
+                                </form>
+                            </div> 
 
 
                             @guest

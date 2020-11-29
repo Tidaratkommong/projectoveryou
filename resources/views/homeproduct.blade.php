@@ -1,4 +1,4 @@
-@extends('layouts.navbarhome')
+@extends('layouts.test')
 
 @section('content')
 
