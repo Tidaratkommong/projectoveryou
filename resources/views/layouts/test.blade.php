@@ -97,7 +97,7 @@
                                     <i class="fas fa-cart-arrow-down text-success fa-2x"></i>
                                     <div class="badge badge-danger">
                                         @auth
-                                        
+                                       <!-- {{Cart::session(auth()->id())->getContent()->count()}}-->
                                         @else
                                         0
                                         @endauth
