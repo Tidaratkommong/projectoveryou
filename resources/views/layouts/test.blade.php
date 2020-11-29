@@ -81,8 +81,8 @@
                             </form>-->
 
                             <!-- Search Widget -->
-                           
-                               <!-- <form class=" form-inline my-2 my-lg-0" action="/search" method="GET" role="search">
+
+                            <!-- <form class=" form-inline my-2 my-lg-0" action="/search" method="GET" role="search">
                                     {{ csrf_field() }}
                                     <div class="input-group">
                                         <input class="form-control mr-sm-2" type="text" class="form-control" placeholder="ค้นหาสินค้าที่คุณต้องการ" name="q"  style="width: 28rem;">
@@ -92,14 +92,18 @@
                                     </div>
                                 </form>-->
 
-                            <div class="card-body py-0">
-                                <form class="form-inline ">
-                                    <a class="btn btn-outline-warning" type="submit" href="#">
-                                        <i class="fa fa-shopping-cart cus-icon py-1"> </i>
-                                    </a>
-
-                                </form>
-                            </div> 
+                            <li class="nav-item mr-2">
+                                <a class="nav-link p-0 m-0" href="{{ route('cart.index') }}">
+                                    <i class="fas fa-cart-arrow-down text-success fa-2x"></i>
+                                    <div class="badge badge-danger">
+                                        @auth
+                                        {{Cart::session(auth()->id())->getContent()->count()}}
+                                        @else
+                                        0
+                                        @endauth
+                                    </div>
+                                </a>
+                            </li>
 
 
                             @guest
