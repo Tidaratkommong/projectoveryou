@@ -96,11 +96,9 @@
                                 <a class="nav-link p-0 m-0" href="{{ route('cart.index') }}">
                                     <i class="fas fa-cart-arrow-down text-success fa-2x"></i>
                                     <div class="badge badge-danger">
-                                        @auth
                                         
-                                        @else
                                         0
-                                        @endauth
+                                      
                                     </div>
                                 </a>
                             </li>
