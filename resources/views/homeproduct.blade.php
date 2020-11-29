@@ -38,11 +38,10 @@
             <span class="sr-only">Next</span>
         </a>
     </div>
-
     <br />
+
     <!-- Search Widget -->
-    <div class="carousel-inner">
-        <div class="carousel-item active">
+    <div class="carousel-caption d-none d-md-block">
     <form class=" form-inline my-2 my-lg-0" action="/searchproduct" method="GET" role="search">
         {{ csrf_field() }}
         <div class="input-group">
@@ -52,10 +51,9 @@
             </span>
         </div>
     </form>
-       </div>
     </div>
     <br />
-    
+
     <!--product -->
     <h5>สินค้าทั้งหมด</h5>
     <div class="breadcrumb">
