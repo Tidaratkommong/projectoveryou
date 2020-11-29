@@ -21,6 +21,8 @@ class CreateProductsTable extends Migration
             $table->decimal('product_num');
             $table->longText('product_detail',200);
             $table->string('product_img',200);
+            $table->unsignedBigInteger('shop_id')->nullable();
+            $table->foreign('shop_id')->references('id')->on('shops')->onDelete('cascade');
             $table->timestamps();
         });
     }
@@ -35,3 +37,4 @@ class CreateProductsTable extends Migration
         Schema::dropIfExists('products');
     }
 }
+
