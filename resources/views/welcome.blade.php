@@ -84,9 +84,6 @@
             </div><!-- page-main-->
         </main>
     </div>
-
-    @extends('review.review')
-
 </div>
 
 <!-- chatbot-->
@@ -131,6 +128,7 @@
 
 <br />
 <br />
+@extends('review.review')
 
 <ul class="nav justify-content-center bg-dark fixed-bottom ">
     <li class="nav-item">
