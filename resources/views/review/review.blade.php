@@ -1,7 +1,7 @@
 <div class="custom-col-style-2 custom-col-4">
     <div class="product-wrapper product-border mb-24">
         <div class="product-img-3">
-            <a href="{{route('products.show', $product)}}">
+            <a href="#">
                
                     <img src="promo3.jpg" " alt="">
                
