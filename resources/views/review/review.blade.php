@@ -3,9 +3,9 @@
         <div class="product-img-3">
             
                
-                    <img src="{{asset('storage/'.$product->cover_img)}}" alt="">
+                    <img src="#" alt="">
                
-                    <img src="/assets/img/product/electro/1.jpg" alt="">
+                    <img src="#" alt="">
               
             </a>
             <div class="product-action-right">
