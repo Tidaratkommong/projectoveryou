@@ -3,7 +3,7 @@
         <div class="product-img-3">
             <a href="#">
                
-                    <img src="promo3.jpg" " alt="">
+                    <img src="promo3.jpg" alt="">
                
                     <img src="promo3.jpg"  alt="">
                
