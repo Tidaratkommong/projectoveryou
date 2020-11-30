@@ -71,8 +71,6 @@
             <br/>
             <br/>
         </div>
-
-        @extends('review.review')
 </div>
 
 <!-- chatbot-->
