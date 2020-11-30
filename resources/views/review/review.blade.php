@@ -1,37 +1,26 @@
-<div class="custom-col-style-2 custom-col-4">
-    <div class="product-wrapper product-border mb-24">
-        <div class="product-img-3">
-            <a href="#">
-               
-                    <img src="promo3.jpg" alt="">
-               
-                
-               
-            </a>
-            <div class="product-action-right">
-                <a class="animate-right" href="#" title="View">
-                    <i class="pe-7s-look"></i>
+<div class="product-description-review-area pb-90">
+    <div class="container">
+        <div class="product-description-review text-center">
+            <div class="description-review-title nav" role=tablist>
+                <a class="active" href="#pro-dec" data-toggle="tab" role="tab" aria-selected="true">
+                    Description
                 </a>
-                <a class="animate-top" title="Add To Cart" href="#">
-                    <i class="pe-7s-cart"></i>
-                </a>
-                <a class="animate-left" title="Wishlist" href="#">
-                    <i class="pe-7s-like"></i>
+                <a href="#pro-review" data-toggle="tab" role="tab" aria-selected="false">
+                    Reviews (0)
                 </a>
             </div>
-        </div>
-        <div class="product-content-4 text-center">
-            <div class="product-rating-4">
-                <i class="icofont icofont-star yellow"></i>
-                <i class="icofont icofont-star yellow"></i>
-                <i class="icofont icofont-star yellow"></i>
-                <i class="icofont icofont-star yellow"></i>
-                <i class="icofont icofont-star"></i>
+            <div class="description-review-text tab-content">
+                <div class="tab-pane active show fade" id="pro-dec" role="tabpanel">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
+                        labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                        laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in</p>
+                </div>
+                <div class="tab-pane fade" id="pro-review" role="tabpanel">
+                    <a href="#">Be the first to write your review!</a>
+                </div>
             </div>
-            <h4><a href="#">name</a></h4>
-            <span>========</span>
-            <h5>$ </h5>
-        <p>gggggggg</p>
         </div>
     </div>
 </div>
+
+   
