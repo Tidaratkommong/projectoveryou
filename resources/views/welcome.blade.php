@@ -85,7 +85,7 @@
         </main>
     </div>
 
-
+    @extends('review.review')
 
 </div>
 
