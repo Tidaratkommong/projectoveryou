@@ -5,14 +5,14 @@
                
                     <img src="promo3.jpg" alt="">
                
-                    <img src="promo3.jpg"  alt="">
+                
                
             </a>
             <div class="product-action-right">
                 <a class="animate-right" href="#" title="View">
                     <i class="pe-7s-look"></i>
                 </a>
-                <a class="animate-top" title="Add To Cart" href="#"">
+                <a class="animate-top" title="Add To Cart" href="#">
                     <i class="pe-7s-cart"></i>
                 </a>
                 <a class="animate-left" title="Wishlist" href="#">
