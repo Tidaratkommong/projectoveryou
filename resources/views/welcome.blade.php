@@ -131,7 +131,7 @@
 @include('review.review')
 
 <!-- related product area start -->
-//{{-- @include('product._related-product') --}}
+@include('review.related-product')
 
 <br />
 <br />

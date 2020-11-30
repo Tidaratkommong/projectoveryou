@@ -113,6 +113,12 @@
 <!-- endchatbot -->
 
 
+{{-- reviews section --}}
+
+@include('review.review')
+
+<!-- related product area start -->
+{{-- @include('product._related-product') --}}
 <br />
 <br />
 
@@ -123,10 +129,5 @@
     <br />
 
 </ul>
-
-
-
-
-
 
 @endsection
