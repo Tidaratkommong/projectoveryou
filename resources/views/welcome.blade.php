@@ -128,7 +128,7 @@
 
 <br />
 <br />
-@extends('review.review')
+
 
 <ul class="nav justify-content-center bg-dark fixed-bottom ">
     <li class="nav-item">
@@ -138,9 +138,9 @@
 
 </ul>
 
+@endsection
 
 
-
-
-
+@extends('review.review')
+@section('content')
 @endsection
