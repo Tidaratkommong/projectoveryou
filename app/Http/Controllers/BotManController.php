@@ -47,7 +47,7 @@ class BotManController extends Controller
         });
 
         $botman->hears('โปรโมชั่น', function ($bot) {
-            $bot->reply('...............');
+            $bot->reply('โปรโมชั่นเดือนธันวาคมคือ');
             // $this->startConversation($bot);
          });
 
