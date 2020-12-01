@@ -47,7 +47,8 @@ class ShopController extends Controller
      */
     public function show($id)
     {
-        //
+        $product = Product::findOrFail($id);
+        return view('shop.products', compact('product'));
     }
 
     /**

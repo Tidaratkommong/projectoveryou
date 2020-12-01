@@ -52,14 +52,12 @@ Route::group(['prefix' => 'admin'], function(){
     });
 });
 
-
+//admin management
 Route::get('admin/index_user', 'DashboardController@index')->name('admin/index_user');
 Route::resource('admin', 'DashboardController');
 
 //Route::get('admin/edit_user', 'DashboardController@edit')->name('admin/edit_user');
 //Route::delete('/delete_user/{id}', 'DashboardController@registeredDelete');
-
-
 
 //profile
 Route::get('/user/{id}','UserController@profile')->name('user.profile');
@@ -76,7 +74,6 @@ Route::delete('/product/{id}', 'ProductController@Destroy');
 
 //search
 Route::get('/search', [ListproductController::class, 'search']);
-
 Route::get('/searchproduct', [ShopController::class, 'search']);
 
 //Route::get('/search', [ProductController::class, 'search']);
@@ -108,7 +105,8 @@ Route::get('/searchproduct', [ShopController::class, 'search']);
 
 //Route::delete('/product/{id}', 'ProductController@Destroy');
 
-// event
+
+// event_admin
 Route::resource('/event', 'EventController');
 Route::get('/addeventurl','EventController@display');
 Route::get('/displaydata','EventController@show');
@@ -119,8 +117,16 @@ Route::get('/displaydata','EventController@show');
 Route::get('/', 'ListproductController@index');
 //Route::get('/{id}','ListproductController@show'); // detail product
 
-// view home
+// shopping
 Route::get('/shop', 'ShopController@index');
+Route::get('/shop/{id}','ShopController@show')->name('shop.show');
+
+
+
+
+
+
+
 
 //chatbot
 Route::match(['get', 'post'], '/botman', 'BotManController@handle');
