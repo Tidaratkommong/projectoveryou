@@ -10,7 +10,7 @@
     <i class="fa fa-chevron-right breadcrumb-separator"></i>
     <span><a href="{{url('/shop')}}"> Shop </a></span>
     <i class="fa fa-chevron-right breadcrumb-separator"></i>
-    <span>{{ $product->product_name }}</span>
+    <span class="text-dark">{{ $product->product_name }}</span>
 </h4>
 <br>
 <!-- show product -->
@@ -23,10 +23,10 @@
             </div>
             <div class="col-md-8">
                 <div class="card-body">
-                    <h5 class="card-title ">{{ $product->product_name }}</h5>
-                    <p class="card-text ">{{ $product->product_detail }}</p>
-                    <p class="card-text ">ราคา {{ $product->product_price}} บาท </p>
-                    <p class="card-text ">จำนวน {{ $product->product_num }} </p>
+                    <h5 class="card-title text-dark ">{{ $product->product_name }}</h5>
+                    <p class="card-text text-dark ">{{ $product->product_detail }}</p>
+                    <p class="card-text text-dark">ราคา {{ $product->product_price}} บาท </p>
+                    <p class="card-text text-dark"> เหลือ {{ $product->product_num }} ตัว</p>
                     
                     <form action="#" method="POST">
                         <button type="submit" class="button button-plain">Add to Cart</button>
@@ -39,7 +39,8 @@
 </div>
 
 <!-- end product-section -->
-
+<br>
+<br>
 @include('shop.might-like')
 <!-- chatbot-->
 

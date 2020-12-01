@@ -1,6 +1,6 @@
 <div class="might-like-section">
     <div class="container">
-        <h3>คุณอาจจะชอบ...</h3>
+        <h4>คุณอาจจะชอบ...</h4>
         <div class="breadcrumb">
             <main>
                 <div class="page-overlay-bg">
@@ -12,7 +12,7 @@
                             <div class="col-6 col-sm-4 col-md-3 bg-light px-1">
                                 <div href="javascript:void(0);">
                                     <a href="{{ route('shop.show',$product->id )}}" class="card  mb-2 shadow-sm" style="width: 16rem; height:20rem;">
-                                        <img class="text-center w-100" src="{{asset($product->product_img )}}" style="width: 150px; height:250px;" />
+                                        <img class="text-center w-100" src="{{asset($product->product_img )}}" style="max-width: 540px;" >
                                         <div class="might-like-product-name">{{ $product->product_name }}</div>
                                         <div class="might-like-product-price">{{ $product->product_price}}</div>
                                     </a>
