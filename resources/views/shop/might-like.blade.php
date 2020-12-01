@@ -9,10 +9,10 @@
                         <div class="row no-gutters px-0">
                             <!--row-->
                             @foreach ($mightAlsoLike as $product)
-                            <div class="col-6 col-sm-4 col-md-3 bg-light px-1">
+                            <div class="col-6 col-sm-5 col-md-3 bg-light px-1">
                                 <div href="javascript:void(0);">
                                     <a href="{{ route('shop.show',$product->id )}}" class="card  mb-2 shadow-sm" style="width: 12rem; height:16rem;">
-                                        <img class="text-center w-100" src="{{asset($product->product_img )}}" style="max-width: 130px; max-height:250px;"/ >
+                                        <img class="text-center w-100" src="{{asset($product->product_img )}}" style="max-width: 130px; max-height:200px;"/ >
                                         <div class="might-like-product-name text-dark text-center">{{ $product->product_name }}</div>
                                         <div class="might-like-product-price text-dark text-center">ราคา {{ $product->product_price}} บาท</div>
                                     </a>
