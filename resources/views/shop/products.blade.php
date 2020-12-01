@@ -15,18 +15,20 @@
 <br>
 <!-- show product -->
 <div class="product-section container" >
-    <div class="card mb-5" style="max-width: 540px; margin: 10px;  padding: 24px;">
+    <div class="card mb-5" style="max-width: 540px; margin: center;  padding: 24px; ">
         <div class="row no-gutters">
             <div class="col-md-4">
                 <img src="{{asset($product->product_img )}}" class="card-img" alt="product">
             </div>
             <div class="col-md-8">
                 <div class="card-body">
-                    <h5 class="card-title">{{ $product->product_name }}</h5>
-                    <p class="card-text">{{ $product->product_detail }}</p>
-                    <p class="card-text"><small class="text-muted">{{ $product->product_price}}</small></p>
+                    <h5 class="card-title col-md-6">{{ $product->product_name }}</h5>
+                    <p class="card-text col-md-6">{{ $product->product_detail }}</p>
+                    <p class="card-text col-md-6">ราคา {{ $product->product_price}} บาท </p>
+                    <p class="card-text col-md-6">จำนวน {{ $products->product_num }} </p>
                 </div>
-
+                <br>
+                <br>
                 <form action="#" method="POST">
                     <button type="submit" class="button button-plain">Add to Cart</button>
                 </form>
