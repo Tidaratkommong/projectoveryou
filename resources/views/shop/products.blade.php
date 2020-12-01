@@ -9,16 +9,16 @@
 <div class="product-section container">
     <div>
         <div class="product-section-image">
-            <img src="{{asset($product->product_img )}} alt="product" class="active" id="currentImage">
+            <img src="{{asset($product->product_img )}}" alt="product" class="active" id="currentImage">
         </div>
         <div class="product-section-images">
             <div class="product-section-thumbnail selected">
-                <img src="{{asset($product->product_img )}} alt="product">
+                <img src="{{asset($product->product_img )}}" alt="product">
             </div>
 
             
             <div class="product-section-thumbnail">
-                <img src="{{asset($product->product_img )}} alt="product">
+                <img src="{{asset($product->product_img )}}" alt="product">
             </div>
             
         </div>
