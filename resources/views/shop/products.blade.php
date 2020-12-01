@@ -4,11 +4,13 @@
 
 @section('content')
 
-        <a href="/">Home</a>
-        <i class="fa fa-chevron-right breadcrumb-separator"></i>
-        <span><a href="#">Shop</a></span>
-        <i class="fa fa-chevron-right breadcrumb-separator"></i>
-        <span>{{ $product->product_name }}</span>
+<nav class="navbar navbar-secondary sticky-top" style="background-color: #e3f2fd;">
+    <a href="/">Home</a>
+    <i class="fa fa-chevron-right breadcrumb-separator"></i>
+    <span><a href="#">Shop</a></span>
+    <i class="fa fa-chevron-right breadcrumb-separator"></i>
+    <span>{{ $product->product_name }}</span>
+</nav>
 
 
 <div class="product-section container">
@@ -21,11 +23,11 @@
                 <img src="{{asset($product->product_img )}}" alt="product">
             </div>
 
-            
+
             <div class="product-section-thumbnail">
                 <img src="{{asset($product->product_img )}}" alt="product">
             </div>
-            
+
         </div>
     </div>
     <div class="product-section-information">
@@ -40,12 +42,12 @@
 
         <p>&nbsp;</p>
 
-       
+
         <form action="#" method="POST">
-           
+
             <button type="submit" class="button button-plain">Add to Cart</button>
         </form>
-        
+
     </div>
 </div> <!-- end product-section -->
 
@@ -66,7 +68,6 @@
         height: 100vh;
         margin: 0;
     }
-
 </style>
 </head>
 
