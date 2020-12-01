@@ -3,10 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Product;
-use Illuminate\Support\Facades\Auth;
 
-class ListproductController extends Controller
+class CartController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,12 +13,7 @@ class ListproductController extends Controller
      */
     public function index()
     {
-        //$product =Product::find(Auth::all());
-        //return view('welcome', compact('product'));
-        $product = Product::inRandomOrder()->take(8)->get();
-        
-        return view('welcome')->with('product',$product);
-       // {{ Auth::user()->name }}
+        //
     }
 
     /**
@@ -52,8 +45,7 @@ class ListproductController extends Controller
      */
     public function show($id)
     {
-        $product = Product::findOrFail($id);
-        return view('welcome', compact('product'));
+        //
     }
 
     /**
@@ -88,12 +80,5 @@ class ListproductController extends Controller
     public function destroy($id)
     {
         //
-    }
-
-    public function search()
-    {
-        $search = $_GET['search'];
-        $product = Product::where('product_name','LIKE','%'.$search.'%')->get();
-        return view('welcome', compact('product'));
     }
 }
