@@ -2,16 +2,12 @@
 
 @section('content')
 
-
-@section('content')
-
-    @component('components.breadcrumbs')
         <a href="/">Home</a>
         <i class="fa fa-chevron-right breadcrumb-separator"></i>
         <span><a href="#">Shop</a></span>
         <i class="fa fa-chevron-right breadcrumb-separator"></i>
         <span>{{ $product->product_name }}</span>
-    @endcomponent
+
 
     <div class="container">
         @if (session()->has('success_message'))
