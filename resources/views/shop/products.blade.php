@@ -13,7 +13,7 @@
     <span>{{ $product->product_name }}</span>
 </h4>
 <!-- show product -->
-<div class="product-section container" style="margin: 70px;  padding: 24px; ">
+<div class="product-section container" style="margin: 24px;  padding: 70px; ">
     <div class="card mb-3" style="max-width: 540px; margin: 10px;  padding: 24px; ">
         <div class="row no-gutters">
             <div class="col-md-4">
