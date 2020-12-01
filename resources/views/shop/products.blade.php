@@ -1,54 +1,102 @@
 @extends('layouts.test')
 
 @section('content')
-<a href="/">Home</a>
+
+
+@section('content')
+
+    @component('components.breadcrumbs')
+        <a href="/">Home</a>
         <i class="fa fa-chevron-right breadcrumb-separator"></i>
         <span><a href="#">Shop</a></span>
         <i class="fa fa-chevron-right breadcrumb-separator"></i>
-        <span>{{ $product->name }}</span>
-<br>
-<br>
-<br>
-<br>
-<div class="product-section container">
-    <div>
-        <div class="product-section-image">
-            <img src="{{asset($product->product_img )}}" alt="product" class="active" id="currentImage">
-        </div>
-        <div class="product-section-images">
-            <div class="product-section-thumbnail selected">
-                <img src="{{asset($product->product_img )}}" alt="product">
-            </div>
+        <span>{{ $product->product_name }}</span>
+    @endcomponent
 
-            
-            <div class="product-section-thumbnail">
-                <img src="{{asset($product->product_img )}}" alt="product">
+    <div class="container">
+        @if (session()->has('success_message'))
+            <div class="alert alert-success">
+                {{ session()->get('success_message') }}
             </div>
-            
-        </div>
+        @endif
+
+        @if(count($errors) > 0)
+            <div class="alert alert-danger">
+                <ul>
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+        @endif
     </div>
-    <div class="product-section-information">
-        <h1 class="product-section-title">{{ $product->product_name }}</h1>
-        <div class="product-section-subtitle">{{ $product->product_detail }}</div>
-        <div></div>
-        <div class="product-section-price">{{ $product->product_price}}</div>
 
-        <p>
-            //////
-        </p>
+    <div class="product-section container">
+        <div>
+            <div class="product-section-image">
+             
+            </div>
+            <div class="product-section-images">
+                <div class="product-section-thumbnail selected">
+                  
+                </div>
 
-        <p>&nbsp;</p>
+                @if ($product->images)
+                    @foreach (json_decode($product->images, true) as $image)
+                    <div class="product-section-thumbnail">
+                       
+                    </div>
+                    @endforeach
+                @endif
+            </div>
+        </div>
+        <div class="product-section-information">
+            <h1 class="product-section-title">{{ $product->product_name }}</h1>
+            <div class="product-section-subtitle">{{ $product->product_name }}</div>
+            <div>{!! $stockLevel !!}</div>
+            <div class="product-section-price">{{ $product->product_name }}</div>
 
-       
-        <form action="#" method="POST">
+            <p>
+                {!! $product->description !!}
+            </p>
+
+            <p>&nbsp;</p>
+
            
-            <button type="submit" class="button button-plain">Add to Cart</button>
-        </form>
-        
-    </div>
-</div> <!-- end product-section -->
+                <form action="#" method="POST">
+                   
+                    <button type="submit" class="button button-plain">Add to Cart</button>
+                </form>
+           
+        </div>
+    </div> <!-- end product-section -->
 
+    @include('partials.might-like')
 
+@endsection
+
+@section('extra-js')
+    <script>
+        (function(){
+            const currentImage = document.querySelector('#currentImage');
+            const images = document.querySelectorAll('.product-section-thumbnail');
+            images.forEach((element) => element.addEventListener('click', thumbnailClick));
+            function thumbnailClick(e) {
+                currentImage.classList.remove('active');
+                currentImage.addEventListener('transitionend', () => {
+                    currentImage.src = this.querySelector('img').src;
+                    currentImage.classList.add('active');
+                })
+                images.forEach((element) => element.classList.remove('selected'));
+                this.classList.add('selected');
+            }
+        })();
+    </script>
+
+    <!-- Include AlgoliaSearch JS Client and autocomplete.js library -->
+    <script src="https://cdn.jsdelivr.net/algoliasearch/3/algoliasearch.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/autocomplete.js/0/autocomplete.min.js"></script>
+    <script src="{{ asset('js/algolia.js') }}"></script>
 
 <!-- chatbot-->
 
