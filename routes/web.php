@@ -119,7 +119,7 @@ Route::get('/', 'ListproductController@index');
 //Route::get('/{id}','ListproductController@show'); // detail product
 
 // view home
-Route::get('/homeproduct', 'ListproducthomeController@index');
+Route::get('/homeproduct', 'ShopController@index');
 
 
 //chatbot

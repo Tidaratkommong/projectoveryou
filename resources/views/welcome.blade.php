@@ -62,7 +62,6 @@
                     <!--container-fluid-->
                     <div class="row no-gutters px-0">
                         <!--row-->
-
                         @foreach($product as $value)
                         <div class="col-6 col-sm-4 col-md-3 bg-light px-1">
                             <div href="javascript:void(0);">
@@ -74,27 +73,17 @@
                             </div>
                         </div>
                         @endforeach
-
-
                     </div>
                     <!--row-->
                 </div>
                 <!--container-fluid-->
-
             </div><!-- page-main-->
         </main>
     </div>
 </div>
-<div class="products text-center">
-                        @foreach ($product as $value)
-                            <div class="product">
-                                <a href=""><img src="{{asset($value->product_img )}}" alt="product"></a>
-                                <a href=""><div class="product-name">{{ $value->product_name }}</div></a>
-                                <div class="product-price">{{ $value->product_price }}/div>
-                            </div>
-                        @endforeach
+<!-- end products -->
 
-                    </div> <!-- end products -->
+
 <!-- chatbot-->
 
 <!--<link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">-->
