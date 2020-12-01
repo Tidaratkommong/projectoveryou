@@ -88,6 +88,6 @@ class ShopController extends Controller
     {
         $search = $_GET['search'];
         $product = Product::where('product_name','LIKE','%'.$search.'%')->get();
-        return view('shop', compact('product'));
+        return view('shop.shop', compact('product'));
     }
 }

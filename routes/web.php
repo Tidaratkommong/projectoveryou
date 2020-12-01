@@ -2,7 +2,7 @@
 
 use App\Repositories\TodoRepositoryInterface;
 use Illuminate\Http\Request;
-use App\Http\Controllers\ListproducthomeController;
+use App\Http\Controllers\ShopController;
 use App\Http\Controllers\ListproductController;
 use Illuminate\Support\Facades\Route;
 
