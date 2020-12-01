@@ -5,44 +5,6 @@
 <br>
 <br>
 <br>
-<div class="product-section container">
-    <div>
-        <div class="product-section-image">
-            <img src="{{asset($value->product_img )}} alt="product" class="active" id="currentImage">
-        </div>
-        <div class="product-section-images">
-            <div class="product-section-thumbnail selected">
-                <img src="{{asset($value->product_img )}} alt="product">
-            </div>
-
-            
-            <div class="product-section-thumbnail">
-                <img src="{{asset($value->product_img )}} alt="product">
-            </div>
-            
-        </div>
-    </div>
-    <div class="product-section-information">
-        <h1 class="product-section-title">{{ $value->product_name }}</h1>
-        <div class="product-section-subtitle">{{ $value->product_detail }}</div>
-        <div>{!! $stockLevel !!}</div>
-        <div class="product-section-price">{{ $value->product_price }}</div>
-
-        <p>
-            //////
-        </p>
-
-        <p>&nbsp;</p>
-
-        @if ($product->quantity > 0)
-        <form action="#" method="POST">
-            {{ csrf_field() }}
-            <button type="submit" class="button button-plain">Add to Cart</button>
-        </form>
-        @endif
-    </div>
-</div> <!-- end product-section -->
-
 
 
 <!-- chatbot-->
@@ -95,10 +57,5 @@
     <br />
 
 </ul>
-
-
-
-
-
 
 @endsection
