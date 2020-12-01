@@ -95,7 +95,7 @@
         </div> <!-- end sidebar -->
         <div>
             <div class="products-header">
-                <h1 class="stylish-heading">{{ $categoryName }}</h1>
+                <h1 class="stylish-heading">{{ $value->product_name }}</h1>
                 <div>
                     <strong>Price: </strong>
                     <a href="#">Low to High</a> |
