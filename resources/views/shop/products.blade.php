@@ -25,7 +25,7 @@
                     <h5 class="card-title col-md-6">{{ $product->product_name }}</h5>
                     <p class="card-text col-md-6">{{ $product->product_detail }}</p>
                     <p class="card-text col-md-6">ราคา {{ $product->product_price}} บาท </p>
-                    <p class="card-text col-md-6">จำนวน {{ $products->product_num }} </p>
+                    <p class="card-text col-md-6">จำนวน {{ $product->product_num }} </p>
                 </div>
                 <br>
                 <br>
