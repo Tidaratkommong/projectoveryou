@@ -3,10 +3,12 @@
 @section('title', $product->product_name)
 
 @section('content')
+<br>
+<br>
 <h4>
-    <a href="/">Home</a>
+    <a href="{{url('/home')}}>Home</a>
     <i class="fa fa-chevron-right breadcrumb-separator"></i>
-    <span><a href="#">Shop</a></span>
+    <span><a href="{{url('/shop')}}">Shop</a></span>
     <i class="fa fa-chevron-right breadcrumb-separator"></i>
     <span>{{ $product->product_name }}</span>
 </h4>
