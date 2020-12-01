@@ -14,6 +14,7 @@
 </h4>
 
 <!-- show product -->
+<div class="product-section container">
 <div class="card mb-3" style="max-width: 540px;">
     <div class="row no-gutters">
         <div class="col-md-4">
@@ -27,6 +28,7 @@
             </div>
         </div>
     </div>
+</div>
 </div>
 
 <!-- end show product -->
