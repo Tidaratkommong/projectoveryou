@@ -49,7 +49,7 @@
         <div class="product-section-information">
             <h1 class="product-section-title">{{ $product->product_name }}</h1>
             <div class="product-section-subtitle">{{ $product->product_name }}</div>
-            <div>{!! $stockLevel !!}</div>
+            <div></div>
             <div class="product-section-price">{{ $product->product_name }}</div>
 
             <p>
@@ -67,7 +67,7 @@
         </div>
     </div> <!-- end product-section -->
 
-    @include('partials.might-like')
+   
 
 @endsection
 
