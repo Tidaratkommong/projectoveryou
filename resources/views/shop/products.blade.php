@@ -1,7 +1,11 @@
 @extends('layouts.test')
 
 @section('content')
-
+<a href="/">Home</a>
+        <i class="fa fa-chevron-right breadcrumb-separator"></i>
+        <span><a href="#">Shop</a></span>
+        <i class="fa fa-chevron-right breadcrumb-separator"></i>
+        <span>{{ $product->name }}</span>
 <br>
 <br>
 <br>
