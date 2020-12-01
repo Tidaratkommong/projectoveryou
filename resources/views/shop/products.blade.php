@@ -35,12 +35,12 @@
 
         <p>&nbsp;</p>
 
-        @if ($product->quantity > 0)
+       
         <form action="#" method="POST">
-            {{ csrf_field() }}
+           
             <button type="submit" class="button button-plain">Add to Cart</button>
         </form>
-        @endif
+        
     </div>
 </div> <!-- end product-section -->
 
