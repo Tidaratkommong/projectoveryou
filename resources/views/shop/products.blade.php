@@ -3,30 +3,18 @@
 @section('title', $product->product_name)
 
 @section('content')
-
+<h4>
     <a href="/">Home</a>
     <i class="fa fa-chevron-right breadcrumb-separator"></i>
     <span><a href="#">Shop</a></span>
     <i class="fa fa-chevron-right breadcrumb-separator"></i>
     <span>{{ $product->product_name }}</span>
-
-
+</h4>
 
 <div class="product-section container">
     <div>
         <div class="product-section-image">
             <img src="{{asset($product->product_img )}}" alt="product" class="active" id="currentImage">
-        </div>
-        <div class="product-section-images">
-            <div class="product-section-thumbnail selected">
-                <img src="{{asset($product->product_img )}}" alt="product">
-            </div>
-
-
-            <div class="product-section-thumbnail">
-                <img src="{{asset($product->product_img )}}" alt="product">
-            </div>
-
         </div>
     </div>
     <div class="product-section-information">
@@ -34,11 +22,6 @@
         <div class="product-section-subtitle">{{ $product->product_detail }}</div>
         <div></div>
         <div class="product-section-price">{{ $product->product_price}}</div>
-
-        <p>
-            //////
-        </p>
-
         <p>&nbsp;</p>
 
 
