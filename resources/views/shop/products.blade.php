@@ -19,7 +19,7 @@
     <div class="card mb-3" style="max-width: 560px; margin:10px;  padding: 24px; ">
         <div class="row no-gutters">
             <div class="col-md-4">
-                <img src="{{asset($product->product_img )}}" class="card-img  w-100" alt="product" style="width: 130px; max-height:220px;">
+                <img src="{{asset($product->product_img )}}" class="card-img  w-100" alt="product" style="width: 150px; max-height:220px;">
             </div>
             <div class="col-md-8">
                 <div class="card-body">
