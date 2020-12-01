@@ -26,8 +26,8 @@
     <div class="product-section-information">
         <h1 class="product-section-title">{{ $products->product_name }}</h1>
         <div class="product-section-subtitle">{{ $products->product_detail }}</div>
-        <div>{!! $stockLevel !!}</div>
-        <div class="product-section-price">{{{ $products->product_price}}</div>
+        <div></div>
+        <div class="product-section-price">{{ $products->product_price}}</div>
 
         <p>
             //////
