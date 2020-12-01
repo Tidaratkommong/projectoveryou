@@ -22,10 +22,10 @@
             </div>
             <div class="col-md-8">
                 <div class="card-body">
-                    <h5 class="card-title col-md-6">{{ $product->product_name }}</h5>
-                    <p class="card-text col-md-6">{{ $product->product_detail }}</p>
-                    <p class="card-text col-md-6">ราคา {{ $product->product_price}} บาท </p>
-                    <p class="card-text col-md-6">จำนวน {{ $product->product_num }} </p>
+                    <h5 class="card-title ">{{ $product->product_name }}</h5>
+                    <p class="card-text ">{{ $product->product_detail }}</p>
+                    <p class="card-text ">ราคา {{ $product->product_price}} บาท </p>
+                    <p class="card-text ">จำนวน {{ $product->product_num }} </p>
                     
                     <form action="#" method="POST">
                         <button type="submit" class="button button-plain">Add to Cart</button>
