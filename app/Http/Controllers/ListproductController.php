@@ -88,7 +88,7 @@ class ListproductController extends Controller
     {
         //
     }
-
+    
     public function search()
     {
         $search = $_GET['search'];

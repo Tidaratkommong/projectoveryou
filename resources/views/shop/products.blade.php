@@ -26,8 +26,7 @@
                     <h5 class="card-title text-dark ">{{ $product->product_name }}</h5>
                     <p class="card-text text-dark ">{{ $product->product_detail }}</p>
                     <p class="card-text text-dark">ราคา {{ $product->product_price}} บาท </p>
-                    <p class="card-text text-dark"> เหลือ {{ $product->product_num }} ตัว</p>
-                    
+                    <p class="card-text text-dark"> เหลือ {{ $product->product_num }} ตัว</p>                   
                     <form action="#" method="POST">
                         <button type="submit" class="button button-plain">Add to Cart</button>
                     </form>
