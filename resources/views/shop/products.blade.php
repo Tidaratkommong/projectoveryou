@@ -15,7 +15,7 @@
 <br>
 <!-- show product -->
 <div class="product-section container">
-    <div class="card mb-3" style="max-width: 540px;">
+    <div class="card mb-3" style="max-width: 540px; margin: 10px;  padding: 24px; ">
         <div class="row no-gutters">
             <div class="col-md-4">
                 <img src="{{asset($product->product_img )}}" class="card-img" alt="product">
