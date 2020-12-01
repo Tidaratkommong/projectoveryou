@@ -5,7 +5,7 @@
 @section('content')
 <br>
 <br>
-<h4>
+<h4 class="col-md-6">
     <a href="{{url('/home')}}"> Home </a>
     <i class="fa fa-chevron-right breadcrumb-separator"></i>
     <span><a href="{{url('/shop')}}"> Shop </a></span>
