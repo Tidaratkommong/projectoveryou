@@ -4,13 +4,12 @@
 
 @section('content')
 
-@component('components.breadcrumbs')
         <a href="/">Home</a>
         <i class="fa fa-chevron-right breadcrumb-separator"></i>
         <span><a href="#">Shop</a></span>
         <i class="fa fa-chevron-right breadcrumb-separator"></i>
-        <span>{{ $product->name }}</span>
-    @endcomponent
+        <span>{{ $product->product_name }}</span>
+
 
 <div class="product-section container">
     <div>
@@ -67,6 +66,7 @@
         height: 100vh;
         margin: 0;
     }
+
 </style>
 </head>
 
