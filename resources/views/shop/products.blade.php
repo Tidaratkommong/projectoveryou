@@ -14,8 +14,8 @@
 </h4>
 <br>
 <!-- show product -->
-<div class="product-section container" >
-    <div class="card mb-5" style="max-width: 540px; margin: center;  padding: 24px; ">
+<div class="product-section container">
+    <div class="card mb-3" style="max-width: 540px; margin: center;  padding: 24px; ">
         <div class="row no-gutters">
             <div class="col-md-4">
                 <img src="{{asset($product->product_img )}}" class="card-img" alt="product">
@@ -26,13 +26,12 @@
                     <p class="card-text col-md-6">{{ $product->product_detail }}</p>
                     <p class="card-text col-md-6">ราคา {{ $product->product_price}} บาท </p>
                     <p class="card-text col-md-6">จำนวน {{ $product->product_num }} </p>
+                    
+                    <form action="#" method="POST">
+                        <button type="submit" class="button button-plain">Add to Cart</button>
+                    </form>
                 </div>
-                <br>
-                <br>
-                <form action="#" method="POST">
-                    <button type="submit" class="button button-plain">Add to Cart</button>
-                </form>
-
+               
             </div>
         </div>
     </div>
