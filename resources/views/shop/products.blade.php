@@ -14,38 +14,38 @@
             <div class="card ">
 
 
-                <h6 class="card-header text-center">ID สินค้าที่ {{ $products->id }}</h6>
+                <h6 class="card-header text-center">ID สินค้าที่ {{ $product->id }}</h6>
                 <form style=" margin: 10px;" enctype="multipart/form-data">
                     @csrf
                     <div class="form-row">
                         <div class="ml-5 ">
-                            <img src="{{asset($products->product_img )}}" style="width: 16rem; height:16rem;" class="img-thumbnail" />
+                            <img src="{{asset($product->product_img )}}" style="width: 16rem; height:16rem;" class="img-thumbnail" />
                             <br />
                             <br />
                         </div>
 
                         <div class="form-group col-md-6">
-                            <label for="productname">ชื่อสินค้า : {{ $products->product_name }} </label>
+                            <label for="productname">ชื่อสินค้า : {{ $product->product_name }} </label>
                         </div>
 
                         <div class="form-group col-md-6">
-                            <label for="producttype">ประเภทสินค้า : {{ $products->product_type }}</label>
+                            <label for="producttype">ประเภทสินค้า : {{ $product->product_type }}</label>
 
                         </div>
 
                     </div>
                     <div class="form-group ">
-                        <label for="product">รายละเอียดสินค้า : {{ $products->product_detail }}</label>
+                        <label for="product">รายละเอียดสินค้า : {{ $product->product_detail }}</label>
                     </div>
                     <div class="form-row">
 
                         <div class="form-group col-md-6">
-                            <label for="productprice">ราคาสินค้า : {{ $products->product_price}} บาท</label>
+                            <label for="productprice">ราคาสินค้า : {{ $product->product_price}} บาท</label>
 
                         </div>
 
                         <div class="form-group col-md-6">
-                            <label for="productnum">จำนวนสินค้า : {{ $products->product_num }} ตัว </label>
+                            <label for="productnum">จำนวนสินค้า : {{ $product->product_num }} ตัว </label>
                         </div>
                     </div>
             </div>
