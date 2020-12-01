@@ -12,9 +12,10 @@
     <i class="fa fa-chevron-right breadcrumb-separator"></i>
     <span>{{ $product->product_name }}</span>
 </h4>
+<br>
 <!-- show product -->
 <div class="product-section container" >
-    <div class="card mb-5" style="max-width: 540px; margin: 10px;  padding: 24px; ">
+    <div class="card mb-5" style="max-width: 540px; margin: 10px;  padding: 24px;">
         <div class="row no-gutters">
             <div class="col-md-4">
                 <img src="{{asset($product->product_img )}}" class="card-img" alt="product">
@@ -36,6 +37,8 @@
 </div>
 
 <!-- end product-section -->
+
+@include('shop.might-like')
 <!-- chatbot-->
 
 <!--<link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">-->
