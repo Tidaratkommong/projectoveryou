@@ -43,7 +43,7 @@
     <br />
     <!--product -->
     <div class="breadcrumb">
-        <h5><a href="{{url('/homeproduct')}}">ดูสินค้าทั้งหมด</a></h5>
+        <h5><a href="{{url('/shop')}}">ดูสินค้าทั้งหมด</a></h5>
         <main>
             <div class="page-overlay-bg">
                 <div class="container-fluid m-0 p-0">
