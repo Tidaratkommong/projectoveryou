@@ -15,7 +15,7 @@ class ShopController extends Controller
     public function index()
     {
         $product = Product::all();
-        return view('/homeproduct', compact('product'));
+        return view('shop.shop', compact('product'));
     }
 
     /**
@@ -88,6 +88,6 @@ class ShopController extends Controller
     {
         $search = $_GET['search'];
         $product = Product::where('product_name','LIKE','%'.$search.'%')->get();
-        return view('/homeproduct', compact('product'));
+        return view('shop.shop', compact('product'));
     }
 }
