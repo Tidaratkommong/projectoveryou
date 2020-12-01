@@ -6,12 +6,33 @@
 <br>
 <br>
 <h4>
-    <a href="{{url('/home')}}>Home</a>
+    <a href="{{url('/home')}}"> Home </a>
     <i class="fa fa-chevron-right breadcrumb-separator"></i>
-    <span><a href="{{url('/shop')}}">Shop</a></span>
+    <span><a href="{{url('/shop')}}"> Shop </a></span>
     <i class="fa fa-chevron-right breadcrumb-separator"></i>
     <span>{{ $product->product_name }}</span>
 </h4>
+
+<!-- show product -->
+<div class="card mb-3" style="max-width: 540px;">
+    <div class="row no-gutters">
+        <div class="col-md-4">
+            <img src="..." class="card-img" alt="...">
+        </div>
+        <div class="col-md-8">
+            <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- end show product -->
+
+
+
 
 <div class="product-section container">
     <div>
@@ -25,10 +46,7 @@
         <div></div>
         <div class="product-section-price">{{ $product->product_price}}</div>
         <p>&nbsp;</p>
-
-
         <form action="#" method="POST">
-
             <button type="submit" class="button button-plain">Add to Cart</button>
         </form>
 
