@@ -13,8 +13,8 @@
                                 <div href="javascript:void(0);">
                                     <a href="{{ route('shop.show',$product->id )}}" class="card  mb-2 shadow-sm" style="width: 16rem; height:18rem;">
                                         <img class="text-center w-100" src="{{asset($product->product_img )}}" style="max-width: 130px; max-height:200px;"/ >
-                                        <div class="might-like-product-name">{{ $product->product_name }}</div>
-                                        <div class="might-like-product-price">{{ $product->product_price}}</div>
+                                        <div class="might-like-product-name text-dark text-center">{{ $product->product_name }}</div>
+                                        <div class="might-like-product-price text-dark text-center">ราคา {{ $product->product_price}} บาท</div>
                                     </a>
                                 </div>
                             </div>
@@ -26,27 +26,6 @@
                 </div><!-- page-main-->
             </main>
         </div>
-
-
-
-
-
-        <div class="might-like-grid">
-            @foreach ($mightAlsoLike as $product)
-            <a href="{{ route('shop.show',$product->id )}}" class="might-like-product">
-                <img src="#" alt="product">
-                <div class="might-like-product-name">{{ $product->product_name }}</div>
-                <div class="might-like-product-price">{{ $product->product_name }}</div>
-            </a>
-            @endforeach
-
-        </div>
-
-
-
-
-
-
     </div>
 </div>
 </div>
