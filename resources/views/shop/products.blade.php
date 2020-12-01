@@ -12,51 +12,31 @@
     <i class="fa fa-chevron-right breadcrumb-separator"></i>
     <span>{{ $product->product_name }}</span>
 </h4>
-
+<br>
 <!-- show product -->
 <div class="product-section container">
-<div class="card mb-3" style="max-width: 540px;">
-    <div class="row no-gutters">
-        <div class="col-md-4">
-            <img src="..." class="card-img" alt="...">
-        </div>
-        <div class="col-md-8">
-            <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+    <div class="card mb-3" style="max-width: 540px;">
+        <div class="row no-gutters">
+            <div class="col-md-4">
+                <img src="{{asset($product->product_img )}}" class="card-img" alt="product">
+            </div>
+            <div class="col-md-8">
+                <div class="card-body">
+                    <h5 class="card-title">{{ $product->product_name }}</h5>
+                    <p class="card-text">{{ $product->product_detail }}</p>
+                    <p class="card-text"><small class="text-muted">{{ $product->product_price}}</small></p>
+                </div>
+
+                <form action="#" method="POST">
+                    <button type="submit" class="button button-plain">Add to Cart</button>
+                </form>
+
             </div>
         </div>
     </div>
 </div>
-</div>
 
-<!-- end show product -->
-
-
-
-
-<div class="product-section container">
-    <div>
-        <div class="product-section-image">
-            <img src="{{asset($product->product_img )}}" alt="product" class="active" id="currentImage">
-        </div>
-    </div>
-    <div class="product-section-information">
-        <h1 class="product-section-title">{{ $product->product_name }}</h1>
-        <div class="product-section-subtitle">{{ $product->product_detail }}</div>
-        <div></div>
-        <div class="product-section-price">{{ $product->product_price}}</div>
-        <p>&nbsp;</p>
-        <form action="#" method="POST">
-            <button type="submit" class="button button-plain">Add to Cart</button>
-        </form>
-
-    </div>
-</div> <!-- end product-section -->
-
-
-
+<!-- end product-section -->
 <!-- chatbot-->
 
 <!--<link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">-->
