@@ -6,53 +6,43 @@
 <br>
 <br>
 <br>
-<br />
-<div class="container">
-    <a type="submit" name="submit" class="btn btn-danger" value="BACK" href="{{url('product/index_product')}}" />BACK</a> 
-    <div class="row justify-content-center">
-        <div class="col-md-5">
-            <div class="card ">
-
-
-                <h6 class="card-header text-center">ID สินค้าที่ {{ $product->id }}</h6>
-                <form style=" margin: 10px;" enctype="multipart/form-data">
-                    @csrf
-                    <div class="form-row">
-                        <div class="ml-5 ">
-                            <img src="{{asset($product->product_img )}}" style="width: 16rem; height:16rem;" class="img-thumbnail" />
-                            <br />
-                            <br />
-                        </div>
-
-                        <div class="form-group col-md-6">
-                            <label for="productname">ชื่อสินค้า : {{ $product->product_name }} </label>
-                        </div>
-
-                        <div class="form-group col-md-6">
-                            <label for="producttype">ประเภทสินค้า : {{ $product->product_type }}</label>
-
-                        </div>
-
-                    </div>
-                    <div class="form-group ">
-                        <label for="product">รายละเอียดสินค้า : {{ $product->product_detail }}</label>
-                    </div>
-                    <div class="form-row">
-
-                        <div class="form-group col-md-6">
-                            <label for="productprice">ราคาสินค้า : {{ $product->product_price}} บาท</label>
-
-                        </div>
-
-                        <div class="form-group col-md-6">
-                            <label for="productnum">จำนวนสินค้า : {{ $product->product_num }} ตัว </label>
-                        </div>
-                    </div>
+<div class="product-section container">
+    <div>
+        <div class="product-section-image">
+            <img src="{{asset($product->product_img )}} alt="product" class="active" id="currentImage">
+        </div>
+        <div class="product-section-images">
+            <div class="product-section-thumbnail selected">
+                <img src="{{asset($product->product_img )}} alt="product">
             </div>
+
+            
+            <div class="product-section-thumbnail">
+                <img src="{{asset($product->product_img )}} alt="product">
+            </div>
+            
         </div>
     </div>
+    <div class="product-section-information">
+        <h1 class="product-section-title">{{ $product->product_name }}</h1>
+        <div class="product-section-subtitle">{{ $product->product_detail }}</div>
+        <div></div>
+        <div class="product-section-price">{{ $product->product_price}}</div>
 
-    </div><!-- end product-section -->
+        <p>
+            //////
+        </p>
+
+        <p>&nbsp;</p>
+
+       
+        <form action="#" method="POST">
+           
+            <button type="submit" class="button button-plain">Add to Cart</button>
+        </form>
+        
+    </div>
+</div> <!-- end product-section -->
 
 
 
