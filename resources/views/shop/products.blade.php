@@ -4,13 +4,12 @@
 
 @section('content')
 
-<nav class="navbar navbar-secondary sticky-top" style="background-color: #e3f2fd;">
     <a href="/">Home</a>
     <i class="fa fa-chevron-right breadcrumb-separator"></i>
     <span><a href="#">Shop</a></span>
     <i class="fa fa-chevron-right breadcrumb-separator"></i>
     <span>{{ $product->product_name }}</span>
-</nav>
+
 
 
 <div class="product-section container">
