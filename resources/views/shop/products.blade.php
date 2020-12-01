@@ -12,9 +12,8 @@
     <i class="fa fa-chevron-right breadcrumb-separator"></i>
     <span>{{ $product->product_name }}</span>
 </h4>
-<br>
 <!-- show product -->
-<div class="product-section container" style="margin: 30px;  padding: 30px; ">
+<div class="product-section container" style="margin: 50px;  padding: 24px; ">
     <div class="card mb-3" style="max-width: 540px; margin: 10px;  padding: 24px; ">
         <div class="row no-gutters">
             <div class="col-md-4">
