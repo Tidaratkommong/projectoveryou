@@ -76,7 +76,7 @@ Route::delete('/product/{id}', 'ProductController@Destroy');
 
 //search
 Route::get('/search', [ListproductController::class, 'search']);
-Route::get('/searchproduct', [ListproducthomeController::class, 'search']);
+Route::get('/searchproduct', [ShopController::class, 'search']);
 
 //Route::get('/search', [ProductController::class, 'search']);
 

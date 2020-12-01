@@ -116,7 +116,6 @@
                             </li>
                             @endif
                             @else
-
                             <!--<div class="card-body py-0">
                                 <form class="form-inline ">
                                     <a class="btn btn-outline-warning" type="submit" href="#">
@@ -125,7 +124,6 @@
 
                                 </form>
                             </div>-->
-
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle fas fa-user text-light" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     {{ Auth::user()->name }}
