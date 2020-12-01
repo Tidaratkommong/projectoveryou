@@ -18,7 +18,6 @@ class ListproductController extends Controller
         //$product =Product::find(Auth::all());
         //return view('welcome', compact('product'));
         $product = Product::inRandomOrder()->take(8)->get();
-
         return view('welcome', compact('product'));
        // {{ Auth::user()->name }}
     }

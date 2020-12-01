@@ -85,46 +85,16 @@
         </main>
     </div>
 </div>
+<div class="products text-center">
+                        @foreach ($product as $value)
+                            <div class="product">
+                                <a href=""><img src="{{asset($value->product_img )}}" alt="product"></a>
+                                <a href=""><div class="product-name">{{ $value->product_name }}</div></a>
+                                <div class="product-price">{{ $value->product_price }}/div>
+                            </div>
+                        @endforeach
 
-<div class="products-section container">
-        <div class="sidebar">
-            <h3>By Category</h3>
-            <ul>
-               
-            </ul>
-        </div> <!-- end sidebar -->
-        <div>
-            <div class="products-header">
-                <h1 class="stylish-heading">{{ $value->product_name }}</h1>
-                <div>
-                    <strong>Price: </strong>
-                    <a href="#">Low to High</a> |
-                    <a href="#">High to Low</a>
-
-                </div>
-            </div>
-
-            <div class="products text-center">
-                @forelse ($product as $value)
-                    <div class="product">
-                        <a href="#"><img src="{{asset($value->product_img )}}" alt="product"></a>
-                        <a href="#"><div class="product-name">{{ $value->product_name }}</div></a>
-                        <div class="product-price">{{ $value->product_price }}</div>
-                    </div>
-                @empty
-                    <div style="text-align: left">No items found</div>
-                @endforelse
-            </div> <!-- end products -->
-
-            <div class="spacer"></div>
-            {{ $product->appends(request()->input())->links() }}
-        </div>
-    </div>
-<!-- Include AlgoliaSearch JS Client and autocomplete.js library -->
-<script src="https://cdn.jsdelivr.net/algoliasearch/3/algoliasearch.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/autocomplete.js/0/autocomplete.min.js"></script>
-    <script src="{{ asset('js/algolia.js') }}"></script>
-
+                    </div> <!-- end products -->
 <!-- chatbot-->
 
 <!--<link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">-->
