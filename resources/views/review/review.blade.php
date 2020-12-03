@@ -198,34 +198,6 @@
     }
 </style>
 
-<div class="form-popup" id="myForm">
-
-    {!! Form::open(['action' => 'ReviewsController@store', 'method' => 'POST']) !!}
-
-    <div class="form-group">
-        {{Form::label('rating', 'rating')}}
-        {{Form::text('rating', '',['class' => 'form-control', 'placeholder' => 'rating'] )}}
-    </div>
-    <div class="form-group">
-        {{Form::label('title', 'Title')}}
-        {{Form::text('title', '',['class' => 'form-control', 'placeholder' => 'Title'] )}}
-    </div>
-    <div class="form-group">
-        {{Form::label('body', 'Review')}}
-        {{Form::textarea('body', '',['class' => 'form-control', 'placeholder' => 'Review'] )}}
-    </div>
-
-    <div class="form-group"> 
-    </div>
-    <div class="form-group">
-        {{Form::hidden('post_id', $product->id)}}
-    </div>
-
-    {{Form::Submit('submit', ['class' => 'btn btn-primary'])}}
-    {!! Form::close() !!}
-    <button type="button" class="btn btn-primary" onclick="closeForm()">Close</button>
-</div>
-</div>
 
 
 <script>
@@ -245,26 +217,3 @@ function closeForm() {
 </div>
 
 
-<div id="Reviews" class="tabcontent">
- <div class = 'reviews'>
- @can('isUser')
-    <button class="open-button" onclick="openForm()">Write review</button>
-    @endcan
-    <h1>Reviews</h1>
-    @if(count($review) > 1)
-        @foreach($review as $reviews)
-            <div class= "well"> 
-                <h3><a href="/review/{{$reviews->title}}">{{$reviews->title}} </a></h3><small>{{$reviews->created_at}}</small><br>
-                <small>{{$reviews->body}}</small> 
-               <br>
-               <br>
-            </div>
-            
-            @endforeach
-
-            @else
-        </p>no posts found</p>
-        @endif     
-@endsection  
-    </div>
-</div>
