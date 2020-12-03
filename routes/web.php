@@ -143,3 +143,4 @@ Route::get('test',function(TodoRepositoryInterface $repository){
     dd($repository->all());
 });
 
+Route::resource('reviews', 'ReviewsController');
