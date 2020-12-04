@@ -69,9 +69,9 @@
                                 <a class="btn btn-link text-dark" href="{{ url('shipments') }} " > ตรวจสอบการจัดส่ง</a>
                             </li>
                             
-                            <li class="nav-item">
+                           <!-- <li class="nav-item">
                                 <a class="btn btn-link text-dark" href="#"> ออกแบบ.....</a>
-                            </li>
+                            </li>-->
 
                             @guest
                             <li class="nav-item">

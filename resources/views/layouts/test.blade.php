@@ -70,10 +70,10 @@
                                 <a class="btn btn-link text-dark" href="{{ url('shipments') }} "> ตรวจสอบการจัดส่ง</a>
                             </li>
 
-                            <li class="nav-item">
+                           <!-- <li class="nav-item">
                                 <a class="btn btn-link text-dark" href="#"> ออกแบบ.....</a>
-                            </li>
-
+                            </li>-->
+                            
                             <!--<form class="form-inline my-2 my-lg-0">
                                 <input class="form-control mr-sm-2" type="search" placeholder="ค้นหาสินค้าที่คุณต้องการ" aria-label="Search" style="width: 28rem;">
                                 <button class="btn btn-outline-success my-2 my-sm-0" type="submit"> <i class="fas fa-search cus-icon py-1"></i></button>

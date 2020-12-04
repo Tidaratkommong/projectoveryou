@@ -70,9 +70,9 @@
                                 <a class="btn btn-link text-light" href="{{ url('shipments') }} "> ตรวจสอบการจัดส่ง</a>
                             </li>
 
-                            <li class="nav-item">
-                                <a class="btn btn-link text-light" href="#"> ออกแบบ.....</a>
-                            </li>
+                            <!-- <li class="nav-item">
+                                <a class="btn btn-link text-dark" href="#"> ออกแบบ.....</a>
+                            </li>-->
 
                             <!--<form class="form-inline my-2 my-lg-0">
                                 <input class="form-control mr-sm-2" type="search" placeholder="ค้นหาสินค้าที่คุณต้องการ" aria-label="Search" style="width: 28rem;">
