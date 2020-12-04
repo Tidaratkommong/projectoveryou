@@ -2,7 +2,18 @@
 
 @section('content')
 
-<div class="product-section container">
+
+<br>
+<br>
+<h4 class="col-md-6">
+    <a href="{{url('/home')}}"> Home </a>
+    <i class="fa fa-chevron-right breadcrumb-separator"></i>
+    <span><a href="{{url('/shop')}}"> Shop </a></span>
+    <i class="fa fa-chevron-right breadcrumb-separator"></i>
+   
+</h4>
+<br>
+<div class="container ">
     <!-- promotion -->
     <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
         <ol class="carousel-indicators">
