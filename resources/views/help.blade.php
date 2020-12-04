@@ -56,9 +56,8 @@
     <br />
     <br />
 
-    <div class="row justify-content-center bg-light">
         <div class="col-md-11">
-            <div class="card">
+            <div class="card btn btn-outline-success ">
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item active">
                         <h5 class="nav-link"> การคืนสินค้า </h5>
@@ -86,7 +85,7 @@
                 </ul>
             </div>
         </div>
-    </div>
+   
     <br />
     <br />
     <br />
