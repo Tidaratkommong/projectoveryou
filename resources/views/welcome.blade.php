@@ -2,7 +2,7 @@
 
 @section('content')
 
-<div class="container">
+<div class="product-section container">
     <!-- promotion -->
     <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
         <ol class="carousel-indicators">
@@ -57,7 +57,7 @@
 
     <div class="breadcrumb">
         <main>
-            
+            <div class="page-overlay-bg bg-light">
                 <div class="container-fluid m-0 p-0">
                     <!--container-fluid-->
                     <div class="row no-gutters px-0">
@@ -77,7 +77,7 @@
                     <!--row-->
                 </div>
                 <!--container-fluid-->
-            <!-- page-main-->
+            </div><!-- page-main-->
         </main>
     </div>
 </div>
