@@ -53,7 +53,14 @@ class BotManController extends Controller
 
          $botman->hears('image attachment', function (BotMan $bot) {
             // Create attachment
-            $bot->reply('https://botman.io/img/logo.png'); 
+            $attachment = new Image('https://botman.io/img/logo.png');
+        
+            // Build message object
+            $message = OutgoingMessage::create('This is my text')
+                        ->withAttachment($attachment);
+        
+            // Reply message object
+            $bot->reply($message);
         });
 
         // 
