@@ -3,13 +3,67 @@
 
 
 @section('content')
+<br>
+<br>
+<h4 class="col-md-6">
+    <a href="{{url('/home')}}"> Home </a>
+    <i class="fa fa-chevron-right breadcrumb-separator"></i>
+    <span><a href="{{url('/shop')}}"> Shop </a></span>
+    <i class="fa fa-chevron-right breadcrumb-separator"></i>
+    <span class="text-dark"></span>
+</h4>
+<br>
+<!-- show product -->
 
-<!-- end products -->
+<div class="product-section container">
+    <div class="card mb-3" style="max-width: 560px; margin:10px;  padding: 24px; ">
+        <div class="row no-gutters">
+            <div class="col-md-4">
+                <img src="" class="card-img  w-100" alt="product" style="width: 150px; max-height:220px;">
+            </div>
+            <div class="col-md-8">
+                <div class="card-body">
+                    <h5 class="card-title text-dark "></h5>
+                    <p class="card-text text-dark "></p>
+                    <p class="card-text text-dark">ราคา บาท </p>
+                    <p class="card-text text-dark"> เหลือ  ตัว</p>                   
+                    <form action="#" method="POST">
+                        <button type="submit" class="btn btn-outline-success">เพิ่มไปยังรถเข็น</button>
+                        <!--<button type="submit" class="button button-plain"> เพิ่มไปยังรถเข็น </button>-->
+                    </form>
+                </div>
+               
+            </div>
+        </div>
+    </div>
+</div>
 
+<!-- end product-section -->
+<br>
+<br>
 
 <!-- chatbot-->
 
 <!--<link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">-->
+
+<link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,700,800" rel="stylesheet">
+<style>
+    html,
+    body {
+        background-color: #fff;
+        color: #636b6f;
+        font-family: sans-serif;
+        font-weight: 200;
+        height: 100vh;
+        margin: 0;
+    }
+</style>
+</head>
+
+<body>
+</body>
+
+<link rel="stylesheet" type="text/css">
 <script>
     var botmanWidget = {
         aboutText: 'ssdsd',
@@ -30,6 +84,7 @@
 
 <br />
 <br />
+
 <ul class="nav justify-content-center bg-dark fixed-bottom ">
     <li class="nav-item">
         <a class="btn btn-link" href="#"></a>
@@ -37,6 +92,4 @@
     <br />
 
 </ul>
-
 @endsection
-
