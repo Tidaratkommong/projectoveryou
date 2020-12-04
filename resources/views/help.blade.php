@@ -12,7 +12,7 @@
 
         <div class="col-md-11">
             <div class="card">
-                <ul class="navbar-nav mr-auto">
+                <ul class="navbar-nav mr-auto btn btn-outline-success ">
                     <br />
                     <li class="nav-item active">
                         <h5 class="nav-link ml-2 text-black"> การซื้อสินค้า </h5>
@@ -57,7 +57,7 @@
     <br />
 
         <div class="col-md-11">
-            <div class="card btn btn-outline-success ">
+            <div class="card">
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item active">
                         <h5 class="nav-link"> การคืนสินค้า </h5>
