@@ -20,17 +20,15 @@ class BotManController extends Controller
         // user:hi
         //botman: hi user
         $botman->hears('สวัสดีครับ', function ($bot) {
-          //  $bot->reply('มีอะไรให้เราช่วยไหมคะ ถ้าต้องการเริ่มต้นใหม่ พิมพ์คำว่า "เริ่มใหม่" ได้ตลอดเวลา');
             $this->startConversation($bot);
         });
 
         $botman->hears('สวัสดีค่ะ', function ($bot) {
-           // $bot->reply('สวัสดีค่ะ ✋');
             $this->startConversation($bot);
         });
 
         $botman->hears('สวัสดี', function ($bot) {
-            // $bot->reply('สวัสดีค่ะ ✋');
+           
              $this->startConversation($bot);
          });
 
@@ -46,40 +44,35 @@ class BotManController extends Controller
             $this->startConversation($bot);
         });
 
-        $botman->hears('โปรโมชั่น', function ($bot) {
-            $bot->reply('โปรโมชั่นเดือนธันวาคมคือ');
-            // $this->startConversation($bot);
-         });
-
-         $botman->hears('image attachment', function (BotMan $bot) {
+        // show image 
+       // $botman->hears('โปรโมชั่น', function ($bot) {
+          //  $bot->reply('โปรโมชั่นเดือนธันวาคมคือ');
+        // });
+        $botman->hears('โปรโมชั่น', function (BotMan $bot) {
             // Create attachment
             $attachment = new Image('https://botman.io/img/logo.png');
-        
             // Build message object
-            $message = OutgoingMessage::create('This is my text')
+            $message = OutgoingMessage::create('โปรโมชั่นเดือนธันวาคมคือ')
                         ->withAttachment($attachment);
-        
+            // Reply message object
+            $bot->reply($message);
+        });
+
+
+        $botman->hears('คืนสินค้า', function (BotMan $bot) {
+            // Create attachment
+            $attachment = new Image('https://botman.io/img/logo.png');
+            // Build message object
+            $message = OutgoingMessage::create('ขั้นตอนการคืนสินค้า')
+                        ->withAttachment($attachment);
             // Reply message object
             $bot->reply($message);
         });
 
         // 
         $botman->fallback(function($bot) {
-           $bot->reply('Sorry, I did not understand these commands. Here is a list of commands I understand: ...');
+           $bot->reply('ขออภัย ฉันไม่เข้าใจคําสั่งเหล่านี้');
         });
-
-/* showe image
-$botman->hears('image attachment', function (BotMan $bot) {
-    // Create attachment
-    $attachment = new Image('https://botman.io/img/logo.png');
-
-    // Build message object
-    $message = OutgoingMessage::create('This is my text')
-                ->withAttachment($attachment);
-
-    // Reply message object
-    $bot->reply($message);
-});*/
 
         $botman->listen();
 
