@@ -34,7 +34,7 @@
                 <div class="container-fluid my-3">
                     <!--<a href="{{ url('/') }}"> <img src="https://www.img.in.th/images/2ca66c73960a89eeaa7a3407cf46eb32.th.jpg" class="img-rounded" alt="Cinque Terre" style="width:100px;height:55px;"></a>-->
 
-                    <a class="navbar-brand text-dark" href="{{url('/')}}"> Over You 99</a>
+                    <a class="navbar-brand text-warning" href="{{url('/')}}"> Over You 99</a>
 
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                         <span class="navbar-toggler-icon"> </span>
@@ -73,7 +73,7 @@
                            <!-- <li class="nav-item">
                                 <a class="btn btn-link text-dark" href="#"> ออกแบบ.....</a>
                             </li>-->
-                            
+
                             <!--<form class="form-inline my-2 my-lg-0">
                                 <input class="form-control mr-sm-2" type="search" placeholder="ค้นหาสินค้าที่คุณต้องการ" aria-label="Search" style="width: 28rem;">
                                 <button class="btn btn-outline-success my-2 my-sm-0" type="submit"> <i class="fas fa-search cus-icon py-1"></i></button>
