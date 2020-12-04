@@ -28,7 +28,7 @@
                     <p class="card-text text-dark">ราคา {{ $product->product_price}} บาท </p>
                     <p class="card-text text-dark"> เหลือ {{ $product->product_num }} ตัว</p>                   
                     <form action="#" method="POST">
-                        <button type="submit" class="btn btn-outline-success">เพิ่มไปยังรถเข็น</button>
+                        <button type="submit" class="btn btn-outline-success"><i class="fas fa-cart-arrow-down text-success fa-2x">เพิ่มไปยังรถเข็น</i></button>
                         <!--<button type="submit" class="button button-plain"> เพิ่มไปยังรถเข็น </button>-->
                     </form>
                 </div>
