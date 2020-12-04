@@ -53,7 +53,7 @@
     <br />
 
     <!--product -->
-    <h5><a href="{{url('/shop')}}">สินค้าทั้งหมด</a></h5>
+    <h5><a href="{{url('/shop')}}" class="text-dark"> สินค้าทั้งหมด </a></h5>
 
     <div class="breadcrumb">
         <main>
