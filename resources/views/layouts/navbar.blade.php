@@ -28,7 +28,7 @@
     <script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
     <div class="main_content">
         <div id="app">
-            <nav class="navbar navbar-expand-md navbar-dark bg-dark sticky-top">
+            <nav class="navbar navbar-expand-md navbar-light bg-light sticky-top">
 
                 <div class="container-fluid my-4">
                       <!--<a href="{{ url('/') }}"> <img src="https://www.img.in.th/images/2ca66c73960a89eeaa7a3407cf46eb32.th.jpg" class="img-rounded" alt="Cinque Terre" style="width:100px;height:55px;"></a>-->
@@ -50,36 +50,36 @@
                             <!-- Authentication Links -->
 
                             <li class="nav-item">
-                                <a class="btn btn-link text-light" href="{{ url('help') }}"><i class="fa fa-info-circle" aria-hidden="true"></i>  การช่วยเหลือ</a>
+                                <a class="btn btn-link text-dark" href="{{ url('help') }}"><i class="fa fa-info-circle" aria-hidden="true"></i>  การช่วยเหลือ</a>
                             </li>
                             <li class="nav-item">
-                                <a class="btn btn-link text-light" href="{{ url('about') }}"><i class="fa fa-compress" aria-hidden="true"></i> เกี่ยวกับเรา</a>
+                                <a class="btn btn-link text-dark" href="{{ url('about') }}"><i class="fa fa-compress" aria-hidden="true"></i> เกี่ยวกับเรา</a>
                             </li>
                            <!-- <li class="nav-item">
                                 <a class="btn btn-link text-light" href="#"> โปรโมชั่น</a>
                             </li>-->
                             <li class="nav-item">
-                                <a class="btn btn-link text-light" href="https://www.facebook.com/overyou99">ติดตามเรา</a></blockquote>
+                                <a class="btn btn-link text-dark" href="https://www.facebook.com/overyou99">ติดตามเรา</a></blockquote>
                             </li>
                             
                             <!--<li class="nav-item">
                                 <a class="btn btn-link text-light" href="#"><i class="fa fa-comments" aria-hidden="true"></i>  Chat กับเรา</a>
                             </li>-->
                             <li class="nav-item">
-                                <a class="btn btn-link text-light" href="{{ url('shipments') }} " > ตรวจสอบการจัดส่ง</a>
+                                <a class="btn btn-link text-dark" href="{{ url('shipments') }} " > ตรวจสอบการจัดส่ง</a>
                             </li>
                             
                             <li class="nav-item">
-                                <a class="btn btn-link text-light" href="#"> ออกแบบ.....</a>
+                                <a class="btn btn-link text-dark" href="#"> ออกแบบ.....</a>
                             </li>
 
                             @guest
                             <li class="nav-item">
-                                <a class="nav-link text-light" href="{{ route('login') }}"> {{ __('เข้าสู่ระบบ') }}</a>
+                                <a class="nav-link text-dark" href="{{ route('login') }}"> {{ __('เข้าสู่ระบบ') }}</a>
                             </li>
                             @if (Route::has('register'))
                             <li class="nav-item">
-                                <a class="nav-link text-light" href="{{ route('register') }}"> {{ __('ลงทะเบียน') }}</a>
+                                <a class="nav-link text-dark" href="{{ route('register') }}"> {{ __('ลงทะเบียน') }}</a>
                             </li>
                             @endif
                             @else
@@ -89,7 +89,7 @@
 </div>
 
                             <li class="nav-item dropdown">
-                                <a id="navbarDropdown" class="nav-link dropdown-toggle fas fa-user text-light" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                <a id="navbarDropdown" class="nav-link dropdown-toggle fas fa-user text-dark" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     {{ Auth::user()->name }}
                                 </a>
 
