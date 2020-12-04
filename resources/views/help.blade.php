@@ -56,7 +56,7 @@
     <br />
     <br />
 
-    <div class="row justify-content-center bg-secondary">
+    <div class="row justify-content-center bg-light">
         <div class="col-md-11">
             <div class="card">
                 <ul class="navbar-nav mr-auto">

@@ -29,7 +29,7 @@
         <div id="app">
             <nav class="navbar navbar-expand-md navbar-dark bg-dark sticky-top">
 
-                <div class="container-fluid my-4">
+                <div class="container-fluid my-3">
                     <!--<a href="{{ url('/') }}"> <img src="https://www.img.in.th/images/2ca66c73960a89eeaa7a3407cf46eb32.th.jpg" class="img-rounded" alt="Cinque Terre" style="width:100px;height:55px;"></a>-->
                     <a class="navbar-brand" href="{{ url('/') }}"> Over You 99</a>
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">

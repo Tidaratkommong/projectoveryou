@@ -13,20 +13,21 @@
         </ol>
         <div class="carousel-inner">
             <div class="carousel-item active">
-                <img src="o1.jpg" width="250" height="300" class="d-block w-100" alt="...">
+                <img src="o1.jpg" width="270" height="370" class="d-block w-100" alt="...">
                 <div class="carousel-caption d-none d-md-block">
                 </div>
             </div>
             <div class="carousel-item">
-                <img src="o3.jpg" width="250" height="300" class="d-block w-100" alt="...">
+                <img src="o2.jpg" width="270" height="370" class="d-block w-100" alt="...">
                 <div class="carousel-caption d-none d-md-block">
                 </div>
             </div>
             <div class="carousel-item">
-                <img src="o2.jpg" width="250" height="300" class="d-block w-100" alt="...">
+                <img src="o3.jpg" width="270" height="370" class="d-block w-100" alt="...">
                 <div class="carousel-caption d-none d-md-block">
                 </div>
             </div>
+
 
         </div>
         <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
@@ -54,23 +55,23 @@
     </div>
 
     <br />
-        <div class="carousel-inner">
-            <div class="carousel-item active">
-                <img src="noimg.jpg" width="200" height="100" class="d-block w-100" alt="...">
-                <div class="carousel-caption d-none d-md-block">
-                </div>
+    <div class="carousel-inner">
+        <div class="carousel-item active">
+            <img src="noimg.jpg" width="200" height="100" class="d-block w-100" alt="...">
+            <div class="carousel-caption d-none d-md-block">
             </div>
-            <br />
-
-            <div class="carousel-item active">
-                <img src="noimg.jpg" width="200" height="100" class="d-block w-100" alt="...">
-                <div class="carousel-caption d-none d-md-block">
-                </div>
-            </div>
-            <br />
-            <br/>
-            <br/>
         </div>
+        <br />
+
+        <div class="carousel-item active">
+            <img src="noimg.jpg" width="200" height="100" class="d-block w-100" alt="...">
+            <div class="carousel-caption d-none d-md-block">
+            </div>
+        </div>
+        <br />
+        <br />
+        <br />
+    </div>
 </div>
 
 <!-- chatbot-->
