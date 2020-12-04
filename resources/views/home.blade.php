@@ -12,18 +12,18 @@
             <li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
         </ol>
         <div class="carousel-inner">
-            <div class="carousel-item active">
-                <img src="o1.jpg" width="270" height="370" class="d-block w-100" alt="...">
+        <div class="carousel-item active">
+                <img src="o1.jpg" width="300" height="390" class="d-block w-100" alt="...">
                 <div class="carousel-caption d-none d-md-block">
                 </div>
             </div>
             <div class="carousel-item">
-                <img src="o2.jpg" width="270" height="370" class="d-block w-100" alt="...">
+                <img src="o2.jpg" width="300" height="390" class="d-block w-100" alt="...">
                 <div class="carousel-caption d-none d-md-block">
                 </div>
             </div>
             <div class="carousel-item">
-                <img src="o3.jpg" width="270" height="370" class="d-block w-100" alt="...">
+                <img src="o3.jpg" width="300" height="390" class="d-block w-100" alt="...">
                 <div class="carousel-caption d-none d-md-block">
                 </div>
             </div>
