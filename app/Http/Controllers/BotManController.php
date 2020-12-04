@@ -51,7 +51,10 @@ class BotManController extends Controller
             // $this->startConversation($bot);
          });
 
-       
+         $botman->hears('image attachment', function (BotMan $bot) {
+            // Create attachment
+            $bot->reply('https://botman.io/img/logo.png'); 
+        });
 
         // 
         $botman->fallback(function($bot) {
