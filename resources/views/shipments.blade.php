@@ -13,7 +13,7 @@
      <!-- Search form -->
     <form class="form-inline d-flex justify-content-center my-2 my-lg-0">
     <input class="form-control mr-sm-2" type="text" placeholder="ค้นหาจากหมายเลขการสั่งซื้อของท่าน" aria-label="Search" style="width: 60rem; height:3rem;">
-    <i class="fas fa-cart-arrow-down text-success fa-2x"></i>                          
+    <i class="fas fa-search text-success fa-2x" aria-hidden="true"></i>                            
     </form>
     
     <br/>
@@ -50,7 +50,7 @@
 <br/>
 <br/>
 <br/>
-    <h5 class="nav-link text-danger">*** ข้อมูลการจัดส่งสินค้า
+    <h5 class="nav-link text-danger"> ** ข้อมูลการจัดส่งสินค้า
        <h6 class="nav-link ml-3 text-danger"> 1. สินค้าปกติจะส่งถึงมือคุณภายใน 2-5 วันทำการ</h6>                       
     </h5>
 </div>
