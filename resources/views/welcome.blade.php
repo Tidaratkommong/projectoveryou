@@ -57,7 +57,7 @@
 
     <div class="breadcrumb">
         <main>
-            <div class="page-overlay-bg bg-light">
+            <div class="page-overlay-bg">
                 <div class="container-fluid m-0 p-0">
                     <!--container-fluid-->
                     <div class="row no-gutters px-0">
