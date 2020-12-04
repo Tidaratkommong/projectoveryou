@@ -94,7 +94,7 @@
 
                             <li class="nav-item mr-2">
                                 <a class="nav-link p-0 m-0" href="#">
-                                    <i class="fas fa-cart-arrow-down text-success fa-2x"></i>
+                                    <i class="fas fa-cart-arrow-down text-danger fa-2x"></i>
                                     <div class="badge badge-danger">
                                         @auth
                                       
