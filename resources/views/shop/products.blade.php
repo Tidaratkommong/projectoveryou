@@ -28,7 +28,8 @@
                     <p class="card-text text-dark">ราคา {{ $product->product_price}} บาท </p>
                     <p class="card-text text-dark"> เหลือ {{ $product->product_num }} ตัว</p>                   
                     <form action="#" method="POST">
-                        <button type="submit" class="button button-plain"> เพิ่มไปยังรถเข็น </button>
+                        <button type="submit" class="btn btn-outline-success">เพิ่มไปยังรถเข็น</button>
+                        <!--<button type="submit" class="button button-plain"> เพิ่มไปยังรถเข็น </button>-->
                     </form>
                 </div>
                
@@ -67,8 +68,8 @@
     var botmanWidget = {
         aboutText: 'ssdsd',
         title: 'Over You 99',
-        mainColor: '#F28240',
-        bubbleBackground: '#F28240',
+        mainColor: '#2E8B57',
+        bubbleBackground: '#2E8B57',
         introMessage: '✋สวัสดีค่ะ นี่เป็นข้อความอัตโนมัติ มีอะไรให้เราช่วยไหมคะ ถ้าต้องการเริ่มต้นใหม่ พิมพ์คำว่า "เริ่มใหม่" ได้ตลอดเวลา ',
         placeholderText: 'Ask Me Something',
         aboutLink: 'mhdevelopment.gr'
