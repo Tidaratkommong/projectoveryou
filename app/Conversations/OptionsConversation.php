@@ -23,7 +23,7 @@ class OptionsConversation extends Conversation
             Button::create('ข้อมูลการติดต่อทางร้าน')->value('add'),
             Button::create('การเลือกซื้อสินค้า')->value('all'),
             Button::create('การคืนสินค้า')->value('completed'),
-            Button::create('.............')->value('not_completed'),
+            Button::create('โปรโมชั่น')->value('not_completed'),
         ]);
 
         $this->bot->ask($question, function(Answer $answer){
@@ -41,7 +41,7 @@ class OptionsConversation extends Conversation
                         $this->bot->startConversation(new CompletedTodoConversation);
                     break;
                     case 'not_completed':
-                        $this->bot->startConversation();
+                        $this->bot->startConversation(new NotCompletedTodoConversation);
                     break;
                 }
             }
