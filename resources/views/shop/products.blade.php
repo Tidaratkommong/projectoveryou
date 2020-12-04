@@ -6,9 +6,9 @@
 <br>
 <br>
 <h4 class="col-md-6">
-    <a href="{{url('/home')}}"> Home </a>
+    <a href="{{url('/home')}}" class="text-success"> Home </a>
     <i class="fa fa-chevron-right breadcrumb-separator"></i>
-    <span><a href="{{url('/shop')}}"> Shop </a></span>
+    <span><a href="{{url('/shop')}}" class="text-success" > Shop </a></span>
     <i class="fa fa-chevron-right breadcrumb-separator"></i>
     <span class="text-dark">{{ $product->product_name }}</span>
 </h4>
