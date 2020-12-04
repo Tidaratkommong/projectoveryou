@@ -30,7 +30,7 @@
 <div class="fb-page ml-5 center" 
 data-href="https://www.facebook.com/overyou99" 
 data-tabs="timeline" 
-data-width="500" 
+data-width="600" 
 data-height="" 
 data-small-header="false" 
 data-adapt-container-width="true" 
