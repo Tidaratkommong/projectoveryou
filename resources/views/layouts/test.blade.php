@@ -29,11 +29,12 @@
     <script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
     <div class="main_content">
         <div id="app">
-            <nav class="navbar navbar-expand-md navbar-info bg-info btn btn-outline-success sticky-top  ">
+            <nav class="navbar navbar-expand-md navbar-warning bg-warning btn btn-outline-dark sticky-top  ">
+
                 <div class="container-fluid my-4">
                     <!--<a href="{{ url('/') }}"> <img src="https://www.img.in.th/images/2ca66c73960a89eeaa7a3407cf46eb32.th.jpg" class="img-rounded" alt="Cinque Terre" style="width:100px;height:55px;"></a>-->
 
-                    <a class="navbar-brand" href="{{url('/')}}"> Over You 99</a>
+                    <a class="navbar-brand text-dark" href="{{url('/')}}"> Over You 99</a>
 
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                         <span class="navbar-toggler-icon"> </span>
