@@ -10,11 +10,6 @@
 <!-- chatbot-->
 
 <!--<link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">-->
-
-<link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,700,800" rel="stylesheet">
-
-
-<link rel="stylesheet" type="text/css">
 <script>
     var botmanWidget = {
         aboutText: 'ssdsd',
