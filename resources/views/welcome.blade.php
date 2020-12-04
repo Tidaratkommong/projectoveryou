@@ -57,7 +57,7 @@
 
     <div class="breadcrumb">
         <main>
-            <div class="page-overlay-bg">
+            
                 <div class="container-fluid m-0 p-0">
                     <!--container-fluid-->
                     <div class="row no-gutters px-0">
@@ -77,7 +77,7 @@
                     <!--row-->
                 </div>
                 <!--container-fluid-->
-            </div><!-- page-main-->
+            <!-- page-main-->
         </main>
     </div>
 </div>
