@@ -47,13 +47,6 @@
 <!-- endchatbot -->
 
 
-{{-- reviews section --}}
-
-@include('review.review')
-
-<!-- related product area start -->
-{{-- @include('review.related-product') --}}
-
 <br />
 <br />
 <ul class="nav justify-content-center bg-dark fixed-bottom ">
