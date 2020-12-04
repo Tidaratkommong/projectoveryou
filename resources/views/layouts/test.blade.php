@@ -29,7 +29,7 @@
     <script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
     <div class="main_content">
         <div id="app">
-            <nav class="navbar navbar-expand-md navbar-light bg-light btn-outline-dark sticky-top  ">
+            <nav class="navbar navbar-expand-md navbar-light bg-light btn btn-outline-dark sticky-top  ">
 
                 <div class="container-fluid my-4">
                     <!--<a href="{{ url('/') }}"> <img src="https://www.img.in.th/images/2ca66c73960a89eeaa7a3407cf46eb32.th.jpg" class="img-rounded" alt="Cinque Terre" style="width:100px;height:55px;"></a>-->
