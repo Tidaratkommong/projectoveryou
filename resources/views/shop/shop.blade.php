@@ -41,7 +41,7 @@
     <br />
 
     <!-- Search Widget -->
-   
+
     <form class=" form-inline my-2 my-lg-0" action="/searchproduct" method="GET" role="search">
         {{ csrf_field() }}
         <div class="input-group">
@@ -67,8 +67,13 @@
                             <div href="javascript:void(0);">
                                 <a href="{{ route('shop.show',$value->id )}}" class="card  mb-2 shadow-sm" style="width: 16rem; height:20rem;">
                                     <img class="text-center w-100" src="{{asset($value->product_img )}}" style="width: 150px; height:250px;" />
-                                    <div class=" text-dark text-center"> <h5>{{ $value->product_name }} <h5></div>
-                                    <div class="price text-dark text-center"> <h5> ราคา : {{ $value->product_price }}<span> บาท  </h5></span></div>
+                                    <div class=" text-dark text-center">
+                                        <h5>{{ $value->product_name }}
+                                            <h5>
+                                    </div>
+                                    <div class="price text-dark text-center">
+                                        <h5> ราคา : {{ $value->product_price }}<span> บาท </h5></span>
+                                    </div>
                                 </a>
                             </div>
                         </div>
@@ -85,7 +90,7 @@
             </div><!-- page-main-->
         </main>
     </div>
-  
+
 
     <div>
 
@@ -116,8 +121,8 @@
             var botmanWidget = {
                 aboutText: 'ssdsd',
                 title: 'Over You 99',
-                mainColor: '#F28240',
-                bubbleBackground: '#F28240',
+                mainColor: '#2E8B57',
+                bubbleBackground: '#2E8B57',
                 introMessage: '✋สวัสดีค่ะ นี่เป็นข้อความอัตโนมัติ มีอะไรให้เราช่วยไหมคะ ถ้าต้องการเริ่มต้นใหม่ พิมพ์คำว่า "เริ่มใหม่" ได้ตลอดเวลา ',
                 placeholderText: 'Ask Me Something',
                 aboutLink: 'mhdevelopment.gr'
