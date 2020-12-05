@@ -12,7 +12,7 @@
                 <h6>
                     <span style="font-size: 21px;">
                         <a href="#pro-review" data-toggle="tab" role="tab" aria-selected="false">
-                            Reviews
+                           &nbsp;&nbsp; รีวิวจากผู้ใช้
                         </a>
                     </span>
                 </h6>
