@@ -47,7 +47,7 @@
                                         <div id="respond" class="comment-respond">
                                             <span id="reply-title" class="comment-reply-title"> ความคิดเห็นจากลูกค้า <small><a rel="nofollow" id="cancel-comment-reply-link" href="/excel-template/personal-reviews-ratings-database/#respond" style="display:none;">Cancel reply</a></small></span>
                                             <form action="https://www.someka.net/wp-comments-post.php" method="post" id="commentform" class="comment-form" novalidate="">
-                                                <p class="comment-notes"><span id="email-notes"> ที่อยู่อีเมลของคุณจะไม่ถูกเผยแพร่ </span> <span class="required text-danger">*</span></p>
+                                                <p class="comment-notes"><span id="email-notes">  &nbsp;ที่อยู่อีเมลของคุณจะไม่ถูกเผยแพร่ </span> <span class="required text-danger">*</span></p>
                                                 
                                     
                                             </form>
