@@ -15,8 +15,6 @@
                         <div id="reviews" class="woocommerce-Reviews">
                             <div id="comments">
                                 <ol class="commentlist">
-                                    <li class="review even thread-odd thread-alt depth-1" id="li-comment-32503">
-
                                         <div id="comment-32503" class="comment_container">
 
 
@@ -34,8 +32,23 @@
                                                     <p>I needed a system to keep track of reviews, and there just wasn’t an app that worked. This sheet is very easy to use and the owner was very responsive when I had a question. This is the perfect sheet to log reviews!</p>
                                                 </div>
                                             </div>
+
+                                            <div class="comment-text">
+
+
+                                                <p class="meta">
+                                                    <strong class="woocommerce-review__author">Julie Kosinda </strong>
+                                                    <span class="woocommerce-review__dash">–</span> <time class="woocommerce-review__published-date" datetime="2017-08-23T22:00:25+03:00">August 23, 2017</time>
+                                                </p>
+
+                                                <!--<div class="star-rating" role="img" aria-label="Rated 5 out of 5"><span style="width:100%">Rated <strong class="rating">5</strong> out of 5</span></div> -->
+
+                                                <div class="description">
+                                                    <p>I needed a system to keep track of reviews, and there just wasn’t an app that worked. This sheet is very easy to use and the owner was very responsive when I had a question. This is the perfect sheet to log reviews!</p>
+                                                </div>
+                                            </div>
                                         </div>
-                                    </li><!-- #comment-## -->
+                                   
                                 </ol>
 
                             </div>
