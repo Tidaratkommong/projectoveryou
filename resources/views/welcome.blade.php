@@ -53,7 +53,7 @@
 
     <!--product -->
     <h5><a href="{{url('/shop')}}" class="text-dark"> สินค้าแนะนำ </a></h5>
-
+        <br>
         <main>
             <div class="page-overlay-bg bg-light">
                 <div class="container-fluid m-0 p-0">
@@ -121,7 +121,8 @@
 
 
 <!-- endchatbot -->
-
+<br>
+<br>
 
 {{-- reviews section --}}
 
