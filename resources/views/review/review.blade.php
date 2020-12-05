@@ -16,7 +16,7 @@
                         laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in</p>
                 </div>
                 <!-- review -->
-                <div class="tab-pane fade" id="pro-review">
+                <div class="tab-pane fade" id="pro-review" role="tab" >
                         <div class="breadcrumb">
                             <div class="page-overlay-bg bg-light">
                                 <div class="vc_column-inner">
