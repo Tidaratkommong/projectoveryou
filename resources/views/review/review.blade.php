@@ -38,12 +38,14 @@
 
                             </div>
 
+
+                            <hr>
                             <div id="review_form_wrapper">
                                 <div id="review_form">
                                     <div id="respond" class="comment-respond">
-                                        <span id="reply-title" class="comment-reply-title">Leave a customer review <small><a rel="nofollow" id="cancel-comment-reply-link" href="/excel-template/personal-reviews-ratings-database/#respond" style="display:none;">Cancel reply</a></small></span>
+                                        <span id="reply-title" class="comment-reply-title"> แสดงความคิดเห็นจากลูกค้า <small><a rel="nofollow" id="cancel-comment-reply-link" href="/excel-template/personal-reviews-ratings-database/#respond" style="display:none;">Cancel reply</a></small></span>
                                         <form action="https://www.someka.net/wp-comments-post.php" method="post" id="commentform" class="comment-form" novalidate="">
-                                            <p class="comment-notes"><span id="email-notes">Your email address will not be published.</span> Required fields are marked <span class="required">*</span></p>
+                                            <p class="comment-notes"><span id="email-notes"> ที่อยู่อีเมลของคุณจะไม่ถูกเผยแพร่ </span> <span class="required text-danger">*</span></p>
                                             <div class="comment-form-rating"><label for="rating">Your rating&nbsp;<span class="required">*</span></label>
                                                 <p class="stars"> <span> <a class="star-1" href="#">1</a> <a class="star-2" href="#">2</a> <a class="star-3" href="#">3</a> <a class="star-4" href="#">4</a> <a class="star-5" href="#">5</a> </span> </p><select name="rating" id="rating" required="" style="display: none;">
                                                     <option value="">Rate…</option>
