@@ -1,12 +1,11 @@
 <div class="container">
-    <div class="breadcrumb page-overlay-bg bg-light">
-       
+    <div class="breadcrumb">
             <div class="vc_column-inner">
                 <div class="wpb_wrapper">
                     <div class="wpb_text_column wpb_content_element ">
                         <div class="wpb_wrapper">
                             <br>
-                            <h6><span style="font-size: 21px;">&nbsp;&nbsp;&nbsp;&nbsp; รีวิวจากผู้ใช้ </span></h6>
+                            <h6><span style="font-size: 21px;">&nbsp;&nbsp; รีวิวจากผู้ใช้ </span></h6>
                             <hr>
                         </div>
                     </div>
