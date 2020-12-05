@@ -6,7 +6,7 @@
                     Description
                 </a>
                 <a href="#pro-review" data-toggle="tab" role="tab" aria-selected="false">
-                    Reviews (0)
+                    Reviews 
                 </a>
             </div>
             <div class="description-review-text tab-content">
@@ -16,7 +16,7 @@
                         laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in</p>
                 </div>
                 <!-- review -->
-                <div class="tab-pane fade" id="pro-review" role="tabpanel">
+                <div class="tab-pane" id="pro-review" role="tabpanel">
                         <div class="breadcrumb">
                             <div class="page-overlay-bg bg-light">
                                 <div class="vc_column-inner">
