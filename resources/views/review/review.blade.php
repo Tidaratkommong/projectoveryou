@@ -6,7 +6,7 @@
                 <a class="active" href="#pro-dec" data-toggle="tab" role="tab" aria-selected="true">
                     <h5>Description</h5>
                 </a>
-                
+
                 <a href="#pro-review" data-toggle="tab" role="tab" aria-selected="false">
                     <h5>Reviews</h5>
                 </a>
@@ -43,7 +43,7 @@
 
 
                                                             <p class="meta">
-                                                                <strong class="woocommerce-review__author">Julie Kosinda </strong>
+                                                                <strong class="woocommerce-review__author">Tidarat Kommong</strong>
                                                                 <span class="woocommerce-review__dash">–</span> <time class="woocommerce-review__published-date" datetime="2017-08-23T22:00:25+03:00">August 23, 2017</time>
                                                             </p>
 
@@ -58,7 +58,7 @@
 
 
                                                             <p class="meta">
-                                                                <strong class="woocommerce-review__author">Julie Kosinda </strong>
+                                                                <strong class="woocommerce-review__author">Kanjana</strong>
                                                                 <span class="woocommerce-review__dash">–</span> <time class="woocommerce-review__published-date" datetime="2017-08-23T22:00:25+03:00">August 23, 2017</time>
                                                             </p>
 
