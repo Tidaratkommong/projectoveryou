@@ -2,17 +2,15 @@
     <div class="container">
         <div class="product-description-review">
             <div class="description-review-title nav" role=tablist>
-                <h6>
-                    <a class="active" href="#pro-dec" data-toggle="tab" role="tab" aria-selected="true">
-                        Description
-                    </a>
-                </h6>
+
+                <a class="active" href="#pro-dec" data-toggle="tab" role="tab" aria-selected="true">
+                    <h5>Description</h5>
+                </a>
                 
-                <h6>
-                    <a href="#pro-review" data-toggle="tab" role="tab" aria-selected="false">
-                        Reviews
-                    </a>
-                </h6>
+                <a href="#pro-review" data-toggle="tab" role="tab" aria-selected="false">
+                    <h5>Reviews</h5>
+                </a>
+
             </div>
             <div class="description-review-text tab-content">
                 <div class="tab-pane active show fade" id="pro-dec" role="tabpanel">
