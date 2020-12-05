@@ -1,6 +1,5 @@
 <div class="container">
-    <div class="page-overlay-bg bg-light">
-        <div class="breadcrumb bg-light">
+        <div class="breadcrumb">
             <div class="page-overlay-bg bg-light">
                 <div class="vc_column-inner">
                     <div class="wpb_wrapper">
