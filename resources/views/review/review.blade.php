@@ -81,7 +81,8 @@
 
                                             </div>
 
-                                            <button type="button" class="btn btn-primary"> บันทึก </button>
+                                            &nbsp;&nbsp;<button type="button" class="btn btn-primary"> บันทึก </button>
+                                            <br>
 
                                         </form>
                                     </div><!-- #respond -->
