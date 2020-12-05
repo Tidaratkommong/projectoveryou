@@ -76,10 +76,12 @@
 
                                                 <div class="form-group col-md-6">
                                                     <label for="review_email">&nbsp;อีเมล <span class="required text-danger">*</span></label>
-                                                    <input type="text" name="review_email" class="form-control input-lg" placeholder="ชื่อสินค้า" value="" />
+                                                    <input type="text" name="review_email" class="form-control input-lg"  value="" />
                                                 </div>
 
                                             </div>
+
+                                            <button type="button" class="btn btn-primary"> บันทึก </button>
 
                                         </form>
                                     </div><!-- #respond -->
