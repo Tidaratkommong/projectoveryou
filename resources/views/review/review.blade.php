@@ -15,8 +15,8 @@
                         labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
                         laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in</p>
                 </div>
-                <div class="" id="pro-review" role="tabpanel">
-                    <div class="container">
+                <!-- review -->
+                <div class="tab-pane fade" id="pro-review" role="tabpanel">
                         <div class="breadcrumb">
                             <div class="page-overlay-bg bg-light">
                                 <div class="vc_column-inner">
