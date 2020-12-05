@@ -65,7 +65,7 @@
 
                                             <div class="form-group">
                                                 <label for="text_review">&nbsp;รีวิวสินค้า <span class="required text-danger">*</span></label>
-                                                &nbsp;&nbsp;<textarea class="form-control" name="text_review" rows="4" /></textarea> &nbsp;&nbsp;
+                                               <textarea class="form-control" name="text_review" rows="4" /></textarea> 
                                             </div>
 
                                             <div class="form-row">
@@ -84,8 +84,6 @@
                                             &nbsp;&nbsp;&nbsp;&nbsp;<button type="button" class="btn btn-primary"> บันทึก </button>
                                             <br>
                                             <br>
-                                            <br>
-
                                         </form>
                                     </div><!-- #respond -->
                                 </div>
