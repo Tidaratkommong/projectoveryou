@@ -63,9 +63,9 @@
                                             <p class="comment-notes"><span id="email-notes"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ที่อยู่อีเมลของคุณจะไม่ถูกเผยแพร่ </span> <span class="required text-danger">*</span></p>
 
 
-                                            &nbsp;&nbsp; <div class="form-group">
+                                            <div class="form-group">
                                                 <label for="text_review">&nbsp;รีวิวสินค้า <span class="required text-danger">*</span></label>
-                                                <textarea class="form-control" name="text_review" rows="4" /></textarea>
+                                                &nbsp;&nbsp;<textarea class="form-control" name="text_review" rows="4" /></textarea> &nbsp;&nbsp;
                                             </div>
 
                                             <div class="form-row">
