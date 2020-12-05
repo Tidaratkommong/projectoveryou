@@ -50,7 +50,7 @@
                                                             <!--<div class="star-rating" role="img" aria-label="Rated 5 out of 5"><span style="width:100%">Rated <strong class="rating">5</strong> out of 5</span></div> -->
 
                                                             <div class="description">
-                                                                <p>&nbsp;&nbsp;I needed a system to keep track of reviews, and there just wasn’t an app that worked. This sheet is very easy to use and the owner was very responsive when I had a question. This is the perfect sheet to log reviews!</p>
+                                                                <p>&nbsp;&nbsp;&nbsp;I needed a system to keep track of reviews, and there just wasn’t an app that worked. This sheet is very easy to use and the owner was very responsive when I had a question. This is the perfect sheet to log reviews!</p>
                                                             </div>
                                                         </div>
 
@@ -65,7 +65,7 @@
                                                             <!--<div class="star-rating" role="img" aria-label="Rated 5 out of 5"><span style="width:100%">Rated <strong class="rating">5</strong> out of 5</span></div> -->
 
                                                             <div class="description">
-                                                                <p>&nbsp;&nbsp;I needed a system to keep track of reviews, and there just wasn’t an app that worked. This sheet is very easy to use and the owner was very responsive when I had a question. This is the perfect sheet to log reviews!</p>
+                                                                <p>&nbsp;&nbsp;&nbsp;I needed a system to keep track of reviews, and there just wasn’t an app that worked. This sheet is very easy to use and the owner was very responsive when I had a question. This is the perfect sheet to log reviews!</p>
                                                             </div>
                                                         </div>
                                                     </div>
