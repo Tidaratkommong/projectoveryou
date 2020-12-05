@@ -6,7 +6,7 @@
                         <div class="wpb_text_column wpb_content_element ">
                             <div class="wpb_wrapper">
                                 <br>
-                                <h6><span style="font-size: 21px;"> รีวิวจากผู้ใช้ </span></h6>
+                                <h6><span style="font-size: 21px;">&nbsp;&nbsp;&nbsp;&nbsp; รีวิวจากผู้ใช้ </span></h6>
                                 <hr>
                             </div>
                         </div>
@@ -45,9 +45,9 @@
                                 <div id="review_form_wrapper">
                                     <div id="review_form">
                                         <div id="respond" class="comment-respond">
-                                            <span id="reply-title" class="comment-reply-title"> ความคิดเห็นจากลูกค้า <small><a rel="nofollow" id="cancel-comment-reply-link" href="/excel-template/personal-reviews-ratings-database/#respond" style="display:none;">Cancel reply</a></small></span>
+                                            <span id="reply-title" class="comment-reply-title"> &nbsp;&nbsp;&nbsp;&nbsp;ความคิดเห็นจากลูกค้า <small><a rel="nofollow" id="cancel-comment-reply-link" href="/excel-template/personal-reviews-ratings-database/#respond" style="display:none;">Cancel reply</a></small></span>
                                             <form action="https://www.someka.net/wp-comments-post.php" method="post" id="commentform" class="comment-form" novalidate="">
-                                                <p class="comment-notes"><span id="email-notes">  &nbsp;ที่อยู่อีเมลของคุณจะไม่ถูกเผยแพร่ </span> <span class="required text-danger">*</span></p>
+                                                <p class="comment-notes"><span id="email-notes">  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ที่อยู่อีเมลของคุณจะไม่ถูกเผยแพร่ </span> <span class="required text-danger">*</span></p>
                                                 
                                     
                                             </form>
