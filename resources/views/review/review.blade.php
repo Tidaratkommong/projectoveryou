@@ -4,11 +4,11 @@
             <div class="description-review-title nav" role=tablist>
 
                 <a class="active" href="#pro-dec" data-toggle="tab" role="tab" aria-selected="true">
-                    <h5>Description</h5>
+                    <h5>Description....   </h5>
                 </a>
 
                 <a href="#pro-review" data-toggle="tab" role="tab" aria-selected="false">
-                    <h5>Reviews</h5>
+                    <h5>   Reviews</h5>
                 </a>
 
             </div>
