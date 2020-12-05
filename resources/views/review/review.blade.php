@@ -1,6 +1,6 @@
 <div class="product-description-review-area pb-90">
     <div class="container">
-        <div class="product-description-review text-center">
+        <div class="product-description-review">
             <div class="description-review-title nav" role=tablist>
                 <a class="active" href="#pro-dec" data-toggle="tab" role="tab" aria-selected="true">
                     Description
@@ -16,7 +16,7 @@
                         laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in</p>
                 </div>
                 <!-- review -->
-                <div class="tab-pane fade" id="pro-review" role="tab" >
+                <div class="tab-pane fade" id="pro-review" role="tabpanel">
                         <div class="breadcrumb">
                             <div class="page-overlay-bg bg-light">
                                 <div class="vc_column-inner">
