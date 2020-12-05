@@ -45,25 +45,25 @@
                             <div id="review_form_wrapper">
                                 <div id="review_form">
                                     <div id="respond" class="comment-respond">
-                                        <span id="reply-title" class="comment-reply-title"> &nbsp;&nbsp;&nbsp;&nbsp;ความคิดเห็นจากลูกค้า <small><a rel="nofollow" id="cancel-comment-reply-link" href="/excel-template/personal-reviews-ratings-database/#respond" style="display:none;">Cancel reply</a></small></span>
+                                        <span id="reply-title" class="comment-reply-title"> &nbsp;&nbsp;ความคิดเห็นจากลูกค้า <small><a rel="nofollow" id="cancel-comment-reply-link" href="/excel-template/personal-reviews-ratings-database/#respond" style="display:none;">Cancel reply</a></small></span>
                                         <form action="https://www.someka.net/wp-comments-post.php" method="post" id="commentform" class="comment-form" novalidate="">
                                             <p class="comment-notes"><span id="email-notes"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ที่อยู่อีเมลของคุณจะไม่ถูกเผยแพร่ </span> <span class="required text-danger">*</span></p>
 
                                             
                                             <div class="form-group">
-                                                <label for="productdetail">รายละเอียดสินค้า</label>
-                                                <textarea class="form-control" name="product_detail" placeholder="รายละเอียดสินค้า" rows="4" /></textarea>
+                                                <label for="text_review">&nbsp;รีวิวสินค้า <span class="required text-danger">*</span></label>
+                                                <textarea class="form-control" name="text_review" rows="4" /></textarea>
                                             </div>
 
                                             <div class="form-row">
                                                 <div class="form-group col-md-6">
-                                                    <label for="productname">ชื่อสินค้า</label>
-                                                    <input type="text" name="product_name" class="form-control input-lg" placeholder="ชื่อสินค้า" value="" />
+                                                    <label for="review_name">&nbsp;ชื่อ<span class="required text-danger">*</span></label>
+                                                    <input type="text" name="review_name" class="form-control input-lg"  value="" />
                                                 </div>
 
                                                 <div class="form-group col-md-6">
-                                                    <label for="productname">ชื่อสินค้า</label>
-                                                    <input type="text" name="product_name" class="form-control input-lg" placeholder="ชื่อสินค้า" value="" />
+                                                    <label for="review_email">&nbsp;อีเมล <span class="required text-danger">*</span></label>
+                                                    <input type="text" name="review_email" class="form-control input-lg" placeholder="ชื่อสินค้า" value="" />
                                                 </div>
 
                                             </div>
