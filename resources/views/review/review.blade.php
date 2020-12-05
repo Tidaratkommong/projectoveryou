@@ -1,3 +1,20 @@
+<link href="{{ asset('css/app.css') }}" rel="stylesheet">
+
+<link href="http://netdna.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.css" rel="stylesheet"> 
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-star-rating/4.0.2/css/star-rating.min.css" />
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-star-rating/4.0.2/js/star-rating.min.js"></script>
+
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet">
+
+<link href="{{ asset('css/preview.css') }}" rel="stylesheet">
+
+
 <div class="container">
     <div class="page-overlay-bg bg-light">
         <div class="breadcrumb">
@@ -27,7 +44,8 @@
                                                     <span class="woocommerce-review__dash">–</span> <time class="woocommerce-review__published-date" datetime="2017-08-23T22:00:25+03:00">August 23, 2017</time>
                                                 </p>
 
-                                                <div class="star-rating" role="img" aria-label="Rated 5 out of 5"><span style="width:100%">Rated <strong class="rating">5</strong> out of 5</span></div>
+                                                <!--<div class="star-rating" role="img" aria-label="Rated 5 out of 5"><span style="width:100%">Rated <strong class="rating">5</strong> out of 5</span></div> -->
+                                                
                                                 <div class="description">
                                                     <p>I needed a system to keep track of reviews, and there just wasn’t an app that worked. This sheet is very easy to use and the owner was very responsive when I had a question. This is the perfect sheet to log reviews!</p>
                                                 </div>
