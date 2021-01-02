@@ -39,7 +39,6 @@
     <br />
 
     <!-- Search Widget -->
-
     <form class=" form-inline my-2 my-lg-0" action="/search" method="GET" role="search">
         {{ csrf_field() }}
         <div class="input-group">
@@ -49,35 +48,66 @@
             </span>
         </div>
     </form>
+
     <br />
 
     <!--product -->
     <h5><a href="{{url('/shop')}}" class="text-dark"> สินค้าแนะนำ </a></h5>
-        <br>
-        <main>
-            <div class="page-overlay-bg bg-light">
-                <div class="container-fluid m-0 p-0">
-                    <!--container-fluid-->
-                    <div class="row no-gutters px-0">
-                        <!--row-->
-                        @foreach($product as $value)
-                        <div class="col-6 col-sm-4 col-md-3 bg-light px-1">
-                            <div href="javascript:void(0);">
-                                <a href="{{ route('login') }}" class="card  mb-2 shadow-sm" style="width: 16rem; height:20rem;">
-                                    <img class="text-center w-100" src="{{asset($value->product_img )}}" style="width: 150px; height:250px;" />
-                                    <div class=" text-dark text-center"><h5>{{ $value->product_name }}</h5></div>
-                                    <div class="price text-dark text-center"><h5> ราคา : {{ $value->product_price }}<span> บาท  </h5> </span></div>
-                                </a>
+    <br>
+    <main>
+        <div class="container products">
+            <div class="row">
+                @foreach($product as $value)
+                <a href="{{ route('login') }}">
+                    <div class="col-xs-18 col-sm-6 col-md-3">
+                        <div class="thumbnail">
+                            <img src="{{asset($value->product_img )}}" width="250" height="260">
+                            <div class="caption">
+                                <h4 class=" text-dark">{{ $value->product_name }}</h4>
+                                <p class=" text-dark">{{ str_limit(strtolower($value->product_detail), 50) }}</p>
+                                <p class=" text-dark"><strong>ราคา : </strong> {{ $value->product_price }} $</p>
+                                <p class="btn-holder"><a class="btn btn-warning btn-block text-center" role="button"> </a> </p>
                             </div>
                         </div>
-                        @endforeach
                     </div>
-                    <!--row-->
+                </a>
+                @endforeach
+
+            </div><!-- End row -->
+
+        </div>
+        <!-- 
+        <div class="page-overlay-bg bg-light">
+            <div class="container-fluid m-0 p-0">
+                <!--container-fluid
+                <div class="row no-gutters px-0">
+                   
+                    @foreach($product as $value)
+                    <div class="col-6 col-sm-4 col-md-3 bg-light px-1">
+                        <div href="javascript:void(0);">
+                            <a href="{{ route('login') }}" class="card  mb-2 shadow-sm" style="width: 16rem; height:20rem;">
+                                <img class="text-center w-100" src="{{asset($value->product_img )}}" style="width: 150px; height:250px;" />
+                                <div class=" text-dark text-center">
+                                    <h4>{{ $value->product_name }}</h4>
+                                </div>
+                                <div class=" text-dark text-center">
+                                    <p>{{ str_limit(strtolower($value->product_detail), 50) }}</p>
+                                </div>
+
+                                <div class="price text-dark text-center">
+                                    <p><strong>ราคา : </strong> {{ $value->product_price }} $</p>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    @endforeach
                 </div>
-                <!--container-fluid-->
-            </div><!-- page-main-->
-        </main>
-    
+                <!--row
+            </div>
+            <!--container-fluid
+        </div><!-- page-main-->
+    </main>
+
 </div>
 
 <!-- end products -->
@@ -87,49 +117,28 @@
 
 <!--<link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">-->
 
-<link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,700,800" rel="stylesheet">
-<style>
-    html,
-    body {
-        background-color: #fff;
-        color: #636b6f;
-        font-family: sans-serif;
-        font-weight: 200;
-        height: 100vh;
-        margin: 0;
-    }
-</style>
-</head>
-
-<body>
-</body>
-
-<link rel="stylesheet" type="text/css">
 <script>
-    var botmanWidget = {
-        aboutText: 'ssdsd',
-        title: 'Over You 99',
-        mainColor: '#2E8B57',
-        bubbleBackground: '#2E8B57',
-        introMessage: '✋สวัสดีค่ะ นี่เป็นข้อความอัตโนมัติ มีอะไรให้เราช่วยไหมคะ ถ้าต้องการเริ่มต้นใหม่ พิมพ์คำว่า "เริ่มใหม่" ได้ตลอดเวลา ',
-        placeholderText: 'Ask Me Something',
-        aboutLink: 'mhdevelopment.gr'
-
-    };
+    ! function(e, t, a) {
+        var c = e.head || e.getElementsByTagName("head")[0],
+            n = e.createElement("script");
+        n.async = !0, n.defer = !0, n.type = "text/javascript", n.src = t + "/static/js/chat_widget.js?config=" + JSON.stringify(a), c.appendChild(n)
+    }(document, "https://app.engati.com", {
+        bot_key: "00208c9fb9574ea5",
+        welcome_msg: true,
+        branding_key: "default",
+        server: "https://app.engati.com",
+        e: "p"
+    });
 </script>
-<script src='https://cdn.jsdelivr.net/npm/botman-web-widget@0/build/js/widget.js'></script>
-
 
 <!-- endchatbot -->
-<br>
-<br>
+<a href="{{url('review')}}">review</a>
 
-{{-- reviews section --}}
 
 @include('review.review')
 
-<!-- related product area start -->
-{{-- @include('review.related-product') --}}
+<!-- related product area start-->
+
 
 <br />
 <br />
@@ -142,4 +151,3 @@
 </ul>
 
 @endsection
-

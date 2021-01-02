@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Review as ModelsReview;
 use Illuminate\Http\Request;
 use App\Review;
 use App\Post;
@@ -15,7 +16,9 @@ class ReviewsController extends Controller
      */
     public function index()
     {
-        //
+        $review = Review::all();
+        return view('review.review', compact('review'));
+
     }
 
     /**
@@ -23,9 +26,9 @@ class ReviewsController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Request $request)
     {
-        //
+        //return view('review.review');
     }
 
     /**
@@ -36,20 +39,21 @@ class ReviewsController extends Controller
      */
     public function store(Request $request)
     {
-        $this->validate($request, [
-            'title' => 'required' ,
-            'body' => 'required' ,
-            'rating' => 'required' ,
-            'post_id' => 'required'
+        $this->validate($request,[
+            'title_review' => 'required',
+            'name_review' => 'required',
+            'email_review' => 'required',
         ]);
-        
+    
         $review = new Review;
-        $review->title = $request->input('title');
-        $review->body = $request->input('body');
-        $review->rating = $request->input('rating');
-        $review->post_id = $request['post_id'];
+    
+        $review->title_review = $request->input('title_review');
+        $review->name_review= $request->input('name_review');
+        $review->email_review = $request->input('email_review');
+        
+    
         $review->save();
-        return redirect('/posts')->with('success', 'post created');
+         return redirect()->back();
     }
 
     /**
@@ -60,7 +64,8 @@ class ReviewsController extends Controller
      */
     public function show($id)
     {
-        //
+        $review = Review::findOrFail($id);
+        return view('welcome', compact('review'));
     }
 
     /**

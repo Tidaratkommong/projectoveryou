@@ -12,7 +12,7 @@
             <li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
         </ol>
         <div class="carousel-inner">
-        <div class="carousel-item active">
+            <div class="carousel-item active">
                 <img src="o1.jpg" width="300" height="390" class="d-block w-100" alt="...">
                 <div class="carousel-caption d-none d-md-block">
                 </div>
@@ -55,101 +55,67 @@
 
     <!--product -->
     <h5>สินค้าทั้งหมด</h5>
-    <div class="breadcrumb">
-        <main>
-            <div class="page-overlay-bg">
-                <div class="container-fluid m-0 p-0">
-                    <!--container-fluid-->
-                    <div class="row no-gutters px-0">
-                        <!--row-->
-                        @foreach($product as $value)
-                        <div class="col-6 col-sm-4 col-md-3 bg-light px-1">
-                            <div href="javascript:void(0);">
-                                <a href="{{ route('shop.show',$value->id )}}" class="card  mb-2 shadow-sm" style="width: 16rem; height:20rem;">
-                                    <img class="text-center w-100" src="{{asset($value->product_img )}}" style="width: 150px; height:250px;" />
-                                    <div class=" text-dark text-center">
-                                        <h5>{{ $value->product_name }}
-                                            <h5>
-                                    </div>
-                                    <div class="price text-dark text-center">
-                                        <h5> ราคา : {{ $value->product_price }}<span> บาท </h5></span>
-                                    </div>
-                                </a>
+    <main>
+        <div class="container products">
+            <div class="row">
+                @foreach($product as $value)
+                <a href="{{ route('shop.show',$value->id )}}">
+                    <div class="col-xs-18 col-sm-6 col-md-3">
+                        <div class="thumbnail">
+                            <img src="{{asset($value->product_img )}}" width="250" height="260">
+                            <div class="caption">
+                                <h4 class=" text-dark">{{ $value->product_name }}</h4>
+                                <p class=" text-dark">{{ str_limit(strtolower($value->product_detail), 50) }}</p>
+                                <p class=" text-dark"><strong>ราคา : </strong> {{ $value->product_price }} $</p>
+                                <p class="btn-holder"><a class="btn btn-warning btn-block text-center" role="button"> </a> </p>
                             </div>
                         </div>
-                        @endforeach
-
-
-
-
                     </div>
-                    <!--row-->
-                </div>
-                <!--container-fluid-->
+                </a>
+                @endforeach
 
-            </div><!-- page-main-->
-        </main>
-    </div>
-
-
-    <div>
+            </div><!-- End row -->
+    </main>
+</div>
+<div>
 
 
-        <!-- chatbot-->
+    <!-- chatbot-->
 
-        <!--<link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">-->
+    <!--<link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">-->
 
-        <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,700,800" rel="stylesheet">
-        <style>
-            html,
-            body {
-                background-color: #fff;
-                color: #636b6f;
-                font-family: sans-serif;
-                font-weight: 200;
-                height: 100vh;
-                margin: 0;
-            }
-        </style>
-        </head>
-
-        <body>
-        </body>
-
-        <link rel="stylesheet" type="text/css">
-        <script>
-            var botmanWidget = {
-                aboutText: 'ssdsd',
-                title: 'Over You 99',
-
-                mainColor: '#2E8B57',
-                bubbleBackground: '#2E8B57',
-                introMessage: '✋สวัสดีค่ะ นี่เป็นข้อความอัตโนมัติ มีอะไรให้เราช่วยไหมคะ ถ้าต้องการเริ่มต้นใหม่ พิมพ์คำว่า "เริ่มใหม่" ได้ตลอดเวลา ',
-                placeholderText: 'Ask Me Something',
-                aboutLink: 'mhdevelopment.gr'
-
-            };
-        </script>
-        <script src='https://cdn.jsdelivr.net/npm/botman-web-widget@0/build/js/widget.js'></script>
+    <script>
+        ! function(e, t, a) {
+            var c = e.head || e.getElementsByTagName("head")[0],
+                n = e.createElement("script");
+            n.async = !0, n.defer = !0, n.type = "text/javascript", n.src = t + "/static/js/chat_widget.js?config=" + JSON.stringify(a), c.appendChild(n)
+        }(document, "https://app.engati.com", {
+            bot_key: "00208c9fb9574ea5",
+            welcome_msg: true,
+            branding_key: "default",
+            server: "https://app.engati.com",
+            e: "p"
+        });
+    </script>
 
 
-        <!-- endchatbot -->
+    <!-- endchatbot -->
 
 
-        <br />
+    <br />
+    <br />
+
+    <ul class="nav justify-content-center bg-dark fixed-bottom ">
+        <li class="nav-item">
+            <a class="btn btn-link" href="#"></a>
+        </li>
         <br />
 
-        <ul class="nav justify-content-center bg-dark fixed-bottom ">
-            <li class="nav-item">
-                <a class="btn btn-link" href="#"></a>
-            </li>
-            <br />
-
-        </ul>
+    </ul>
 
 
 
 
 
 
-        @endsection
+    @endsection

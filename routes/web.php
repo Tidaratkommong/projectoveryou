@@ -123,24 +123,26 @@ Route::get('/shop/{id}','ShopController@show')->name('shop.show');
 
 
 
+//review
+
+Route::resource('/review', 'ReviewsController');
+//Route::resource('/review', 'ReviewsController@index');
 
 
 
 
 
 //chatbot
-Route::match(['get', 'post'], '/botman', 'BotManController@handle');
+//Route::match(['get', 'post'], '/botman', 'BotManController@handle');
 //Route::get('/botman/tinker', 'BotManController@tinker');
 
-Route::get('test',function(TodoRepositoryInterface $repository){
+//Route::get('test',function(TodoRepositoryInterface $repository){
 
-    $todo = [
-      'title' => 'Title 3',
-      'description' => 'dddd'
-    ];
-    $repository->store($todo);
+ //   $todo = [
+   //   'title' => 'Title 3',
+     // 'description' => 'dddd'
+    //];
+    //$repository->store($todo);
     
-    dd($repository->all());
-});
-
-//Route::resource('reviews', 'ReviewsController');
+    //dd($repository->all());
+//});

@@ -25,7 +25,7 @@
                 <div class="card-body">
                     <h5 class="card-title text-dark ">{{ $product->product_name }}</h5>
                     <p class="card-text text-dark ">{{ $product->product_detail }}</p>
-                    <p class="card-text text-dark">ราคา {{ $product->product_price}} บาท </p>
+                    <p class="card-text text-dark "><strong>ราคา : </strong> {{  $product->product_price }} $</p>
                     <p class="card-text text-dark"> เหลือ {{ $product->product_num }} ตัว</p>                   
                     <form action="#" method="POST">
                         <button type="submit" class="btn btn-outline-success">เพิ่มไปยังรถเข็น</button>
@@ -46,37 +46,7 @@
 
 <!--<link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">-->
 
-<link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,700,800" rel="stylesheet">
-<style>
-    html,
-    body {
-        background-color: #fff;
-        color: #636b6f;
-        font-family: sans-serif;
-        font-weight: 200;
-        height: 100vh;
-        margin: 0;
-    }
-</style>
-</head>
-
-<body>
-</body>
-
-<link rel="stylesheet" type="text/css">
-<script>
-    var botmanWidget = {
-        aboutText: 'ssdsd',
-        title: 'Over You 99',
-        mainColor: '#2E8B57',
-        bubbleBackground: '#2E8B57',
-        introMessage: '✋สวัสดีค่ะ นี่เป็นข้อความอัตโนมัติ มีอะไรให้เราช่วยไหมคะ ถ้าต้องการเริ่มต้นใหม่ พิมพ์คำว่า "เริ่มใหม่" ได้ตลอดเวลา ',
-        placeholderText: 'Ask Me Something',
-        aboutLink: 'mhdevelopment.gr'
-
-    };
-</script>
-<script src='https://cdn.jsdelivr.net/npm/botman-web-widget@0/build/js/widget.js'></script>
+<script>!function(e,t,a){var c=e.head||e.getElementsByTagName("head")[0],n=e.createElement("script");n.async=!0,n.defer=!0, n.type="text/javascript",n.src=t+"/static/js/chat_widget.js?config="+JSON.stringify(a),c.appendChild(n)}(document,"https://app.engati.com",{bot_key:"00208c9fb9574ea5",welcome_msg:true,branding_key:"default",server:"https://app.engati.com",e:"p" });</script>
 
 
 <!-- endchatbot -->

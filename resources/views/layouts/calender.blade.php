@@ -162,7 +162,7 @@
                     <a class="dropdown-item " href="#"> :ยืนยันการคืนสินค้า</a>
                 </li>-->
                 <li><a href="#"><i class="fa fa-shopping-basket" aria-hidden="true"></i>  สรุปยอดขาย</a></li>
-                <li><a href="{{url('event')}}""><i class="fa fa-calendar" aria-hidden="true"></i>  Events</a></li>
+                <li><a href="{{url('event')}}"><i class="fa fa-calendar" aria-hidden="true"></i>  Events</a></li>
 
             </ul>
         </div>

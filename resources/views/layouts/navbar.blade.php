@@ -105,6 +105,11 @@
                                     <a class="dropdown-item" href="{{ route('password.edit')}}">
                                         {{ __('เปลี่ยนรหัสผ่าน') }}
                                     </a>
+
+                                    <a class="dropdown-item" href="#">
+                                        {{ __('ประวัติการซื้อ') }}
+                                    </a>
+                                    
                                     <a class="dropdown-item " href="{{ route('logout') }}" onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
                                         {{ __('ออกจากระบบ') }}
