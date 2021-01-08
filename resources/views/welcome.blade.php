@@ -50,9 +50,8 @@
     </form>
 
     <br />
-
     <!--product -->
-    <h5><a href="{{url('/shop')}}" class="text-dark"> สินค้าแนะนำ </a></h5>
+    <h5><a href="#" class="text-dark"> สินค้าแนะนำ </a></h5>
     <br>
     <main>
         <div class="container products">
@@ -132,8 +131,6 @@
 </script>
 
 <!-- endchatbot -->
-<a href="{{url('review')}}">review</a>
-
 
 @include('review.review')
 

@@ -33,6 +33,10 @@ Route::get('about', function () {
     return view('about');
 });
 
+Route::get('size', function () {
+    return view('size');
+});
+
 Route::get('shipments', function () {
     return view('shipments');
 });
@@ -125,8 +129,10 @@ Route::get('/shop/{id}','ShopController@show')->name('shop.show');
 
 //review
 
+//Route::get('/','ReviewsController@show');
+//Route::get('/', 'ReviewsController@index');
 Route::resource('/review', 'ReviewsController');
-//Route::resource('/review', 'ReviewsController@index');
+//Route::get('/', 'ReviewsController@index');
 
 
 

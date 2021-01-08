@@ -31,12 +31,12 @@
             <div class="description-review-title nav" role=tablist>
 
                 <a class="active" href="#pro-dec" data-toggle="tab" role="tab" aria-selected="true">
-                    <h5>Description....   </h5>
+                    <h5>Description.... </h5>
                 </a>
 
-              
+
                 <a href="#pro-review" data-toggle="tab" role="tab" aria-selected="false">
-                    <h5>   Reviews </h5>
+                    <h5> Reviews </h5>
                 </a></a>
             </div>
             <div class="description-review-text tab-content">
@@ -65,20 +65,19 @@
                                                 <ol class="commentlist">
                                                     <div id="comment-32503" class="comment_container">
 
-                                                   
+                                                        @foreach ($reviewAlsoLike as $review)
                                                         <div class="comment-text">
                                                             <p class="meta">
-                                                                <strong class="woocommerce-review__author"></strong>
-                                                                <span class="woocommerce-review__dash">–</span> <time class="woocommerce-review__published-date" datetime="2017-08-23T22:00:25+03:00"></time>
+                                                                <strong class="woocommerce-review__author">&nbsp;&nbsp;{{$review->name_review }}</strong>
+                                                                <span class="woocommerce-review__dash">–</span> <time class="woocommerce-review__published-date" datetime="2017-08-23T22:00:25+03:00">{{$review->created_at }}</time>
                                                             </p>
-
                                                             <!--<div class="star-rating" role="img" aria-label="Rated 5 out of 5"><span style="width:100%">Rated <strong class="rating">5</strong> out of 5</span></div> -->
-
                                                             <div class="description">
-                                                                <p>&nbsp;&nbsp;&nbsp;</p>
+                                                                <p>&nbsp;&nbsp;&nbsp;{{$review->title_review }}</p>
                                                             </div>
                                                         </div>
-                                                  
+                                                        @endforeach
+
                                                     </div>
 
                                                 </ol>
@@ -91,8 +90,8 @@
                                                 <div id="review_form">
                                                     <div id="respond" class="comment-respond">
                                                         <span id="reply-title" class="comment-reply-title"> &nbsp;&nbsp;แสดงความคิดเห็นจากลูกค้า <small><a rel="nofollow" id="cancel-comment-reply-link" href="/excel-template/personal-reviews-ratings-database/#respond" style="display:none;">Cancel reply</a></small></span>
-                                                        <form method="POST" action="{{route('review.store')}}" >
-                                                        @csrf
+                                                        <form method="POST" action="{{route('review.store')}}">
+                                                            @csrf
                                                             <p class="comment-notes"><span id="email-notes"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ที่อยู่อีเมลของคุณจะไม่ถูกเผยแพร่ </span> <span class="required text-danger">*</span></p>
 
 
@@ -117,7 +116,7 @@
                                                             &nbsp;&nbsp;&nbsp;&nbsp; <button type="submit" class="btn btn-success">บันทึก</button>
                                                             <br>
                                                             <br>
-                                                            </form>
+                                                        </form>
                                                     </div><!-- #respond -->
                                                 </div>
                                             </div>

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Product;
+use App\Review;
 use Illuminate\Support\Facades\Auth;
 
 class ListproductController extends Controller
@@ -18,8 +19,26 @@ class ListproductController extends Controller
         //$product =Product::find(Auth::all());
         //return view('welcome', compact('product'));
         $product = Product::inRandomOrder()->take(12)->get();
-        return view('welcome', compact('product'));
+        $reviewAlsoLike = Review::inRandomOrder()->take(5)->get();
+
+        return view('welcome')->with([
+            'product' => $product,
+            'reviewAlsoLike' => $reviewAlsoLike,
+ 
+        ]);
+       // return view('welcome', compact('product'));
        // {{ Auth::user()->name }}
+
+
+      // $product = Product::findOrFail($id);
+      // $reviewAlsoLike = Review::where('id', '!=', $id)->inRandomOrder()->take(4)->get();
+
+
+      // return view('welcome')->with([
+         //  'product' => $product,
+         //  'reviewAlsoLike' => $reviewAlsoLike,
+
+      // ]);
     }
 
     /**
@@ -53,6 +72,7 @@ class ListproductController extends Controller
     {
         $product = Product::findOrFail($id);
         return view('welcome', compact('product'));
+
     }
 
     /**

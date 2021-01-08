@@ -24,4 +24,17 @@ $(document).ready(function(){
           });
 
     });
-});
+
+    $('.sizeForm').click(function(evt){
+      evt.preventDefault();
+      swal({
+        title:"ตารางไซส์",
+        text: "ไซส์เสื้อเเเ",
+        imageUrl:"https://sv1.picz.in.th/images/2021/01/04/lNGgjQ.th.jpg",
+        imageAlt:'custom image'
+    
+        })
+
+        });
+
+  });

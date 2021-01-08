@@ -19,6 +19,9 @@ class ReviewsController extends Controller
         $review = Review::all();
         return view('review.review', compact('review'));
 
+      //  $product = Product::all();
+     //   return view('shop.shop', compact('product'));
+
     }
 
     /**
@@ -64,8 +67,7 @@ class ReviewsController extends Controller
      */
     public function show($id)
     {
-        $review = Review::findOrFail($id);
-        return view('welcome', compact('review'));
+      //
     }
 
     /**
