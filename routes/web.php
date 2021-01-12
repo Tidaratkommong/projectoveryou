@@ -125,7 +125,29 @@ Route::get('/', 'ListproductController@index');
 Route::get('/shop', 'ShopController@index');
 Route::get('/shop/{id}','ShopController@show')->name('shop.show');
 
+// cart
 
+Route::get('/add-to-cart/{product}', 'CartController@add')->name('cart.add')->middleware('auth');
+Route::get('/cart', 'CartController@index')->name('cart.index')->middleware('auth');
+Route::get('/cart/destroy/{itemId}', 'CartController@destroy')->name('cart.destroy')->middleware('auth');
+Route::get('/cart/update/{itemId}', 'CartController@update')->name('cart.update')->middleware('auth');
+
+
+
+//Route::get('/cart', 'CartController@index')->name('cart.index');
+//Route::get('/cart', 'CartController@store')->name('cart.store');
+//Route::get('cart/{id}', 'CartController@addToCart');
+//Route::patch('update-cart', 'CartController@update');
+//Route::delete('remove-from-cart', 'CartController@remove');
+//Route::delete('/cart/{id}', 'CartController@destroy')->name('cart.destroy');
+
+//Route::get('/', 'ProductsController@index');
+//Route::get('cart', 'ProductsController@cart');
+//Route::get('add-to-cart/{id}', 'ProductsController@addToCart');
+
+//Route::get('empty',function(){
+ //   Cart::destroy();
+//});
 
 //review
 

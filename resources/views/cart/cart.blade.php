@@ -1,3 +1,8 @@
+@extends('layouts.test')
+
+
+
+@section('content')
 <style>
     .main-section {
         background-color: #F8F8F8;
@@ -6,6 +11,12 @@
     .dropdown {
         float: right;
         padding-right: 30px;
+    }
+
+    .btn {
+        border: 0px;
+        margin: 10px 0px;
+        box-shadow: none !important;
     }
 
     .dropdown .dropdown-menu {
@@ -149,64 +160,60 @@
 
     }
 </style>
-<div class="container products">
-    <h4> สินค้าที่คุณอาจจะชอบ... </h4>
-    <div class="row">
-        @foreach ($mightAlsoLike as $product)
-        <div class="col-xs-18 col-sm-6 col-md-3">
-        <a href="{{ route('shop.show',$product->id )}}">
-            <div class="thumbnail">
-                <img src="{{asset($product->product_img )}}" width="450" height="250">
-                <div class="caption">
-                    <h4 class=" text-dark">{{ $product->product_name }}</h4>
-                    <p class=" text-dark">{{ str_limit(strtolower($product->product_detail), 50) }}</p>
-                    <p class=" text-dark"><strong class=" text-dark">Price: </strong> {{$product->product_price }}$</p>
-                </div>
-            </div>
-        </a>
-        </div>
-        @endforeach
+<div class="product-section container">
+    <br>
+    <br>
+    <table id="cart" class="table table-hover table-condensed">
+        <thead>
+            <tr>
+                <th style="width:50%">Product</th>
+                <th style="width:10%">Price</th>
+                <th style="width:8%">Quantity</th>
+                <th style="width:22%" class="text-center">Subtotal</th>
+                <th style="width:10%"></th>
+            </tr>
+        </thead>
+        <tbody>
+            <?php $total = 0 ?>
+            @if(session('cart.cart'))
+            @foreach(session('cart.cart') as $id => $details)
 
-    </div><!-- End row -->
+            <?php $total += $details['product_price'] * $details['product_num'] ?>
 
-</div>
-
-
-<!-- 
-
-<div class="might-like-section">
-    <div class="container">
-        <h4> สินค้าที่คุณอาจจะชอบ... </h4>
-        <main>
-            <div class="page-overlay-bg">
-                <div class="container-fluid m-0 p-0">
-                    <!--container-fluid
-                    <div class="row no-gutters px-0">
-                        <!--row-
-                        @foreach ($mightAlsoLike as $product)
-                        <div class="col-6 col-sm-5 col-md-3 bg-light px-1">
-                            <div href="javascript:void(0);">
-                                <a href="{{ route('shop.show',$product->id )}}" class="card  mb-2 shadow-sm" style="width: 18rem; height:24rem;">
-                                    <img class=" w-100" src="{{asset($product->product_img )}}" style="width: 90px; max-height:270px;" />
-                                    <div class="caption">
-                                        <h5 class=" text-dark">&nbsp;&nbsp;{{ $product->product_name }}</h5>
-                                        <p class=" text-dark">&nbsp;&nbsp;{{ str_limit(strtolower($product->product_detail), 50) }}
-                                            <br> &nbsp;&nbsp;<strong>ราคา : </strong> {{$product->product_price }} $
-                                        </p>
-                                    </div>
-                                </a>
-                            </div>
+            <tr>
+                <td data-th="Product">
+                    <div class="row">
+                        <div class="col-sm-3 hidden-xs"><img src="{{ $details['product_img'] }}" width="100" height="100" class="img-responsive" /></div>
+                        <div class="col-sm-9">
+                            <h4 class="nomargin">{{ $details['product_name'] }}</h4>
                         </div>
-                        @endforeach
                     </div>
-                    <!--row
-                </div>
-                <!--container-fluid
-            </div><!-- page-main
-        </main>
-    </div>
+                </td>
+                <td data-th="Price">${{ $details['product_price'] }}</td>
+                <td data-th="Quantity">
+                    <input type="number" value="{{ $details['product_num'] }}" class="form-control quantity" />
+                </td>
+                <td data-th="Subtotal" class="text-center">${{ $details['product_price'] * $details['product_num'] }}</td>
+                <td class="actions" data-th="">
+                    <button class="btn btn-info btn-sm update-cart" data-id="{{ $id }}"><i class="fa fa-refresh"></i></button>
+                    <button class="btn btn-danger btn-sm remove-from-cart" data-id="{{ $id }}"><i class="fa fa-trash-o"></i></button>
+                </td>
+            </tr>
+            @endforeach
+            @endif
+
+        </tbody>
+        <tfoot>
+            <tr class="visible-xs">
+                <td class="text-center"><strong>Total {{ $total }}</strong></td>
+            </tr>
+            <tr>
+                <td><a href="{{ url('/shop') }}" class="btn btn-warning"><i class="fa fa-angle-left"></i> Continue Shopping</a></td>
+                <td><a href="{{ url('/shop') }}" class="btn btn-warning"><i class="fa fa-angle-left"></i> Continue Shopping</a></td>
+                <td class="hidden-xs text-center"><strong>Total ${{ $total }}</strong></td>
+            </tr>
+        </tfoot>
+    </table>
 </div>
-</div>
-</div>
--->
-© 202
+
+@endsection

@@ -96,7 +96,7 @@
             <div class="small-box  text-center " style="background-color: #F4A460;">
                 <div class="inner">
                     <br>
-                    <a  href="{{ url('help') }}">
+                    <a href="{{ url('help') }}">
                         <h4 class="text-light">วิธีการซื้อสินค้า</h4>
                     </a>
                     <h5>HOW TO SHOP</h5>
@@ -108,7 +108,7 @@
             <div class="small-box  text-center " style="background-color: #5F9EA0;">
                 <div class="inner">
                     <br>
-                    <a  href="{{ url('help') }}">
+                    <a href="{{ url('help') }}">
                         <h4 class="text-light">วิธีการคืนสินค้า</h4>
                     </a>
                     <h5>HOW TO RETURN ITEMS</h5>
@@ -116,7 +116,7 @@
             </div>
         </div>
 
-        
+
 
 
     </div>
@@ -126,27 +126,31 @@
     <main>
         <div class="container products">
             <div class="row">
-                @foreach($product as $value)
-                <a href="{{ route('shop.show',$value->id )}}">
+                @foreach($allProducts as $product)
+                <a href="{{ route('shop.show',$product->id )}}"> 
                     <div class="col-xs-18 col-sm-6 col-md-3">
                         <div class="thumbnail">
-                            <img src="{{asset($value->product_img )}}" width="250" height="260">
+                            <img src="{{asset($product->product_img )}}" width="250" height="260">
                             <div class="caption">
-                                <h4 class=" text-dark">{{ $value->product_name }}</h4>
-                                <p class=" text-dark">{{ str_limit(strtolower($value->product_detail), 50) }}</p>
-                                <p class=" text-dark"><strong>ราคา : </strong> {{ $value->product_price }} $</p>
-                                <p class="btn-holder"><a class="btn btn-warning btn-block text-center" role="button"> </a> </p>
+                                <h4 class=" text-dark">{{ $product->product_name }}</h4>
+                                <p class=" text-dark">{{ str_limit(strtolower($product->product_detail), 50) }}</p>
+                                <p class=" text-dark"><strong>ราคา : </strong> {{ $product->product_price }} $</p>
+                                <p class="btn-holder"><a  class="btn btn-warning btn-block text-center" role="button"></a> </p>
                             </div>
                         </div>
                     </div>
                 </a>
+               
                 @endforeach
 
             </div><!-- End row -->
         </div>
     </main>
-
     <br />
+
+    <div class="text-center button-container">
+       <a href="{{url('/shop')}}" class="button" ><button type="button" class="btn btn-outline-secondary">View more products</button></a>
+    </div>
 </div>
 
 <!-- chatbot-->

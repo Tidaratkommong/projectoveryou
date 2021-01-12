@@ -23,6 +23,7 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 
 
+
 </head>
 
 <body>
@@ -70,7 +71,7 @@
                                 <a class="btn btn-link text-dark" href="{{ url('shipments') }} "> ตรวจสอบการจัดส่ง</a>
                             </li>
 
-                           <!-- <li class="nav-item">
+                            <!-- <li class="nav-item">
                                 <a class="btn btn-link text-dark" href="#"> ออกแบบ.....</a>
                             </li>-->
 
@@ -93,14 +94,15 @@
                                 </form>-->
 
                             <li class="nav-item mr-2">
-                                <a class="nav-link p-0 m-0" href="#">
-                                    <i class="fas fa-cart-arrow-down text-success fa-2x"></i>
+                                <a class="nav-link p-0 m-0" href="{{ route('cart.index') }}">
+                                    <i class="fas fa-cart-arrow-down text-success fa-2x">
+                                    </i>
                                     <div class="badge badge-danger">
-                                        @auth
-                                      
-                                        
-                                        0
-                                        @endauth
+                                    @auth
+                                    {{Cart::session(auth()->id())->getTotalQuantity()}}
+                                    @else
+                                    0
+                                    @endauth
                                     </div>
                                 </a>
                             </li>

@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Product;
+use Darryldecode\Cart\Cart;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
 
 class CartController extends Controller
 {
@@ -11,9 +14,52 @@ class CartController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+    public function add(Product  $product)
+    {
+         //dd($product);
+         //add the product to cart
+
+         \Cart::session(auth()->id())->add(array(
+             'id' => $product->id,
+             'name' => $product->product_name,
+             'price' => $product->product_price,
+             'quantity' => 1,
+             'attributes' => array(),
+             'associatedModel' => $product
+         ));
+
+         return redirect()->route('cart.index');
+
+    }
     public function index()
     {
-        //
+        //$cart = Cart::all();
+        $cartItems =\Cart::session(auth()->id())->getContent();
+       return view('cart.index',compact('cartItems'));
+    }
+
+    public function destroy($itemId)
+    {
+        //$cart = Cart::all();
+        \Cart::session(auth()->id())->remove($itemId);
+       return back();
+    }
+
+    public function update($rowId)
+    {
+        //$cart = Cart::all();
+        \Cart::session(auth()->id())->update($rowId,[
+
+            'quantity' => array(
+                'relative' =>false,
+                'value' => request('quantity')
+            )
+            
+
+        ]);
+        return back();
+       
     }
 
     /**
@@ -34,9 +80,21 @@ class CartController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
+        // $duplicates = Cart::search(function ($cartIteme, $rowId) use ($request){
+        //      return $cartIteme->id === $request->id;
+        // });
+
+        // if($duplicates->isNotEmpty()){
+        //     return redirect()->route('cart.index');
+        // }
+        // Cart::add($request->id, $request->product_name, 1, $request->product_price)
+        //    ->associate('App\Product');
+
+       // return view('cart.cart');
     }
 
+    
     /**
      * Display the specified resource.
      *
@@ -66,10 +124,7 @@ class CartController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
-    {
-        //
-    }
+    
 
     /**
      * Remove the specified resource from storage.
@@ -77,8 +132,5 @@ class CartController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
-    {
-        //
-    }
+    
 }

@@ -113,6 +113,14 @@ class ListproductController extends Controller
     {
         $search = $_GET['search'];
         $product = Product::where('product_name','LIKE','%'.$search.'%')->get();
-        return view('welcome', compact('product'));
+        $reviewAlsoLike = Review::inRandomOrder()->take(5)->get();
+        return view('welcome', compact('product'))->with([
+            'product' => $product,
+            'reviewAlsoLike' => $reviewAlsoLike,
+ 
+        ]);
+
+
+        
     }
 }

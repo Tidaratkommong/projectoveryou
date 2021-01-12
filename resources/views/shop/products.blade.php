@@ -12,6 +12,8 @@
 </h4>
 
 <br>
+
+
 <!-- show product -->
 <div class="product-section container">
     <div class="form-row">
@@ -26,16 +28,19 @@
                             <h5 class="card-title text-dark ">{{ $product->product_name }}</h5>
                             <p class="card-text text-dark ">{{ $product->product_detail }}</p>
                             <p class="card-text text-dark"> <strong> เหลือ : </strong>{{ $product->product_num }} ตัว &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                <strong>ราคา : </strong> {{ $product->product_price }} $</p>
+                                <strong>ราคา : </strong> {{ $product->product_price }} $
+                            </p>
                             </p>
                             <a href="{{url('size')}}">
                                 <strong class="card-text text-dark"> ดูตารางไซส์ </strong>
                             </a>
                             <p>
-                                <form action="#" method="POST">
-                                    <button type="submit" class="btn btn-outline-success">เพิ่มไปยังรถเข็น</button>
-                                    <!--<button type="submit" class="button button-plain"> เพิ่มไปยังรถเข็น </button>-->
-                                </form>
+                                <p class="btn-holder">
+                                <a href="{{route('cart.add',$product->id)}}"class="btn btn-outline-success" role="button">เพิ่มไปยังรถเข็น
+                                </a>
+                            </p>
+                                <!--<button type="submit" class="button button-plain"> เพิ่มไปยังรถเข็น </button>-->
+                            </form>
                             </p>
                         </div>
 
@@ -81,6 +86,7 @@
 
 <!-- end product-section -->
 @include('shop.might-like')
+
 <!-- chatbot-->
 
 <!--<link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">-->

@@ -75,36 +75,6 @@
             </div><!-- End row -->
 
         </div>
-        <!-- 
-        <div class="page-overlay-bg bg-light">
-            <div class="container-fluid m-0 p-0">
-                <!--container-fluid
-                <div class="row no-gutters px-0">
-                   
-                    @foreach($product as $value)
-                    <div class="col-6 col-sm-4 col-md-3 bg-light px-1">
-                        <div href="javascript:void(0);">
-                            <a href="{{ route('login') }}" class="card  mb-2 shadow-sm" style="width: 16rem; height:20rem;">
-                                <img class="text-center w-100" src="{{asset($value->product_img )}}" style="width: 150px; height:250px;" />
-                                <div class=" text-dark text-center">
-                                    <h4>{{ $value->product_name }}</h4>
-                                </div>
-                                <div class=" text-dark text-center">
-                                    <p>{{ str_limit(strtolower($value->product_detail), 50) }}</p>
-                                </div>
-
-                                <div class="price text-dark text-center">
-                                    <p><strong>ราคา : </strong> {{ $value->product_price }} $</p>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                    @endforeach
-                </div>
-                <!--row
-            </div>
-            <!--container-fluid
-        </div><!-- page-main-->
     </main>
 
 </div>
@@ -132,7 +102,7 @@
 
 <!-- endchatbot -->
 
-@include('review.review')
+@include('review.review') 
 
 <!-- related product area start-->
 

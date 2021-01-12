@@ -34,11 +34,11 @@ class HomeController extends Controller
         } else {
             //return view('home');
             // return view('welcome');
-            $product = Product::inRandomOrder()->take(8)->get();
+            $products = Product::inRandomOrder()->take(8)->get();
             $reviewAlsoLike = Review::inRandomOrder()->take(5)->get();
 
             return view('home')->with([
-                'product' => $product,
+                'allProducts' => $products,
                 'reviewAlsoLike' => $reviewAlsoLike,
 
             ]);

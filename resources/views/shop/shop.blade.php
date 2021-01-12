@@ -67,7 +67,7 @@
                                 <h4 class=" text-dark">{{ $value->product_name }}</h4>
                                 <p class=" text-dark">{{ str_limit(strtolower($value->product_detail), 50) }}</p>
                                 <p class=" text-dark"><strong>ราคา : </strong> {{ $value->product_price }} $</p>
-                                <p class="btn-holder"><a class="btn btn-warning btn-block text-center" role="button"> </a> </p>
+                                <p class="btn-holder"><a class="btn btn-warning btn-block text-center" role="button"></a> </p>
                             </div>
                         </div>
                     </div>
@@ -77,26 +77,62 @@
             </div><!-- End row -->
         </div>
     </main>
+    <br>
 </div>
 <div>
 
+    <!-- chatbot-->
+    <script>
+        ! function(e, t, a) {
+            var c = e.head || e.getElementsByTagName("head")[0],
+                n = e.createElement("script");
+            n.async = !0, n.defer = !0, n.type = "text/javascript", n.src = t + "/static/js/chat_widget.js?config=" + JSON.stringify(a), c.appendChild(n)
+        }(document, "https://app.engati.com", {
+            bot_key: "00208c9fb9574ea5",
+            welcome_msg: true,
+            branding_key: "default",
+            server: "https://app.engati.com",
+            e: "p"
+        });
+    </script>
 
-<!-- chatbot-->
-<script>
-    ! function(e, t, a) {
-        var c = e.head || e.getElementsByTagName("head")[0],
-            n = e.createElement("script");
-        n.async = !0, n.defer = !0, n.type = "text/javascript", n.src = t + "/static/js/chat_widget.js?config=" + JSON.stringify(a), c.appendChild(n)
-    }(document, "https://app.engati.com", {
-        bot_key: "00208c9fb9574ea5",
-        welcome_msg: true,
-        branding_key: "default",
-        server: "https://app.engati.com",
-        e: "p"
-    });
-</script>
+    <!-- endchatbot -->
 
-<!-- endchatbot -->
+
+
+    <!-- Scroll To Top -->
+    <script>
+        //Get the button:
+        mybutton = document.getElementById("myBtn");
+
+        // When the user scrolls down 20px from the top of the document, show the button
+        window.onscroll = function() {
+            scrollFunction()
+        };
+
+        function scrollFunction() {
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                mybutton.style.display = "block";
+            } else {
+                mybutton.style.display = "none";
+            }
+        }
+
+        // When the user clicks on the button, scroll to the top of the document
+        function topFunction() {
+            document.body.scrollTop = 0; // For Safari
+            document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+        }
+    </script>
+
+    <div class="text-center button-container">
+        <button onclick="topFunction()" id="myBtn" title="Go to top" class="btn btn-outline-secondary">
+            <i class="fa fa-angle-double-up" aria-hidden="true">
+                กลับสู่ด้านบน
+            </i>
+        </button>
+    </div>
+    <!-- Scroll To Top -->
 
     <br />
     <br />
