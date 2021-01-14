@@ -2,7 +2,6 @@
 @section('content')
 <br>
 <br>
-
 <h4 class="col-md-6">
     <a href="{{url('/home')}}" class="text-success"> Home </a>
     <i class="fa fa-chevron-right breadcrumb-separator"></i>
@@ -10,10 +9,7 @@
     <i class="fa fa-chevron-right breadcrumb-separator"></i>
     <span class="text-dark">{{ $product->product_name }}</span>
 </h4>
-
 <br>
-
-
 <!-- show product -->
 <div class="product-section container">
     <div class="form-row">

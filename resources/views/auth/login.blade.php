@@ -9,7 +9,6 @@
         <div class="col-md-8">
             <div class="card text-center">
                 <div class="card-header text-dark"><h4>{{ __('เข้าสู่ระบบ') }}</h4></div>
-
                 <div class="card-body">
                     <form method="POST" action="{{ route('login') }}">
                         @csrf

@@ -1,6 +1,5 @@
 @extends('layouts.test')
 
-@section('title', 'Products')
 
 @section('content')
 <style>
@@ -160,17 +159,21 @@
 
     }
 </style>
+<br>
+<h4 class="col-md-6">
+    <a href="{{url('/home')}}" class="text-success"> Home </a>
+    <i class="fa fa-chevron-right breadcrumb-separator"></i>
+    <span><a href="{{url('/shop')}}" class="text-success"> Shop </a></span>
+    <i class="fa fa-chevron-right breadcrumb-separator"></i>
+    <span class="text-dark">ตะกร้าสินค้าของคุณ</span>
+</h4>
 <div class="product-section container">
-    <br>
-    <br>
-<h4>ตะกร้าสินค้าของคุณ </h4>
-    <br>
     <table id="cart" class="table table-hover table-condensed">
         <thead>
             <tr>
-                <th style="width:50%">สินค้า</th>
-                <th style="width:10%">ราคา</th>
-                <th style="width:15%">จำนวน</th>
+                <th style="width:40%">สินค้า</th>
+                <th style="width:15%">ราคา</th>
+                <th style="width:20%">จำนวน</th>
                 <th style="width:22%" class="text-center">รวม</th>
                 <th style="width:10%">แก้ไข</th>
             </tr>
@@ -181,7 +184,7 @@
             <tr>
                 <td data-th="Product">
                     <div class="row">
-                        <div class="col-sm-3 hidden-xs"><img src="#" width="90" height="90" class="img-responsive" /></div>
+                       <!-- <div class="col-sm-3 hidden-xs"><img src="#" width="60" height="80" class="img-responsive" /></div>-->
                         <div class="col-sm-9">
                             <h5 class="nomargin">{{$item->name}}</h5>
                         </div>
@@ -208,25 +211,29 @@
                     </form>
 
                 </td>
-                <td data-th="Subtotal" class="text-center"> {{Cart::session(auth()->id())->get($item->id)->getPriceSum()}} บาท </td>
+                <td data-th="Subtotal" class="text-center"> {{\Cart::session(auth()->id())->get($item->id)->getPriceSum()}} บาท </td>
                 <td class="actions" data-th="">
-                    <button class="btn btn-danger btn-sm remove-from-cart" data-id="#"><a href="{{route('cart.destroy',$item->id)}}">ลบ</a></button>
+                    <button class="btn btn-danger btn-sm remove-from-cart" data-id="#">
+                        <a href="{{route('cart.destroy',$item->id)}}" class="text-light">
+                            <i class="fa fa-trash" aria-hidden="true"></i>
+                        </a>
+                    </button>
                 </td>
             </tr>
             @endforeach
         </tbody>
         <tfoot>
-           
+
             <tr>
-                <td><a href="{{ url('/shop') }}" class="btn btn-warning"><i class="fa fa-angle-left"></i> Continue Shopping</a></td>
+                <td><a href="{{route('cart.checkout')}}" class="btn btn-primary"> ดําเนินการชําระเงิน</a></td>
                 <td colspan="2" class="hidden-xs"></td>
                 <td class="hidden-xs text-center">
                     <h4>
-                        รวม : {{Cart::session(auth()->id())->getTotal()}} บาท
+                        รวม :{{\Cart::session(auth()->id())->getTotal()}} 
 
                     </h4>
                 </td>
-               
+
             </tr>
         </tfoot>
     </table>

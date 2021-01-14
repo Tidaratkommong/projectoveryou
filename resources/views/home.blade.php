@@ -126,15 +126,15 @@
     <main>
         <div class="container products">
             <div class="row">
-                @foreach($allProducts as $product)
-                <a href="{{ route('shop.show',$product->id )}}"> 
+            @foreach($product as $value)
+                <a href="{{ route('shop.show',$value->id )}}"> 
                     <div class="col-xs-18 col-sm-6 col-md-3">
                         <div class="thumbnail">
-                            <img src="{{asset($product->product_img )}}" width="250" height="260">
+                            <img src="{{asset($value->product_img )}}" width="250" height="260">
                             <div class="caption">
-                                <h4 class=" text-dark">{{ $product->product_name }}</h4>
-                                <p class=" text-dark">{{ str_limit(strtolower($product->product_detail), 50) }}</p>
-                                <p class=" text-dark"><strong>ราคา : </strong> {{ $product->product_price }} $</p>
+                                <h4 class=" text-dark">{{ $value->product_name }}</h4>
+                                <p class=" text-dark">{{ str_limit(strtolower($value->product_detail), 50) }}</p>
+                                <p class=" text-dark"><strong>ราคา : </strong> {{ $value->product_price }} $</p>
                                 <p class="btn-holder"><a  class="btn btn-warning btn-block text-center" role="button"></a> </p>
                             </div>
                         </div>

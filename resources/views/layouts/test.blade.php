@@ -98,11 +98,11 @@
                                     <i class="fas fa-cart-arrow-down text-success fa-2x">
                                     </i>
                                     <div class="badge badge-danger">
-                                    @auth
-                                    {{Cart::session(auth()->id())->getTotalQuantity()}}
-                                    @else
-                                    0
-                                    @endauth
+                                        @auth
+                                        {{Cart::session(auth()->id())->getContent()->count()}}
+                                        @else
+                                        0
+                                        @endauth
                                     </div>
                                 </a>
                             </li>
@@ -164,6 +164,20 @@
                     </div>
                 </div>
             </nav>
+            {{-- display success message --}}
+            @if(session()->has('message'))
+            <div class="alert alert-success text-center" role="alert">
+                {{session('message')}}
+            </div>
+            @endif
+
+            {{-- display error message --}}
+
+            @if(session()->has('error'))
+            <div class="alert alert-danger text-center" role="alert">
+                {{session('error')}}
+            </div>
+            @endif
             <main class="py-10">
                 @yield('content')
             </main>

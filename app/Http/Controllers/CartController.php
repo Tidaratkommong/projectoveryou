@@ -67,70 +67,14 @@ class CartController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+  
+    public function checkout()
     {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-
-        // $duplicates = Cart::search(function ($cartIteme, $rowId) use ($request){
-        //      return $cartIteme->id === $request->id;
-        // });
-
-        // if($duplicates->isNotEmpty()){
-        //     return redirect()->route('cart.index');
-        // }
-        // Cart::add($request->id, $request->product_name, 1, $request->product_price)
-        //    ->associate('App\Product');
-
-       // return view('cart.cart');
+        return view('cart.checkout');
     }
 
     
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     
 }
