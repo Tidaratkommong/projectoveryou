@@ -89,60 +89,20 @@ class OrderController extends Controller
 
         }
 
+        //payment
+        if(request('payment_method') == 'paypal'){
+            //return redirect('paypal.checkout');
+            return redirect()->route('paypal.checkout');
+        }
         //empty cart
-          \Cart::session(auth()->id())->clear();
+         \Cart::session(auth()->id())->clear();
         //
         //return "order completed, thank you for order";
         //return back();
         
         return redirect('home')->withMessage('สั่งซื้อสินค้าสำเร็จ');
         //dd('order created',$order);
-       
-
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Order  $order
-     * @return \Illuminate\Http\Response
-     */
-    public function show(Order $order)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Order  $order
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Order $order)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Order  $order
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, Order $order)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Order  $order
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(Order $order)
-    {
-        //
-    }
+    
 }

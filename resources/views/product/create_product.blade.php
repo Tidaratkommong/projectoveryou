@@ -77,11 +77,6 @@
                         <label for="exampleInputFile">Select Profile Image</label>
                         <input type="file" name="product_img" value="{{old('product_img')}}" />
                     </div>
-                    <div class="checkbox">
-                        <label>
-                            <input type="checkbox"> Check me out
-                        </label>
-                    </div>
                     <button type="submit" class="btn btn-success">บันทึก</button>
 
             </div>

@@ -114,7 +114,6 @@
         <a class="btn btn-link" href="#"></a>
     </li>
     <br />
-
 </ul>
 
 @endsection

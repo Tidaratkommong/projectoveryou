@@ -14,7 +14,7 @@ class CreateReviewTable extends Migration
     public function up()
     {
         Schema::create('review', function (Blueprint $table) {
-            $table->increments('id');
+            $table->bigIncrements('id');
             $table->string('title_review');
             $table->string('name_review');
            // $table->text('address')->nullable();

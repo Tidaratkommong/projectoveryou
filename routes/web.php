@@ -42,6 +42,10 @@ Route::get('shipments', function () {
     return view('shipments');
 });
 
+Route::get('order_history', function () {
+    return view('order_history');
+});
+
 Auth::routes();
 
 //Route::get('/home', 'HomeController@index')->name('home');
@@ -106,6 +110,15 @@ Route::get('/cart/checkout', 'CartController@checkout')->name('cart.checkout')->
 
 // order
 Route::resource('orders','OrderController')->middleware('auth');
+
+//payment
+
+Route::get('payple/checkout','PayPalController@checkout')->name('paypal.checkout')->middleware('auth');
+Route::resource('paypal','PayPalController')->middleware('auth');
+
+//Route::get('payple/checkout','PayPalController@index')->name('paypal.index')->middleware('auth');
+//Route::get('payple/checkout-success','PayPalController@getExpressCheckoutSuccess');
+
 //review
 Route::resource('/review', 'ReviewsController');
 
