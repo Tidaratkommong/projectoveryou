@@ -1,4 +1,4 @@
-@extends('layouts.navbar')
+@extends('layouts.test')
 
 @section('content')
 
@@ -17,7 +17,7 @@
                     <br />
                     <li class="nav-item active">
                         <h6 class="nav-link ml-2 text-black ml-3 "> เว็บไซต์ Overyou99 สร้างขึ้นเพื่อเพิ่มช่องทางการซื้อขายสินค้า
-                            จากร้านค้าชื่อ Overyou99​ ที่ขายสินค้าเกี่ยวกับเสื้อผ้า รองเท้า <br/> และของใช้สำหรับผู้ชายจากแบรนด์ดัง อาทิ Superstars Adidas Nike เป็นต้น</h6>
+                            จากร้านค้าชื่อ Overyou99​ ที่ขายสินค้าเกี่ยวกับเสื้อผ้า รองเท้า <br /> และของใช้สำหรับผู้ชายจากแบรนด์ดัง อาทิ Superstars Adidas Nike เป็นต้น</h6>
                     </li>
                     <li class="nav-item active">
                         <h6 class="nav-link ml-3"> สามารถเยี่ยมชมร้านค้าผ่านทาง </h6>
@@ -25,25 +25,18 @@
                         <h6 class="nav-link ml-3"> Line ID : @Overyou </h6>
                         <h6 class="nav-link ml-3"> Facebook ได้ที่เพจ :<a href="https://www.facebook.com/overyou99">Over You99</a></h6>
 
-<div id="fb-root "></div>
-<script async defer crossorigin="anonymous" src="https://connect.facebook.net/th_TH/sdk.js#xfbml=1&version=v8.0" nonce="Svru9YoR"></script>
-<div class="fb-page ml-5 center" 
-data-href="https://www.facebook.com/overyou99" 
-data-tabs="timeline" 
-data-width="500" 
-data-height="" 
-data-small-header="false" 
-data-adapt-container-width="true" 
-data-hide-cover="false" 
-data-show-facepile="true">
-<blockquote cite="https://www.facebook.com/overyou99" class="fb-xfbml-parse-ignore"></blockquote></div>
+                        <div id="fb-root "></div>
+                        <script async defer crossorigin="anonymous" src="https://connect.facebook.net/th_TH/sdk.js#xfbml=1&version=v8.0" nonce="Svru9YoR"></script>
+                        <div class="fb-page ml-5 center" data-href="https://www.facebook.com/overyou99" data-tabs="timeline" data-width="500" data-height="" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true">
+                            <blockquote cite="https://www.facebook.com/overyou99" class="fb-xfbml-parse-ignore"></blockquote>
+                        </div>
 
-                       <br/>
-                       <br/>
-                       <br/>
-                       <br/> <br/>
+                        <br />
+                        <br />
+                        <br />
+                        <br /> <br />
 
-                       
+
                     </li>
 
                 </ul>
@@ -52,14 +45,26 @@ data-show-facepile="true">
     </div>
 
     <ul class="nav justify-content-center bg-dark fixed-bottom ">
-    <li class="nav-item">
-        <a class="btn btn-link" href="#"></a>
-    </li>
-   
-    
-</ul>
+        <li class="nav-item">
+            <a class="btn btn-link" href="#"></a>
+        </li>
 
 
-<script>!function(e,t,a){var c=e.head||e.getElementsByTagName("head")[0],n=e.createElement("script");n.async=!0,n.defer=!0, n.type="text/javascript",n.src=t+"/static/js/chat_widget.js?config="+JSON.stringify(a),c.appendChild(n)}(document,"https://app.engati.com",{bot_key:"00208c9fb9574ea5",welcome_msg:true,branding_key:"default",server:"https://app.engati.com",e:"p" });</script>
+    </ul>
+
+
+    <script>
+        ! function(e, t, a) {
+            var c = e.head || e.getElementsByTagName("head")[0],
+                n = e.createElement("script");
+            n.async = !0, n.defer = !0, n.type = "text/javascript", n.src = t + "/static/js/chat_widget.js?config=" + JSON.stringify(a), c.appendChild(n)
+        }(document, "https://app.engati.com", {
+            bot_key: "00208c9fb9574ea5",
+            welcome_msg: true,
+            branding_key: "default",
+            server: "https://app.engati.com",
+            e: "p"
+        });
+    </script>
 
     @endsection

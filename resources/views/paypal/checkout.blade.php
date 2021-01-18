@@ -27,23 +27,36 @@
                                 @csrf
                                 <div class="form-group">
                                     <label for="exampleInputFile"> อัพโหลดหลักฐานการโอน </label>
-                                    <input type="file" name="paypal_img">
+                                    <input type="file" name="paypal_img" required>
                                 </div>
 
                                 <div class="form-group">
-                                    <label for=""> วันที่และเวลาโอนเงิน </label>
-                                    <input type="datetime-local" name="date" class="form-control">
+                                    <label for=""> วันที่และเวลาโอนเงิน : </label>
+                                    <input type="datetime-local" name="date" class="form-control" required>
                                 </div>
 
                                 <div class="form-group">
-                                    <label for=""> โอนจากธนาคาร </label>
-                                    <input type="text" name="bank_form" class="form-control">
+                                    <label for="bank_form">โอนไปยัง :</label>
+                                    <select class="form-control" id="bank_form" type="text" name="bank_form" required>
+                                        <option>----------------</option>
+                                        <option>ธนาคารกรุงศรีอยุธยา</option>
+                                        <option>ธนาคารไทยพาณิชย์</option>
+                                    </select>
                                 </div>
 
                                 <div class="form-group">
-                                    <label for=""> ไปยัง </label>
-                                    <input type="text" name="bank_go" class="form-control">
+                                    <label for="bank_go">โอนจากธนาคาร :</label>
+                                    <select class="form-control" id="bank_go" type="text" name="bank_go" required>
+                                        <option>----------------</option>
+                                        <option>ธนาคารกรุงศรีอยุธยา</option>
+                                        <option>ธนาคารไทยพาณิชย์</option>
+                                        <option>ธนาคารกรุงไทย</option>
+                                        <option>ธนาคารกรุงเทพ</option>
+                                        <option>ธนาคารกสิกรไทย</option>
+                                        <option>ธนาคารออมสิน</option>
+                                    </select>
                                 </div>
+
 
                                 <p class="card-text text-dark ">จำนวนโอน : {{\Cart::session(auth()->id())->getTotal()}} บาท</p>
 
@@ -63,20 +76,20 @@
         <div class="form-group col-md-6">
             <div class="card mb-3" style="max-width: 540px; margin:10px;  padding: 20px; ">
                 <div class="row no-gutters">
-                <div class="col-md-2"> 
+                    <div class="col-md-2">
                     </div>
                     <div class="col-md-7">
                         <div class="card-body">
                             <h5 class="card-title text-dark ">ธนาคารกรุงศรีอยุธยา (KMA)</h5>
-                            <h5 class="card-title text-dark ">ชื่อบัญชี : ธิดารัตน์  คำโมง </h5>
+                            <h5 class="card-title text-dark ">ชื่อบัญชี : ธิดารัตน์ คำโมง </h5>
                             <h5 class="card-title text-dark ">เลขบัญชี: 1234567890</h5>
-                           <hr>
+                            <hr>
 
-                           <h5 class="card-title text-dark ">ธนาคารไทยพาณิชย์ (SCB)</h5>
-                           <h5 class="card-title text-dark ">ชื่อบัญชี : ธิดารัตน์  คำโมง </h5>
+                            <h5 class="card-title text-dark ">ธนาคารไทยพาณิชย์ (SCB)</h5>
+                            <h5 class="card-title text-dark ">ชื่อบัญชี : ธิดารัตน์ คำโมง </h5>
                             <h5 class="card-title text-dark ">เลขบัญชี: 0987654321</h5>
-                           <hr>
-                           
+                            <hr>
+
                         </div>
 
                     </div>

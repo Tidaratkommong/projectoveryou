@@ -77,7 +77,13 @@ class OrderController extends Controller
         $order->item_count = \Cart::session(auth()->id())->getContent()->count();
 
         $order->user_id = auth()->id();
-        
+    
+        //payment
+        if(request('payment_method') == 'paypal'){
+            //return redirect('paypal.checkout');
+           $order->payment_method = 'paypal';
+        }
+
         //$order->status ='pending';
         $order->save();
 
