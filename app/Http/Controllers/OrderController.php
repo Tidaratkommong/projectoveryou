@@ -14,7 +14,8 @@ class OrderController extends Controller
      */
     public function index()
     {
-        //
+        $order =Order::inRandomOrder()->take(0)->get();
+        return view('shipments', compact('order'));
     }
 
     /**
@@ -108,6 +109,13 @@ class OrderController extends Controller
         
         return redirect('home')->withMessage('สั่งซื้อสินค้าสำเร็จ');
         //dd('order created',$order);
+    }
+
+    public function search()
+    {
+        $search = $_GET['search'];
+        $order = Order::where('shipping_fullname','LIKE','%'.$search.'%')->get();
+        return view('shipments', compact('order'));
     }
 
     

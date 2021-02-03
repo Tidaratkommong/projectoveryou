@@ -79,7 +79,8 @@
 
 </div>
 
-
+<br>
+<br>
 <!-- end product-section -->
 @include('shop.might-like')
 

@@ -144,8 +144,8 @@
                                         {{ __('เปลี่ยนรหัสผ่าน') }}
                                     </a>
 
-                                    <a class="dropdown-item" href="{{url('order_history')}}">
-                                        {{ __('ประวัติการซื้อ') }}
+                                    <a class="dropdown-item" href="{{url('history')}}">
+                                        {{ __('ดูประวัติการซื้อ') }}
                                     </a>
 
                                     <a class="dropdown-item " href="{{ route('logout') }}" onclick="event.preventDefault();

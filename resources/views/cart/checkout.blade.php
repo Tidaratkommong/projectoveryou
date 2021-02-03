@@ -69,7 +69,7 @@
         <div class="form-check">
             <label class="form-check-label">
                 <input type="radio" class="form-check-input" name="payment_method" id="" value="paypal" required>
-                Paypal
+                โอน / ชำระผ่านบัญชีธนาคาร
 
             </label>
 

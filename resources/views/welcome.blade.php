@@ -38,17 +38,19 @@
     </div>
     <br />
 
-    <!-- Search Widget -->
-    <form class=" form-inline my-2 my-lg-0" action="/search" method="GET" role="search">
+    <!-- Search form -->
+    <form action="/search" method="GET" role="search">
         {{ csrf_field() }}
-        <div class="input-group">
-            <input class="form-control mr-sm-4" type="text" class="form-control" placeholder="ค้นหาสินค้าที่คุณต้องการ" name="search" style="width: 64rem; height:3rem;">
-            <span class="input-group-btn">
-                <button class="btn btn-outline-success my-2 my-sm-0 " type="submit" style="width: 3rem; height:3rem;"><i class="fas fa-search cus-icon py-1"></i></button>
+        <div class="input-group md-form form-sm form-2 pl-0">
+            <input class="form-control my-0 py-1 red-border" type="text" class="form-control" placeholder="ค้นหาสินค้าที่คุณต้องการ" name="search" style=" height:3rem;">
+            <span class="input-group-append">
+                <button class="input-group-text red lighten-3" type="submit" style="background-color: #FA8072; height:3rem;">
+                    <i class="fas fa-search text-grey" aria-hidden="true"></i>
+                </button>
             </span>
         </div>
     </form>
-
+    <!-- End Search form -->
     <br />
     <!--product -->
     <h5><a href="#" class="text-dark"> สินค้าแนะนำ </a></h5>
@@ -102,7 +104,7 @@
 
 <!-- endchatbot -->
 
-@include('review.review') 
+@include('review.review')
 
 <!-- related product area start-->
 

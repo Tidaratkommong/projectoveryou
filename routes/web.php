@@ -42,9 +42,9 @@ Route::get('shipments', function () {
     return view('shipments');
 });
 
-Route::get('order_history', function () {
-    return view('order_history');
-});
+//Route::get('order_history', function () {
+ //   return view('order_history');
+//});
 
 Auth::routes();
 
@@ -70,6 +70,15 @@ Route::resource('admin', 'DashboardController');
 
 //profile
 Route::get('/user/{id}','UserController@profile')->name('user.profile');
+//Route::get('/history','UserController@getProfile')->name('user.history');
+Route::get('/history', [
+    'uses' => 'UserController@getProfile',
+     'as' => 'user.history'
+
+]);
+
+
+
 Route::get('/edit/user/', 'UserController@edit')->name('user.edit');
 Route::post('/edit/user/', 'UserController@update')->name('user.update');
 Route::get('/edit/password/user/', 'UserController@passwordEdit')->name('password.edit');
@@ -84,6 +93,8 @@ Route::delete('/product/{id}', 'ProductController@Destroy');
 //search
 Route::get('/search', [ListproductController::class, 'search']);
 Route::get('/searchproduct', [ShopController::class, 'search']);
+// search Shipments
+Route::get('/searchp', [OrderController::class, 'search']);
 
 // event_admin
 Route::resource('/event', 'EventController');
@@ -110,6 +121,8 @@ Route::get('/cart/checkout', 'CartController@checkout')->name('cart.checkout')->
 
 // order
 Route::resource('orders','OrderController')->middleware('auth');
+
+Route::get('/shipments', 'OrderController@index');
 
 //payment
 
