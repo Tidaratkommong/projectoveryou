@@ -47,11 +47,11 @@
         </th>
       </tr>
     </thead>
-    @foreach($order as $value)
+    @foreach( $orders as $value)
     <tbody>
       <tr class="success">
         <td>{{ $value->order_number}}</td>
-        <td>{{ $value->created_at}}</td>
+        <td>{{$value->created_at->format('D d M, Y')}} at {{$value->created_at->format('g : i a')}}</td>
         <td>{{ $value->grand_total}} บาท </td>
         <td>{{ $value->status}}</td>
         <td>{{ $value->payment_method}}</td>
@@ -59,6 +59,8 @@
     </tbody>
     @endforeach
 
+
+   
   </table>
   <br />
   

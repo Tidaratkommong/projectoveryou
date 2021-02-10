@@ -24,7 +24,7 @@
                             <h5 class="card-title text-dark ">{{ $product->product_name }}</h5>
                             <p class="card-text text-dark ">{{ $product->product_detail }}</p>
                             <p class="card-text text-dark"> <strong> เหลือ : </strong>{{ $product->product_num }} ตัว &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                <strong>ราคา : </strong> {{ $product->product_price }} $
+                                <strong>ราคา : </strong> {{ $product->product_price }} บาท
                             </p>
                             </p>
                             <a href="{{url('size')}}">
@@ -47,19 +47,19 @@
         <!-- ตาราง size -->
 
         <div class="form-group col-md-6">
-            <div class="card mb-1  bg-secondary " style="max-width: 500px; margin:10px;  padding: 24px; ">
+            <div class="card mb-1 " style="max-width: 500px; margin:10px;  padding: 24px;  background-color: #FA8072;" >
             </div>
 
             <div class="card mb-1" style="max-width: 500px; margin:10px;  padding: 24px; ">
             </div>
 
-            <div class="card mb-1 bg-secondary" style="max-width: 500px; margin:10px;  padding: 24px; ">
+            <div class="card mb-1" style="max-width: 500px; margin:10px;  padding: 24px; background-color: #FA8072;">
             </div>
 
             <div class="card mb-1" style="max-width: 500px; margin:10px;  padding: 24px; ">
             </div>
 
-            <div class="card mb-1 bg-secondary" style="max-width: 500px; margin:10px;  padding: 24px; ">
+            <div class="card mb-1" style="max-width: 500px; margin:10px;  padding: 24px; background-color: #FA8072; ">
             </div>
 
 

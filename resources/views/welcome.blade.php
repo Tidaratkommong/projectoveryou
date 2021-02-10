@@ -55,6 +55,7 @@
     <!--product -->
     <h5><a href="#" class="text-dark"> สินค้าแนะนำ </a></h5>
     <br>
+    <!-- 
     <main>
         <div class="container products">
             <div class="row">
@@ -74,10 +75,30 @@
                 </a>
                 @endforeach
 
-            </div><!-- End row -->
+            </div>
 
         </div>
-    </main>
+    </main> -->
+
+    <div class="container-fluid m-0 p-0"> <!--container-fluid-->
+    <div class="row no-gutters px-1"> <!--row-->
+    @foreach($product as $value)
+        <div class="col-6 col-sm-4 col-md-3 bg-light px-1">
+            <a href="{{ route('login') }}">
+            <div class="bg-warning pic_preview" >
+            <img src="{{asset($value->product_img )}}" width="250" height="260">
+  
+            </div>
+            <div class="bg-white mb-5 shadow-sm">
+                <div class=" text-dark"><h5><strong>{{ $value->product_name }}</strong></h5></div>
+                <div class="price text-dark"><h6>{{ str_limit(strtolower($value->product_detail), 50) }}</h6></div>
+                <div class="discount_price text-dark"><strong>ราคา : </strong> {{ $value->product_price }} บาท</div>
+            </div>    
+            </a>        
+        </div>
+        @endforeach  
+    </div> <!--row-->
+ </div> <!--container-fluid-->
 
 </div>
 

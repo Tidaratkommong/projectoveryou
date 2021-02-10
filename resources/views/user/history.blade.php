@@ -16,7 +16,7 @@
 <div class="product-section container">
     <table id="cart" class="table table-hover table-condensed">
         <thead>
-        
+
             <tr>
                 <th style="width:5%"></th>
                 <th style="width:40%">สินค้า</th>
@@ -25,14 +25,15 @@
                 <th style="width:20%"></th>
             </tr>
         </thead>
-              
+
         <tbody>
+            @foreach($cartItems as $item)
             <tr>
                 <td data-th="Price"> </td>
                 <td data-th="Product">
                     <div class="row">
                         <div class="col-sm-9">
-                            <h5 class="nomargin">..........................</h5>
+                            <h5 class="nomargin">{{$item->name}}</h5>
                         </div>
                     </div>
                 </td>
@@ -54,8 +55,9 @@
                         </a>
                     </button>
                 </td>
-            </tr>        
-        </tbody>       
+            </tr>
+             @endforeach
+        </tbody>
     </table>
 </div>
 

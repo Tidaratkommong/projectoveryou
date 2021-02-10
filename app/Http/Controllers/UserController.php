@@ -116,13 +116,23 @@ class UserController extends Controller
 
     public function getProfile()
     {
-        $orders = Auth::user()->orders;
+       // $orders = Auth::user()->orders;
         //$orders->transform(function($order, $key){
          //   $order->cart = unserialize($order->cart);
          //   return $order;
        // });
+      // $cartItems = Cart::all();
 
-        return view('user.history',['orders'=> $orders]);
+       $cartItems =\Cart::session(auth()->id())->getContent();
+       return view('user.history',compact('cartItems'));
+
+        // $products = Product::all();
+         //return view('user.history',compact('products'));
+
+       //$cartItems = Cart::content();
+       //return view('user.history',['cartItems' => $cartItems]);
+
+        //return view('user.history',['orders'=> $orders]);
     }
 
 

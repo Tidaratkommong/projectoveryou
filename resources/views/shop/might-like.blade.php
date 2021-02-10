@@ -160,7 +160,7 @@
                 <div class="caption">
                     <h4 class=" text-dark">{{ $product->product_name }}</h4>
                     <p class=" text-dark">{{ str_limit(strtolower($product->product_detail), 50) }}</p>
-                    <p class=" text-dark"><strong class=" text-dark">Price: </strong> {{$product->product_price }}$</p>
+                    <p class=" text-dark"><strong class=" text-dark">ราคา: </strong> {{$product->product_price }} บาท </p>
                 </div>
             </div>
         </a>

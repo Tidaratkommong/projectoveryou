@@ -35,7 +35,7 @@
             box-sizing: border-box;
             list-style: none;
             text-decoration: none;
-            
+
         }
 
         body {
@@ -157,93 +157,95 @@
 
                 <li><a href="{{url('adminhome')}}"><i class="fas fa-home"></i> หน้าหลัก</a></li>
                 <li><a href="{{url('admin/index_user')}}"><i class="fas fa-address-card"></i> จัดการข้อมูลผู้ใช้</a></li>
-                <li><a href="{{url('product/index_product')}}"><i class="fa fa-database"></i>  จัดการข้อมูลสินค้า</a></li>
+                <li><a href="{{url('product/index_product')}}"><i class="fa fa-database"></i> จัดการข้อมูลสินค้า</a></li>
                 <li><a href="#"><i class=""></i>ตรวจสอบการชำระเงิน</a></li>
-                <li><a href="#"><i class=""></i>ตรวจสอบคำสั่งซื้อ(Orders)</a></li>
+                <li><a  href="{{ route('seller.orders.index') }}"><i class=""></i>ตรวจสอบคำสั่งซื้อ(Orders)</a></li>
+
+              
                 <!--<li><a href="#"><i class="fa fa-thumbs-up"></i> จัดการโปรโมชั่น</a></li>-->
                 <!--  <li class="nav-item dropdown">
                     <a href="#"><i class="fa fa-tasks"></i> รายการยืนยัน</a>
                     <a class="dropdown-item  " href="#"> :ยืนยันการสั่งซื้อ</a>
                     <a class="dropdown-item " href="#"> :ยืนยันการคืนสินค้า</a>
                 </li>-->
-                <li><a href="#"><i class="fa fa-shopping-basket" aria-hidden="true"></i>  สรุปยอดขายสินค้า</a></li>
-                <li><a href="{{url('event')}}""><i class="fa fa-calendar" aria-hidden="true"></i> ปฎิทินการทำงาน</a></li>
+                <li><a href="{{url('summary')}}"><i class="fa fa-shopping-basket" aria-hidden="true"></i> สรุปยอดขายสินค้า</a></li>
+                <li><a href="{{url('event')}}"><i class=" fa fa-calendar" aria-hidden="true"></i> ปฎิทินการทำงาน</a></li>
 
             </ul>
         </div>
         <div class=" main_content">
-                        <div id="app">
-                            <nav class="navbar navbar-expand-md navbar-light bg-warning shadow-sm ">
-                                <div class="container my-4">
-                                    <a class="navbar-brand" href="{{ url('adminhome') }}"> Overyou 99
+            <div id="app">
+                <nav class="navbar navbar-expand-md navbar-light bg-warning shadow-sm ">
+                    <div class="container my-4">
+                        <a class="navbar-brand" href="{{ url('adminhome') }}"> Overyou 99
+                        </a>
+                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+
+                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                            <!-- Left Side Of Navbar -->
+                            <ul class="navbar-nav mr-auto">
+
+                            </ul>
+
+                            <!-- Right Side Of Navbar -->
+                            <ul class="navbar-nav ml-auto">
+                                <!-- Authentication Links -->
+                                @guest
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                                </li>
+                                @if (Route::has('register'))
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+                                </li>
+                                @endif
+                                @else
+                                <li class="nav-item dropdown">
+                                    <!-- time -->
+                                    <?php
+                                    $_month_name = array(
+                                        "01" => "มกราคม",  "02" => "กุมภาพันธ์",  "03" => "มีนาคม",
+                                        "04" => "เมษายน",  "05" => "พฤษภาคม",  "06" => "มิถุนายน",
+                                        "07" => "กรกฎาคม",  "08" => "สิงหาคม",  "09" => "กันยายน",
+                                        "10" => "ตุลาคม", "11" => "พฤศจิกายน",  "12" => "ธันวาคม"
+                                    );
+
+                                    $vardate = date('Y-m-d');
+                                    $yy = date('Y');
+                                    $mm = date('m');
+                                    $dd = date('d');
+                                    if ($dd < 10) {
+                                        $dd = substr($dd, 1, 2);
+                                    }
+                                    $date = $dd . " " . $_month_name[$mm] . "  " . $yy += 543;
+                                    echo $date;
+                                    ?>
+
+                                    <a id="navbarDropdown" class="nav-link dropdown-toggle fas fa-user text-dark" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                        {{ Auth::user()->name }}
                                     </a>
-                                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
-                                        <span class="navbar-toggler-icon"></span>
-                                    </button>
 
-                                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                                        <!-- Left Side Of Navbar -->
-                                        <ul class="navbar-nav mr-auto">
-
-                                        </ul>
-
-                                        <!-- Right Side Of Navbar -->
-                                        <ul class="navbar-nav ml-auto">
-                                            <!-- Authentication Links -->
-                                            @guest
-                                            <li class="nav-item">
-                                                <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
-                                            </li>
-                                            @if (Route::has('register'))
-                                            <li class="nav-item">
-                                                <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
-                                            </li>
-                                            @endif
-                                            @else
-                                            <li class="nav-item dropdown">
-                                              <!-- time -->
-                                                <?php
-                                                $_month_name = array(
-                                                    "01" => "มกราคม",  "02" => "กุมภาพันธ์",  "03" => "มีนาคม",
-                                                    "04" => "เมษายน",  "05" => "พฤษภาคม",  "06" => "มิถุนายน",
-                                                    "07" => "กรกฎาคม",  "08" => "สิงหาคม",  "09" => "กันยายน",
-                                                    "10" => "ตุลาคม", "11" => "พฤศจิกายน",  "12" => "ธันวาคม"
-                                                );
-
-                                                $vardate = date('Y-m-d');
-                                                $yy = date('Y');
-                                                $mm = date('m');
-                                                $dd = date('d');
-                                                if ($dd < 10) {
-                                                    $dd = substr($dd, 1, 2);
-                                                }
-                                                $date = $dd . " " . $_month_name[$mm] . "  " . $yy += 543;
-                                                echo $date;
-                                                ?>
-                                       
-                                                <a id="navbarDropdown" class="nav-link dropdown-toggle fas fa-user text-dark"  role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                                    {{ Auth::user()->name }}
-                                                </a>
-
-                                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                                    <a class="dropdown-item fas fa-lock" href="{{ route('logout') }}" onclick="event.preventDefault();
+                                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                        <a class="dropdown-item fas fa-lock" href="{{ route('logout') }}" onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
-                                                        {{ __('Logout') }}
-                                                    </a>
-                                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                                                        @csrf
-                                                    </form>
-                                                </div>
-                                            </li>
-                                            @endguest
-                                        </ul>
+                                            {{ __('Logout') }}
+                                        </a>
+                                        <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                            @csrf
+                                        </form>
                                     </div>
-                                </div>
-                            </nav>
-                            <main class="py-6">
-                                @yield('content')
-                            </main>
+                                </li>
+                                @endguest
+                            </ul>
                         </div>
+                    </div>
+                </nav>
+                <main class="py-6">
+                    @yield('content')
+                </main>
+            </div>
         </div>
     </div>
 

@@ -172,7 +172,8 @@
         <thead>
             <tr>
                 <th style="width:40%">สินค้า</th>
-                <th style="width:15%">ราคา</th>
+                <th style="width:15%">ราคา </th>
+                <th style="width:15%">size </th>
                 <th style="width:20%">จำนวน</th>
                 <th style="width:22%" class="text-center">รวม</th>
                 <th style="width:10%">แก้ไข</th>
@@ -184,21 +185,38 @@
             <tr>
                 <td data-th="Product">
                     <div class="row">
-                       <!-- <div class="col-sm-3 hidden-xs"><img src="#" width="60" height="80" class="img-responsive" /></div>-->
+                        <div class="col-sm-3 hidden-xs">
+                            <!--<img  src="{{asset($item->img )}}" atl="{{asset($item->img )}}" width="60" height="80" class="img-responsive" />-->
+                        </div>
                         <div class="col-sm-9">
                             <h5 class="nomargin">{{$item->name}}</h5>
+                            </h5>
                         </div>
                     </div>
                 </td>
+
                 <td data-th="Price">
 
-                    {{$item->price}} บาท
-
+                    {{$item->price}} บาท{{number_format($item->price,2)}}
+                    
                 </td>
+
+                <td data-th="Quantity">
+                    <select name="status" id="" class="form-control">
+                        <option value="new">S</option>
+                        <option value="process">M</option>
+                        <option value="delivered">L</option>
+                        <option value="cancel" >XL</option>
+                        <option value="cancel" >XXL</option>
+                    </select>
+                </td>
+
+
                 <td data-th="Quantity">
                     <form action="{{route('cart.update',$item->id)}}">
 
                         <div class="form-row">
+
                             <div class="form-group col-md-6">
                                 <input name="quantity" type="number" value="{{$item->quantity}}" class="form-control " />
                             </div>
@@ -211,6 +229,7 @@
                     </form>
 
                 </td>
+
                 <td data-th="Subtotal" class="text-center"> {{\Cart::session(auth()->id())->get($item->id)->getPriceSum()}} บาท </td>
                 <td class="actions" data-th="">
                     <button class="btn btn-danger btn-sm remove-from-cart" data-id="#">
@@ -229,7 +248,7 @@
                 <td colspan="2" class="hidden-xs"></td>
                 <td class="hidden-xs text-center">
                     <h4>
-                        รวม :{{\Cart::session(auth()->id())->getTotal()}} 
+                        รวม :{{\Cart::session(auth()->id())->getTotal()}}
 
                     </h4>
                 </td>
@@ -238,5 +257,16 @@
         </tfoot>
     </table>
 </div>
+
+<br />
+<br />
+<ul class="nav justify-content-center bg-dark fixed-bottom ">
+    <li class="nav-item">
+        <a class="btn btn-link" href="#"></a>
+    </li>
+    <br />
+
+</ul>
+
 
 @endsection

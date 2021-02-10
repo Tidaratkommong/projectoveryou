@@ -50,8 +50,8 @@
 
         <div class="form-group col-md-5">
             <div class="small-box bg-success text-center">
-                <di<br>
-                    <a href="#">
+                <br>
+                    <a href="{{ route('seller.orders.index') }}">
                         <h4 class="text-light">ตรวจสอบคำสั่งซื้อ</h4>
                     </a>
                     <h5>( ORDERS )</h5>

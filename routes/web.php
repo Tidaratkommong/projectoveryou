@@ -26,6 +26,11 @@ Route::get('adminhome', function () {
     return view('adminhome');
 });
 
+
+Route::get('summary', function () {
+    return view('summary');
+});
+
 Route::get('help', function () {
     return view('help');
 });
@@ -61,6 +66,10 @@ Route::group(['prefix' => 'admin'], function(){
     });
 });
 
+//Route::get('/summary','AdminController@index');
+
+
+
 //admin management
 Route::get('admin/index_user', 'DashboardController@index')->name('admin/index_user');
 Route::resource('admin', 'DashboardController');
@@ -71,11 +80,12 @@ Route::resource('admin', 'DashboardController');
 //profile
 Route::get('/user/{id}','UserController@profile')->name('user.profile');
 //Route::get('/history','UserController@getProfile')->name('user.history');
-Route::get('/history', [
-    'uses' => 'UserController@getProfile',
-     'as' => 'user.history'
+Route::get('/history', 'UserController@getProfile')->name('user.history')->middleware('auth');
+//Route::get('/history', [
+ //   'uses' => 'UserController@getProfile',
+ //   'as' => 'user.history'
 
-]);
+//]);
 
 
 
@@ -102,6 +112,8 @@ Route::get('/addeventurl','EventController@display');
 Route::get('/displaydata','EventController@show');
 
 
+//Route::get('/summary','AdminController@index');
+
 
 // view welcome
 Route::get('/', 'ListproductController@index');
@@ -115,6 +127,7 @@ Route::get('/shop/{id}','ShopController@show')->name('shop.show');
 // cart
 Route::get('/add-to-cart/{product}', 'CartController@add')->name('cart.add')->middleware('auth');
 Route::get('/cart', 'CartController@index')->name('cart.index')->middleware('auth');
+//Route::get('/history', 'CartController@index')->name('user.history')->middleware('auth');
 Route::get('/cart/destroy/{itemId}', 'CartController@destroy')->name('cart.destroy')->middleware('auth');
 Route::get('/cart/update/{itemId}', 'CartController@update')->name('cart.update')->middleware('auth');
 Route::get('/cart/checkout', 'CartController@checkout')->name('cart.checkout')->middleware('auth');
@@ -122,7 +135,22 @@ Route::get('/cart/checkout', 'CartController@checkout')->name('cart.checkout')->
 // order
 Route::resource('orders','OrderController')->middleware('auth');
 
-Route::get('/shipments', 'OrderController@index');
+
+Route::group(['prefix' => 'seller', 'middleware' => 'auth' , 'as' => 'seller.'], function () {
+    Route::resource('/','seller/orders');
+    Route::resource('/orders','OrderController');
+    //Route::get('/orders/view/{id}', 'OrderController@show');
+    //Route::get('/order/delivered/{order}','OrderController@markDelivered')->name('order.delivered');
+   // Route::get('/orders/delivered/{order}','OrderController@markDelivered')->name('order.delivered');
+
+ });
+
+ Route::get('/orders/view/{id}', 'OrderController@show');
+ //Route::get('/orders/delivered/{order}','OrderController@edit');
+ //Route::post('/orders/delivered/', 'OrderController@update');
+
+
+Route::get('/shipments', 'OrderController@indexTest');
 
 //payment
 
