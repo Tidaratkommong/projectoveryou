@@ -41,7 +41,18 @@ class OrderController extends Controller
     }
     public function show($id)
     {
-        $order = DB::table('orders')->join('users', 'orders.user_id', 'users.id')->select('users.name', 'orders.*')->where('orders.id', $id)->first();
+        $order = DB::table('orders')
+                ->join('users', 'orders.user_id', 'users.id')
+                ->join('order_items', 'orders.id', 'order_items.id')
+                ->join('paypals', 'orders.user_id', 'users.id')
+                ->select('users.*', 'orders.*','order_items.*','paypals.*')
+                ->where('orders.id', $id)->first();
+        
+       // $order = DB::table('orders')
+       //         ->join('users', 'orders.user_id', 'users.id')
+       //         ->join('order_items', 'orders.user_id', 'order_items.id')
+         //       ->select('users.name','orders.*','order_items.*')->where('orders.id', $id)->first();
+        
         //$orders=Order::find($id);
         //dd($orders);
         return view('seller.order.view', compact('order'));
@@ -53,7 +64,6 @@ class OrderController extends Controller
         $orders = Order::inRandomOrder()->take(0)->get();
         return view('shipments', compact('orders'));
     }
-
 
     // return redirect('admin')->with('success', 'แก้ไขข้อมูลสมาชิกสำเร็จ'); 
     /**
@@ -135,7 +145,7 @@ class OrderController extends Controller
         //payment
         if (request('payment_method') == 'paypal') {
             //return redirect('paypal.checkout');
-            return redirect()->route('paypal.checkout');
+            return redirect('checkout');
         }
         //empty cart
         \Cart::session(auth()->id())->clear();
@@ -143,7 +153,7 @@ class OrderController extends Controller
         //return "order completed, thank you for order";
         //return back();
 
-        return redirect('home')->withMessage('สั่งซื้อสินค้าสำเร็จ');
+        return redirect('shipments')->withMessage('สั่งซื้อสินค้าสำเร็จ');
         //dd('order created',$order);
     }
     public function edit($id)

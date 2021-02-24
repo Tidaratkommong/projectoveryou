@@ -40,9 +40,9 @@
                 <div class="inner">
                     <br>
                     <a href="#">
-                        <h4 class="text-light">ตรวจสอบการชำระเงิน</h4>
+                        <h4 class="text-light">ตรวจสอบคำร้องขอในการคืนสินค้าสินค้า</h4>
                     </a>
-                    <h5> ( Check payments )</h5>
+                    <h5> (  )</h5>
                     <br>
                 </div>
             </div>
@@ -63,7 +63,7 @@
             <div class="small-box  text-center " style="background-color: #FFA500;">
                 <div class="inner">
                     <br>
-                    <a href="#">
+                    <a href="{{url('summary')}}">
                         <h4 class="text-light">สรุปยอดขายสินค้า</h4>
                     </a>
                     <h5> ( Sales Summary )</h5>
@@ -87,11 +87,11 @@
         <br> 
         <br> 
         <br>
-        <h4 class="text-dark"> สถิติการเข้าชมเว็บไซต์ &nbsp;&nbsp;&nbsp;&nbsp;</h4>
+
         <br> 
         <br> 
         <br>
-        <script type='text/javascript' src='https://www.siamecohost.com/member/gcounter/graphcount.php?page=overyou_page&style=40&maxdigits=5'></script>
+        
 
     </div>
 

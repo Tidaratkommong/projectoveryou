@@ -42,7 +42,7 @@
     <form action="/search" method="GET" role="search">
         {{ csrf_field() }}
         <div class="input-group md-form form-sm form-2 pl-0">
-            <input class="form-control my-0 py-1 red-border" type="text" class="form-control" placeholder="ค้นหาสินค้าที่คุณต้องการ" name="search" style=" height:3rem;">
+            <input class="form-control my-0 py-1 red-border" type="text" class="form-control" placeholder="ค้นหาสินค้าที่คุณต้องการ" name="search"  style=" height:3rem;">
             <span class="input-group-append">
                 <button class="input-group-text red lighten-3" type="submit" style="background-color: #FA8072; height:3rem;">
                     <i class="fas fa-search text-grey" aria-hidden="true"></i>
@@ -50,6 +50,7 @@
             </span>
         </div>
     </form>
+
     <!-- End Search form -->
     <br />
     <!--product -->

@@ -35,6 +35,14 @@ Route::get('help', function () {
     return view('help');
 });
 
+Route::get('how-to-order', function () {
+    return view('how-to-order');
+});
+
+Route::get('how-to-return', function () {
+    return view('how-to-return');
+});
+
 Route::get('about', function () {
     return view('about');
 });
@@ -150,11 +158,14 @@ Route::group(['prefix' => 'seller', 'middleware' => 'auth' , 'as' => 'seller.'],
  //Route::post('/orders/delivered/', 'OrderController@update');
 
 
+//Route::get('seller/order_items', 'OrderItemsController@index');
 Route::get('/shipments', 'OrderController@indexTest');
 
 //payment
 
-Route::get('payple/checkout','PayPalController@checkout')->name('paypal.checkout')->middleware('auth');
+
+
+Route::get('checkout','PayPalController@checkout')->name('checkout')->middleware('auth');
 Route::resource('paypal','PayPalController')->middleware('auth');
 
 //Route::get('payple/checkout','PayPalController@index')->name('paypal.index')->middleware('auth');

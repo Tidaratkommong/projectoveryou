@@ -20,7 +20,7 @@ class PayPalController extends Controller
     }
     public function checkout()
     {
-        return view('paypal.checkout');
+        return view('checkout');
     }
 
     /**
@@ -80,7 +80,7 @@ class PayPalController extends Controller
        //empty cart
           \Cart::session(auth()->id())->clear();
 
-        return redirect('home')->withMessage('สั่งซื้อสินค้าสำเร็จ');
+        return redirect('shipments')->withMessage('สั่งซื้อสินค้าสำเร็จ');
         
     }
 

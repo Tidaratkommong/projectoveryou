@@ -95,7 +95,13 @@ class ShopController extends Controller
     public function search()
     {
         $search = $_GET['search'];
-        $product = Product::where('product_name','LIKE','%'.$search.'%')->get();
+        
+        $product = Product::where('product_name','LIKE','%'.$search.'%')
+                   ->orWhere( 'product_detail', 'LIKE', '%' . $search . '%' )
+                   ->orWhere( 'product_price', 'LIKE', '%' . $search . '%' )
+                   ->orWhere( 'product_type', 'LIKE', '%' . $search . '%' )
+                   ->get();
+
         return view('shop.shop', compact('product'));
     }
 }

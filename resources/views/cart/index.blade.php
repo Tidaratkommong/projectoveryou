@@ -197,7 +197,7 @@
 
                 <td data-th="Price">
 
-                    {{$item->price}} บาท{{number_format($item->price,2)}}
+                    {{number_format($item->price)}} บาท
                     
                 </td>
 
@@ -230,7 +230,7 @@
 
                 </td>
 
-                <td data-th="Subtotal" class="text-center"> {{\Cart::session(auth()->id())->get($item->id)->getPriceSum()}} บาท </td>
+                <td data-th="Subtotal" class="text-center"> {{\Cart::session(auth()->id())->get($item->id)->getPriceSum()}} บาท</td>
                 <td class="actions" data-th="">
                     <button class="btn btn-danger btn-sm remove-from-cart" data-id="#">
                         <a href="{{route('cart.destroy',$item->id)}}" class="text-light">

@@ -37,10 +37,10 @@
                             <tbody>
                                 @foreach($orders as $order)
                                 <tr>
-                                    <td>{{ $order->id}}</td>
+                                    <td>[{{ $order->id}}]</td>
                                     <td>{{ $order->order_number }}</td>
                                     <td>{{ $order->user->name }}</td>
-                                    <td class="text-center">{{number_format($order->grand_total,2)}}</td>
+                                    <td class="text-center"> ฿ {{number_format($order->grand_total)}}</td>
                                     <td class="text-center">{{ $order->item_count }}</td>
                                     <td class="text-center">
                                         @if ($order->payment_method =='cash on delivery')

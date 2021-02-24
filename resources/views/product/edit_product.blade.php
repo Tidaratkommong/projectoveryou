@@ -44,9 +44,11 @@
                             <label for="producttype">ประเภทสินค้า</label>
                             <select class="form-control input-lg text-dark" type="text" name="product_type" value="{{$products['product_type'] }}">
                                 <option>{{$products['product_type']}}</option>
-                                <option>เสื้อ</option>
-                                <option>กางเกง</option>
-                                <option>รองเท้า</option>
+                                <option>เสื้อแขนสั้น</option>
+                                <option>เสื้อแขนยาว</option>
+                                <option>กางเกงขาสั้น</option>
+                                <option>กางเกงขายาว</option>
+                                <option>กางเกงยีนส์</option>
                             </select>
                         </div>
 

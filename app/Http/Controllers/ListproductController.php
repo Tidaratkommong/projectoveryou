@@ -111,16 +111,21 @@ class ListproductController extends Controller
     
     public function search()
     {
+      
         $search = $_GET['search'];
-        $product = Product::where('product_name','LIKE','%'.$search.'%')->get();
+        $product = Product::where('product_name','LIKE','%'.$search.'%')
+                   ->orWhere( 'product_detail', 'LIKE', '%' . $search . '%' )
+                   ->orWhere( 'product_price', 'LIKE', '%' . $search . '%' )
+                   ->orWhere( 'product_type', 'LIKE', '%' . $search . '%' )
+                   ->get();
+
         $reviewAlsoLike = Review::inRandomOrder()->take(5)->get();
         return view('welcome', compact('product'))->with([
             'product' => $product,
             'reviewAlsoLike' => $reviewAlsoLike,
  
         ]);
+         
 
-
-        
     }
 }

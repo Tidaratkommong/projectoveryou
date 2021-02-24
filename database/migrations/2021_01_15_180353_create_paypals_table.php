@@ -17,9 +17,7 @@ class CreatePaypalsTable extends Migration
             $table->bigIncrements('id');
             
             $table->unsignedBigInteger('user_id');
-        
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
-
             $table->string('paypal_img');
             $table->date('date');
             $table->string('bank_form');

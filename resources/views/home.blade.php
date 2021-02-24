@@ -96,7 +96,7 @@
             <div class="small-box  text-center " style="background-color: #F4A460;">
                 <div class="inner">
                     <br>
-                    <a href="{{ url('help') }}">
+                    <a href="{{ url('how-to-order') }}">
                         <h4 class="text-light">วิธีการซื้อสินค้า</h4>
                     </a>
                     <h5>HOW TO SHOP</h5>
@@ -108,7 +108,7 @@
             <div class="small-box  text-center " style="background-color: #5F9EA0;">
                 <div class="inner">
                     <br>
-                    <a href="{{ url('help') }}">
+                    <a href="{{ url('how-to-return') }}">
                         <h4 class="text-light">วิธีการคืนสินค้า</h4>
                     </a>
                     <h5>HOW TO RETURN ITEMS</h5>
