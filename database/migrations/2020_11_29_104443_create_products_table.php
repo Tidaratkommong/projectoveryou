@@ -17,10 +17,11 @@ class CreateProductsTable extends Migration
             $table->bigIncrements('id');
             $table->string('product_name');
             $table->string('product_type');
-            $table->decimal('product_price');
-            $table->decimal('product_num');
+            $table->float('product_price');
+            $table->float('product_num');
             $table->longText('product_detail');
             $table->string('product_img');
+            $table->enum('product_method', ['_', 'new','hot','sale'])->default('_');
             $table->timestamps();
         });
     }

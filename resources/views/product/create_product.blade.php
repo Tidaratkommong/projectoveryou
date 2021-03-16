@@ -3,14 +3,14 @@
 @section('content')
 <br />
 <div class="container">
-    <a type="submit" name="submit" class="btn btn-danger" value="BACK" href="{{url('product/index_product')}}" />BACK</a>
+    <a type="submit" name="submit" class="btn btn-danger" value="BACK" href="{{url('product/product')}}" />BACK</a>
     <br/>
     <br/>
     <div class="row justify-content-center">
         <div class="col-md-10">
             <div class="card ">
                 <h5 class="card-header text-center bg-success">เพิ่มสินค้า</i></h5>
-                <form style="margin: 20px;" method="POST" action="{{route('product.store')}}" enctype="multipart/form-data">
+                <form style="margin: 20px;" method="POST" action="{{route('products.store')}}" enctype="multipart/form-data">
                     @csrf
 
                     @if(Session::get('success'))
@@ -38,12 +38,15 @@
                        <div class="form-group col-md-6">
                             <label for="producttype">ประเภทสินค้า</label>
                             <select class="form-control input-lg" placeholder="ประเภทสินค้า" type="text" name="product_type" value="{{old('product_type')}}">
-                                <option>กางเกง</option>
-                                <option>เสื้อ</option>
-                                <option>รองเท้า</option>
+                            <option>เสื้อแขนสั้น</option>
+                                <option>เสื้อแขนยาว</option>
+                                <option>กางเกงขาสั้น</option>
+                                <option>กางเกงขายาว</option>
+                                <option>กางเกงยีนส์</option>
                             </select>
                         </div>
 
+                        
                     </div>
                     
                     <div class="form-group">

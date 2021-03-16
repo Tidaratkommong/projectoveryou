@@ -39,13 +39,15 @@ class OrderController extends Controller
         //  })->get();
         //   return view('seller.orders.index', compact('orders'));
     }
+    
     public function show($id)
     {
         $order = DB::table('orders')
                 ->join('users', 'orders.user_id', 'users.id')
                 ->join('order_items', 'orders.id', 'order_items.id')
-                ->join('paypals', 'orders.user_id', 'users.id')
-                ->select('users.*', 'orders.*','order_items.*','paypals.*')
+               // ->join('paypals', 'orders.user_id', 'users.id')
+               ->select('users.*', 'orders.*','order_items.*')
+               // ->select('users.*', 'orders.*','order_items.*','paypals.*')
                 ->where('orders.id', $id)->first();
         
        // $order = DB::table('orders')
@@ -146,9 +148,13 @@ class OrderController extends Controller
         if (request('payment_method') == 'paypal') {
             //return redirect('paypal.checkout');
             return redirect('checkout');
+           
         }
         //empty cart
-        \Cart::session(auth()->id())->clear();
+
+           \Cart::session(auth()->id())->clear();
+
+
         //
         //return "order completed, thank you for order";
         //return back();
@@ -173,36 +179,21 @@ class OrderController extends Controller
         $this->validate($request, [
             'status' => 'required|in:pending,processing,completed,decline'
         ]);
-
+       
         $order->status = $request->status;
         // return $request->status;
-        $status=$order->save();
-        if($status){
+        //$status=
+       // $order->save();
+        if($order->save()){
             request()->session()->flash('success','Successfully updated order');
         }
         else{
             request()->session()->flash('error','Error while updating order');
         }
         return redirect('seller/orders');
-       // $order->status = $request->status;
-        // return $request->status;
-       // if ($order->save()) {
-       //     $request->session()->flash('success', ' ตรวจสอบคำสั่งซื้อสำเร็จ');
-        //    return redirect('seller/orders');
-       // } else {
-       //     $request->session()->flash('success', 'ตรวจสอบคำสั่งซื้อไม่สำเร็จ');
-        //    return redirect('seller/orders');
-        //}
+       
        
     }
-
-        //$order = Order::find($id);
-        //$request->validate([
-        //    'status' => 'required|in:pending,processing,completed,decline'
-        // ]);
-        // $order->save();
-        //  return redirect()->route('seller.order.index');
-
         public function destroy($id)
         {
             $order=Order::find($id);

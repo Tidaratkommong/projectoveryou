@@ -23,15 +23,14 @@
                         <table class="table table-hover table-bordered" id="sampleTable">
                             <thead>
                                 <tr>
-                                    <th> N0. </th>
-                                    <th> Order Number </th>
-                                    <th> Placed By </th>
-                                    <th class="text-center"> Total Amount </th>
-                                    <th class="text-center"> Items Qty </th>
-                                    <th class="text-center"> Payment Type </th>
-                                    <th class="text-center"> Status </th>
-                                    <th class="text-center"> DATE </th>
-                                    <th style="width:100px; min-width:100px;" class="text-center text-danger"><i class="fa fa-bolt"> </i></th>
+                                    <th class="card-header text-center "> N0. </th>
+                                    <th class="card-header text-center "> Order Number </th>
+                                    <th class="card-header text-center "> Placed By </th>
+                                    <th class="card-header text-center "> Total Amount </th>
+                                    <th class="card-header text-center "> Payment Type </th>
+                                    <th class="card-header text-center "> Status </th>
+                                    <th class="card-header text-center "> DATE </th>
+                                    <th style="width:100px; min-width:100px;" class="card-header text-center text-danger"><i class="fa fa-bolt"> </i></th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -41,7 +40,6 @@
                                     <td>{{ $order->order_number }}</td>
                                     <td>{{ $order->user->name }}</td>
                                     <td class="text-center"> ฿ {{number_format($order->grand_total)}}</td>
-                                    <td class="text-center">{{ $order->item_count }}</td>
                                     <td class="text-center">
                                         @if ($order->payment_method =='cash on delivery')
                                         <span class="badge badge-warning">{{$order->payment_method}}</span>

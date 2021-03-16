@@ -16,7 +16,7 @@
                     <a href="{{url('admin/index_user')}}">
                         <h4 class="text-light">จัดการข้อมูลผู้ใช้</h4>
                     </a>
-                    <h5> ( Manage user information )</h5>
+                    <h5> [ MANAGE USER INFORMATION ]  </h5>
                     <br>
                 </div>
             </div>
@@ -26,10 +26,10 @@
             <div class="small-box bg-info  text-center">
                 <div class="inner">
                     <br>
-                    <a href="{{url('product/index_product')}} ">
+                    <a href="{{url('product/product')}} ">
                         <h4 class="text-light">จัดการข้อมูลสินค้า</h4>
                     </a>
-                    <h5> ( Manage product information )</h5>
+                    <h5> [ MANAGE PRODUCT INFORMATION ]  </h5>
                     <br>
                 </div>
             </div>
@@ -39,10 +39,10 @@
             <div class="small-box bg-info  text-center">
                 <div class="inner">
                     <br>
-                    <a href="#">
-                        <h4 class="text-light">ตรวจสอบคำร้องขอในการคืนสินค้าสินค้า</h4>
+                    <a href="{{url('claim')}}">
+                        <h4 class="text-light">ตรวจสอบการเคลมสินค้า</h4>
                     </a>
-                    <h5> (  )</h5>
+                    <h5> [ CLAIM PRODUCT ]</h5>
                     <br>
                 </div>
             </div>
@@ -54,7 +54,7 @@
                     <a href="{{ route('seller.orders.index') }}">
                         <h4 class="text-light">ตรวจสอบคำสั่งซื้อ</h4>
                     </a>
-                    <h5>( ORDERS )</h5>
+                    <h5>[ ORDERS ] </h5>
                     <br>
             </div>
         </div>
@@ -63,10 +63,10 @@
             <div class="small-box  text-center " style="background-color: #FFA500;">
                 <div class="inner">
                     <br>
-                    <a href="{{url('summary')}}">
+                    <a href="{{url('report')}}">
                         <h4 class="text-light">สรุปยอดขายสินค้า</h4>
                     </a>
-                    <h5> ( Sales Summary )</h5>
+                    <h5> [ SALES SUMMARY ] </h5>
                     <br>
                 </div>
             </div>
@@ -79,7 +79,7 @@
                     <a href="{{url('event')}} ">
                         <h4 class="text-light">ปฎิทินการทำงาน</h4>
                     </a>
-                    <h5> ( EVENTS )</h5>
+                    <h5> [ EVENTS ] </h5>
                     <br>
                 </div>
             </div>

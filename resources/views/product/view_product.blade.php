@@ -1,9 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<br />
-<div class="container">
-    <a type="submit" name="submit" class="btn btn-danger" value="BACK" href="{{url('product/index_product')}}" />BACK</a> 
+
     <div class="row justify-content-center">
         <div class="col-md-5">
             <div class="card ">
@@ -43,9 +41,25 @@
                             <label for="productnum">จำนวนสินค้า : {{ $products->product_num }} ตัว </label>
                         </div>
                     </div>
+
+                    <div class="form-group ">
+                   <label for="product"> ชนิดสินค้า  :
+                                @if($products->product_method=='new')
+                                <span class="badge badge-danger">{{$products->product_method}}</span>
+                                @elseif($products->product_method=='sale')
+                                <span class="badge badge-success">{{$products->product_method}}</span>
+                                @elseif($products->product_method=='hot')
+                                <span class="badge badge-warning">{{$products->product_method}}</span>
+                                @else
+                                <span class="badge badge-primary">{{$products->product_method}}</span>
+                                @endif 
+                           
+                        </label> 
+                    </div>
+
             </div>
         </div>
     </div>
 
-    </div>
-    @endsection
+</div>
+@endsection

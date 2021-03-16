@@ -41,10 +41,8 @@ class PayPalController extends Controller
      */
     public function store(Request $request)
     {
-
-        //dd($request->all());
         $request->validate([
-            'paypal_img' => 'required',
+            'image' => 'required',
             'date' => 'required',
             'bank_form' => 'required',
             'bank_go' => 'required'
@@ -53,10 +51,7 @@ class PayPalController extends Controller
 
           $paypal = new Paypal();  
           
-          $paypal->paypal_img = $request->input('paypal_img');
-          //$paypal->date = $request->date;
-          //$paypal->bank_form = $request->bank_form;
-          //$paypal->bank_go = $request->bank_go;
+          $paypal->image = $request->input('image');
           $paypal->date = $request->input('date');
           $paypal->bank_form = $request->input('bank_form');
           $paypal->bank_go = $request->input('bank_go');
@@ -81,7 +76,7 @@ class PayPalController extends Controller
           \Cart::session(auth()->id())->clear();
 
         return redirect('shipments')->withMessage('สั่งซื้อสินค้าสำเร็จ');
-        
+
     }
 
     /**

@@ -27,9 +27,9 @@ Route::get('adminhome', function () {
 });
 
 
-Route::get('summary', function () {
-    return view('summary');
-});
+//Route::get('report', function () {
+ //   return view('report');
+//});
 
 Route::get('help', function () {
     return view('help');
@@ -54,6 +54,8 @@ Route::get('size', function () {
 Route::get('shipments', function () {
     return view('shipments');
 });
+
+
 
 //Route::get('order_history', function () {
  //   return view('order_history');
@@ -80,15 +82,22 @@ Route::group(['prefix' => 'admin'], function(){
 
 //admin management
 Route::get('admin/index_user', 'DashboardController@index')->name('admin/index_user');
+//Route::get('/search/user', [DashboardController::class,'search']);
 Route::resource('admin', 'DashboardController');
+// search Users
+Route::get('/search/user', 'DashboardController@search');
+
 
 //Route::get('admin/edit_user', 'DashboardController@edit')->name('admin/edit_user');
 //Route::delete('/delete_user/{id}', 'DashboardController@registeredDelete');
 
 //profile
 Route::get('/user/{id}','UserController@profile')->name('user.profile');
-//Route::get('/history','UserController@getProfile')->name('user.history');
-Route::get('/history', 'UserController@getProfile')->name('user.history')->middleware('auth');
+Route::get('/history/{id}','UserController@getProfile')->name('user.history');
+//Route::get('/history/{id}', 'UserController@show')->name('history');
+//Route::get('/history/{id}', 'HistoryController@show')->name('history');
+
+//Route::get('/orders/order_items/{id}', 'OrderItemsController@show');
 //Route::get('/history', [
  //   'uses' => 'UserController@getProfile',
  //   'as' => 'user.history'
@@ -103,16 +112,26 @@ Route::get('/edit/password/user/', 'UserController@passwordEdit')->name('passwor
 Route::post('/edit/password/user/', 'UserController@passwordUpdate')->name('password.update');
 
 //product
-Route::get('product/index_product', 'ProductsController@index')->name('product/index_product');
-Route::resource('product', 'ProductsController');
+
+Route::resource('products', 'ProductsController');
+Route::get('product/product', 'ProductsController@index')->name('product/product');
+Route::get('/search/product', 'ProductsController@search');
 Route::get('product/{id}','ProductsController@show')->name('product/view_product');
 Route::delete('/product/{id}', 'ProductController@Destroy');
-
+//Route::get('/search/product', 'ProductsController@search', 'search');
 //search
+
+
+
+//Route::get('search/products', [ProductsController::class,'search'])->name('product/product');
+// search product 
 Route::get('/search', [ListproductController::class, 'search']);
 Route::get('/searchproduct', [ShopController::class, 'search']);
+
 // search Shipments
-Route::get('/searchp', [OrderController::class, 'search']);
+Route::get('/search/shipment', [OrderController::class, 'search']);
+
+
 
 // event_admin
 Route::resource('/event', 'EventController');
@@ -154,6 +173,7 @@ Route::group(['prefix' => 'seller', 'middleware' => 'auth' , 'as' => 'seller.'],
  });
 
  Route::get('/orders/view/{id}', 'OrderController@show');
+ Route::get('/orders/order_items/{id}', 'OrderItemsController@show');
  //Route::get('/orders/delivered/{order}','OrderController@edit');
  //Route::post('/orders/delivered/', 'OrderController@update');
 
@@ -166,6 +186,8 @@ Route::get('/shipments', 'OrderController@indexTest');
 
 
 Route::get('checkout','PayPalController@checkout')->name('checkout')->middleware('auth');
+//Route::get('checkout','PayPalController@store')->name('checkout')->middleware('auth');
+
 Route::resource('paypal','PayPalController')->middleware('auth');
 
 //Route::get('payple/checkout','PayPalController@index')->name('paypal.index')->middleware('auth');
@@ -173,4 +195,12 @@ Route::resource('paypal','PayPalController')->middleware('auth');
 
 //review
 Route::resource('/review', 'ReviewsController');
+
+
+// sales report
+Route::get('/report', 'ReportController@index');
+
+//Claim_Product
+Route::resource('claim', 'ClaimController');
+//Route::get('/claim/index', 'ClaimController@index')->middleware('auth');
 

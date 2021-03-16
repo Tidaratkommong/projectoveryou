@@ -6,6 +6,7 @@ use App\Order;
 use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 
 class UserController extends Controller
@@ -32,7 +33,7 @@ class UserController extends Controller
     public function update(Request $request)
     {
         $user = User::find(Auth::user()->id);
-  
+
         if ($user) {
             $validate = null;
             if (Auth::user()->email == $request['email']) {
@@ -41,11 +42,11 @@ class UserController extends Controller
                     'address' => 'required',
                     'telephone' => 'required',
                     'email' => 'required',
-                  
+
                 ]);
             } else {
                 $validate = $request->validate([
-                    'name' => 'required',  
+                    'name' => 'required',
                     'telephone' => 'required',
                     'email' => 'required|email|unique:users',
                     'address' => 'required',
@@ -71,12 +72,11 @@ class UserController extends Controller
 
     public function passwordEdit()
     {
-        if (Auth::user()) {      
-                return view('user.password');
+        if (Auth::user()) {
+            return view('user.password');
         } else {
             return redirect()->back();
         }
-
     }
 
 
@@ -85,7 +85,7 @@ class UserController extends Controller
         $validate = $request->validate([
             'oldPassword' => 'required|min:8',
             'password' => 'required|min:8|required_with:password_confirmation'
-            
+
         ]);
 
         $user = User::find(Auth::user()->id);
@@ -114,26 +114,15 @@ class UserController extends Controller
         }
     }
 
-    public function getProfile()
-    {
-       // $orders = Auth::user()->orders;
-        //$orders->transform(function($order, $key){
-         //   $order->cart = unserialize($order->cart);
-         //   return $order;
-       // });
-      // $cartItems = Cart::all();
-
-       $cartItems =\Cart::session(auth()->id())->getContent();
-       return view('user.history',compact('cartItems'));
-
-        // $products = Product::all();
-         //return view('user.history',compact('products'));
-
-       //$cartItems = Cart::content();
-       //return view('user.history',['cartItems' => $cartItems]);
-
-        //return view('user.history',['orders'=> $orders]);
+    public function getProfile($id)
+    {     
+        $user = User::find($id);
+        $user = DB::table('users')
+            ->join('orders', 'users.id', 'orders.id')
+            ->join('order_items', 'orders.id', 'order_items.id')
+            ->join('products', 'order_items.id', 'products.id')
+            ->select('users.*', 'orders.*', 'order_items.*', 'products.*')
+            ->where('users.id', $id)->first();
+        return view('user.history', compact('user'));
     }
-
-
 }

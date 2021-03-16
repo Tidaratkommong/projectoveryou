@@ -154,16 +154,24 @@
     <div class="row">
         @foreach ($mightAlsoLike as $product)
         <div class="col-xs-18 col-sm-6 col-md-3">
-        <a href="{{ route('shop.show',$product->id )}}">
-            <div class="thumbnail">
-                <img src="{{asset($product->product_img )}}" width="450" height="250">
-                <div class="caption">
-                    <h4 class=" text-dark">{{ $product->product_name }}</h4>
-                    <p class=" text-dark">{{ str_limit(strtolower($product->product_detail), 50) }}</p>
-                    <p class=" text-dark"><strong class=" text-dark">ราคา: </strong> {{$product->product_price }} บาท </p>
+            <a href="{{ route('shop.show',$product->id )}}">
+                <div class="thumbnail">
+                    <img src="{{asset($product->product_img )}}" width="450" height="250">
+                    <div class="caption">
+                        <h5 class=" text-dark">{{ $product->product_name }}
+                            @if($product->product_method=='new')
+                            <span class="badge badge-danger">{{$product->product_method}}</span>
+                            @elseif($product->product_method=='sale')
+                            <span class="badge badge-success">{{$product->product_method}}</span>
+                            @elseif($product->product_method=='hot')
+                            <span class="badge badge-warning">{{$product->product_method}}</span>
+                            @endif
+                        </h5>
+                        <p class=" text-dark">{{ str_limit(strtolower($product->product_detail), 50) }}</p>
+                        <p class=" text-dark"><strong class=" text-dark">ราคา: </strong> {{$product->product_price }} บาท </p>
+                    </div>
                 </div>
-            </div>
-        </a>
+            </a>
         </div>
         @endforeach
 

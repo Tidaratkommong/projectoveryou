@@ -152,10 +152,10 @@
 
                 <li><a href="{{url('adminhome')}}"><i class="fas fa-home"></i> หน้าหลัก</a></li>
                 <li><a href="{{url('admin/index_user')}}"><i class="fas fa-address-card"></i> จัดการข้อมูลผู้ใช้</a></li>
-                <li><a href="{{url('product/index_product')}}"><i class="fa fa-database"></i>  จัดการข้อมูลสินค้า</a></li>
-                <li><a  href="{{ route('seller.orders.index') }}"><i class="fa fa-shopping-bag" aria-hidden="true"></i> ตรวจสอบคำสั่งซื้อ (Orders)</a></li>
-                <li><a href="#"><i class="fa fa-undo" aria-hidden="true"></i> ตรวจสอบคำร้องขอ  ขอคืนสินค้า</a></li>
-                <li><a href="{{url('summary')}}"><i class="fa fa-shopping-basket" aria-hidden="true"></i>  สรุปยอดขายสินค้า</a></li>
+                <li><a href="{{url('product/product')}}"><i class="fa fa-database"></i>  จัดการข้อมูลสินค้า</a></li>
+                <li><a  href="{{ route('seller.orders.index') }}"><i class="fa fa-shopping-bag" aria-hidden="true"></i> ตรวจสอบคำสั่งซื้อ</a></li>
+                <li><a href="#"><i class="fa fa-undo" aria-hidden="true"></i> ตรวจสอบการเคลมสินค้า</a></li>
+                <li><a href="{{url('report')}}"><i class="fa fa-shopping-basket" aria-hidden="true"></i>  สรุปยอดขายสินค้า</a></li>
                 <li><a href="{{url('event')}}"><i class="fa fa-calendar" aria-hidden="true"></i>  ปฎิทินการทำงาน </a></li>
 
             </ul>

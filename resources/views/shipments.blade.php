@@ -8,11 +8,11 @@
     <li class="nav-item active">
       <h1 class="nav-link"> ตรวจสอบเลขพัสดุ </h1>
     </li>
-    <h6 class="nav-link text-danger"> ** สามารถค้นหาเลขพัสดุโดยค้นหาจากชื่อผู้ใช้งาน **</h6>
+    <h6 class="nav-link text-danger"> ** สามารถค้นหาเลขพัสดุโดยค้นหาจากชื่อผู้ใช้งาน เช่น Kanjana loetchaloenyong**</h6>
   </ul>
 
   <!-- Search form -->
-  <form action="/searchp" method="GET" role="search">
+  <form action="/search/shipment" method="GET" role="search">
     {{ csrf_field() }}
     <div class="input-group md-form form-sm form-2 pl-0">
       <input class="form-control my-0 py-1 red-border" type="text" class="form-control" placeholder="ตรวจสอบเลขพัสดุ" name="search" style=" height:3rem;">
@@ -82,13 +82,7 @@
   <br />
   <br />
   <br />
-  <br />
-  <br />
-  <br />
-  <br />
-  <br />
-  <br />
-
+  
   <h5 class="nav-link text-danger"> ** ข้อมูลการจัดส่งสินค้า
     <h6 class="nav-link ml-3 text-danger"> 1. สินค้าปกติจะส่งถึงมือคุณภายใน 2-5 วันทำการ</h6>
   </h5>

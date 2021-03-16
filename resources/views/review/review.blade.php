@@ -69,7 +69,7 @@
                                                         <div class="comment-text">
                                                             <p class="meta">
                                                                 <strong class="woocommerce-review__author">&nbsp;&nbsp;{{$review->name_review }}</strong>
-                                                                <span class="woocommerce-review__dash">–</span> <time class="woocommerce-review__published-date" datetime="2017-08-23T22:00:25+03:00">{{$review->created_at }}</time>
+                                                                <span class="woocommerce-review__dash">–</span> <time class="woocommerce-review__published-date" datetime="2017-08-23T22:00:25+03:00">{{$review->created_at->format('D d M, Y')}} at {{$review->created_at->format('g : i a')}}</time>
                                                             </p>
                                                             <!--<div class="star-rating" role="img" aria-label="Rated 5 out of 5"><span style="width:100%">Rated <strong class="rating">5</strong> out of 5</span></div> -->
                                                             <div class="description">

@@ -6,6 +6,7 @@ use App\User;
 use BotMan\BotMan\Messages\Attachments\Contact;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 
 
@@ -67,31 +68,30 @@ class DashboardController extends Controller
       $users->save();
       return redirect('admin')->with('success', 'แก้ไขข้อมูลสมาชิกสำเร็จ');  
 
-      //return redirect()->route('admin.edit_user')
-                      //->with('success', 'User updated successfully');
+     
     }
     
-          //return redirect()->route('admin.index_user')
-                          //->with('success', ' User updated successfully');
-       
-    
+         
+   // public function destroy($id)
+  //  {
+    //    $users = User::find($id);
+      //  $users->delete();
+     //   return redirect('admin')
+     //                   ->with('success', ' User deleted successfully');
+  //  }
 
-    public function destroy($id)
+    public function search(Request $request)
     {
-        $users = User::find($id);
-        $users->delete();
-        return redirect('admin')
-                        ->with('success', ' User deleted successfully');
+        $search = $request->get('search');
+        $users = DB::table('users')
+                ->where('name', 'LIKE', '%' . $search . '%')
+                ->orWhere( 'id', 'LIKE', '%' . $search . '%' )
+                ->paginate(5);
+               
+        return view('admin.index_user', compact('users'));
     }
 
-
-    /*public function registeredDelete($id)
-    {
-       $users = User::findOrFail($id);
-        $users ->delete();
-        return redirect('admin/index_user')->with('success','Your Data is Deleted');
-
-   }*/
+  
     
   
 }

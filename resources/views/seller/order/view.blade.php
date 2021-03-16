@@ -72,7 +72,7 @@
                             
                                 <tr>
                                     <td>Quantity (จำนวน)</td>
-                                    <td> : {{ $order->item_count}} ตัว</td>
+                                    <td> : {{ $order->quantity}} ตัว</td>
                                 </tr>
                                 <tr>
                                     <td>Order Status (สถานะใบสั่ง) </td>
@@ -94,33 +94,13 @@
                                 <tr>
                                     <td> Payment Method (วิธีการชําระเงิน) </td>
                                     <td> : @if ($order->payment_method =='cash on delivery')
-                                        <span class="badge badge-warning">{{$order->payment_method}}</span>
+                                        <span class="badge badge-warning">{{$order->payment_method}}</span>(เก็บเงินปลายทาง)
                                         @elseif($order->payment_method =='paypal')
-                                        <span class="badge badge-success">{{$order->payment_method}}</span>
+                                        <span class="badge badge-success">{{$order->payment_method}}</span>(โอน)
+                                       <h5> <a class="badge badge-success" href="{{url('/orders/order_items',$order->id)}}">   ดูข้อมูลการชำระเงิน </h5> 
                                         @endif
                                     </td>
                                 </tr>
-                            </table>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-6 col-lx-4">
-                        <div class="shipping-info">
-                            <h4 class="text-center pb-4">PAYMENT INFORMATION [ข้อมูลการชำระเงิน]</h4>
-                            <table class="table">
-                                <tr class="">
-                                    <td>Date (วันที่)</td>
-                                    <td> : {{$order->date}} </td>
-                                </tr>
-                                <tr>
-                                    <td>Bank (ชื่อธนาคาร)</td>
-                                    <td> : {{$order->bank_form}} </td>
-                                </tr>
-                                <tr>
-                                    <td> หลักฐานการโอน </td>
-                                    <td> : {{$order->paypal_img}}</td>
-                                </tr>
-                              
                             </table>
                         </div>
                     </div>
@@ -160,5 +140,8 @@
 
         @endif
     </div>
+
+   
 </div>
+
 @endsection

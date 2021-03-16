@@ -10,6 +10,10 @@ class Paypal extends Model
     {
         return $this->belongsToMany(Product::class,'order_items','order_id','product_id')->withPivot('quantity','price');
     }
+    protected $fillable =[
+
+        'image','date','bank_form','bank_go'
+    ];
 
   
     

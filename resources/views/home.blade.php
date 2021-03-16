@@ -57,25 +57,26 @@
         </div>
 
         <div class="form-group col-md-3">
-            <div class="small-box bg-info  text-center">
+            <div class="small-box  text-center " style="background-color: #F4A460;">
                 <div class="inner">
                     <br>
-                    <a href="{{url('/shop')}}">
-                        <h4 class="text-light">สินค้ายอดฮิต</h4>
+                    <a href="{{ url('how-to-order') }}">
+
+                        <h4 class="text-light">วิธีการซื้อสินค้า</h4>
                     </a>
-                    <h5>HOT</h5>
+                    <h5>HOW TO SHOP</h5>
                 </div>
             </div>
         </div>
 
         <div class="form-group col-md-3">
-            <div class="small-box  text-center " style="background-color: #FA8072;">
+            <div class="small-box  text-center " style="background-color: #5F9EA0;">
                 <div class="inner">
                     <br>
-                    <a href="{{url('/shop')}}">
-                        <h4 class="text-light">สินค้ามาใหม่</h4>
+                    <a href="{{ url('how-to-return') }}">
+                        <h4 class="text-light"> เคลมสินค้า</h4>
                     </a>
-                    <h5>NEW</h5>
+                    <h5> CLAIM PRODUCT</h5>
                 </div>
             </div>
         </div>
@@ -92,82 +93,48 @@
             </div>
         </div>
 
-        <div class="form-group col-md-3">
-            <div class="small-box  text-center " style="background-color: #F4A460;">
-                <div class="inner">
-                    <br>
-                    <a href="{{ url('how-to-order') }}">
-                        <h4 class="text-light">วิธีการซื้อสินค้า</h4>
-                    </a>
-                    <h5>HOW TO SHOP</h5>
-                </div>
-            </div>
-        </div>
-
-        <div class="form-group col-md-3">
-            <div class="small-box  text-center " style="background-color: #5F9EA0;">
-                <div class="inner">
-                    <br>
-                    <a href="{{ url('how-to-return') }}">
-                        <h4 class="text-light">วิธีการคืนสินค้า</h4>
-                    </a>
-                    <h5>HOW TO RETURN ITEMS</h5>
-                </div>
-            </div>
-        </div>
-        
     </div>
     <!-- end ads -->
-
-
-    <!--product 
-    <main>
-        <div class="container products">
-            <div class="row">
+    <div class="container-fluid m-0 p-0">
+        <!--container-fluid-->
+        <div class="row no-gutters px-1">
+            <!--row-->
             @foreach($product as $value)
-                <a href="{{ route('shop.show',$value->id )}}"> 
-                    <div class="col-xs-18 col-sm-6 col-md-3">
-                        <div class="thumbnail">
-                            <img src="{{asset($value->product_img )}}" width="250" height="260">
-                            <div class="caption">
-                                <h4 class=" text-dark">{{ $value->product_name }}</h4>
-                                <p class=" text-dark">{{ str_limit(strtolower($value->product_detail), 50) }}</p>
-                                <p class=" text-dark"><strong>ราคา : </strong> {{ $value->product_price }} $</p>
-                                <p class="btn-holder"><a  class="btn btn-warning btn-block text-center" role="button"></a> </p>
-                            </div>
+            <div class="col-6 col-sm-4 col-md-3 bg-light px-1">
+                <a href="{{ route('shop.show',$value->id )}}">
+                    <div class="bg-warning pic_preview">
+                        <img src="{{asset($value->product_img )}}" width="250" height="260">
+
+                    </div>
+                    <div class="bg-white mb-5 shadow-sm">
+                        <div class=" text-dark">
+                            <h5><strong>{{ $value->product_name }}
+                                    @if($value->product_method=='new')
+                                    <span class="badge badge-danger">{{$value->product_method}}</span>
+                                    @elseif($value->product_method=='sale')
+                                    <span class="badge badge-success">{{$value->product_method}}</span>
+                                    @elseif($value->product_method=='hot')
+                                    <span class="badge badge-warning">{{$value->product_method}}</span>
+                                    @endif
+                                </strong>
+                            </h5>
                         </div>
+                        <div class="price text-dark">
+                            <h6>{{ str_limit(strtolower($value->product_detail), 50) }}</h6>
+                        </div>
+                        <div class="discount_price text-dark"><strong>ราคา : </strong> {{ $value->product_price }} บาท</div>
                     </div>
                 </a>
-               
-                @endforeach
-
-            </div><!-- End row 
-        </div>
-    </main>-->
-    
-    <div class="container-fluid m-0 p-0"> <!--container-fluid-->
-    <div class="row no-gutters px-1"> <!--row-->
-    @foreach($product as $value)
-        <div class="col-6 col-sm-4 col-md-3 bg-light px-1">
-        <a href="{{ route('shop.show',$value->id )}}">
-            <div class="bg-warning pic_preview" >
-            <img src="{{asset($value->product_img )}}" width="250" height="260">
-  
             </div>
-            <div class="bg-white mb-5 shadow-sm">
-                <div class=" text-dark"><h5><strong>{{ $value->product_name }}</strong></h5></div>
-                <div class="price text-dark"><h6>{{ str_limit(strtolower($value->product_detail), 50) }}</h6></div>
-                <div class="discount_price text-dark"><strong>ราคา : </strong> {{ $value->product_price }} บาท</div>
-            </div>    
-            </a>        
+            @endforeach
         </div>
-        @endforeach  
-    </div> <!--row-->
- </div> <!--container-fluid-->
+        <!--row-->
+    </div>
+    <!--container-fluid-->
     <br />
 
     <div class="text-center button-container">
-       <a href="{{url('/shop')}}" class="button" ><button type="button" class="btn btn-outline-secondary">View more products</button></a>
+        <a href="{{url('/shop')}}" class="button"><button type="button" class="btn btn-outline-secondary">View more products</button></a>
     </div>
 </div>
 

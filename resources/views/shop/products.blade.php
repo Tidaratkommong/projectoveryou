@@ -21,7 +21,15 @@
                     </div>
                     <div class="col-md-8">
                         <div class="card-body">
-                            <h5 class="card-title text-dark ">{{ $product->product_name }}</h5>
+                            <h5 class="card-title text-dark ">{{ $product->product_name }}
+                                @if($product->product_method=='new')
+                                <span class="badge badge-danger">{{$product->product_method}}</span>
+                                @elseif($product->product_method=='sale')
+                                <span class="badge badge-success">{{$product->product_method}}</span>
+                                @elseif($product->product_method=='hot')
+                                <span class="badge badge-warning">{{$product->product_method}}</span>
+                                @endif
+                            </h5>
                             <p class="card-text text-dark ">{{ $product->product_detail }}</p>
                             <p class="card-text text-dark"> <strong> เหลือ : </strong>{{ $product->product_num }} ตัว &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                                 <strong>ราคา : </strong> {{ $product->product_price }} บาท
@@ -31,11 +39,11 @@
                                 <strong class="card-text text-dark"> ดูตารางไซส์ </strong>
                             </a>
                             <p>
-                                <p class="btn-holder">
-                                <a href="{{route('cart.add',$product->id)}}"class="btn btn-outline-success" role="button">เพิ่มไปยังรถเข็น
+                            <p class="btn-holder">
+                                <a href="{{route('cart.add',$product->id)}}" class="btn btn-outline-success" role="button">เพิ่มไปยังรถเข็น
                                 </a>
                             </p>
-                                <!--<button type="submit" class="button button-plain"> เพิ่มไปยังรถเข็น </button>-->
+                            <!--<button type="submit" class="button button-plain"> เพิ่มไปยังรถเข็น </button>-->
                             </form>
                             </p>
                         </div>
@@ -47,7 +55,7 @@
         <!-- ตาราง size -->
 
         <div class="form-group col-md-6">
-            <div class="card mb-1 " style="max-width: 500px; margin:10px;  padding: 24px;  background-color: #FA8072;" >
+            <div class="card mb-1 " style="max-width: 500px; margin:10px;  padding: 24px;  background-color: #FA8072;">
             </div>
 
             <div class="card mb-1" style="max-width: 500px; margin:10px;  padding: 24px; ">

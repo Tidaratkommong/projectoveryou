@@ -122,7 +122,7 @@
                                         {{ __('เปลี่ยนรหัสผ่าน') }}
                                     </a>
 
-                                    <a class="dropdown-item" href="{{url('history')}}">
+                                    <a class="dropdown-item" href="{{url('history',Auth::user()->id)}}">
                                         {{ __('ดูประวัติการซื้อ') }} 
                                     </a>
 

@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateShopsTable extends Migration
+class CreateClaimsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,17 +13,15 @@ class CreateShopsTable extends Migration
      */
     public function up()
     {
-        Schema::create('shops', function (Blueprint $table) {
+        Schema::create('claims', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->string('image');
             $table->string('name');
-            $table->unsignedBigInteger('user_id');
-            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
-           
-            $table->boolean('is_active')->default(false);
-
-            $table->text('description')->nullable();
-            $table->float('rating')->nullable();
-
+            $table->text('address');
+            $table->string('telephone')->unique();
+            $table->string('email')->unique();
+            $table->longText('detail');
+            $table->enum('status', ['pending','processing','completed','decline'])->default('pending');
             $table->timestamps();
         });
     }
@@ -35,6 +33,6 @@ class CreateShopsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('shops');
+        Schema::dropIfExists('claims');
     }
 }

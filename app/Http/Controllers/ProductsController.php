@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Product;
+
 use Carbon\Carbon;
+use App\Product;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Symfony\Component\VarDumper\Cloner\Data;
 
 class ProductsController extends Controller
@@ -17,7 +19,7 @@ class ProductsController extends Controller
     public function index()
     {
         $product = Product::latest()->paginate(7);
-        return view('product.index_product', compact('product'))
+        return view('product.product', compact('product'))
             ->with('i', (request()->input('page', 1) - 1) * 7);
     }
 
@@ -42,7 +44,7 @@ class ProductsController extends Controller
     public function store(Request $request)
     {
         //validate
-       $request->validate([
+        $request->validate([
             'product_name' =>  'required',
             'product_price' =>  'required|numeric',
             'product_detail' =>  'required',
@@ -79,7 +81,7 @@ class ProductsController extends Controller
 
         if ($product->save()) {
             $request->session()->flash('success', 'เพิ่ม' . $product->product_name  . 'สำเร็จ จำนวน'  . $product->product_num .  'ตัว');
-            return redirect('product');
+            return redirect('products');
         } else {
             $request->session()->flash('success', 'เพิ่ม' . $product->product_name . 'ไม่สำเร็จ');
             return view('product.create_product');
@@ -149,13 +151,17 @@ class ProductsController extends Controller
 */
 
 
-         $products =  Product::find($id);
+        $products =  Product::find($id);
 
+        $this->validate($request, [
+            'product_method' => 'required|in:_,new,hot,sale'
+        ]);
         $products->product_name = $request->product_name;
         $products->product_detail = $request->product_detail;
         $products->product_type = $request->product_type;
         $products->product_price = $request->product_price;
         $products->product_num = $request->product_num;
+        $products->product_method = $request->product_method;
 
         /*if ($request->hasFile('public/imaproduct'))
         {
@@ -167,8 +173,8 @@ class ProductsController extends Controller
         }*/
 
 
-       // $image_name = rand() . '.' . $image->getClientOriginalExtension();
-          //  $image->move(public_path('public/imaproduct'), $image_name);
+        // $image_name = rand() . '.' . $image->getClientOriginalExtension();
+        //  $image->move(public_path('public/imaproduct'), $image_name);
 
         if ($request->hasFile('public/imaproduct')) {
 
@@ -183,7 +189,7 @@ class ProductsController extends Controller
 
         if ($products->save()) {
             $request->session()->flash('success', ' แก้ไขข้อมูลสินค้าสำเร็จ');
-            return redirect('product');
+            return redirect('products');
         } else {
             $request->session()->flash('success', 'แก้ไขข้อมูลสินค้าไม่สำเร็จ');
             return view('product.create_product');
@@ -202,6 +208,23 @@ class ProductsController extends Controller
     public function destroy($id)
     {
         Product::find($id)->delete();
-        return redirect('product');
+        return redirect('products');
     }
+
+    public function search(Request $request)
+    {
+        $search = $request->get('search');
+        $product = DB::table('products')
+                ->where('product_name', 'LIKE', '%' . $search . '%')
+                ->orWhere( 'product_price', 'LIKE', '%' . $search . '%' )
+                ->orWhere( 'product_type', 'LIKE', '%' . $search . '%' )
+                ->orWhere( 'id', 'LIKE', '%' . $search . '%' )
+                ->paginate(5);
+        return view('product.product', compact('product'));
+    }
+
+   
 }
+
+
+
