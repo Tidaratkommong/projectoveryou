@@ -18,8 +18,10 @@ class CreateClaimsTable extends Migration
             $table->string('image');
             $table->string('name');
             $table->text('address');
-            $table->string('telephone')->unique();
-            $table->string('email')->unique();
+            $table->string('telephone');
+           // $table->string('telephone')->unique();
+           // $table->string('email')->unique();
+            $table->string('email');
             $table->longText('detail');
             $table->enum('status', ['pending','processing','completed','decline'])->default('pending');
             $table->timestamps();
