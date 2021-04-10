@@ -73,7 +73,7 @@
                                     </tr>
                                     <tr>
                                         <td> หลักฐานการโอน </td>
-                                        <td> : {{$order->image}}</td>
+                                        <td> <img src="{{URL::to('/')}}/slip/{{$order->image}}" class="img-thumbnail" width="300" /> </td>
                                     </tr>
 
                                 </table>

@@ -6,16 +6,16 @@
   <br />
   <ul class="navbar-nav mr-auto">
     <li class="nav-item active">
-      <h1 class="nav-link"> ตรวจสอบเลขพัสดุ </h1>
+      <h1 class="nav-link"> ตรวจสอบหมายเลขการสั่งซื้อ </h1>
     </li>
-    <h6 class="nav-link text-danger"> ** สามารถค้นหาเลขพัสดุโดยค้นหาจากชื่อผู้ใช้งาน เช่น Kanjana loetchaloenyong**</h6>
+    <h6 class="nav-link text-danger"> ** สามารถค้นหาเลขการสั่งซื้อโดยค้นหาจากชื่อผู้ใช้งาน เช่น Kanjana loetchaloenyong**</h6>
   </ul>
 
   <!-- Search form -->
   <form action="/search/shipment" method="GET" role="search">
     {{ csrf_field() }}
     <div class="input-group md-form form-sm form-2 pl-0">
-      <input class="form-control my-0 py-1 red-border" type="text" class="form-control" placeholder="ตรวจสอบเลขพัสดุ" name="search" style=" height:3rem;">
+      <input class="form-control my-0 py-1 red-border" type="text" class="form-control" placeholder="ตรวจสอบเลขการสั่งซื้อ" name="search" style=" height:3rem;">
       <span class="input-group-append">
         <button class="input-group-text red lighten-3" type="submit" style="background-color: #FA8072; height:3rem;">
           <i class="fas fa-search text-grey" aria-hidden="true"></i>
@@ -30,7 +30,7 @@
     <thead>
       <tr>
         <th scope="col">
-          <h5>เลขพัสดุ</h5>
+          <h5>หมายเลขการสั่งซื้อ</h5>
         </th>
         <th scope="col">
           <h5>วันที่สั่งซื้อ</h5>

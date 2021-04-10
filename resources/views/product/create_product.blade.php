@@ -32,12 +32,12 @@
                     <div class="form-row">
                         <div class="form-group col-md-6">
                             <label for="productname">ชื่อสินค้า</label>
-                            <input type="text" name="product_name" class="form-control input-lg" placeholder="ชื่อสินค้า" value="{{old('product_name')}}" />
+                            <input type="text" name="product_name" class="form-control input-lg" placeholder="ชื่อสินค้า" value="{{old('product_name')}}" required/>
                         </div>
 
                        <div class="form-group col-md-6">
                             <label for="producttype">ประเภทสินค้า</label>
-                            <select class="form-control input-lg" placeholder="ประเภทสินค้า" type="text" name="product_type" value="{{old('product_type')}}">
+                            <select class="form-control input-lg" placeholder="ประเภทสินค้า" type="text" name="product_type" value="{{old('product_type')}}" required>
                             <option>เสื้อแขนสั้น</option>
                                 <option>เสื้อแขนยาว</option>
                                 <option>กางเกงขาสั้น</option>
@@ -51,7 +51,7 @@
                     
                     <div class="form-group">
                         <label for="productdetail">รายละเอียดสินค้า</label>
-                        <textarea class="form-control" name="product_detail" placeholder="รายละเอียดสินค้า" rows="4" />{{old('product_detail')}}</textarea>
+                        <textarea class="form-control" name="product_detail" placeholder="รายละเอียดสินค้า" rows="4" required />{{old('product_detail')}}</textarea>
                     </div>
 
 
@@ -67,18 +67,18 @@
                         </div> -->
                         <div class="form-group col-md-6">
                             <label for="productprice">ราคาสินค้า</label>
-                            <input type="number" name="product_price" class="form-control input-lg" placeholder="ราคาสินค้า" value="{{old('product_price')}}" />
+                            <input type="number" name="product_price" class="form-control input-lg" placeholder="ราคาสินค้า" value="{{old('product_price')}}" required />
                         </div>
 
                         <div class="form-group col-md-2">
                             <label for="productnum">จำนวนสินค้า</label>
-                            <input type="number" name="product_num" class="form-control input-lg" placeholder="จำนวนสินค้า" value="{{old('product_num')}}" />
+                            <input type="number" name="product_num" class="form-control input-lg" placeholder="จำนวนสินค้า" value="{{old('product_num')}}" required/>
                         </div>
                     </div>
                     <br />
                     <div class="form-group">
                         <label for="exampleInputFile">Select Profile Image</label>
-                        <input type="file" name="product_img" value="{{old('product_img')}}" />
+                        <input type="file" name="product_img" value="{{old('product_img')}}" required />
                     </div>
                     <button type="submit" class="btn btn-success">บันทึก</button>
 

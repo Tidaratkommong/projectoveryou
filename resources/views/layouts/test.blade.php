@@ -66,7 +66,7 @@
                                 <a class="btn btn-link text-light" href="#"><i class="fa fa-comments" aria-hidden="true"></i>  Chat กับเรา</a>
                             </li>-->
                             <li class="nav-item">
-                                <a class="btn btn-link text-dark" href="{{ url('shipments') }} "> ตรวจสอบเลขพัสดุ</a>
+                                <a class="btn btn-link text-dark" href="{{ url('shipments') }} "> ตรวจสอบหมายเลขการสั่งซื้อ</a>
                             </li>
 
 

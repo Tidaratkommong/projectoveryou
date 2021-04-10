@@ -36,13 +36,13 @@
                     <div class="form-row">
                         <div class="form-group col-md-6">
                             <label for="product_name">ชื่อสินค้า</label>
-                            <input type="text" name="product_name" class="form-control input-lg text-dark" value="{{$products['product_name'] }}" />
+                            <input type="text" name="product_name" class="form-control input-lg text-dark" value="{{$products['product_name'] }}" required />
                         </div>
 
                         <!--producttype -->
                         <div class="form-group col-md-6">
                             <label for="product_type">ประเภทสินค้า</label>
-                            <select class="form-control input-lg text-dark" type="text" name="product_type" value="{{$products['product_type'] }}">
+                            <select class="form-control input-lg text-dark" type="text" name="product_type" value="{{$products['product_type'] }}" required>
                                 <option>{{$products['product_type']}}</option>
                                 <option>เสื้อแขนสั้น</option>
                                 <option>เสื้อแขนยาว</option>
@@ -57,7 +57,7 @@
                     <!--productdetail -->
                     <div class="form-group">
                         <label for="product_detail">รายละเอียดสินค้า</label>
-                        <textarea class="form-control" name="product_detail" placeholder="รายละเอียดสินค้า" rows="4" />{{$products['product_detail']}}</textarea>
+                        <textarea class="form-control" name="product_detail" placeholder="รายละเอียดสินค้า" rows="4" required />{{$products['product_detail']}}</textarea>
                     </div>
 
                     <!--<div class="form-group">
@@ -70,12 +70,12 @@
                     <div class="form-row">
                         <div class="form-group col-md-6">
                             <label for="produc_tprice">ราคาสินค้า</label>
-                            <input type="number" name="product_price" class="form-control input-lg text-dark" value="{{$products['product_price']}}" />
+                            <input type="number" name="product_price" class="form-control input-lg text-dark" value="{{$products['product_price']}}" required/>
                         </div>
 
                         <div class="form-group col-md-2">
                             <label for="produc_tnum">จำนวนสินค้า</label>
-                            <input type="number" name="product_num" class="form-control input-lg text-dark" value="{{$products['product_num']}}" />
+                            <input type="number" name="product_num" class="form-control input-lg text-dark" value="{{$products['product_num']}}" required/>
                         </div>
 
                         <div class="form-group col-md-2">
@@ -97,7 +97,7 @@
 
                     <div class="form-group">
                         <label for="exampleInputFile">Select Profile Image</label>
-                        <input type="file" name="product_img" value="{{old('product_img')}}" />
+                        <input type="file" name="product_img" value="{{old('product_img')}}" required />
                         <img src="{{asset ($products->product_img) }}" class="img-thumbnail" width="50" />
                     </div>
 

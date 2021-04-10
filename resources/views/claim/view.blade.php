@@ -15,7 +15,7 @@
                     <div class="row">
                         <div class="col-lg-6 col-lx-4">
                             <div class="order-info">
-                                <h4 class="text-center pb-4">ข้อมูลการพื้นฐาน</h4>
+                                <h4 class="text-center pb-4">ข้อมูลพื้นฐาน</h4>
                                 <table class="table">
                                     <tr class="">
                                         <td>Full Name (ชื่อ-สกุล)</td>

@@ -16,7 +16,7 @@ class PayPalController extends Controller
     {
         //$cart = \Cart::session(auth()->id());
         //dd($cart->getContent());
-       //return redirect()->route('paypal.index');
+        //return redirect()->route('paypal.index');
     }
     public function checkout()
     {
@@ -42,41 +42,50 @@ class PayPalController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'image' => 'required',
             'date' => 'required',
             'bank_form' => 'required',
-            'bank_go' => 'required'
+            'bank_go' => 'required',
+            'image' => 'required|image|max:2048'
         ]);
 
+        $image = $request->file('image');
 
-          $paypal = new Paypal();  
-          
-          $paypal->image = $request->input('image');
-          $paypal->date = $request->input('date');
-          $paypal->bank_form = $request->input('bank_form');
-          $paypal->bank_go = $request->input('bank_go');
-          
+        $new_name = rand() . '.' . $image->getClientOriginalExtension();
+        $image->move(public_path('slip'), $new_name);
+
        
+        $paypal = new Paypal;
 
-          //$paypal->grand_total = \Cart::session(auth()->id())->getTotal();
-         // $paypal->item_count = \Cart::session(auth()->id())->getContent()->count();
+        $paypal->date = $request->date;
+        $paypal->bank_form = $request->bank_form;
+        $paypal->bank_go= $request->bank_go;
+        $paypal->image = $new_name;
+       
+        // $paypal->date = $request->input('date');
+        // $paypal->bank_form = $request->input('bank_form');
+        // $paypal->bank_go = $request->input('bank_go');
+        // $paypal->image = $request->input('image');
+
+
+
+        //$paypal->grand_total = \Cart::session(auth()->id())->getTotal();
+        // $paypal->item_count = \Cart::session(auth()->id())->getContent()->count();
         $paypal->user_id = auth()->id();
-        
+
         //$order->status ='pending';
         $paypal->save();
 
         //save order items
         $cartItems = \Cart::session(auth()->id())->getContent();
 
-       foreach($cartItems as $item){
-           //$paypal->items()->attach($item->id,['price'=>$item->price,'quantity'=>$item->quantity]);
+        foreach ($cartItems as $item) {
+            //$paypal->items()->attach($item->id,['price'=>$item->price,'quantity'=>$item->quantity]);
 
-       }
-       //empty cart
-          \Cart::session(auth()->id())->clear();
+        }
+        //empty cart
+        \Cart::session(auth()->id())->clear();
 
         return redirect('shipments')->withMessage('สั่งซื้อสินค้าสำเร็จ');
-
     }
 
     /**

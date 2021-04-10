@@ -20,10 +20,10 @@
                         <div class="card-body">
                             <h5 class="card-title text-dark ">ยอดชำระทั้งหมด :
                                 <span class="text-danger">
-                                   ฿ {{\Cart::session(auth()->id())->getTotal()}} 
+                                    ฿ {{\Cart::session(auth()->id())->getTotal()}}
                                 </span>
                             </h5>
-                            <form action="{{route('paypal.store')}}" method="post">
+                            <form method="POST" action="{{route('paypal.store')}}" enctype="multipart/form-data">
                                 {{ csrf_field() }}
                                 <div class="form-group">
                                     <label for="exampleInputFile"> อัพโหลดหลักฐานการโอน </label>
@@ -31,7 +31,7 @@
                                 </div>
 
                                 <div class="form-group">
-                                    <label for=""> วันที่และเวลาโอนเงิน : </label>
+                                    <label for="date"> วันที่และเวลาโอนเงิน : </label>
                                     <input type="datetime-local" name="date" class="form-control" required>
                                 </div>
 
@@ -55,7 +55,7 @@
                                     </select>
                                 </div>
                                 <p class="card-text text-dark ">จำนวนโอน : {{\Cart::session(auth()->id())->getTotal()}} บาท</p>
-                                <button type="submit"  class="btn btn-primary mt-2">ส่ง</button>
+                                <button type="submit" class="btn btn-primary mt-2">ส่ง</button>
                                 </p>
                                 <form>
                         </div>

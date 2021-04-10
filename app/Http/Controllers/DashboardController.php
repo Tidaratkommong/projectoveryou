@@ -39,7 +39,7 @@ class DashboardController extends Controller
         ]);
        
         User::create($request->all());
-        return redirect('admin')->with('success', 'new user created successfully');    
+        return redirect('admin')->with('success', 'เพิ่มสมาชิกใหม่สำเร็จ');    
     }
 
 

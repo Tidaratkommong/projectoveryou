@@ -75,7 +75,7 @@ class EventController extends Controller
         $events->end_date = $request->input('end_date');
     
         $events->save();
-        return redirect('event')->with('success', 'Events has been added');
+        return redirect('event')->with('success', 'เพิ่ม Events สำเร็จ');
     
     }
 
@@ -126,6 +126,6 @@ class EventController extends Controller
         $event = Event::find($id);
         $event->delete();
 
-        return redirect('event')->with('success','Event Delete');
+        return redirect('event')->with('success','ลบ Events สำเร็จ');
     }
 }

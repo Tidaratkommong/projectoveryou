@@ -12,34 +12,34 @@
             <div class="form-row">
                 <div class="form-group col-md-6">
                     <label for="name">ชื่อ - สกุล</label>
-                    <input type="text" name="name" class="form-control input-lg" placeholder="ชื่อ - สกุล"  />
+                    <input type="text" name="name" class="form-control input-lg" placeholder="ชื่อ - สกุล"  required />
                 </div>
 
                 <div class="form-group col-md-6">
                     <label for="email">Email</label>
-                    <input type="text" name="email" class="form-control input-lg" placeholder="อีเมล" />
+                    <input type="text" name="email" class="form-control input-lg" placeholder="อีเมล" required />
                 </div>
 
                 <div class="form-group col-md-6">
                     <label for="telephone">เบอร์โทร</label>
-                    <input type="text" name="telephone" class="form-control input-lg" placeholder="เบอร์โทร"  />
+                    <input type="text" name="telephone" class="form-control input-lg" placeholder="เบอร์โทร" required />
                 </div>
             </div>
 
             <div class="form-group">
                 <label for="address">ที่อยู่</label>
-                <textarea class="form-control" name="address" placeholder="ที่อยู่" rows="4" /></textarea>
+                <textarea class="form-control" name="address" placeholder="ที่อยู่" rows="4" required /></textarea>
             </div>
 
             <div class="form-group">
                 <label for="detail">รายละเอียด</label>
-                <textarea class="form-control" name="detail" placeholder="รายละเอียด" rows="4" /></textarea>
+                <textarea class="form-control" name="detail" placeholder="รายละเอียด" rows="4" required /></textarea>
             </div>
 
             <br />
             <div class="form-group">
                 <label for="exampleInputFile">Select Profile Image</label>
-                <input type="file" name="image"  />
+                <input type="file" name="image" required />
             </div>
             <button type="submit" class="btn btn-success">บันทึก</button>
 

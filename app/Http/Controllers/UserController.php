@@ -59,7 +59,7 @@ class UserController extends Controller
                 $user->address = $request['address'];
 
                 $user->save();
-                $request->session()->flash('success', ' Your detals have now been updated !');
+                $request->session()->flash('success', ' Your detail have now been updated !');
                 return redirect()->back();
             } else {
                 return redirect()->back();
