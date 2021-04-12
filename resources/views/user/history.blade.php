@@ -29,7 +29,7 @@
         <tbody>
            
         <tbody>
-            @if($user )
+            @if($user)
             <tr>
                 <td data-th="Product">
                     <div class="row">

@@ -114,6 +114,7 @@ class UserController extends Controller
         }
     }
 
+    
     public function getProfile($id)
     {     
         $user = User::find($id);
