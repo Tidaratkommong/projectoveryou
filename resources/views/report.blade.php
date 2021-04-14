@@ -29,7 +29,7 @@
 
     </h5>
     <hr style="background-color: #FA8072;">
-    
+
     @foreach($order as $value)
     <div class="text-center">
         <h5>
@@ -43,12 +43,9 @@
                     <td>ทั้งหมด</td>
                     <td> {{ $value->id }} </td>
 
-                   
-                    <td>฿ {{number_format($value->grand_total)}}  </td>
-                </tr>
 
-               
-                
+                    <td>฿ {{number_format($value->grand_total)}}</td>
+                </tr>
 
             </table>
             </h4>
@@ -57,15 +54,18 @@
     <br>
     <hr style="background-color: #FA8072;">
     <h5> รายละเอียด </h5>
-    <div class="row">
+
+    <div class="form-row justify-content-center">
+        @foreach($user as $user)
         <div class="col-md-6">
             <div class="card pd-20 pd-sm-30 text-center">
                 <br>
-                <h5>จำนวนลูกค้า</h5>
-                <h5>4 </h5>
+                <h5>จำนวนลูกค้าทั้งหมด</h5>
+                <h5>{{ $user->id }} users </h5>
                 <br>
             </div>
         </div>
+        @endforeach
 
         <div class="col-md-6">
             <div class="card pd-20 pd-sm-30 text-center">
@@ -76,11 +76,18 @@
             </div>
         </div>
 
-        <br>
-        <br>
+        <div class=" col-md-5">
+            <div class="small-box  text-center ">
+                <div class="inner">
+                    <br>
+                    <br>
+                    <h5> ///////////////////////////////////////////////////////////////////////////////////////////// </h5>
+                </div>
+            </div>
+        </div>
+
     </div>
 
-</div>
 
 
 
@@ -88,5 +95,4 @@
 
 
 
-
-@endsection
+    @endsection
