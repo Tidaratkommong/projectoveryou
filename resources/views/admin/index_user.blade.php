@@ -11,6 +11,8 @@
             </div>
             @endif
 
+            <hr style="background-color: #FA8072;">
+            
             <div class="row">
                 <div class="col-md-4">
                     <h4>จัดการข้อมูลสมาชิก</h4>
@@ -41,7 +43,7 @@
 
             <h6 class="nav-link text-danger"> ** สามารถค้นหาสมาชิกโดยค้นหาจาก ชื่อสมาชิก IDสมาชิก **</h6>
 
-            <hr>
+            <hr style="background-color: #FA8072;">
 
             <div class="text-center">
                 <h5 class="card-header text-center">ข้อมูลสมาชิก</h5>
@@ -66,7 +68,7 @@
                         <td>
                             <a class="btn btn-warning" href="{{ route('admin.edit',$value->id )}}"><i class="fa fa-wrench" aria-hidden="true"></i></a>
                         </td>
-                       <!--<td>
+                        <!--<td>
                             <form action="{{route('admin.destroy',$value->id)}}" method="post">
                                 @csrf
                                 @method('DELETE')

@@ -1,62 +1,84 @@
 @extends('layouts.app')
-
 @section('content')
-
-
 <div class="container">
     <br />
-    <br />
-    <h3>สรุปยอดขายสินค้า [Sales Report]</h3>
-    <hr>
+    <hr style="background-color: #FA8072;">
+    <h3>สรุปยอดขายสินค้า [Sales Summary]</h3>
+    <h5>วันที่:
+        <!-- Right Side Of Navbar -->
+        <!-- Authentication Links -->
+        <!-- time -->
+        <?php
+        $_month_name = array(
+            "01" => "มกราคม",  "02" => "กุมภาพันธ์",  "03" => "มีนาคม",
+            "04" => "เมษายน",  "05" => "พฤษภาคม",  "06" => "มิถุนายน",
+            "07" => "กรกฎาคม",  "08" => "สิงหาคม",  "09" => "กันยายน",
+            "10" => "ตุลาคม", "11" => "พฤศจิกายน",  "12" => "ธันวาคม"
+        );
+
+        $vardate = date('Y-m-d');
+        $yy = date('Y');
+        $mm = date('m');
+        $dd = date('d');
+        if ($dd < 10) {
+            $dd = substr($dd, 1, 2);
+        }
+        $date = $dd . " " . $_month_name[$mm] . "  " . $yy += 543;
+        echo $date;
+        ?>
+
+    </h5>
+    <hr style="background-color: #FA8072;">
+    
+    @foreach($order as $value)
+    <div class="text-center">
+        <h5>
+            <table class=" table table-bordered">
+                <tr style="background-color: #FA8072;">
+                    <th width="3%">ประเภท </th>
+                    <th width="4%">บิล</th>
+                    <th width="8%">รวมยอดเงินที่ได้รับ</th>
+                </tr>
+                <tr>
+                    <td>ทั้งหมด</td>
+                    <td> {{ $value->id }} </td>
+
+                   
+                    <td>฿ {{number_format($value->grand_total)}}  </td>
+                </tr>
+
+               
+                
+
+            </table>
+            </h4>
+    </div>
+    @endforeach
+    <br>
+    <hr style="background-color: #FA8072;">
+    <h5> รายละเอียด </h5>
     <div class="row">
         <div class="col-md-6">
-            <div class="card pd-20 pd-sm-40 text-center">
-
+            <div class="card pd-20 pd-sm-30 text-center">
                 <br>
+                <h5>จำนวนลูกค้า</h5>
+                <h5>4 </h5>
                 <br>
-                <h4>จัดการข้อมูลผู้ใช้</h4>
-                <h4>จัดการข้อมูลผู้ใช้</h4>
-                <br>
-                <br>
-
             </div>
         </div>
 
-
         <div class="col-md-6">
-            <div class="card pd-20 pd-sm-40 text-center">
-
+            <div class="card pd-20 pd-sm-30 text-center">
                 <br>
+                <h5>คืนเงิน</h5>
+                <h5>฿ 0 </h5>
                 <br>
-                <h4>จัดการข้อมูลผู้ใช้</h4>
-                <h4>จัดการข้อมูลผู้ใช้</h4>
-                <br>
-                <br>
-
             </div>
         </div>
 
         <br>
         <br>
-        
-        <div class="col-md-6">
-        <div class="center">
-        
-        <br>
-        <br>
-            <script type='text/javascript' src='https://www.siamecohost.com/member/gcounter/graphcount.php?page=overyou_page&style=40&maxdigits=5'></script>
-        </div>
-        </div>
-
-
-
-
-
     </div>
-
-
-
-
 
 </div>
 

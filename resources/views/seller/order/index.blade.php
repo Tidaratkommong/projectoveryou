@@ -9,10 +9,12 @@
             {{Session::get('success')}}
         </div>
         @endif
+
         <div class="app-title">
             <div>
-                <br>
-                <h4><i class="fa fa-bar-chart"></i> ตรวจสอบคำสั่งซื้อ(Orders) </h4>
+                <hr style="background-color: #FA8072;">
+                <h4 class="text-center"> ตรวจสอบคำสั่งซื้อ(Orders) </h4>
+                <hr style="background-color: #FA8072;">
                 <p></p>
             </div>
         </div>

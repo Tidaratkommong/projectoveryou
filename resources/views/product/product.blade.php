@@ -11,6 +11,8 @@
         </div>
         @endif
 
+        <hr style="background-color: #FA8072;">
+
         <div class="row">
             <div class="col-md-4">
                 <h4>จัดการข้อมูลสินค้า</h4>
@@ -31,7 +33,7 @@
 
                 <!-- End Search form -->
             </div>
-            
+
             <div class="col-md-2 text-right">
                 <a href="{{route('products.create')}}" class="btn btn-success " role="button" aria-pressed="true"> + เพิ่มสินค้า</a>
                 {{ csrf_field() }}
@@ -41,7 +43,7 @@
 
         <h6 class="nav-link text-danger"> ** สามารถค้นหาสินค้าโดยค้นหาจาก IDสินค้า ชื่อสินค้า ราคาสินค้า ประเภทสินค้า **</h6>
 
-        <hr>
+        <hr style="background-color: #FA8072;">
         <div class="text-center">
             <h5 class="card-header text-center "> ข้อมูลสินค้า</h5>
             <table class=" table table-bordered">

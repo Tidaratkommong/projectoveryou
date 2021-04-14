@@ -199,6 +199,7 @@ Route::resource('/review', 'ReviewsController');
 
 // sales report
 Route::get('/report', 'ReportController@index');
+//Route::get('/report', 'ReportController@');
 
 //Claim_Product
 Route::resource('claim', 'ClaimController');

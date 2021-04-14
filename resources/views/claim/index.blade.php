@@ -1,23 +1,20 @@
 @extends('layouts.app')
 
 @section('content')
-<br />
+
 <div class="container">
+<br />
     <div class="col-md-12">
         <div class="margin: 20px;">
-
-
             @if(Session::get('success'))
             <div class="alert alert-success">
                 {{Session::get('success')}}
             </div>
             @endif
-            <div class="row">
-                <div class="col-md-4">
-                    <h4>การเคลมสินค้า</h4>
-                </div>
-            </div>
-            <hr>
+
+            <hr style="background-color: #FA8072;">
+            <h4 class="text-center">การเคลมสินค้า</h4>
+            <hr style="background-color: #FA8072;">
 
             <div class="text-center">
                 <h5 class="card-header text-center">คำร้องขอ การเคลมสินค้า</h5>
