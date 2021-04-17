@@ -21,6 +21,11 @@
                 </div>
 
                 <div class="form-group col-md-6">
+                    <label for="product_name">ชื่อสินค้า</label>
+                    <input type="text" name="product_name" class="form-control input-lg" placeholder="ชื่อสินค้า" required />
+                </div>
+
+                <div class="form-group col-md-6">
                     <label for="telephone">เบอร์โทร</label>
                     <input type="text" name="telephone" class="form-control input-lg" placeholder="เบอร์โทร" required />
                 </div>

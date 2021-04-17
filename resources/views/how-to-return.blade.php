@@ -16,7 +16,7 @@
     <h2 class="nav-link"> การเคลมสินค้า [CLAIM PRODUCT]
 
         <a  href="{{route('claim.create')}}" class="btn btn-success " role="button" aria-pressed="true">
-            เคลมสินค้าคลิ๊กที่นี่ ! 
+            เคลมสินค้าคลิกที่นี่ ! 
         </a>
         {{ csrf_field() }}
     </h2>

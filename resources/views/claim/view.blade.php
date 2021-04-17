@@ -37,6 +37,10 @@
                                     </tr>
                                     <tr>
                                         <td>Detail (รายละเอียด)</td>
+                                        <td> : {{$claim->product_name}} </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Detail (รายละเอียด)</td>
                                         <td> : {{$claim->detail}} </td>
                                     </tr>
 

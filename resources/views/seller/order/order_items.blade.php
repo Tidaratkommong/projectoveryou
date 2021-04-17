@@ -21,6 +21,7 @@
                                         <td>Product Id (รหัสสินค้า)</td>
                                         <td> : [ {{ $order->product_id }} ]</td>
                                     </tr>
+                                   
 
                                     <tr>
                                         <td>Quantity (จำนวน)</td>

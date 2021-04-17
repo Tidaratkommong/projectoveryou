@@ -2,7 +2,6 @@
 
 @section('content')
 
-<div class="container">
 <br />
     <div class="col-md-12">
         <div class="margin: 20px;">
@@ -22,10 +21,12 @@
                     <tr>
                         <th width="1%">ID</th>
                         <th width="10%">รูป</th>
+                        <th width="10%">รหัสผู้ใช้งาน</th>
                         <th width="10%">ชื่อผู้ใช้งาน</th>
                         <th width="20%">ที่อยู่</th>
                         <th width="10%">เบอร์โทร</th>
                         <th width="10%">E-Mail</th>
+                        <th width="10%">ชื่อสินค้า</th>
                         <th width="20%">รายละเอียด</th>
                         <th width="10%">สถานะ</th>
                         <th width="5%">ข้อมูล</th>
@@ -35,10 +36,12 @@
                     <tr>
                         <td>[{{$value->id }}]</td>
                         <td> <img src="{{URL::to('/')}}/images/{{$value->image}}" class="img-thumbnail" width="75" /> </td>
+                        <td>{{$value->user_id }}</td>
                         <td>{{$value->name }}</td>
                         <td>{{ $value->address }}</td>
                         <td>{{ $value->telephone }}</td>
                         <td>{{ $value->email }}</td>
+                        <td>{{ $value->product_name }}</td>
                         <td>{{ $value->detail }}</td>
 
 
@@ -68,5 +71,5 @@
             </div>
         </div>
     </div>
-</div>
+
 @endsection

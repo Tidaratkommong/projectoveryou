@@ -15,10 +15,15 @@ class CreateClaimsTable extends Migration
     {
         Schema::create('claims', function (Blueprint $table) {
             $table->bigIncrements('id');
+
+            $table->unsignedBigInteger('user_id');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+
             $table->string('image');
             $table->string('name');
             $table->text('address');
             $table->string('telephone');
+            $table->string('product_name');
            // $table->string('telephone')->unique();
            // $table->string('email')->unique();
             $table->string('email');

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Claim;
+use App\Paypal;
 use Illuminate\Http\Request;
 
 class ClaimController extends Controller
@@ -46,23 +47,29 @@ class ClaimController extends Controller
             'telephone'     =>  'required',
             'email'     =>  'required',
             'detail'     =>  'required',
+            'product_name'     =>  'required',
             'image'         =>  'required|image|max:2048'
         ]);
 
         $image = $request->file('image');
-
+        $user_id = auth()->id();
+        
         $new_name = rand() . '.' . $image->getClientOriginalExtension();
         $image->move(public_path('images'), $new_name);
         $form_data = array(
             'name'       =>   $request->name,
             'address'        =>   $request->address,
             'telephone'        =>   $request->telephone,
+            'product_name'        =>   $request->product_name,
             'email'        =>   $request->email,
             'detail'        =>   $request->detail,
-            'image'            =>   $new_name
+            'image'            =>   $new_name,
+            'user_id'  => $user_id
+           
         );
 
         Claim::create($form_data);
+        //$paypal->save();
 
         return redirect('how-to-return')->with('success', 'Data Added successfully.');
         //return  view('claim.claim')->with('success', 'Data Added successfully.');
