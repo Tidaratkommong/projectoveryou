@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Order;
+use App\OrderItem;
 use App\User;
+use Darryldecode\Cart\Cart;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -14,6 +16,17 @@ class ReportController extends Controller
 
         $order = Order::latest()->paginate(1);
         $user = User::latest()->paginate(1);
+
+        $cartItems = OrderItem::latest()->paginate(1);
+
+       // $cartItems = DB::table("order_items")
+         //     ->get()->sum("price")->getSum();
+
+
+        //$cartItems =\Cart::session(auth()->id())->getContent();
+
+
+
 
         //$order->grand_total = \Cart::session(auth()->id())->getTotal();
         //$order->item_count = \Cart::session(auth()->id())->getContent()->count();
@@ -33,6 +46,7 @@ class ReportController extends Controller
         return view('report')->with([
             'order' => $order,
             'user' => $user,
+            'cartItems'=>$cartItems,
 
         ]);
     }

@@ -97,7 +97,7 @@
 
                     <div class="form-group">
                         <label for="exampleInputFile">Select Profile Image</label>
-                        <input type="file" name="product_img" value="{{old('product_img')}}" required />
+                        <input type="file" name="product_img" value="{{old('product_img')}}" />
                         <img src="{{asset ($products->product_img) }}" class="img-thumbnail" width="50" />
                     </div>
 

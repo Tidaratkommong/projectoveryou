@@ -43,14 +43,21 @@
                     <td>ทั้งหมด</td>
                     <td> {{ $value->id }} </td>
 
+                    @endforeach
 
-                    <td>฿ {{number_format($value->grand_total)}}</td>
+                    @foreach($cartItems as $cartItems)
+
+                    <td>฿  {{ $cartItems->price }}</td>
+
+                    
+
                 </tr>
+                @endforeach
 
             </table>
             </h4>
     </div>
-    @endforeach
+
     <br>
     <hr style="background-color: #FA8072;">
     <h5> รายละเอียด </h5>
