@@ -18,22 +18,40 @@ class ReportController extends Controller
         $user = User::latest()->paginate(1);
         $cartItems = OrderItem::latest()->paginate(7);
 
+        $getOrder_item =OrderItem::all();
+
         $order = Order::latest()->paginate(1);
-        //$getOrder = DB::table('orders')->where('grand_total','id')->get();
-        $getOrder = Order::where('grand_total','id')->get();
 
-        //$getOrder = Order::all();
-        //$getOrder = Order::all();
-        //$getOrder = DB::table('orders')->get();  // ทั้งหมด
+        $orders = Order::all();
+        
+        
+       // $getOrder = DB::table('orders')->where('grand_total')->get();
+        //$getOrder = Order::where('grand_total','id')->get();
+
+        //$getOrder = DB::table('orders')->where('grand_total',$getOrder)->first();
+
+       $getOrder = Order::all();
+        
+       // $getOrder = DB::table('orders')->get();  // ทั้งหมด
         //$getOrder = DB::table('orders')->get();
+       // $getOrder = DB::table('orders')->find('$grand_total');
 
-        $sumPrice = 0;
+      // $getOrder = DB::table('orders')->where('id', $grand_total)->first();
+
+        //$getOrder = DB::table('orders')->where('grand_total',$row)->first();
+
+       // $getOrder = Order::find(3);
+
+       //$getOrder = Order::latest()->paginate(7);
+    
+     //  $sumPrice = 0;
        
-        foreach($getOrder as $row){
+    //    foreach($getOrder as $value){
 
-           $sumPrice += $row->grand_total;
+      //     $sumPrice += $value->grand_total;
 
-        }
+      //  }
+        
 
        // $sumTotal =  $sumTotal + $sumPrice;
         
@@ -42,6 +60,8 @@ class ReportController extends Controller
             'getOrder' => $getOrder,
             'user' => $user,
             'cartItems'=>$cartItems,
+            'getOrder_item'=>$getOrder_item,
+            'orders' =>$orders,
             
            
 
