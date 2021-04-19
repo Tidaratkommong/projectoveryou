@@ -141,7 +141,7 @@ class OrderController extends Controller
         $cartItems = \Cart::session(auth()->id())->getContent();
 
         foreach ($cartItems as $item) {
-            $order->items()->attach($item->id, ['price' => $item->price, 'quantity' => $item->quantity]);
+            $order->items()->attach($item->id, ['price' => $item->price, 'quantity' => $item->quantity,'name' => $item->name]);
         }
 
         //payment

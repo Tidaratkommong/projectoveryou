@@ -62,6 +62,10 @@
                             <h4 class="text-center pb-4">ORDER INFORMATION [ข้อมูลการสั่งซื้อ ]</h4>
                             <table class="table">
                                 <tr class="">
+                                    <td>Order Id (บิลที่)</td>
+                                    <td> : {{$order->order_id}}</td>
+                                </tr>
+                                <tr class="">
                                     <td>Order Number (หมายเลขใบสั่ง)</td>
                                     <td> : {{$order->order_number}}</td>
                                 </tr>
@@ -69,7 +73,12 @@
                                     <td>Product Id (รหัสสินค้า)</td>
                                     <td> : [ {{ $order->product_id }} ]</td>
                                 </tr>
-                            
+
+                                <tr>
+                                    <td>Product Name (ชื่อสินค้า)</td>
+                                    <td> : [ {{ $order->name }} ]</td>
+                                </tr>
+
                                 <tr>
                                     <td>Quantity (จำนวน)</td>
                                     <td> : {{ $order->quantity}} ตัว</td>
@@ -97,7 +106,7 @@
                                         <span class="badge badge-warning">{{$order->payment_method}}</span>(เก็บเงินปลายทาง)
                                         @elseif($order->payment_method =='paypal')
                                         <span class="badge badge-success">{{$order->payment_method}}</span>(โอน)
-                                       <h5> <a class="badge badge-success" href="{{url('/orders/order_items',$order->id)}}">   ดูข้อมูลการชำระเงิน </h5> 
+                                        <h5> <a class="badge badge-success" href="{{url('/orders/order_items',$order->id)}}"> ดูข้อมูลการชำระเงิน </h5>
                                         @endif
                                     </td>
                                 </tr>
@@ -133,7 +142,7 @@
                         </div>
                     </div>
 
-                    
+
                 </div>
             </div>
         </section>
@@ -141,7 +150,7 @@
         @endif
     </div>
 
-   
+
 </div>
 
 @endsection

@@ -24,8 +24,10 @@ class CreateClaimsTable extends Migration
             $table->text('address');
             $table->string('telephone');
             $table->string('product_name');
+
            // $table->string('telephone')->unique();
            // $table->string('email')->unique();
+           
             $table->string('email');
             $table->longText('detail');
             $table->enum('status', ['pending','processing','completed','decline'])->default('pending');
