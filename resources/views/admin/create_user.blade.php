@@ -2,9 +2,6 @@
 
 @section('content')
 <br />
-<br />
-<br />
-
 <div class="container">
 <a type="submit" name="submit" class="btn btn-danger " value="BACK"  href="{{url('admin/index_user')}}" />BACK</a>
     <div class="row justify-content-center">
@@ -46,10 +43,10 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="telephone" class="col-md-4 col-form-label text-md-right">{{ __('เบอร์โทร :') }}</label>
+                            <label for="telephone" class="col-md-4 col-form-label text-md-right">{{ __('เบอร์โทรศัพท์ :') }}</label>
 
                             <div class="col-md-6">
-                                <input id="telephone" placeholder=" เช่น 091 999 9999 " type="tel" class="form-control @error('telephone') is-invalid @enderror" name="telephone" value="{{ old('telephone') }}" 
+                                <input id="telephone" placeholder=" เช่น 091 999 9999 " type="tel" pattern=".+@gmail.com" class="form-control @error('telephone') is-invalid @enderror" name="telephone" value="{{ old('telephone') }}" 
                                 required autocomplete="telephone" autofocus >
                                 @error('address')
                                     <span class="invalid-feedback" role="alert">

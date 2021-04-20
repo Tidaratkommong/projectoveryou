@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Claim;
 use App\Order;
 use App\OrderItem;
 use App\User;
@@ -31,6 +32,8 @@ class ReportController extends Controller
         //$getOrder = DB::table('orders')->where('grand_total',$getOrder)->first();
 
        $getOrder = Order::all();
+
+       $claim = Claim::latest()->paginate(1);
         
        // $getOrder = DB::table('orders')->get();  // ทั้งหมด
         //$getOrder = DB::table('orders')->get();
@@ -62,8 +65,8 @@ class ReportController extends Controller
             'cartItems'=>$cartItems,
             'getOrder_item'=>$getOrder_item,
             'orders' =>$orders,
+            'claim' =>$claim,
             
-           
 
         ]);
     }

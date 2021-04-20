@@ -51,7 +51,7 @@
                             </div>
                         </div>
                         <div class="form-group row">
-                            <label for="telephone" class="col-md-4 col-form-label text-md-right">{{ __('เบอร์โทร :') }}</label>
+                            <label for="telephone" class="col-md-4 col-form-label text-md-right">{{ __('เบอร์โทรศัพท์ :') }}</label>
 
                             <div class="col-md-6">
                                 <input id="telephone" type="tel" class="form-control @error('telephone') is-invalid @enderror" name="telephone" value="{{$users['telephone'] }}" autocomplete="telephone" autofocus>
@@ -68,7 +68,7 @@
                             <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail :') }}</label>
 
                             <div class="col-md-6">
-                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{$users['email'] }}" autocomplete="email">
+                                <input id="email" type="email" pattern=".+@gmail.com" class="form-control @error('email') is-invalid @enderror" name="email" value="{{$users['email'] }}" autocomplete="email">
 
                                 @error('email')
                                 <span class="invalid-feedback" role="alert">

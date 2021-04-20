@@ -64,7 +64,7 @@
                     </tr>
                     @foreach($orders as $value)
                     <tr>
-                        <td class="text-center">  ฿ {{ $value->grand_total }}</td>
+                        <td class="text-center"> ฿ {{ $value->grand_total }}</td>
                         @endforeach
                     </tr>
                 </table>
@@ -72,78 +72,81 @@
         </div>
     </div>
 
-<hr style="background-color: #FA8072;">
-<h5> รายละเอียด </h5>
+    <hr style="background-color: #FA8072;">
+    <h5> รายละเอียด </h5>
 
-<!-- detail Sum_orders-->
+    <!-- detail Sum_orders-->
 
-<div class="form-row justify-content-center">
-    @foreach($order as $value)
-    <div class="col-md-6">
-        <div class="card pd-20 pd-sm-30 text-center">
-            <br>
-            <h5>บิลทั้งหมดทั้งหมด</h5>
-            <h5>{{ $value->id }} </h5>
-            <br>
-        </div>
-    </div>
-    @endforeach
-
-    @php
-    $sumPrice = 0;
-
-    foreach($getOrder as $value){
-
-    $sumTotal = $sumPrice += $value->grand_total;
-    }
-    @endphp
-
-    <div class="col-md-6">
-        <div class="card pd-20 pd-sm-30 text-center">
-            <br>
-            <h5>รวมยอดเงินที่ได้รับ</h5>
-            <h5> ฿ {{number_format($sumTotal)}}</h5>
-            <br>
-        </div>
-    </div>
-
-
-
-</div>
-
-<br>
-<div class="form-row justify-content-center">
-    @foreach($user as $user)
-    <div class="col-md-6">
-        <div class="card pd-20 pd-sm-30 text-center">
-            <br>
-            <h5>จำนวนลูกค้าทั้งหมด</h5>
-            <h5>{{ $user->id }} users </h5>
-            <br>
-        </div>
-    </div>
-    @endforeach
-
-    <div class="col-md-6">
-        <div class="card pd-20 pd-sm-30 text-center">
-            <br>
-            <h5>คืนเงิน</h5>
-            <h5>฿ 0 </h5>
-            <br>
-        </div>
-    </div>
-
-    <div class=" col-md-5">
-        <div class="small-box  text-center ">
-            <div class="inner">
+    <div class="form-row justify-content-center">
+        @foreach($order as $value)
+        <div class="col-md-6">
+            <div class="card pd-20 pd-sm-30 text-center">
                 <br>
+                <h5>บิลทั้งหมด</h5>
+                <h5>{{ $value->id }} </h5>
                 <br>
-                <h5> ///////////////////////////////////////////////////////////////////////////////////////////// </h5>
             </div>
         </div>
+        @endforeach
+
+        @php
+        $sumPrice = 0;
+
+        foreach($getOrder as $value){
+
+        $sumTotal = $sumPrice += $value->grand_total;
+        }
+        @endphp
+
+        <div class="col-md-6">
+            <div class="card pd-20 pd-sm-30 text-center">
+                <br>
+                <h5>รวมยอดเงินที่ได้รับ</h5>
+                <h5> ฿ {{number_format($sumTotal)}}</h5>
+                <br>
+            </div>
+        </div>
+
+
+
     </div>
 
-</div>
+    <br>
+    <div class="form-row justify-content-center">
+        @foreach($user as $user)
+        <div class="col-md-6">
+            <div class="card pd-20 pd-sm-30 text-center">
+                <br>
+                <h5>จำนวนผู้เข้าใช้</h5>
+                <h5>{{ $user->id }} ผู้ใช้ </h5>
+                <br>
+            </div>
+        </div>
+        @endforeach
+
+
+        @foreach($claim as $claim)
+        <div class="col-md-6">
+            <div class="card pd-20 pd-sm-30 text-center">
+                <br>
+                <h5>รายการที่ถูกเคลม</h5>
+                <h5>{{$claim->id }} รายการ </h5>
+                <br>
+            </div>
+        </div>
+        @endforeach
+
+        <div class=" col-md-5">
+            <div class="small-box  text-center ">
+                <div class="inner">
+                    <br>
+                    <br>
+                    <h5> ///////////////////////////////////////////////////////////////////////////////////////////// </h5>
+                </div>
+            </div>
+        </div>
+
+    </div>
 
 
 
@@ -152,4 +155,4 @@
 
 
 
-@endsection
+    @endsection

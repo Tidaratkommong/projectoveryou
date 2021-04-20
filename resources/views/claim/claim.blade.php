@@ -17,7 +17,7 @@
 
                 <div class="form-group col-md-6">
                     <label for="email">Email</label>
-                    <input type="text" name="email" class="form-control input-lg" placeholder="อีเมล" required />
+                    <input type="text" name="email" pattern=".+@gmail.com" class="form-control input-lg" placeholder="อีเมล" required />
                 </div>
 
                 <div class="form-group col-md-6">
@@ -27,7 +27,7 @@
 
                 <div class="form-group col-md-6">
                     <label for="telephone">เบอร์โทร</label>
-                    <input type="text" name="telephone" class="form-control input-lg" placeholder="เบอร์โทร" required />
+                    <input type="text" name="telephone" pattern="[0-9]{3}[0-9]{3}[0-9]{4}" class="form-control input-lg" placeholder="เบอร์โทร" required />
                 </div>
             </div>
 

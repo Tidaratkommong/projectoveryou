@@ -114,16 +114,21 @@ class UserController extends Controller
         }
     }
 
-    
+
     public function getProfile($id)
-    {     
-        $user = User::find($id);
-        $user = DB::table('users')
-            ->join('orders', 'users.id', 'orders.id')
-            ->join('order_items', 'orders.id', 'order_items.id')
-            ->join('products', 'order_items.id', 'products.id')
-            ->select('users.*', 'orders.*', 'order_items.*', 'products.*')
-            ->where('users.id', $id)->first();
-        return view('user.history', compact('user'));
+    {
+       // $order = User::find($id);
+     
+       $user = User::find($id);
+       $user = DB::table('users')
+           ->join('orders', 'users.id', 'orders.id')
+           ->join('order_items', 'orders.id', 'order_items.id')
+           ->join('products', 'order_items.id', 'products.id')
+           ->select('users.*', 'orders.*', 'order_items.*', 'products.*')
+           ->where('users.id', $id)->first();
+       return view('user.history', compact('user'));
+
+      
+
     }
 }

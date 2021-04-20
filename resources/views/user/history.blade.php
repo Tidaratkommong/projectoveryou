@@ -15,43 +15,54 @@
 
 <div class="product-section container">
     <table id="cart" class="table table-hover table-condensed">
-        <thead>
+        <thead style="background-color: #FA8072;">
 
             <tr>
-                <th style="width:30%">สินค้า</th>
+                <th style="width:15%">สินค้า</th>
+                <th style="width:40%"></th>
                 <th style="width:10%">ราคา</th>
-                <th style="width:20%">จำนวน</th>
+                <th style="width:15%">จำนวน</th>
                 <th style="width:20%">สถานะการจัดส่ง</th>
                 <th style="width:10%"></th>
             </tr>
         </thead>
 
         <tbody>
-           
+
         <tbody>
             @if($user)
             <tr>
                 <td data-th="Product">
                     <div class="row">
                         <div class="col-sm-9">
-                            <img src="{{asset($user->product_img )}}" style="width: 70px; height:70px;" /> <br>
-                            <h6 class="nomargin"> {{$user->product_name}}</h6>
-                            <h6 class="nomargin"> รายละเอียด : {{$user->product_detail}} </h6>
+                            <img src="{{asset($user->product_img )}}" style="width: 100px; height:120px;" /> <br>
                         </div>
                     </div>
                 </td>
 
                 <td data-th="Price">
+                    <br>
+                    <br>
+                    <h6 class="nomargin"> {{$user->product_name}} รายละเอียด : {{$user->product_detail}} </h6>
+                </td>
+
+                <td data-th="Price">
+                    <br>
+                    <br>
                     {{$user->price}} บาท
                 </td>
 
                 <td data-th="Quantity">
                     <div class="form-group col-md-6">
+                        <br>
+                        <br>
                         {{$user->quantity}} ตัว
                     </div>
                 </td>
 
                 <td class="actions" data-th="">
+                    <br>
+                    <br>
                     @if($user->status=='pending')
                     <span class="badge badge-primary">{{$user->status}} (รอ)</span>
                     @elseif($user->status=='processing')
@@ -66,6 +77,8 @@
 
                 <td class="actions" data-th="">
                     <div class="form-group col-md-6">
+                        <br>
+                        <br>
                         <button type="button" class="btn btn-danger"><a href="{{ route('shop.show',$user->id )}}" class="text-dark">ซื้ออีกครั้ง</a></button>
                     </div>
 

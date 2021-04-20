@@ -2,11 +2,13 @@
 
 @section('content')
 
+<br />
+<div class="container">
+    <a type="submit" name="submit" class="btn btn-danger" value="BACK" href="{{url('product/product')}}" />BACK</a>
+
     <div class="row justify-content-center">
         <div class="col-md-5">
             <div class="card ">
-
-
                 <h6 class="card-header text-center">ID สินค้าที่ {{ $products->id }}</h6>
                 <form style=" margin: 10px;" enctype="multipart/form-data">
                     @csrf

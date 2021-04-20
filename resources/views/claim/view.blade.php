@@ -36,7 +36,7 @@
                                         <td> : {{$claim->address}}</td>
                                     </tr>
                                     <tr>
-                                        <td>Detail (รายละเอียด)</td>
+                                        <td>Product Name (ชื่อสินค้า )</td>
                                         <td> : {{$claim->product_name}} </td>
                                     </tr>
                                     <tr>
