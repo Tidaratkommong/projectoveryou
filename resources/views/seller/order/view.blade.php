@@ -26,7 +26,7 @@
                     <td>{{$order->order_number}}</td>
                     <td>[ {{$order->user_id}} ] {{$order->shipping_fullname}}</td>
                     <td> {{ $order->email }} </td>
-                    <td>{{$order->item_count}}</td>
+                    <td>{{ $order->quantity}}</td>
                     <td> ฿{{number_format($order->grand_total)}} </td>
                     <td>
                         @if($order->status=='pending')
